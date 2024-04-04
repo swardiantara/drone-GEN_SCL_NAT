@@ -1,0 +1,2817 @@
+{
+  "examples": [
+    {
+      "labels_correct": [
+        [
+          "the feature",
+          "Camera Settings ActiveTrack",
+          "positive",
+          "Optimized"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the parameter",
+          "camera settings",
+          "positive",
+          "activetrack optimized"
+        ]
+      ],
+      "output_correct": "the feature | THE Camera Settings ActiveTrack IS Optimized | positive",
+      "output_pred": "the parameter | THE camera settings IS activetrack optimized | positive",
+      "utterances": [
+        "Camera",
+        "Settings",
+        "ActiveTrack",
+        "Optimized."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the component",
+          "it",
+          "negative",
+          "Cannot send ActiveTrack command"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the state",
+          "ActiveTrack command",
+          "negative",
+          "cannot send"
+        ]
+      ],
+      "output_correct": "the component | THE it IS Cannot send ActiveTrack command | negative",
+      "output_pred": "the state | THE ActiveTrack command IS cannot send | negative",
+      "utterances": [
+        "Cannot",
+        "send",
+        "ActiveTrack",
+        "command."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the issue",
+          "Capture Failed Shooting interrupted",
+          "negative",
+          "NULL"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the state",
+          "shooting",
+          "negative",
+          "interrupted"
+        ],
+        [
+          "the state",
+          "capture",
+          "negative",
+          "failed"
+        ]
+      ],
+      "output_correct": "the issue | THE Capture Failed Shooting interrupted IS NULL | negative",
+      "output_pred": "the state | THE shooting IS interrupted | negative [SSEP] the state | THE capture IS failed | negative",
+      "utterances": [
+        "Capture",
+        "Failed",
+        "Shooting",
+        "interrupted."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the component",
+          "compass",
+          "negative",
+          "error"
+        ],
+        [
+          "the component",
+          "it",
+          "negative",
+          "Calibrate required"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the component",
+          "compass",
+          "negative",
+          "error"
+        ]
+      ],
+      "output_correct": "the component | THE compass IS error | negative [SSEP] the component | THE it IS Calibrate required | negative",
+      "output_pred": "the component | THE compass IS error | negative",
+      "utterances": [
+        "Compass",
+        "error,",
+        "calibration",
+        "required."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the component",
+          "compass",
+          "negative",
+          "disconnected"
+        ],
+        [
+          "the component",
+          "compass",
+          "negative",
+          "error"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the issue",
+          "compass disconnected",
+          "negative",
+          "NULL"
+        ],
+        [
+          "the issue",
+          "compass error",
+          "negative",
+          "NULL"
+        ]
+      ],
+      "output_correct": "the component | THE compass IS disconnected | negative [SSEP] the component | THE compass IS error | negative",
+      "output_pred": "the issue | THE compass disconnected IS NULL | negative [SSEP] the issue | THE compass error IS NULL | negative",
+      "utterances": [
+        "Compass",
+        "Error.",
+        "Compass",
+        "disconnected."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the parameter",
+          "battery voltage",
+          "negative",
+          "critical low"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the parameter",
+          "battery voltage",
+          "negative",
+          "is critically low"
+        ]
+      ],
+      "output_correct": "the parameter | THE battery voltage IS critical low | negative",
+      "output_pred": "the parameter | THE battery voltage IS is critically low | negative",
+      "utterances": [
+        "Critical",
+        "low",
+        "battery",
+        "voltage."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the component",
+          "it",
+          "positive",
+          "Exited Cruise Control mode"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the state",
+          "cruise control mode",
+          "positive",
+          "extended"
+        ]
+      ],
+      "output_correct": "the component | THE it IS Exited Cruise Control mode | positive",
+      "output_pred": "the state | THE cruise control mode IS extended | positive",
+      "utterances": [
+        "Exited",
+        "Cruise",
+        "Control",
+        "mode."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the component",
+          "it",
+          "positive",
+          "Exited Visual Avoidance System"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the feature",
+          "injected visual avoidance system",
+          "positive",
+          "NULL"
+        ]
+      ],
+      "output_correct": "the component | THE it IS Exited Visual Avoidance System | positive",
+      "output_pred": "the feature | THE injected visual avoidance system IS NULL | positive",
+      "utterances": [
+        "Exited",
+        "Visual",
+        "Avoidance",
+        "System."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the action",
+          "landing",
+          "negative",
+          "Failed to cancel"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the state",
+          "landing",
+          "negative",
+          "is failed to cancel"
+        ]
+      ],
+      "output_correct": "the action | THE landing IS Failed to cancel | negative",
+      "output_pred": "the state | THE landing IS is failed to cancel | negative",
+      "utterances": [
+        "Failed",
+        "to",
+        "cancel",
+        "landing."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the parameter",
+          "Flight height",
+          "negative",
+          "too low"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the parameter",
+          "flight height",
+          "negative",
+          "too low"
+        ]
+      ],
+      "output_correct": "the parameter | THE Flight height IS too low | negative",
+      "output_pred": "the parameter | THE flight height IS too low | negative",
+      "utterances": [
+        "Flight",
+        "height",
+        "too",
+        "low."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the parameter",
+          "Gimbal pitch",
+          "negative",
+          "limit"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the parameter",
+          "Gimbal pitch limit",
+          "negative",
+          "reached"
+        ]
+      ],
+      "output_correct": "the parameter | THE Gimbal pitch IS limit | negative",
+      "output_pred": "the parameter | THE Gimbal pitch limit IS reached | negative",
+      "utterances": [
+        "Gimbal",
+        "Pitch",
+        "Limit",
+        "Reached."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the parameter",
+          "Gimbal roll",
+          "negative",
+          "limit"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the parameter",
+          "gimbal roll limit",
+          "negative",
+          "reached"
+        ]
+      ],
+      "output_correct": "the parameter | THE Gimbal roll IS limit | negative",
+      "output_pred": "the parameter | THE gimbal roll limit IS reached | negative",
+      "utterances": [
+        "Gimbal",
+        "Roll",
+        "Limit",
+        "Reached."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the parameter",
+          "Gimbal yaw",
+          "negative",
+          "limit"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the parameter",
+          "gimbal yaw limit",
+          "negative",
+          "reached"
+        ]
+      ],
+      "output_correct": "the parameter | THE Gimbal yaw IS limit | negative",
+      "output_pred": "the parameter | THE gimbal yaw limit IS reached | negative",
+      "utterances": [
+        "Gimbal",
+        "Yaw",
+        "Limit",
+        "Reached."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the feature",
+          "Image transmission",
+          "negative",
+          "signal lost"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the feature",
+          "image transmission signal",
+          "negative",
+          "lost"
+        ]
+      ],
+      "output_correct": "the feature | THE Image transmission IS signal lost | negative",
+      "output_pred": "the feature | THE image transmission signal IS lost | negative",
+      "utterances": [
+        "Image",
+        "transmission",
+        "signal",
+        "lost."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the component",
+          "it",
+          "negative",
+          "impact detected"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the issue",
+          "impact detected",
+          "negative",
+          "NULL"
+        ]
+      ],
+      "output_correct": "the component | THE it IS impact detected | negative",
+      "output_pred": "the issue | THE impact detected IS NULL | negative",
+      "utterances": [
+        "Impact",
+        "detected.",
+        "Restart",
+        "aircraft."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the component",
+          "landing gear",
+          "positive",
+          "function restored"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the component",
+          "landing gear function",
+          "positive",
+          "restored"
+        ]
+      ],
+      "output_correct": "the component | THE landing gear IS function restored | positive",
+      "output_pred": "the component | THE landing gear function IS restored | positive",
+      "utterances": [
+        "Landing",
+        "gear",
+        "function",
+        "restored."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the component",
+          "it",
+          "positive",
+          "Recharge promptly"
+        ],
+        [
+          "the component",
+          "it",
+          "negative",
+          "low battery"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the parameter",
+          "battery",
+          "negative",
+          "is low"
+        ]
+      ],
+      "output_correct": "the component | THE it IS Recharge promptly | positive [SSEP] the component | THE it IS low battery | negative",
+      "output_pred": "the parameter | THE battery IS is low | negative",
+      "utterances": [
+        "Low",
+        "battery.",
+        "Recharge",
+        "promptly."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the component",
+          "it",
+          "positive",
+          "Returning home"
+        ],
+        [
+          "the component",
+          "it",
+          "negative",
+          "low power"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the component",
+          "it",
+          "negative",
+          "low power"
+        ]
+      ],
+      "output_correct": "the component | THE it IS Returning home | positive [SSEP] the component | THE it IS low power | negative",
+      "output_pred": "the component | THE it IS low power | negative",
+      "utterances": [
+        "Low",
+        "Power.",
+        "Returning",
+        "home."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the parameter",
+          "Maximum flight altitude",
+          "positive",
+          "reached"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the state",
+          "Maximum Flight Altitude",
+          "negative",
+          "reached"
+        ]
+      ],
+      "output_correct": "the parameter | THE Maximum flight altitude IS reached | positive",
+      "output_pred": "the state | THE Maximum Flight Altitude IS reached | negative",
+      "utterances": [
+        "Maximum",
+        "Flight",
+        "Altitude",
+        "Reached."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the parameter",
+          "Min Waypoint Distance",
+          "positive",
+          "nnn"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the parameter",
+          "min waypoint distance",
+          "positive",
+          "is nnn"
+        ]
+      ],
+      "output_correct": "the parameter | THE Min Waypoint Distance IS nnn | positive",
+      "output_pred": "the parameter | THE min waypoint distance IS is nnn | positive",
+      "utterances": [
+        "Min",
+        "Waypoint",
+        "Distance:",
+        "nnn."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the component",
+          "it",
+          "negative",
+          "Not Enough Force/ESC Error"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the component",
+          "it",
+          "negative",
+          "not enough force/ESC error"
+        ]
+      ],
+      "output_correct": "the component | THE it IS Not Enough Force/ESC Error | negative",
+      "output_pred": "the component | THE it IS not enough force/ESC error | negative",
+      "utterances": [
+        "Not",
+        "Enough",
+        "Force/ESC",
+        "Error."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the component",
+          "remote controller",
+          "negative",
+          "signal lost"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the feature",
+          "remote controller signal",
+          "negative",
+          "lost"
+        ]
+      ],
+      "output_correct": "the component | THE remote controller IS signal lost | negative",
+      "output_pred": "the feature | THE remote controller signal IS lost | negative",
+      "utterances": [
+        "Remote",
+        "controller",
+        "signal",
+        "lost."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the parameter",
+          "Remote ID",
+          "positive",
+          "functionality normal"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the feature",
+          "remote ID functionality",
+          "positive",
+          "normal"
+        ]
+      ],
+      "output_correct": "the parameter | THE Remote ID IS functionality normal | positive",
+      "output_pred": "the feature | THE remote ID functionality IS normal | positive",
+      "utterances": [
+        "Remote",
+        "ID",
+        "functionality",
+        "normal."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the parameter",
+          "Return-to-Home Altitude",
+          "positive",
+          "65FT"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the parameter",
+          "return-to-home altitude",
+          "positive",
+          "is 65 FT"
+        ]
+      ],
+      "output_correct": "the parameter | THE Return-to-Home Altitude IS 65FT | positive",
+      "output_pred": "the parameter | THE return-to-home altitude IS is 65 FT | positive",
+      "utterances": [
+        "Return-to-Home",
+        "Altitude",
+        ":",
+        "65FT."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the component",
+          "it",
+          "positive",
+          "heading alignment"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the feature",
+          "RTH",
+          "positive",
+          "heading alignment"
+        ]
+      ],
+      "output_correct": "the component | THE it IS heading alignment | positive",
+      "output_pred": "the feature | THE RTH IS heading alignment | positive",
+      "utterances": [
+        "RTH",
+        ":",
+        "Heading",
+        "alignment."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the parameter",
+          "RTH Altitude",
+          "positive",
+          "65FT"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the feature",
+          "RTH Altitude",
+          "positive",
+          "65 FT"
+        ]
+      ],
+      "output_correct": "the parameter | THE RTH Altitude IS 65FT | positive",
+      "output_pred": "the feature | THE RTH Altitude IS 65 FT | positive",
+      "utterances": [
+        "RTH",
+        "Altitude",
+        ":",
+        "65FT."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the issue",
+          "Strong Remote Controller Interference",
+          "negative",
+          "NULL"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the component",
+          "remote controller",
+          "negative",
+          "strong interference"
+        ]
+      ],
+      "output_correct": "the issue | THE Strong Remote Controller Interference IS NULL | negative",
+      "output_pred": "the component | THE remote controller IS strong interference | negative",
+      "utterances": [
+        "Strong",
+        "Remote",
+        "Controller",
+        "Interference."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the component",
+          "it",
+          "positive",
+          "reselect subject"
+        ],
+        [
+          "the component",
+          "it",
+          "negative",
+          "subject lost"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the component",
+          "subject",
+          "negative",
+          "lost"
+        ],
+        [
+          "the component",
+          "it",
+          "positive",
+          "reselect subject"
+        ]
+      ],
+      "output_correct": "the component | THE it IS reselect subject | positive [SSEP] the component | THE it IS subject lost | negative",
+      "output_pred": "the component | THE subject IS lost | negative [SSEP] the component | THE it IS reselect subject | positive",
+      "utterances": [
+        "Subject",
+        "lost.",
+        "Reselect",
+        "subject."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the component",
+          "it",
+          "negative",
+          "subject lost"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the issue",
+          "subject lost",
+          "negative",
+          "NULL"
+        ]
+      ],
+      "output_correct": "the component | THE it IS subject lost | negative",
+      "output_pred": "the issue | THE subject lost IS NULL | negative",
+      "utterances": [
+        "Subject",
+        "lost.",
+        "Searching",
+        "\ufffd."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the component",
+          "it",
+          "positive",
+          "switched to A (Attitude)-mode"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the state",
+          "attitude mode",
+          "positive",
+          "switched"
+        ]
+      ],
+      "output_correct": "the component | THE it IS switched to A (Attitude)-mode | positive",
+      "output_pred": "the state | THE attitude mode IS switched | positive",
+      "utterances": [
+        "Switched",
+        "to",
+        "A",
+        "(Attitude)-mode."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the component",
+          "it",
+          "positive",
+          "switched to P (Positioning)-mode"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the state",
+          "it",
+          "positive",
+          "switched to P (Positioning) mode"
+        ]
+      ],
+      "output_correct": "the component | THE it IS switched to P (Positioning)-mode | positive",
+      "output_pred": "the state | THE it IS switched to P (Positioning) mode | positive",
+      "utterances": [
+        "Switched",
+        "to",
+        "P",
+        "(Positioning)-mode."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the component",
+          "it",
+          "positive",
+          "switched to S (Sport)-mode"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the state",
+          "sport mode",
+          "positive",
+          "switched"
+        ]
+      ],
+      "output_correct": "the component | THE it IS switched to S (Sport)-mode | positive",
+      "output_pred": "the state | THE sport mode IS switched | positive",
+      "utterances": [
+        "Switched",
+        "to",
+        "S",
+        "(Sport)-mode."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the component",
+          "it",
+          "positive",
+          "switched to T (Tripod)-mode"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the state",
+          "tripod mode",
+          "positive",
+          "switched"
+        ]
+      ],
+      "output_correct": "the component | THE it IS switched to T (Tripod)-mode | positive",
+      "output_pred": "the state | THE tripod mode IS switched | positive",
+      "utterances": [
+        "Switched",
+        "to",
+        "T",
+        "(Tripod)-mode."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the component",
+          "it",
+          "positive",
+          "take off in P-Mode"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the component",
+          "it",
+          "positive",
+          "take off in p-mode"
+        ]
+      ],
+      "output_correct": "the component | THE it IS take off in P-Mode | positive",
+      "output_pred": "the component | THE it IS take off in p-mode | positive",
+      "utterances": [
+        "Take",
+        "off",
+        "in",
+        "P-Mode."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the feature",
+          "Target",
+          "negative",
+          "lost"
+        ],
+        [
+          "the state",
+          "QuickShots",
+          "negative",
+          "stopped"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the feature",
+          "quickshoots",
+          "positive",
+          "stopped"
+        ],
+        [
+          "the state",
+          "target",
+          "negative",
+          "lost"
+        ]
+      ],
+      "output_correct": "the feature | THE Target IS lost | negative [SSEP] the state | THE QuickShots IS stopped | negative",
+      "output_pred": "the feature | THE quickshoots IS stopped | positive [SSEP] the state | THE target IS lost | negative",
+      "utterances": [
+        "Target",
+        "lost.",
+        "QuickShots",
+        "stopped."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the action",
+          "Take off",
+          "negative",
+          "Unable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the component",
+          "it",
+          "negative",
+          "unable to take off"
+        ]
+      ],
+      "output_correct": "the action | THE Take off IS Unable | negative",
+      "output_pred": "the component | THE it IS unable to take off | negative",
+      "utterances": [
+        "Unable",
+        "to",
+        "take",
+        "off."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the feature",
+          "Signal",
+          "negative",
+          "Weak"
+        ],
+        [
+          "the action",
+          "antennas",
+          "positive",
+          "Adjust"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the feature",
+          "signal",
+          "negative",
+          "is weak"
+        ]
+      ],
+      "output_correct": "the feature | THE Signal IS Weak | negative [SSEP] the action | THE antennas IS Adjust | positive",
+      "output_pred": "the feature | THE signal IS is weak | negative",
+      "utterances": [
+        "Weak",
+        "signal.",
+        "Adjust",
+        "antennas."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the state",
+          "ActiveTrack Flight",
+          "positive",
+          "Paused"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the state",
+          "active track flight",
+          "negative",
+          "stopped"
+        ]
+      ],
+      "output_correct": "the state | THE ActiveTrack Flight IS Paused | positive",
+      "output_pred": "the state | THE active track flight IS stopped | negative",
+      "utterances": [
+        "ActiveTrack",
+        "Flight",
+        "Paused."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the feature",
+          "Altitude Zone",
+          "positive",
+          "NULL"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the parameter",
+          "altitude zone",
+          "positive",
+          "nnn"
+        ]
+      ],
+      "output_correct": "the feature | THE Altitude Zone IS NULL | positive",
+      "output_pred": "the parameter | THE altitude zone IS nnn | positive",
+      "utterances": [
+        "Altitude",
+        "Zone",
+        "nnn."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the state",
+          "API Takeoff",
+          "positive",
+          "Automatic"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the action",
+          "API Automatic Takeoff",
+          "positive",
+          "NULL"
+        ]
+      ],
+      "output_correct": "the state | THE API Takeoff IS Automatic | positive",
+      "output_pred": "the action | THE API Automatic Takeoff IS NULL | positive",
+      "utterances": [
+        "API",
+        "Automatic",
+        "Takeoff."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the state",
+          "Destination",
+          "positive",
+          "Arrived"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the component",
+          "it",
+          "positive",
+          "arrived at destination"
+        ]
+      ],
+      "output_correct": "the state | THE Destination IS Arrived | positive",
+      "output_pred": "the component | THE it IS arrived at destination | positive",
+      "utterances": [
+        "Arrived",
+        "at",
+        "destination."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the state",
+          "Auto landing",
+          "positive",
+          "initiated"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the action",
+          "auto landing",
+          "positive",
+          "initiated"
+        ]
+      ],
+      "output_correct": "the state | THE Auto landing IS initiated | positive",
+      "output_pred": "the action | THE auto landing IS initiated | positive",
+      "utterances": [
+        "Auto",
+        "landing",
+        "initiated."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the component",
+          "Battery cells",
+          "negative",
+          "undervoltage"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the component",
+          "battery cells",
+          "negative",
+          "undervoltage"
+        ]
+      ],
+      "output_correct": "the component | THE Battery cells IS undervoltage | negative",
+      "output_pred": "the component | THE battery cells IS undervoltage | negative",
+      "utterances": [
+        "Battery",
+        "cells",
+        "undervoltage."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the component",
+          "Battery",
+          "negative",
+          "Connection Error"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the component",
+          "battery",
+          "negative",
+          "connection error"
+        ]
+      ],
+      "output_correct": "the component | THE Battery IS Connection Error | negative",
+      "output_pred": "the component | THE battery IS connection error | negative",
+      "utterances": [
+        "Battery:",
+        "Connection",
+        "Error."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the component",
+          "Cache Space",
+          "negative",
+          "Full"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the state",
+          "cache space",
+          "negative",
+          "full"
+        ]
+      ],
+      "output_correct": "the component | THE Cache Space IS Full | negative",
+      "output_pred": "the state | THE cache space IS full | negative",
+      "utterances": [
+        "Cache",
+        "Space",
+        "Full."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the parameter",
+          "Camera Settings",
+          "positive",
+          "Adjusted"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the parameter",
+          "camera settings",
+          "positive",
+          "adjusted"
+        ]
+      ],
+      "output_correct": "the parameter | THE Camera Settings IS Adjusted | positive",
+      "output_pred": "the parameter | THE camera settings IS adjusted | positive",
+      "utterances": [
+        "Camera",
+        "Settings",
+        "Adjusted."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the component",
+          "Camera storage",
+          "negative",
+          "full"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the component",
+          "camera storage",
+          "negative",
+          "full"
+        ]
+      ],
+      "output_correct": "the component | THE Camera storage IS full | negative",
+      "output_pred": "the component | THE camera storage IS full | negative",
+      "utterances": [
+        "Camera",
+        "storage",
+        "full."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the action",
+          "Landing",
+          "negative",
+          "Cancel Failed"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the component",
+          "it",
+          "negative",
+          "cancel landing failed"
+        ]
+      ],
+      "output_correct": "the action | THE Landing IS Cancel Failed | negative",
+      "output_pred": "the component | THE it IS cancel landing failed | negative",
+      "utterances": [
+        "Cancel",
+        "Landing",
+        "Failed."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the action",
+          "Return-to-Home",
+          "negative",
+          "Cancel Failed"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the state",
+          "return-to-home",
+          "negative",
+          "is failed"
+        ]
+      ],
+      "output_correct": "the action | THE Return-to-Home IS Cancel Failed | negative",
+      "output_pred": "the state | THE return-to-home IS is failed | negative",
+      "utterances": [
+        "Cancel",
+        "Return-to-Home",
+        "Failed."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the state",
+          "ActiveTrack",
+          "negative",
+          "Cannot exit"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the state",
+          "ActiveTrack",
+          "negative",
+          "cannot exit"
+        ]
+      ],
+      "output_correct": "the state | THE ActiveTrack IS Cannot exit | negative",
+      "output_pred": "the state | THE ActiveTrack IS cannot exit | negative",
+      "utterances": [
+        "Cannot",
+        "exit",
+        "ActiveTrack."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the feature",
+          "Identify Subject",
+          "negative",
+          "Cannot"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the issue",
+          "cannot identify subject",
+          "negative",
+          "NULL"
+        ]
+      ],
+      "output_correct": "the feature | THE Identify Subject IS Cannot | negative",
+      "output_pred": "the issue | THE cannot identify subject IS NULL | negative",
+      "utterances": [
+        "Cannot",
+        "Identify",
+        "Subject."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the feature",
+          "Compass",
+          "positive",
+          "Redundancy Switch"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the feature",
+          "compass redundancy",
+          "positive",
+          "switch"
+        ]
+      ],
+      "output_correct": "the feature | THE Compass IS Redundancy Switch | positive",
+      "output_pred": "the feature | THE compass redundancy IS switch | positive",
+      "utterances": [
+        "Compass",
+        "Redundancy",
+        "Switch."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the action",
+          "Landing Position",
+          "positive",
+          "Correcting"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the component",
+          "it",
+          "positive",
+          "correcting landing position"
+        ]
+      ],
+      "output_correct": "the action | THE Landing Position IS Correcting | positive",
+      "output_pred": "the component | THE it IS correcting landing position | positive",
+      "utterances": [
+        "Correcting",
+        "Landing",
+        "Position."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the component",
+          "Battery",
+          "negative",
+          "Critical Low"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the component",
+          "battery",
+          "negative",
+          "is critically low"
+        ]
+      ],
+      "output_correct": "the component | THE Battery IS Critical Low | negative",
+      "output_pred": "the component | THE battery IS is critically low | negative",
+      "utterances": [
+        "Critical",
+        "Low",
+        "Battery."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the state",
+          "Drone",
+          "negative",
+          "Vibrating"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the component",
+          "drone",
+          "negative",
+          "violating"
+        ]
+      ],
+      "output_correct": "the state | THE Drone IS Vibrating | negative",
+      "output_pred": "the component | THE drone IS violating | negative",
+      "utterances": [
+        "Drone",
+        "is",
+        "Vibrating."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the component",
+          "EMMC",
+          "negative",
+          "Full"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the parameter",
+          "EMMC",
+          "negative",
+          "full"
+        ]
+      ],
+      "output_correct": "the component | THE EMMC IS Full | negative",
+      "output_pred": "the parameter | THE EMMC IS full | negative",
+      "utterances": [
+        "EMMC",
+        "is",
+        "full."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the state",
+          "Waypoint mission",
+          "positive",
+          "Executing"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the component",
+          "it",
+          "positive",
+          "executioning waypoint mission"
+        ]
+      ],
+      "output_correct": "the state | THE Waypoint mission IS Executing | positive",
+      "output_pred": "the component | THE it IS executioning waypoint mission | positive",
+      "utterances": [
+        "Executing",
+        "waypoint",
+        "mission."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the state",
+          "Hyperlapse mode",
+          "positive",
+          "Exited"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the state",
+          "hyperlapse",
+          "negative",
+          "expired"
+        ]
+      ],
+      "output_correct": "the state | THE Hyperlapse mode IS Exited | positive",
+      "output_pred": "the state | THE hyperlapse IS expired | negative",
+      "utterances": [
+        "Exited",
+        "Hyperlapse",
+        "mode."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the feature",
+          "GPS Position",
+          "negative",
+          "Mismatch"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the feature",
+          "GPS Position Mismatch",
+          "negative",
+          "NULL"
+        ]
+      ],
+      "output_correct": "the feature | THE GPS Position IS Mismatch | negative",
+      "output_pred": "the feature | THE GPS Position Mismatch IS NULL | negative",
+      "utterances": [
+        "GPS",
+        "Position",
+        "Mismatch."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the feature",
+          "Home Point",
+          "positive",
+          "Recorded"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the feature",
+          "home point",
+          "positive",
+          "recorded"
+        ]
+      ],
+      "output_correct": "the feature | THE Home Point IS Recorded | positive",
+      "output_pred": "the feature | THE home point IS recorded | positive",
+      "utterances": [
+        "Home",
+        "Point",
+        "Recorded."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the feature",
+          "Home Point",
+          "positive",
+          "Updated"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the feature",
+          "home point",
+          "positive",
+          "updated"
+        ]
+      ],
+      "output_correct": "the feature | THE Home Point IS Updated | positive",
+      "output_pred": "the feature | THE home point IS updated | positive",
+      "utterances": [
+        "Home",
+        "Point",
+        "Updated."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the component",
+          "Landing Gear",
+          "positive",
+          "Lowered"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the component",
+          "landing gear",
+          "positive",
+          "lowered"
+        ]
+      ],
+      "output_correct": "the component | THE Landing Gear IS Lowered | positive",
+      "output_pred": "the component | THE landing gear IS lowered | positive",
+      "utterances": [
+        "Landing",
+        "Gear",
+        "Lowered."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the state",
+          "Landing Gear",
+          "positive",
+          "Lowering"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the component",
+          "landing gear",
+          "positive",
+          "lowering"
+        ]
+      ],
+      "output_correct": "the state | THE Landing Gear IS Lowering | positive",
+      "output_pred": "the component | THE landing gear IS lowering | positive",
+      "utterances": [
+        "Landing",
+        "Gear",
+        "Lowering."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the state",
+          "Landing Gear",
+          "positive",
+          "Paused"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the component",
+          "landing gear",
+          "positive",
+          "paused"
+        ]
+      ],
+      "output_correct": "the state | THE Landing Gear IS Paused | positive",
+      "output_pred": "the component | THE landing gear IS paused | positive",
+      "utterances": [
+        "Landing",
+        "Gear",
+        "Paused."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the component",
+          "anding Gear",
+          "positive",
+          "Raised"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the component",
+          "landing gear",
+          "positive",
+          "raised"
+        ]
+      ],
+      "output_correct": "the component | THE anding Gear IS Raised | positive",
+      "output_pred": "the component | THE landing gear IS raised | positive",
+      "utterances": [
+        "Landing",
+        "Gear",
+        "Raised."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the state",
+          "Landing Gear",
+          "positive",
+          "Raising"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the component",
+          "landing gear",
+          "positive",
+          "raising"
+        ]
+      ],
+      "output_correct": "the state | THE Landing Gear IS Raising | positive",
+      "output_pred": "the component | THE landing gear IS raising | positive",
+      "utterances": [
+        "Landing",
+        "Gear",
+        "Raising."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the state",
+          "Wind Velocity",
+          "negative",
+          "Large"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the parameter",
+          "wind velocity",
+          "negative",
+          "is large"
+        ]
+      ],
+      "output_correct": "the state | THE Wind Velocity IS Large | negative",
+      "output_pred": "the parameter | THE wind velocity IS is large | negative",
+      "utterances": [
+        "Large",
+        "Wind",
+        "Velocity."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the component",
+          "Lens",
+          "negative",
+          "not connected"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the component",
+          "lens",
+          "negative",
+          "not connected"
+        ]
+      ],
+      "output_correct": "the component | THE Lens IS not connected | negative",
+      "output_pred": "the component | THE lens IS not connected | negative",
+      "utterances": [
+        "Lens",
+        "not",
+        "connected."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the state",
+          "Landing Point",
+          "positive",
+          "Locating"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the component",
+          "it",
+          "positive",
+          "locating landing point"
+        ]
+      ],
+      "output_correct": "the state | THE Landing Point IS Locating | positive",
+      "output_pred": "the component | THE it IS locating landing point | positive",
+      "utterances": [
+        "Locating",
+        "Landing",
+        "Point."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the component",
+          "Motor",
+          "negative",
+          "Blocked"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the component",
+          "motor",
+          "negative",
+          "blocked"
+        ]
+      ],
+      "output_correct": "the component | THE Motor IS Blocked | negative",
+      "output_pred": "the component | THE motor IS blocked | negative",
+      "utterances": [
+        "Motor",
+        "is",
+        "Blocked."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the feature",
+          "Obstacle Avoidance",
+          "negative",
+          "Disabled"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the feature",
+          "obstacle avoidance",
+          "positive",
+          "disabled"
+        ]
+      ],
+      "output_correct": "the feature | THE Obstacle Avoidance IS Disabled | negative",
+      "output_pred": "the feature | THE obstacle avoidance IS disabled | positive",
+      "utterances": [
+        "Obstacle",
+        "Avoidance",
+        "Disabled."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the state",
+          "PalmControl",
+          "positive",
+          "in Process"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the feature",
+          "palmcontrol",
+          "positive",
+          "in process"
+        ]
+      ],
+      "output_correct": "the state | THE PalmControl IS in Process | positive",
+      "output_pred": "the feature | THE palmcontrol IS in process | positive",
+      "utterances": [
+        "PalmControl",
+        "in",
+        "Process."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the state",
+          "Panorama",
+          "positive",
+          "Captured Successfully"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the feature",
+          "panorama",
+          "positive",
+          "captured successfully"
+        ]
+      ],
+      "output_correct": "the state | THE Panorama IS Captured Successfully | positive",
+      "output_pred": "the feature | THE panorama IS captured successfully | positive",
+      "utterances": [
+        "Panorama",
+        "Captured",
+        "Successfully."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the component",
+          "Propeller",
+          "negative",
+          "Fell Off"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the component",
+          "propeller",
+          "negative",
+          "fell of"
+        ]
+      ],
+      "output_correct": "the component | THE Propeller IS Fell Off | negative",
+      "output_pred": "the component | THE propeller IS fell of | negative",
+      "utterances": [
+        "Propeller",
+        "Fell",
+        "Off."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the component",
+          "Propellers",
+          "negative",
+          "not installed"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the component",
+          "propellers",
+          "negative",
+          "not installed"
+        ]
+      ],
+      "output_correct": "the component | THE Propellers IS not installed | negative",
+      "output_pred": "the component | THE propellers IS not installed | negative",
+      "utterances": [
+        "Propellers",
+        "not",
+        "installed."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the state",
+          "QuickShot",
+          "positive",
+          "has ended"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the feature",
+          "quickshoot",
+          "positive",
+          "ended"
+        ]
+      ],
+      "output_correct": "the state | THE QuickShot IS has ended | positive",
+      "output_pred": "the feature | THE quickshoot IS ended | positive",
+      "utterances": [
+        "QuickShot",
+        "has",
+        "ended."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the state",
+          "Altitude",
+          "positive",
+          "Reaching"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the state",
+          "altitude",
+          "positive",
+          "reached"
+        ]
+      ],
+      "output_correct": "the state | THE Altitude IS Reaching | positive",
+      "output_pred": "the state | THE altitude IS reached | positive",
+      "utterances": [
+        "Reaching",
+        "maximum",
+        "altitude."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the action",
+          "Gimbal Pan",
+          "positive",
+          "Recenter"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the component",
+          "gimbal pan",
+          "positive",
+          "recenter"
+        ]
+      ],
+      "output_correct": "the action | THE Gimbal Pan IS Recenter | positive",
+      "output_pred": "the component | THE gimbal pan IS recenter | positive",
+      "utterances": [
+        "Recenter",
+        "Gimbal",
+        "Pan."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the action",
+          "Aircraft position",
+          "positive",
+          "Rectifying"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the parameter",
+          "aircraft position",
+          "positive",
+          "Rectifying"
+        ]
+      ],
+      "output_correct": "the action | THE Aircraft position IS Rectifying | positive",
+      "output_pred": "the parameter | THE aircraft position IS Rectifying | positive",
+      "utterances": [
+        "Rectifying",
+        "aircraft",
+        "position."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the state",
+          "RTH",
+          "positive",
+          "Cruise"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the feature",
+          "RTH",
+          "positive",
+          "cruise"
+        ]
+      ],
+      "output_correct": "the state | THE RTH IS Cruise | positive",
+      "output_pred": "the feature | THE RTH IS cruise | positive",
+      "utterances": [
+        "RTH",
+        ":",
+        "Cruise."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the state",
+          "RTH",
+          "positive",
+          "Preascending"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the feature",
+          "RTH",
+          "positive",
+          "preascending"
+        ]
+      ],
+      "output_correct": "the state | THE RTH IS Preascending | positive",
+      "output_pred": "the feature | THE RTH IS preascending | positive",
+      "utterances": [
+        "RTH",
+        ":",
+        "Preascending."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the component",
+          "Sprayer",
+          "positive",
+          "turned ON"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the component",
+          "sprayer",
+          "positive",
+          "turned ON"
+        ]
+      ],
+      "output_correct": "the component | THE Sprayer IS turned ON | positive",
+      "output_pred": "the component | THE sprayer IS turned ON | positive",
+      "utterances": [
+        "Sprayer",
+        "turned",
+        "ON."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the state",
+          "Smart Track",
+          "positive",
+          "Starting"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the feature",
+          "smart track",
+          "positive",
+          "starting"
+        ]
+      ],
+      "output_correct": "the state | THE Smart Track IS Starting | positive",
+      "output_pred": "the feature | THE smart track IS starting | positive",
+      "utterances": [
+        "Starting",
+        "Smart",
+        "Track."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the state",
+          "Aircraft",
+          "negative",
+          "Strong Interference"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the issue",
+          "strong aircraft interference",
+          "negative",
+          "NULL"
+        ]
+      ],
+      "output_correct": "the state | THE Aircraft IS Strong Interference | negative",
+      "output_pred": "the issue | THE strong aircraft interference IS NULL | negative",
+      "utterances": [
+        "Strong",
+        "Aircraft",
+        "Interference."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the feature",
+          "Obstacle",
+          "negative",
+          "Upward Detected"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the feature",
+          "upward obstacle",
+          "positive",
+          "Detected"
+        ]
+      ],
+      "output_correct": "the feature | THE Obstacle IS Upward Detected | negative",
+      "output_pred": "the feature | THE upward obstacle IS Detected | positive",
+      "utterances": [
+        "Upward",
+        "Obstacle",
+        "Detected."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the state",
+          "Command",
+          "negative",
+          "Failed"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the state",
+          "command",
+          "negative",
+          "failed"
+        ]
+      ],
+      "output_correct": "the state | THE Command IS Failed | negative",
+      "output_pred": "the state | THE command IS failed | negative",
+      "utterances": [
+        "Warning:",
+        "Command",
+        "Failed."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the state",
+          "Command",
+          "negative",
+          "Timeout"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the issue",
+          "command timeout",
+          "negative",
+          "NULL"
+        ]
+      ],
+      "output_correct": "the state | THE Command IS Timeout | negative",
+      "output_pred": "the issue | THE command timeout IS NULL | negative",
+      "utterances": [
+        "Warning:",
+        "Command",
+        "Timeout."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the component",
+          "Motor",
+          "negative",
+          "Obstructed"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the component",
+          "motor",
+          "negative",
+          "obstructed"
+        ]
+      ],
+      "output_correct": "the component | THE Motor IS Obstructed | negative",
+      "output_pred": "the component | THE motor IS obstructed | negative",
+      "utterances": [
+        "Warning:",
+        "Motor",
+        "Obstructed."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the state",
+          "Waypoint Mission",
+          "positive",
+          "Paused"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the state",
+          "waypoint mission",
+          "negative",
+          "is stopped"
+        ]
+      ],
+      "output_correct": "the state | THE Waypoint Mission IS Paused | positive",
+      "output_pred": "the state | THE waypoint mission IS is stopped | negative",
+      "utterances": [
+        "Waypoint",
+        "Mission",
+        "Paused."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the state",
+          "Waypoint Mission",
+          "positive",
+          "Resumed"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the feature",
+          "waypoint mission",
+          "positive",
+          "resumed"
+        ]
+      ],
+      "output_correct": "the state | THE Waypoint Mission IS Resumed | positive",
+      "output_pred": "the feature | THE waypoint mission IS resumed | positive",
+      "utterances": [
+        "Waypoint",
+        "Mission",
+        "Resumed."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the state",
+          "Waypoint Mission",
+          "positive",
+          "Start"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the parameter",
+          "waypoint mission start",
+          "positive",
+          "NULL"
+        ]
+      ],
+      "output_correct": "the state | THE Waypoint Mission IS Start | positive",
+      "output_pred": "the parameter | THE waypoint mission start IS NULL | positive",
+      "utterances": [
+        "Waypoint",
+        "Mission",
+        "Start."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the state",
+          "Command",
+          "negative",
+          "Failed"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the feature",
+          "command",
+          "negative",
+          "failed"
+        ]
+      ],
+      "output_correct": "the state | THE Command IS Failed | negative",
+      "output_pred": "the feature | THE command IS failed | negative",
+      "utterances": [
+        "Command",
+        "Failed."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the state",
+          "Command",
+          "negative",
+          "Timeout"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the feature",
+          "command timeout",
+          "negative",
+          "NULL"
+        ]
+      ],
+      "output_correct": "the state | THE Command IS Timeout | negative",
+      "output_pred": "the feature | THE command timeout IS NULL | negative",
+      "utterances": [
+        "Command",
+        "Timeout."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the component",
+          "Compass",
+          "negative",
+          "Error"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the issue",
+          "compass error",
+          "negative",
+          "NULL"
+        ]
+      ],
+      "output_correct": "the component | THE Compass IS Error | negative",
+      "output_pred": "the issue | THE compass error IS NULL | negative",
+      "utterances": [
+        "Compass",
+        "Error."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the action",
+          "Subject",
+          "positive",
+          "Detecting"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the component",
+          "it",
+          "positive",
+          "detection subject"
+        ]
+      ],
+      "output_correct": "the action | THE Subject IS Detecting | positive",
+      "output_pred": "the component | THE it IS detection subject | positive",
+      "utterances": [
+        "Detecting",
+        "subject."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the feature",
+          "Downlink",
+          "negative",
+          "Lost"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the feature",
+          "downlink",
+          "negative",
+          "lost"
+        ]
+      ],
+      "output_correct": "the feature | THE Downlink IS Lost | negative",
+      "output_pred": "the feature | THE downlink IS lost | negative",
+      "utterances": [
+        "Downlink",
+        "Lost."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the state",
+          "Gimbal",
+          "positive",
+          "calibrating"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the component",
+          "gimbal",
+          "positive",
+          "calibrating"
+        ]
+      ],
+      "output_correct": "the state | THE Gimbal IS calibrating | positive",
+      "output_pred": "the component | THE gimbal IS calibrating | positive",
+      "utterances": [
+        "Gimbal",
+        "calibrating."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the action",
+          "Gimbal",
+          "positive",
+          "Recenter"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the component",
+          "gimbal recenter",
+          "positive",
+          "NULL"
+        ]
+      ],
+      "output_correct": "the action | THE Gimbal IS Recenter | positive",
+      "output_pred": "the component | THE gimbal recenter IS NULL | positive",
+      "utterances": [
+        "Gimbal",
+        "Recenter."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the state",
+          "Flight",
+          "positive",
+          "NULL"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the component",
+          "it",
+          "positive",
+          "in flight"
+        ]
+      ],
+      "output_correct": "the state | THE Flight IS NULL | positive",
+      "output_pred": "the component | THE it IS in flight | positive",
+      "utterances": [
+        "In",
+        "Flight."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the action",
+          "Landing",
+          "negative",
+          "Canceled"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the component",
+          "it",
+          "positive",
+          "landing cancelled"
+        ]
+      ],
+      "output_correct": "the action | THE Landing IS Canceled | negative",
+      "output_pred": "the component | THE it IS landing cancelled | positive",
+      "utterances": [
+        "Landing",
+        "Canceled."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the state",
+          "Motors",
+          "positive",
+          "Started"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the component",
+          "motors",
+          "positive",
+          "started"
+        ]
+      ],
+      "output_correct": "the state | THE Motors IS Started | positive",
+      "output_pred": "the component | THE motors IS started | positive",
+      "utterances": [
+        "Motors",
+        "Started."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the state",
+          "Pano",
+          "positive",
+          "successful"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the feature",
+          "pano",
+          "positive",
+          "successful"
+        ]
+      ],
+      "output_correct": "the state | THE Pano IS successful | positive",
+      "output_pred": "the feature | THE pano IS successful | positive",
+      "utterances": [
+        "Pano",
+        "successful."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the feature",
+          "Landing",
+          "positive",
+          "Precision"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the component",
+          "it",
+          "positive",
+          "precision landing"
+        ]
+      ],
+      "output_correct": "the feature | THE Landing IS Precision | positive",
+      "output_pred": "the component | THE it IS precision landing | positive",
+      "utterances": [
+        "Precision",
+        "Landing."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the action",
+          "Recharge",
+          "positive",
+          "promptly"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the component",
+          "it",
+          "positive",
+          "recharge promptly"
+        ]
+      ],
+      "output_correct": "the action | THE Recharge IS promptly | positive",
+      "output_pred": "the component | THE it IS recharge promptly | positive",
+      "utterances": [
+        "Recharge",
+        "promptly."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the action",
+          "Aircraft",
+          "positive",
+          "Restart"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the component",
+          "aircraft",
+          "positive",
+          "restart"
+        ]
+      ],
+      "output_correct": "the action | THE Aircraft IS Restart | positive",
+      "output_pred": "the component | THE aircraft IS restart | positive",
+      "utterances": [
+        "Restart",
+        "aircraft."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the state",
+          "Taking Off",
+          "positive",
+          "NULL"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the component",
+          "it",
+          "positive",
+          "taking off"
+        ]
+      ],
+      "output_correct": "the state | THE Taking Off IS NULL | positive",
+      "output_pred": "the component | THE it IS taking off | positive",
+      "utterances": [
+        "Taking",
+        "Off."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the feature",
+          "Yaw",
+          "negative",
+          "Error"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the parameter",
+          "yaw",
+          "negative",
+          "error"
+        ]
+      ],
+      "output_correct": "the feature | THE Yaw IS Error | negative",
+      "output_pred": "the parameter | THE yaw IS error | negative",
+      "utterances": [
+        "Yaw",
+        "Error."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the state",
+          "Landing",
+          "positive",
+          "NULL"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the component",
+          "it",
+          "positive",
+          "landing"
+        ]
+      ],
+      "output_correct": "the state | THE Landing IS NULL | positive",
+      "output_pred": "the component | THE it IS landing | positive",
+      "utterances": [
+        "Landing."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "the state",
+          "Warning",
+          "negative",
+          "NULL"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "the feature",
+          "warning",
+          "negative",
+          "NULL"
+        ]
+      ],
+      "output_correct": "the state | THE Warning IS NULL | negative",
+      "output_pred": "the feature | THE warning IS NULL | negative",
+      "utterances": [
+        "Warning."
+      ]
+    }
+  ],
+  "performance_metrics": {
+    "f1": 0.026200873362445417,
+    "precision": 0.02654867256637168,
+    "recall": 0.02586206896551724
+  }
+}
