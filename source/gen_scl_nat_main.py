@@ -132,6 +132,7 @@ def get_dataset(tokenizer, type_path, args):
 
 """
 Uncomment for tsne logging
+"""
 tsne_dict = {
              'sentiment_vecs': [],
              'opinion_vecs': [],
@@ -140,7 +141,6 @@ tsne_dict = {
              'opinion_labels': [],
              'aspect_labels': []
              }
-"""
 
 class LinearModel(nn.Module):
     """
@@ -247,6 +247,7 @@ class T5FineTuner(pl.LightningModule):
         
         """
         Uncomment this section to extract the tsne encodings/labels used for Figure 2 in paper
+        """
 
         # Use these for generating the 'w/ SCL' figures
         sentiment_encs = cont_normed.detach().numpy()[:,0].tolist()
@@ -256,6 +257,7 @@ class T5FineTuner(pl.LightningModule):
         aspect_labs = aspect_labels.detach().tolist()
         opinion_labs = opinion_labels.detach().tolist()
 
+        """
         # Use these for the version without SCL (no characteristic-specific representations)
         
         sentiment_encs = pooled_encoder_layer.detach().numpy().tolist()
@@ -265,13 +267,13 @@ class T5FineTuner(pl.LightningModule):
         aspect_labs = aspect_labels.detach().tolist()
         opinion_labs = opinion_labels.detach().tolist()
 
+        """
         tsne_dict['sentiment_vecs'] += sentiment_encs
         tsne_dict['aspect_vecs'] += aspect_encs
         tsne_dict['opinion_vecs'] += opinion_encs
         tsne_dict['sentiment_labels'] += sentiment_labs
         tsne_dict['aspect_labels'] += aspect_labs
         tsne_dict['opinion_labels'] += opinion_labs
-        """
 
         # return original loss plus the characteristic-specific SCL losses
         loss = outputs[0] + opinion_contrastive_loss + sentiment_contrastive_loss + aspect_contrastive_loss
