@@ -1,4 +1,4 @@
-name: /home/jpeper/launch_research/gen_scl_nat_env
+name: gen_scl_nat_env
 channels:
   - defaults
 dependencies:
