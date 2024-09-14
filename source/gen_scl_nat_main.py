@@ -42,7 +42,7 @@ from eval_utils import compute_scores
 
 logger = logging.getLogger(__name__)
 
-DEVICE = torch.device("cpu")
+DEVICE = "cpu"
 os.environ['CUDA_LAUNCH_BLOCKING'] = "1"
 
 def init_args():
