@@ -1,7 +1,8 @@
-python CUDA_LAUNCH_BLOCKING=1 \
-    source/gen_scl_nat_main.py \
+python source/gen_scl_nat_main.py \
    --task gen_scl_nat \
    --do_train \
+   --do_direct_eval \
+   --do_inference \
    --embedding sbert \
    --dataset acos_laptop_data \
    --model_name_or_path t5-base \

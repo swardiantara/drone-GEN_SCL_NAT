@@ -33,7 +33,7 @@ from pytorch_lightning import seed_everything
 from pytorch_lightning.callbacks.early_stopping import EarlyStopping
 from losses import SupConLoss
 
-from transformers import AdamW, T5ForConditionalGeneration, T5Tokenizer, AutoModel
+from transformers import AdamW, T5ForConditionalGeneration, T5Tokenizer, AutoModel, AutoTokenizer
 from transformers import get_linear_schedule_with_warmup
 
 from data_utils import GenSCLNatDataset
@@ -440,11 +440,12 @@ if __name__ == '__main__':
     args = init_args()
     seed_everything(args.seed, workers=True)
 
-    tokenizer = T5Tokenizer.from_pretrained(args.model_name_or_path)
-    tokenizer.add_tokens(['[SSEP]'])
-
-
-
+    if args.embedding == 'sbert':
+        tokenizer = AutoTokenizer.from_pretrained("sentence-transformers/all-mpnet-base-v2")
+        tokenizer.add_tokens(['[SSEP]'])
+    else:
+        tokenizer = T5Tokenizer.from_pretrained(args.model_name_or_path)
+        tokenizer.add_tokens(['[SSEP]'])
 
     # Get example from the train set
     dataset = GenSCLNatDataset(tokenizer=tokenizer, data_dir=args.dataset, 
