@@ -33,7 +33,7 @@ from pytorch_lightning import seed_everything
 from pytorch_lightning.callbacks.early_stopping import EarlyStopping
 from losses import SupConLoss
 
-from transformers import AdamW, T5ForConditionalGeneration, T5Tokenizer
+from transformers import AdamW, T5ForConditionalGeneration, T5Tokenizer, AutoModel
 from transformers import get_linear_schedule_with_warmup
 
 from data_utils import GenSCLNatDataset
@@ -62,6 +62,8 @@ def init_args():
     parser.add_argument("--do_inference", action='store_true', 
                         help="Whether to run inference with trained checkpoints")
     # other parameters
+    parser.add_argument('--embedding', choices=['t5', 'sbert'], default='t5', 
+                        help="Embedding model to extract the log's feature. Default: t5")
     parser.add_argument("--max_seq_length", default=128, type=int)
     parser.add_argument("--n_gpu", default=0)
     parser.add_argument("--train_batch_size", default=16, type=int,
@@ -463,6 +465,12 @@ if __name__ == '__main__':
         # initialize the T5 model
         tfm_model = T5ForConditionalGeneration.from_pretrained(args.model_name_or_path)
         tfm_model.resize_token_embeddings(len(tokenizer))
+
+        if args.embedding == 'sbert':
+            # Load fine-tuned SBERT model
+            # SentenceTransformer('all-mpnet-base-v2')
+            sbert_model = AutoModel.from_pretrained("sentence-transformers/all-mpnet-base-v2")
+            tfm_model.encoder.embed_tokens = sbert_model.embeddings
         # initialize characteristic-specific representation models
         cont_model = LinearModel(args.model_name_or_path)
         op_model = LinearModel(args.model_name_or_path)
