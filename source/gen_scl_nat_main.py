@@ -44,6 +44,7 @@ logger = logging.getLogger(__name__)
 
 DEVICE = f"cuda{0}"
 os.environ['CUDA_LAUNCH_BLOCKING'] = "1"
+os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
 def init_args():
     parser = argparse.ArgumentParser()
