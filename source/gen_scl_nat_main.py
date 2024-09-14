@@ -318,6 +318,14 @@ class T5FineTuner(pl.LightningModule):
                 "weight_decay": 0.0,
             },
             {
+                "params": [p for n, p in model.named_parameters() if not any(nd in n for nd in no_decay)],
+                "weight_decay": self.hparams.weight_decay,
+            },
+            {
+                "params": [p for n, p in model.named_parameters() if any(nd in n for nd in no_decay)],
+                "weight_decay": 0.0,
+            },
+            {
                 "params": [p for n, p in cont_model.named_parameters() if not any(nd in n for nd in no_decay)],
                 "weight_decay": self.hparams.weight_decay,
             },
@@ -395,7 +403,7 @@ class LoggingCallback(pl.Callback):
                     writer.write("{} = {}\n".format(key, str(metrics[key])))
 
 
-def evaluate(data_loader, model, sents, task):
+def evaluate(data_loader, model, tokenizer, sents, task):
     """
     Compute scores given the predictions and gold labels and dump to file
     """
@@ -471,10 +479,10 @@ if __name__ == '__main__':
 
         if args.embedding == 'sbert':
             # Load fine-tuned SBERT model
-            # SentenceTransformer('all-mpnet-base-v2')
             sbert_model = AutoModel.from_pretrained("sentence-transformers/all-mpnet-base-v2")
             tfm_model.encoder.embed_tokens = sbert_model.embeddings
             tfm_model.decoder.embed_tokens = sbert_model.embeddings
+
         # initialize characteristic-specific representation models
         cont_model = LinearModel(args.model_name_or_path)
         op_model = LinearModel(args.model_name_or_path)
@@ -529,16 +537,16 @@ if __name__ == '__main__':
         test_loader = DataLoader(test_dataset, args.eval_batch_size, num_workers=4)
 
         # compute the performance scores
-        evaluate(test_loader, model, test_dataset.sentence_strings, args.task)
+        evaluate(test_loader, model, tokenizer, test_dataset.sentence_strings, args.task)
 
     if args.do_inference:
         print("\n****** Conduct inference on trained checkpoint ******")
 
         # initialize the T5 model from previous checkpoint
-        model_path = args.model_name_or_path
-        print(f"Loading trained model from {model_path}")
-        tokenizer = T5Tokenizer.from_pretrained(model_path)
-        tfm_model = T5ForConditionalGeneration.from_pretrained(model_path)
+        # model_path = args.model_name_or_path
+        # print(f"Loading trained model from {model_path}")
+        # tokenizer = T5Tokenizer.from_pretrained(model_path)
+        # tfm_model = T5ForConditionalGeneration.from_pretrained(model_path)
 
         # representations are only used during loss calculation
         cont_model = LinearModel(args.model_name_or_path)
@@ -549,11 +557,10 @@ if __name__ == '__main__':
 
         sents, _ = read_line_examples_from_file(f'data/{args.dataset}/test.txt')
 
-        print()
         test_dataset = GenSCLNatDataset(tokenizer, data_dir=args.dataset, 
                                 data_type='test', max_len=args.max_seq_length, task=args.task, truncate=args.truncate)
         test_loader = DataLoader(test_dataset, batch_size=args.eval_batch_size, num_workers=4)
 
         # compute the performance scores
-        evaluate(test_loader, model, test_dataset.sentence_strings, args.task)
+        evaluate(test_loader, model, tokenizer, test_dataset.sentence_strings, args.task)
     
