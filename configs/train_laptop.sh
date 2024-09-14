@@ -6,7 +6,7 @@ python source/gen_scl_nat_main.py \
    --embedding sbert \
    --dataset acos_laptop_data \
    --model_name_or_path t5-base \
-   --output_folder inference_outputs \
+   --output_folder train_outputs \
    --n_gpu 1 \
    --train_batch_size 16 \
    --eval_batch_size 16 \
