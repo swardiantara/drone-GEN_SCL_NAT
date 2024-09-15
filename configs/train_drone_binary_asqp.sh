@@ -3,7 +3,7 @@ python source/gen_scl_nat_main.py \
    --do_train \
    --do_direct_eval \
    --embedding sbert \
-   --dataset acos_drone_multi \
+   --dataset acos_drone_binary \
    --model_name_or_path t5-base \
    --output_folder drone_sbert \
    --n_gpu 1 \

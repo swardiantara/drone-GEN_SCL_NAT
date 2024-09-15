@@ -2,10 +2,10 @@ python source/drone_scl_nat_main.py \
    --task gen_scl_nat \
    --do_train \
    --do_direct_eval \
-   --embedding t5 \
-   --dataset acos_drone_binary \
+   --embedding sbert \
+   --dataset acos_drone_multi \
    --model_name_or_path t5-base \
-   --output_folder train_outputs \
+   --output_folder drone_sbert \
    --n_gpu 1 \
    --train_batch_size 16 \
    --eval_batch_size 16 \
