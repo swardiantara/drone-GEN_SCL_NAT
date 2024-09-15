@@ -5,7 +5,8 @@
 import random
 from torch.utils.data import Dataset
 import torch
-from generate_data import get_gen_scl_nat_data
+from generate_data import sentword2opinion, dronesent2opinion, get_gen_scl_nat_data
+
 
 def read_line_examples_from_file(data_path, silence=False):
     """
@@ -26,7 +27,7 @@ def read_line_examples_from_file(data_path, silence=False):
     return sents, labels
 
 
-def get_para_asqp_targets(sents, labels, truncated=False):
+def get_para_asqp_targets(sents, labels, drone_sp=None, truncated=False):
     """
     Obtain the target sentence under the paraphrase paradigm
     This replicates the ABSA-QUAD approach
@@ -40,8 +41,10 @@ def get_para_asqp_targets(sents, labels, truncated=False):
             if truncated == True:
                 ac = ac.split("#")[0]
             
-            man_ot = sentword2opinion[sp]  # 'POS' -> 'good'    
-
+            man_ot = sentword2opinion[sp]  # 'positive' -> 'good'    
+            if drone_sp is not None:
+                man_ot == sp if drone_sp == 'multi' else man_ot = dronesent2opinion[sp]
+                
             if at == 'NULL':  # for implicit aspect term
                 at = 'it'
 
@@ -58,10 +61,12 @@ def get_transformed_io(data_path, data_dir, task, data_type, truncate=False):
     The main function to transform input & target according to the task
     """
     sents, labels = read_line_examples_from_file(data_path)
+    drone_sp = None if data_dir.split('_')[-1] == 'data' else data_dir.split('_')[-1]
 
     # the input is just the raw sentence
     if task == 'asqp':
-        inputs, targets = get_para_asqp_targets(sents, labels, truncate)
+        inputs, targets = get_para_asqp_targets(sents, labels, drone_sp, truncate)
+
         return inputs, targets, labels
         
     elif task.startswith('gen_scl_nat'):
@@ -181,6 +186,110 @@ class GenSCLNatDataset(ABSADataset):
                 'positive': 2,
                 'mixed': 3
             }
+            sentiment_labels = []
+            for ex in labels_in:
+                label = list(set([quad[2] for quad in ex]))
+                if len(label) == 1:
+                    label = sentiment_dict[label[0]]
+                else:
+                    label = sentiment_dict['mixed']
+                assert label in [0,1,2,3]
+                sentiment_labels.append(label)
+            from collections import Counter
+            print("Sentiment distribution")
+            print(Counter(sentiment_labels))
+            return sentiment_labels
+
+        def get_opinion_labels(labels_in):
+            opinion_dict = {
+                'NULL': 0,
+                'EXPLICIT': 1,
+                'BOTH': 2,
+            }
+            opinion_labels = []
+            for ex in labels_in:
+                opinions = set([quad[3] for quad in ex])
+
+                if 'NULL' not in opinions:
+                    label = opinion_dict['EXPLICIT']
+                else:
+                    if len(opinions) == 1:
+                        label = opinion_dict['NULL']
+                    else:
+                        label = opinion_dict['BOTH']
+
+                opinion_labels.append(label)
+            return opinion_labels
+
+        def get_aspect_labels(labels_in):
+            aspect_dict = {
+                'NULL': 0,
+                'EXPLICIT': 1,
+                'BOTH': 2,
+            }
+            aspect_labels = []
+            for ex in labels_in:
+                aspects = set([quad[0] for quad in ex])
+
+                if 'NULL' not in aspects:
+                    label = aspect_dict['EXPLICIT']
+                else:
+                    if len(aspects) == 1:
+                        label = aspect_dict['NULL']
+                    else:
+                        label = aspect_dict['BOTH']
+
+                aspect_labels.append(label)
+            return aspect_labels
+        
+        self.contrastive_labels['sentiment'] = get_sentiment_labels(labels)
+        self.contrastive_labels['opinion'] = get_opinion_labels(labels)
+        self.contrastive_labels['aspect'] = get_aspect_labels(labels)
+
+
+class DroneAcosDataset(GenSCLNatDataset):
+    
+    def _build_examples(self):
+        inputs, targets, labels = get_transformed_io(self.data_path, self.data_dir, self.task, self.data_type, self.truncate)
+        
+        self.sentence_strings = inputs
+        for i in range(len(inputs)):
+            # change input and target to two strings
+
+            input = ' '.join(inputs[i])
+            target = targets[i]
+            if isinstance(targets[i], list):
+                target = " ".join(targets[i])
+
+            tokenized_input = self.tokenizer.batch_encode_plus(
+              [input], max_length=self.max_len, padding="max_length",
+              truncation=True, return_tensors="pt"
+            )
+            tokenized_target = self.tokenizer.batch_encode_plus(
+              [target], max_length=self.max_len, padding="max_length",
+              truncation=True, return_tensors="pt"
+            )
+
+            self.inputs.append(tokenized_input)
+            self.targets.append(tokenized_target)
+        
+        def get_sentiment_labels(labels_in):
+
+            if self.data_dir.split('_')[-1] == 'binary':
+                sentiment_dict = {
+                    'negative': 0,
+                    'positive': 1,
+                    'mixed': 2,
+                }
+            else:
+                sentiment_dict = {
+                    'normal': 0,
+                    'minor': 1,
+                    'moderate': 2,
+                    'severe': 3,
+                    'mixed': 4,
+                }
+        
             sentiment_labels = []
             for ex in labels_in:
                 label = list(set([quad[2] for quad in ex]))

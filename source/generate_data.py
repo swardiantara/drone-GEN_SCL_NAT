@@ -7,7 +7,9 @@ use_the_gpu = False
 
 senttag2word = {'POS': 'positive', 'NEG': 'negative', 'NEU': 'neutral'}
 senttag2opinion = {'POS': 'great', 'NEG': 'bad', 'NEU': 'ok'}
+dronesptag2opinion = {'POS': 'ok', 'NEG': 'concerning'}
 sentword2opinion = {'positive': 'great', 'negative': 'bad', 'neutral': 'ok'}
+dronesent2opinion = {'positive': 'ok', 'negative': 'concerning'}
 
 laptop_parent_mapping = mappings['laptop_parent_mapping']
 laptop_full_mapping = mappings['laptop_full_mapping']

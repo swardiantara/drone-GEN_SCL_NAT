@@ -533,11 +533,11 @@ if __name__ == '__main__':
     if args.do_inference:
         print("\n****** Conduct inference on trained checkpoint ******")
 
-        # initialize the T5 model from previous checkpoint
-        # model_path = args.model_name_or_path
-        # print(f"Loading trained model from {model_path}")
-        # tokenizer = T5Tokenizer.from_pretrained(model_path)
-        # tfm_model = T5ForConditionalGeneration.from_pretrained(model_path)
+        if not args.do_train:
+            # initialize the T5 model from previous checkpoint
+            print(f"Loading trained model from {args.model_name_or_path}")
+            tokenizer = T5Tokenizer.from_pretrained(args.model_name_or_path)
+            tfm_model = T5ForConditionalGeneration.from_pretrained(args.model_name_or_path)
 
         # representations are only used during loss calculation
         cont_model = LinearModel(args.model_name_or_path)
