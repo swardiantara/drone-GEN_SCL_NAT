@@ -43,7 +43,7 @@ def get_para_asqp_targets(sents, labels, drone_sp=None, truncated=False):
             
             man_ot = sentword2opinion[sp]  # 'positive' -> 'good'    
             if drone_sp is not None:
-                man_ot == sp if drone_sp == 'multi' else man_ot = dronesent2opinion[sp]
+                man_ot == sp if drone_sp == 'multi' else dronesent2opinion[sp]
                 
             if at == 'NULL':  # for implicit aspect term
                 at = 'it'
