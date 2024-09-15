@@ -443,7 +443,7 @@ if __name__ == '__main__':
     seed_everything(args.seed, workers=True)
 
     if args.embedding == 'sbert':
-        tokenizer = AutoTokenizer.from_pretrained("swardiantara/drone-severity-embedding")
+        tokenizer = AutoTokenizer.from_pretrained("swardiantara/drone-sbert")
         tokenizer.add_tokens(['[SSEP]'])
     else:
         tokenizer = T5Tokenizer.from_pretrained(args.model_name_or_path)
@@ -472,7 +472,7 @@ if __name__ == '__main__':
 
         if args.embedding == 'sbert':
             # Load fine-tuned SBERT model
-            sbert_model = AutoModel.from_pretrained("swardiantara/drone-severity-embedding")
+            sbert_model = AutoModel.from_pretrained("swardiantara/drone-sbert")
             tfm_model.encoder.embed_tokens = sbert_model.embeddings
 
         # initialize characteristic-specific representation models
