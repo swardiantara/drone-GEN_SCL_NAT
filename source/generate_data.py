@@ -134,8 +134,9 @@ def get_gen_scl_nat_data(sents, labels, task, drone_sp=None, truncated=False):
                     
 
                     covered.add(tuple(quad))
-                    man_ot = sentword2opinion[sp]  # 'POS' -> 'good'    
-                    if drone_sp is not None:
+                    if drone_sp is None:
+                        man_ot = sentword2opinion[sp]  # 'POS' -> 'good'    
+                    else:
                         man_ot = dronesent2opinion[sp] if drone_sp == 'binary' else sp
                     
                     if at == 'NULL':  # for implicit aspect term
