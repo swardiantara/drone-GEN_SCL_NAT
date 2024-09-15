@@ -249,6 +249,26 @@ class GenSCLNatDataset(ABSADataset):
 
 
 class DroneAcosDataset(GenSCLNatDataset):
+
+    def __getitem__(self, index):
+        source_ids = self.inputs[index]["input_ids"].squeeze()
+        target_ids = self.targets[index]["input_ids"].squeeze()
+
+        src_mask = self.inputs[index]["attention_mask"].squeeze()  # might need to squeeze
+        target_mask = self.targets[index]["attention_mask"].squeeze()  # might need to squeeze
+
+        sentiment_label = torch.tensor(self.contrastive_labels['sentiment'][index])
+        aspect_label = torch.tensor(self.contrastive_labels['aspect'][index])
+        opinion_label = torch.tensor(self.contrastive_labels['opinion'][index])
+        
+        return {"source_ids": source_ids,
+                "source_mask": src_mask, 
+                "target_ids": target_ids,
+                "target_mask": target_mask,
+                'sentiment_labels': sentiment_label,
+                'opinion_labels': opinion_label,
+                'aspect_labels': aspect_label,
+                }
     
     def _build_examples(self):
         inputs, targets, labels = get_transformed_io(self.data_path, self.data_dir, self.task, self.data_type, self.truncate)
