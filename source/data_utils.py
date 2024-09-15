@@ -318,7 +318,7 @@ class DroneAcosDataset(GenSCLNatDataset):
                     label = sentiment_dict[label[0]]
                 else:
                     label = sentiment_dict['mixed']
-                assert label in [0,1,2,3]
+                assert label in [0,1,2,3,4]
                 sentiment_labels.append(label)
             from collections import Counter
             print("Sentiment distribution")
