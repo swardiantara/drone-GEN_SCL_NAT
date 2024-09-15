@@ -91,6 +91,7 @@ def init_args():
     parser.add_argument("--cont_loss", type=float, default=0.0)
     parser.add_argument("--cont_temp", type=float, default=0.1)
     parser.add_argument('--truncate', action='store_true')
+    parser.add_argument('--save_model', action='store_true')
 
 
     args = parser.parse_args()
@@ -509,8 +510,9 @@ if __name__ == '__main__':
             ex_weights = torch.load(checkpoint_callback.best_model_path)['state_dict']
             model.load_state_dict(ex_weights)
             
-        model.model.save_pretrained(args.output_dir)
-        tokenizer.save_pretrained(args.output_dir)
+        if args.save_model:
+            model.model.save_pretrained(args.output_dir)
+            tokenizer.save_pretrained(args.output_dir)
         with open(os.path.join(args.output_dir, 'args.json'), 'w') as f:
             json.dump(args.__dict__, f, indent=2)
 
@@ -522,7 +524,6 @@ if __name__ == '__main__':
 
         sents, _ = read_line_examples_from_file(f'data/{args.dataset}/test.txt')
 
-        print()
         test_dataset = GenSCLNatDataset(tokenizer, data_dir=args.dataset, 
                                 data_type='test', max_len=args.max_seq_length, task=args.task, truncate=args.truncate)
         test_loader = DataLoader(test_dataset, args.eval_batch_size, num_workers=4)
