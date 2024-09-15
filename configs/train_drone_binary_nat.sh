@@ -1,4 +1,4 @@
-python source/gen_scl_nat_main.py \
+python source/drone_scl_nat_main.py.py \
    --task gen_scl_nat \
    --do_train \
    --do_direct_eval \
