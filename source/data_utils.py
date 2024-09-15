@@ -41,10 +41,11 @@ def get_para_asqp_targets(sents, labels, drone_sp=None, truncated=False):
             if truncated == True:
                 ac = ac.split("#")[0]
             
-            man_ot = sentword2opinion[sp]  # 'positive' -> 'good'    
-            if drone_sp is not None:
+            if drone_sp is None:
+                man_ot = sentword2opinion[sp]  # 'positive' -> 'good'    
+            else:
                 man_ot = dronesent2opinion[sp] if drone_sp == 'binary' else sp
-                
+
             if at == 'NULL':  # for implicit aspect term
                 at = 'it'
 
