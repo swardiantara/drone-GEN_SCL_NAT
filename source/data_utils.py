@@ -70,7 +70,7 @@ def get_transformed_io(data_path, data_dir, task, data_type, truncate=False):
         return inputs, targets, labels
         
     elif task.startswith('gen_scl_nat'):
-        inputs, targets = get_gen_scl_nat_data(sents, labels, task, truncate)
+        inputs, targets = get_gen_scl_nat_data(sents, labels, task, drone_sp, truncate)
         return inputs, targets, labels
     else:
         raise NotImplementedError

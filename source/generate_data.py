@@ -86,7 +86,7 @@ def get_pos_vec_bert(quad, sent):
                 zeroes_vec[idx] = 1
     return zeroes_vec
 
-def get_gen_scl_nat_data(sents, labels, task, truncated=False):
+def get_gen_scl_nat_data(sents, labels, task, drone_sp=None, truncated=False):
     """
     Generate output target with the gen_scl_nat format
     """
@@ -123,16 +123,21 @@ def get_gen_scl_nat_data(sents, labels, task, truncated=False):
                 # if we can produce the quad using the seen aspects, then generate the summary
                 if quad[0] in seen_aspects and quad[3] in seen_aspects and tuple(quad) not in covered:
                     if len(quad) == 4:
-                        at, raw_ac, sp, ot = quad
+                        at, ac, sp, ot = quad
                     # Use this just for the truncated labelsets dataset
                     if truncated == True:
-                        raw_ac = raw_ac.split("#")[0]
+                        ac = ac.split("#")[0]
 
-                    domain = get_domain(raw_ac)
-                    ac = domain_map[domain].get(raw_ac, raw_ac)
+                    if drone_sp is None:
+                        domain = get_domain(ac)
+                        ac = domain_map[domain].get(ac, ac)
+                    
 
                     covered.add(tuple(quad))
                     man_ot = sentword2opinion[sp]  # 'POS' -> 'good'    
+                    if drone_sp is not None:
+                        man_ot = dronesent2opinion[sp] if drone_sp == 'binary' else sp
+                    
                     if at == 'NULL':  # for implicit aspect term
                         at = 'it'
 
