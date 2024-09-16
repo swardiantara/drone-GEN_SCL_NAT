@@ -1,11 +1,11 @@
 python source/gen_scl_nat_main.py \
-   --task asqp \
+   --task gen_scl_nat \
    --do_train \
    --do_direct_eval \
    --embedding t5 \
    --dataset acos_drone_binary \
    --model_name_or_path t5-base \
-   --output_folder drone_binary_asqp \
+   --output_folder drone_binary_scl \
    --n_gpu 1 \
    --accelerator gpu \
    --train_batch_size 16 \

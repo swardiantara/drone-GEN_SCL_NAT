@@ -252,17 +252,23 @@ class GenSCLNatDataset(ABSADataset):
 
 
 class DroneAcosDataset(GenSCLNatDataset):
+    def __init__(self, tokenizer, data_dir, data_type, task, max_len=256, data_path=None, truncate=False, embedding=None):
+        # use super to instantiate the baseclass
+        super().__init__(self, tokenizer, data_dir, data_type, task, max_len=256, data_path=None, truncate=False)
+        self.embedding = embedding
 
     def __getitem__(self, index):
-        source_ids = self.inputs[index]["input_ids"].squeeze()
-        target_ids = self.targets[index]["input_ids"].squeeze()
+        if self.embedding is None:
+            source_ids = self.inputs[index]["input_ids"].squeeze()
+            target_ids = self.targets[index]["input_ids"].squeeze()
 
-        src_mask = self.inputs[index]["attention_mask"].squeeze()  # might need to squeeze
-        target_mask = self.targets[index]["attention_mask"].squeeze()  # might need to squeeze
+            src_mask = self.inputs[index]["attention_mask"].squeeze()  # might need to squeeze
+            target_mask = self.targets[index]["attention_mask"].squeeze()  # might need to squeeze
 
-        sentiment_label = torch.tensor(self.contrastive_labels['sentiment'][index])
-        aspect_label = torch.tensor(self.contrastive_labels['aspect'][index])
-        opinion_label = torch.tensor(self.contrastive_labels['opinion'][index])
+            sentiment_label = torch.tensor(self.contrastive_labels['sentiment'][index])
+            aspect_label = torch.tensor(self.contrastive_labels['aspect'][index])
+            opinion_label = torch.tensor(self.contrastive_labels['opinion'][index])
+
         
         return {"source_ids": source_ids,
                 "source_mask": src_mask, 

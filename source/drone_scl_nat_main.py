@@ -131,9 +131,9 @@ def init_args():
 
     return args
 
-def get_dataset(tokenizer, type_path, args):
+def get_dataset(tokenizer, embedding, type_path, args):
     return DroneAcosDataset(tokenizer=tokenizer, data_dir=args.dataset, 
-                       data_type=type_path, max_len=args.max_seq_length, task=args.task, truncate=args.truncate)
+                       data_type=type_path, max_len=args.max_seq_length, task=args.task, truncate=args.truncate, embedding=embedding)
 
 """
 Uncomment for tsne logging
@@ -175,7 +175,7 @@ class T5FineTuner(pl.LightningModule):
     """
     Fine tune a pre-trained T5 model
     """
-    def __init__(self, hparams, tfm_model, tokenizer, cont_model, op_model, as_model, cat_model):
+    def __init__(self, hparams, tfm_model, tokenizer, embedding, cont_model, op_model, as_model, cat_model):
         super(T5FineTuner, self).__init__()
         self.hparams.update(vars(hparams))
         self.model = tfm_model
@@ -184,6 +184,7 @@ class T5FineTuner(pl.LightningModule):
         self.as_model = as_model
         self.cat_model = cat_model
         self.tokenizer = tokenizer
+        self.embedding = embedding
 
     def is_logger(self):
         return True
@@ -352,7 +353,7 @@ class T5FineTuner(pl.LightningModule):
         return tqdm_dict
 
     def train_dataloader(self):
-        train_dataset = get_dataset(tokenizer=self.tokenizer, type_path="train", args=self.hparams)
+        train_dataset = get_dataset(tokenizer=self.tokenizer, embedding=self.embedding, type_path="train", args=self.hparams)
         dataloader = DataLoader(train_dataset, batch_size=self.hparams.train_batch_size,
                                 drop_last=True, shuffle=True, num_workers=4)
         t_total = (
@@ -367,7 +368,7 @@ class T5FineTuner(pl.LightningModule):
         return dataloader
 
     def val_dataloader(self):
-        val_dataset = get_dataset(tokenizer=self.tokenizer, type_path="dev", args=self.hparams)
+        val_dataset = get_dataset(tokenizer=self.tokenizer, embedding=self.embedding, type_path="dev", args=self.hparams)
         return DataLoader(val_dataset, batch_size=self.hparams.eval_batch_size, num_workers=4)
 
 
@@ -470,10 +471,10 @@ if __name__ == '__main__':
         tfm_model = T5ForConditionalGeneration.from_pretrained(args.model_name_or_path)
         tfm_model.resize_token_embeddings(len(tokenizer))
 
+        embedding = None
         if args.embedding == 'sbert':
             # Load fine-tuned SBERT model
-            sbert_model = AutoModel.from_pretrained("swardiantara/drone-sbert")
-            tfm_model.encoder.embed_tokens = sbert_model.embeddings
+            embedding = AutoModel.from_pretrained("swardiantara/drone-sbert")
 
         # initialize characteristic-specific representation models
         cont_model = LinearModel(args.model_name_or_path)
@@ -525,7 +526,7 @@ if __name__ == '__main__':
         sents, _ = read_line_examples_from_file(f'data/{args.dataset}/test.txt')
 
         test_dataset = DroneAcosDataset(tokenizer, data_dir=args.dataset, 
-                                data_type='test', max_len=args.max_seq_length, task=args.task, truncate=args.truncate)
+                                data_type='test', max_len=args.max_seq_length, task=args.task, truncate=args.truncate, embedding=embedding)
         test_loader = DataLoader(test_dataset, args.eval_batch_size, num_workers=4)
 
         # compute the performance scores
@@ -550,7 +551,7 @@ if __name__ == '__main__':
         sents, _ = read_line_examples_from_file(f'data/{args.dataset}/test.txt')
 
         test_dataset = DroneAcosDataset(tokenizer, data_dir=args.dataset, 
-                                data_type='test', max_len=args.max_seq_length, task=args.task, truncate=args.truncate)
+                                data_type='test', max_len=args.max_seq_length, task=args.task, truncate=args.truncate, embedding=embedding)
         test_loader = DataLoader(test_dataset, batch_size=args.eval_batch_size, num_workers=4)
 
         # compute the performance scores
