@@ -473,7 +473,7 @@ if __name__ == '__main__':
 
         if args.embedding == 'sbert':
             embedding_model = AutoModel.from_pretrained("sentence-transformers/all-mpnet-base-v2")
-            embedding_model.model.resize_token_embeddings(len(tokenizer))
+            embedding_model.resize_token_embeddings(len(tokenizer))
             tfm_model.set_input_embeddings(embedding_model)
         else:
             tfm_model.resize_token_embeddings(len(tokenizer))
