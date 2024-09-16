@@ -473,12 +473,19 @@ if __name__ == '__main__':
         tfm_model = T5ForConditionalGeneration.from_pretrained(args.model_name_or_path)
 
         if args.embedding == 'sbert':
-            # embedding_model = AutoModel.from_pretrained("sentence-transformers/all-mpnet-base-v2").to(device)
-            # embedding_model.resize_token_embeddings(len(tokenizer))
-            embedding_model = SentenceTransformer("all-mpnet-base-v2").to(device)
+            embedding_model = AutoModel.from_pretrained("sentence-transformers/all-mpnet-base-v2").to(device)
+            embedding_model.resize_token_embeddings(len(tokenizer))
+            # embedding_model = SentenceTransformer("all-mpnet-base-v2").to(device)
+            # embedding_model.tokenizer = tokenizer
             # print(embedding_model._modules)
-            embedding_model.tokenizer = tokenizer
-            tfm_model.set_input_embeddings(embedding_model._modules['1'])
+            tfm_model.config.update({'vocab_size': tokenizer.vocab_size})
+            tfm_model.config.eos_token_id = tokenizer.eos_token_id
+            tfm_model.config.bos_token_id = tokenizer.bos_token_id
+            tfm_model.config.pad_token_id = tokenizer.pad_token_id
+            tfm_model.config.sep_token_id = tokenizer.sep_token_id
+            tfm_model.config.decoder_start_token_id = tokenizer.bos_token_id
+            tfm_model.encoder.embed_tokens = embedding_model.embeddings
+            tfm_model.decoder.embed_tokens = embedding_model.embeddings
         else:
             tfm_model.resize_token_embeddings(len(tokenizer))
 
