@@ -6,8 +6,8 @@ python source/gen_scl_nat_main.py \
    --dataset acos_drone_binary \
    --model_name_or_path t5-base \
    --output_folder drone_sbert \
-   --n_gpu 0 \
-   --accelerator cpu \
+   --n_gpu 1 \
+   --accelerator gpu \
    --train_batch_size 16 \
    --eval_batch_size 16 \
    --learning_rate 9e-5 \
