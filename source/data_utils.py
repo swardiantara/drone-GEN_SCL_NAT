@@ -182,10 +182,10 @@ class GenSCLNatDataset(ABSADataset):
             self.inputs.append(tokenized_input)
             self.targets.append(tokenized_target)
         
-        print(f'inputs: {inputs}')
-        print(f'tokenized_input: {tokenized_input}')
-        print(f'targets: {targets}')
-        print(f'tokenized_target: {tokenized_target}')
+            print(f'input: {input}')
+            print(f'tokenized_input: {tokenized_input}')
+            print(f'target: {target}')
+            print(f'tokenized_target: {tokenized_target}')
 
         def get_sentiment_labels(labels_in):
             sentiment_dict = {
