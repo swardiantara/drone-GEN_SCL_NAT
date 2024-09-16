@@ -12,7 +12,7 @@ python source/gen_scl_nat_main.py \
    --eval_batch_size 16 \
    --learning_rate 9e-5 \
    --gradient_accumulation_steps 1 \
-   --num_train_epochs 2 \
+   --num_train_epochs 100 \
    --num_beams 5 \
    --weight_decay 0.0 \
    --seed 123 \
