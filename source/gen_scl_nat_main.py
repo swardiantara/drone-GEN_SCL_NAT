@@ -476,6 +476,7 @@ if __name__ == '__main__':
             # embedding_model = AutoModel.from_pretrained("sentence-transformers/all-mpnet-base-v2").to(device)
             # embedding_model.resize_token_embeddings(len(tokenizer))
             embedding_model = SentenceTransformer("all-mpnet-base-v2").to(device)
+            print(embedding_model._modules)
             embedding_model.tokenizer = tokenizer
             tfm_model.set_input_embeddings(embedding_model._modules[1])
         else:
