@@ -43,7 +43,7 @@ from eval_utils import compute_scores
 
 logger = logging.getLogger(__name__)
 
-DEVICE = f'cpu'
+DEVICE = 'cpu'
 os.environ['CUDA_LAUNCH_BLOCKING'] = "1"
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
