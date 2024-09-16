@@ -185,6 +185,10 @@ class T5FineTuner(pl.LightningModule):
         self.as_model = as_model
         self.cat_model = cat_model
         self.tokenizer = tokenizer
+        if tokenizer == 'sbert':
+            self.embedding = AutoModel.from_pretrained("sentence-transformers/all-mpnet-base-v2")
+            self.model.encoder.embed_tokens = self.embedding.embeddings
+            self.model.decoder.embed_tokens = self.embedding.embeddings
 
     def is_logger(self):
         return True
@@ -344,6 +348,19 @@ class T5FineTuner(pl.LightningModule):
                 "weight_decay": 0.0,
             },
         ]
+
+        if self.tokenizer == 'sbert':
+            optimizer_grouped_parameters.append(
+                {
+                    "params": [p for n, p in model.embedding.parameters() if not any(nd in n for nd in no_decay)],
+                    "weight_decay": self.hparams.weight_decay,
+                },
+                {
+                    "params": [p for n, p in model.embedding.parameters() if any(nd in n for nd in no_decay)],
+                    "weight_decay": 0.0,
+                },
+            )
+
         optimizer = AdamW(optimizer_grouped_parameters, lr=self.hparams.learning_rate, eps=self.hparams.adam_epsilon)
         self.opt = optimizer
         return [optimizer]
@@ -469,13 +486,6 @@ if __name__ == '__main__':
         # initialize the T5 model
         tfm_model = T5ForConditionalGeneration.from_pretrained(args.model_name_or_path)
         tfm_model.resize_token_embeddings(len(tokenizer))
-
-        if args.embedding == 'sbert':
-            # Load fine-tuned SBERT model
-            sbert_model = AutoModel.from_pretrained("sentence-transformers/all-mpnet-base-v2")
-            sbert_model.resize_token_embeddings(len(tokenizer))
-            tfm_model.encoder.embed_tokens = sbert_model.embeddings
-            tfm_model.decoder.embed_tokens = sbert_model.embeddings
 
         # initialize characteristic-specific representation models
         cont_model = LinearModel(args.model_name_or_path)
