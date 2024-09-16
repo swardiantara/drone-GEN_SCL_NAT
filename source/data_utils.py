@@ -54,8 +54,6 @@ def get_para_asqp_targets(sents, labels, drone_sp=None, truncated=False):
 
         target = ' [SSEP] '.join(all_quad_sentences)
         targets.append(target)
-    print(f'sents: {sents}')
-    print(f'targets: {targets}')
     return sents.copy(), targets
 
 
@@ -134,6 +132,8 @@ class ABSADataset(Dataset):
             )
             self.inputs.append(tokenized_input)
             self.targets.append(tokenized_target)
+        print(f'self.inputs: {self.inputs}')
+        print(f'self.inputs: {self.targets}')
 
 class GenSCLNatDataset(ABSADataset):
 
