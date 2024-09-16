@@ -24,6 +24,8 @@ def read_line_examples_from_file(data_path, silence=False):
                 labels.append(eval(tuples))
     if silence:
         print(f"Total examples = {len(sents)}")
+    print(f'sents: {sents}')
+    print(f'labels: {labels}')
     return sents, labels
 
 

@@ -444,10 +444,9 @@ if __name__ == '__main__':
 
     if args.embedding == 'sbert':
         tokenizer = AutoTokenizer.from_pretrained("sentence-transformers/all-mpnet-base-v2")
-        tokenizer.add_tokens(['[SSEP]'])
     else:
         tokenizer = T5Tokenizer.from_pretrained(args.model_name_or_path)
-        tokenizer.add_tokens(['[SSEP]'])
+    tokenizer.add_tokens(['[SSEP]'])
 
     # Get example from the train set
     dataset = GenSCLNatDataset(tokenizer=tokenizer, data_dir=args.dataset, 
@@ -474,6 +473,7 @@ if __name__ == '__main__':
             # Load fine-tuned SBERT model
             sbert_model = AutoModel.from_pretrained("sentence-transformers/all-mpnet-base-v2")
             tfm_model.encoder.embed_tokens = sbert_model.embeddings
+            tfm_model.decoder.embed_tokens = sbert_model.embeddings
 
         # initialize characteristic-specific representation models
         cont_model = LinearModel(args.model_name_or_path)
