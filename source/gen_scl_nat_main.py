@@ -472,7 +472,7 @@ if __name__ == '__main__':
 
         if args.embedding == 'sbert':
             # Load fine-tuned SBERT model
-            sbert_model = AutoModel.from_pretrained("sentence-transformers/all-mpnet-base-v2", tokenizer=tokenizer)
+            sbert_model = AutoModel.from_pretrained("sentence-transformers/all-mpnet-base-v2")
             sbert_model.auto_model.resize_token_embeddings(len(tokenizer))
             tfm_model.encoder.embed_tokens = sbert_model.embeddings
             tfm_model.decoder.embed_tokens = sbert_model.embeddings
