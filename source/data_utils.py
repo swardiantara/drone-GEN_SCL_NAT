@@ -24,8 +24,6 @@ def read_line_examples_from_file(data_path, silence=False):
                 labels.append(eval(tuples))
     if silence:
         print(f"Total examples = {len(sents)}")
-    print(f'sents: {sents}')
-    print(f'labels: {labels}')
     return sents, labels
 
 
@@ -56,6 +54,8 @@ def get_para_asqp_targets(sents, labels, drone_sp=None, truncated=False):
 
         target = ' [SSEP] '.join(all_quad_sentences)
         targets.append(target)
+    print(f'sents: {sents}')
+    print(f'targets: {targets}')
     return sents.copy(), targets
 
 
