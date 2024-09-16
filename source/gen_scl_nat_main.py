@@ -188,7 +188,6 @@ class T5FineTuner(pl.LightningModule):
         if tokenizer == 'sbert':
             self.embedding = AutoModel.from_pretrained("sentence-transformers/all-mpnet-base-v2")
             self.model.encoder.embed_tokens = self.embedding.embeddings
-            self.model.decoder.embed_tokens = self.embedding.embeddings
 
     def is_logger(self):
         return True
