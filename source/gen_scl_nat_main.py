@@ -36,6 +36,7 @@ from losses import SupConLoss
 
 from transformers import AdamW, T5ForConditionalGeneration, T5Tokenizer, AutoModel, AutoTokenizer
 from transformers import get_linear_schedule_with_warmup
+from sentence_transformers import SentenceTransformer
 
 from data_utils import GenSCLNatDataset
 from data_utils import read_line_examples_from_file
@@ -472,7 +473,8 @@ if __name__ == '__main__':
         tfm_model = T5ForConditionalGeneration.from_pretrained(args.model_name_or_path)
 
         if args.embedding == 'sbert':
-            embedding_model = AutoModel.from_pretrained("sentence-transformers/all-mpnet-base-v2")
+            embedding_model = SentenceTransformer("all-mpnet-base-v2")
+            embedding_model = embedding_model._first_module()
             embedding_model.resize_token_embeddings(len(tokenizer))
             tfm_model.set_input_embeddings(embedding_model)
         else:
