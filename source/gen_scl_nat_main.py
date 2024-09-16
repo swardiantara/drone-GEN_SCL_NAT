@@ -281,6 +281,7 @@ class T5FineTuner(pl.LightningModule):
 
         # return original loss plus the characteristic-specific SCL losses
         loss = outputs[0] + opinion_contrastive_loss + sentiment_contrastive_loss + aspect_contrastive_loss
+        loss.requires_grad = True
         return loss, outputs
 
     def training_step(self, batch, batch_idx):
