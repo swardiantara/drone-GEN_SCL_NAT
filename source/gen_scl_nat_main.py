@@ -63,7 +63,7 @@ def init_args():
     parser.add_argument("--do_inference", action='store_true', 
                         help="Whether to run inference with trained checkpoints")
     # other parameters
-    parser.add_argument("--accelerator", default='gpu', type=str, required=True,
+    parser.add_argument("--accelerator", default='gpu', type=str,
                         help="Device for accelerator: [cpu, gpu]")
     parser.add_argument('--embedding', choices=['t5', 'sbert'], default='t5', 
                         help="Embedding model to extract the log's feature. Default: t5")
