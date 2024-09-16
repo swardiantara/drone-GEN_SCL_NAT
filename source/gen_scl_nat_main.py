@@ -472,6 +472,8 @@ if __name__ == '__main__':
 
         if args.embedding == 'sbert':
             embedding_model = AutoModel.from_pretrained("sentence-transformers/all-mpnet-base-v2")
+            for param in embedding_model.parameters():
+                param.requires_grad = True
             embedding_model.resize_token_embeddings(len(tokenizer))
             # embedding_model = SentenceTransformer("all-mpnet-base-v2").to(device)
             # embedding_model.tokenizer = tokenizer
