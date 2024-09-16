@@ -42,8 +42,6 @@ from data_utils import read_line_examples_from_file
 from eval_utils import compute_scores
 
 logger = logging.getLogger(__name__)
-
-DEVICE = 'cpu'
 os.environ['CUDA_LAUNCH_BLOCKING'] = "1"
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
@@ -65,6 +63,8 @@ def init_args():
     parser.add_argument("--do_inference", action='store_true', 
                         help="Whether to run inference with trained checkpoints")
     # other parameters
+    parser.add_argument("--accelerator", default='gpu', type=str, required=True,
+                        help="Device for accelerator: [cpu, gpu]")
     parser.add_argument('--embedding', choices=['t5', 'sbert'], default='t5', 
                         help="Embedding model to extract the log's feature. Default: t5")
     parser.add_argument("--max_seq_length", default=128, type=int)
@@ -397,11 +397,10 @@ class LoggingCallback(pl.Callback):
                     writer.write("{} = {}\n".format(key, str(metrics[key])))
 
 
-def evaluate(data_loader, model, tokenizer, sents, task):
+def evaluate(data_loader, model, device, tokenizer, sents, task):
     """
     Compute scores given the predictions and gold labels and dump to file
     """
-    device = torch.device(DEVICE)
     model.model.to(device)
 
     model.eval()
@@ -442,12 +441,13 @@ if __name__ == '__main__':
     # initialization
     args = init_args()
     seed_everything(args.seed, workers=True)
+    device = torch.device('cpu' if args.accelerator == 'cpu' else 'cuda')
 
     if args.embedding == 'sbert':
         tokenizer = AutoTokenizer.from_pretrained("sentence-transformers/all-mpnet-base-v2")
     else:
         tokenizer = T5Tokenizer.from_pretrained(args.model_name_or_path)
-    tokenizer.add_tokens(['[SSEP]'])
+    tokenizer.add_tokens(['[SSEP]'], special_tokens=True)
 
     # Get example from the train set
     dataset = GenSCLNatDataset(tokenizer=tokenizer, data_dir=args.dataset, 
@@ -472,9 +472,9 @@ if __name__ == '__main__':
 
         if args.embedding == 'sbert':
             # Load fine-tuned SBERT model
-            sbert_model = AutoModel.from_pretrained("sentence-transformers/all-mpnet-base-v2")
+            sbert_model = AutoModel.from_pretrained("sentence-transformers/all-mpnet-base-v2", tokenizer=tokenizer)
             tfm_model.encoder.embed_tokens = sbert_model.embeddings
-            tfm_model.decoder.embed_tokens = copy.deepcopy(sbert_model.embeddings)
+            tfm_model.decoder.embed_tokens = sbert_model.embeddings
 
         # initialize characteristic-specific representation models
         cont_model = LinearModel(args.model_name_or_path)
@@ -495,6 +495,7 @@ if __name__ == '__main__':
         train_params = dict(
             default_root_dir=args.output_dir,
             accumulate_grad_batches=args.gradient_accumulation_steps,
+            accelerator=args.accelerator,
             gpus=args.n_gpu,
             gradient_clip_val=1.0,
             max_epochs=args.num_train_epochs,
@@ -530,7 +531,7 @@ if __name__ == '__main__':
         test_loader = DataLoader(test_dataset, args.eval_batch_size, num_workers=4)
 
         # compute the performance scores
-        evaluate(test_loader, model, tokenizer, test_dataset.sentence_strings, args.task)
+        evaluate(test_loader, model, device, tokenizer, test_dataset.sentence_strings, args.task)
 
     if args.do_inference:
         print("\n****** Conduct inference on trained checkpoint ******")
@@ -555,5 +556,5 @@ if __name__ == '__main__':
         test_loader = DataLoader(test_dataset, batch_size=args.eval_batch_size, num_workers=4)
 
         # compute the performance scores
-        evaluate(test_loader, model, tokenizer, test_dataset.sentence_strings, args.task)
+        evaluate(test_loader, model, device, tokenizer, test_dataset.sentence_strings, args.task)
     
