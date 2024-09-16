@@ -2,7 +2,7 @@ python source/gen_scl_nat_main.py \
    --task gen_scl_nat \
    --do_train \
    --do_direct_eval \
-   --embedding sbert \
+   --embedding t5 \
    --dataset acos_laptop_data \
    --model_name_or_path t5-base \
    --output_folder train_outputs \
