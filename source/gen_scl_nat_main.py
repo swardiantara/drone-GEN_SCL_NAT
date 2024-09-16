@@ -22,7 +22,6 @@ import pickle
 from tqdm import tqdm
 import json
 import numpy as np
-import copy
 
 from torch import nn
 from torch.nn.functional import normalize
@@ -36,7 +35,6 @@ from losses import SupConLoss
 
 from transformers import AdamW, T5ForConditionalGeneration, T5Tokenizer, AutoModel, AutoTokenizer
 from transformers import get_linear_schedule_with_warmup
-from sentence_transformers import SentenceTransformer
 
 from data_utils import GenSCLNatDataset
 from data_utils import read_line_examples_from_file
