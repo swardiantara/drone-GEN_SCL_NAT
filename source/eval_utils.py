@@ -1,9 +1,5 @@
 # -*- coding: utf-8 -*-
 import parse
-from nltk.translate.bleu_score import corpus_bleu
-from rouge import Rouge
-from meteor_score import meteor
-from pycocoevalcap.eval import COCOEvalCap
 
 sentiment_word_list = ['positive', 'negative', 'neutral']
 opinion2word = {'great': 'positive', 'bad': 'negative', 'ok': 'neutral'}
@@ -190,34 +186,34 @@ def compute_gen_metrics(pred_sentences, true_sentences, silent=True):
         dict: A dictionary containing the overall scores.
     """
 
-    # BLEU
-    bleu_score = corpus_bleu([[true_sentence] for true_sentence in true_sentences], pred_sentences)
+    # # BLEU
+    # bleu_score = corpus_bleu([[true_sentence] for true_sentence in true_sentences], pred_sentences)
 
-    # ROUGE
-    rouge = Rouge()
-    scores = rouge.get_scores(pred_sentences, true_sentences)
-    rouge_1 = sum(score["rouge-1"]["f"] for score in scores) / len(scores)
-    rouge_2 = sum(score["rouge-2"]["f"] for score in scores) / len(scores)
-    rouge_l = sum(score["rouge-l"]["f"] for score in scores) / len(scores)
+    # # ROUGE
+    # rouge = Rouge()
+    # scores = rouge.get_scores(pred_sentences, true_sentences)
+    # rouge_1 = sum(score["rouge-1"]["f"] for score in scores) / len(scores)
+    # rouge_2 = sum(score["rouge-2"]["f"] for score in scores) / len(scores)
+    # rouge_l = sum(score["rouge-l"]["f"] for score in scores) / len(scores)
 
-    # METEOR
-    meteor_scores = [meteor(pred_sentence, true_sentence) for pred_sentence, true_sentence in zip(pred_sentences, true_sentences)]
-    meteor_score = sum(meteor_scores) / len(meteor_scores)
+    # # METEOR
+    # meteor_scores = [meteor(pred_sentence, true_sentence) for pred_sentence, true_sentence in zip(pred_sentences, true_sentences)]
+    # meteor_score = sum(meteor_scores) / len(meteor_scores)
 
-    # CIDEr
-    coco_caps = [{"caption": pred_sentence} for pred_sentence in pred_sentences]
-    coco_refs = [{"caption": true_sentence} for true_sentence in true_sentences]
-    coco_eval = COCOEvalCap(coco_caps, coco_refs)
-    coco_eval.evaluate()
-    cider_score = coco_eval.eval['CIDEr']
+    # # CIDEr
+    # coco_caps = [{"caption": pred_sentence} for pred_sentence in pred_sentences]
+    # coco_refs = [{"caption": true_sentence} for true_sentence in true_sentences]
+    # coco_eval = COCOEvalCap(coco_caps, coco_refs)
+    # coco_eval.evaluate()
+    # cider_score = coco_eval.eval['CIDEr']
 
     scores = {
-        "bleu": bleu_score,
-        "rouge_1": rouge_1,
-        "rouge_2": rouge_2,
-        "rouge_l": rouge_l,
-        "meteor": meteor_score,
-        "cider": cider_score
+        "bleu": 0,
+        "rouge_1": 0,
+        "rouge_2": 0,
+        "rouge_l": 0,
+        "meteor": 0,
+        "cider": 0
     }
 
     if not silent:
