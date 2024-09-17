@@ -447,7 +447,7 @@ if __name__ == '__main__':
         tokenizer = AutoTokenizer.from_pretrained("sentence-transformers/all-mpnet-base-v2")
     else:
         tokenizer = T5Tokenizer.from_pretrained(args.model_name_or_path)
-    tokenizer.add_tokens(['[SSEP]'], special_tokens=True)
+    tokenizer.add_tokens(['[SSEP]'])
 
     # Get example from the train set
     dataset = GenSCLNatDataset(tokenizer=tokenizer, data_dir=args.dataset, 
@@ -468,14 +468,22 @@ if __name__ == '__main__':
 
         # initialize the T5 model
         tfm_model = T5ForConditionalGeneration.from_pretrained(args.model_name_or_path)
-        tfm_model.resize_token_embeddings(len(tokenizer))
 
         if args.embedding == 'sbert':
             # Load fine-tuned SBERT model
             sbert_model = AutoModel.from_pretrained("sentence-transformers/all-mpnet-base-v2")
             sbert_model.resize_token_embeddings(len(tokenizer))
+            tfm_model.config.update({'vocab_size': tokenizer.vocab_size})
+            tfm_model.config.eos_token_id = tokenizer.eos_token_id
+            tfm_model.config.bos_token_id = tokenizer.bos_token_id
+            tfm_model.config.pad_token_id = tokenizer.pad_token_id
+            tfm_model.config.sep_token_id = tokenizer.sep_token_id
+            tfm_model.config.decoder_start_token_id = tokenizer.bos_token_id
             tfm_model.encoder.embed_tokens = sbert_model.embeddings
             tfm_model.decoder.embed_tokens = sbert_model.embeddings
+        else:
+            tfm_model.resize_token_embeddings(len(tokenizer))
+
 
         # initialize characteristic-specific representation models
         cont_model = LinearModel(args.model_name_or_path)
