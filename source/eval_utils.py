@@ -181,5 +181,5 @@ def compute_gen_metrics(pred_sents, gold_sents, silent=False):
     return {
         'bleu_score': bleu_score,
         'wer_score': wer_score,
-        'wer_score': rouge_score
+        'rouge_score': rouge_score
     }

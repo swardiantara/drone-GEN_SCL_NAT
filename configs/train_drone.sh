@@ -1,0 +1,4 @@
+bash config/train_drone_binary_asqp.sh
+bash config/train_drone_binary_scl.sh
+bash config/train_drone_multi_asqp.sh
+bash config/train_drone_multi_scl.sh
