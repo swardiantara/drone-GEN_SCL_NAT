@@ -39,7 +39,7 @@ from transformers import get_linear_schedule_with_warmup
 
 from data_utils import GenSCLNatDataset
 from data_utils import read_line_examples_from_file
-from eval_utils import compute_scores
+from eval_utils import compute_scores, compute_gen_metrics
 
 logger = logging.getLogger(__name__)
 os.environ['CUDA_LAUNCH_BLOCKING'] = "1"
@@ -422,7 +422,7 @@ def evaluate(data_loader, model, device, tokenizer, sents, task):
 
     scores, all_labels, all_preds = compute_scores(outputs, targets, task, False)
     results = {'labels_correct': all_labels, 'labels_pred': all_preds, 'output_pred': outputs, 'output_correct': targets, 'utterances': sents}
-    # gen_scores = compute_gen_metrics(outputs, targets, False)
+    gen_scores = compute_gen_metrics(outputs, targets, False)
     ex_list = []
 
     for idx in range(len(all_preds)):
@@ -431,7 +431,7 @@ def evaluate(data_loader, model, device, tokenizer, sents, task):
             new_dict[key] = results[key][idx]
         ex_list.append(new_dict)
     
-    results = {'performance_metrics': scores, 'examples': ex_list}
+    results = {'generative_score': gen_scores, 'performance_metrics': scores, 'examples': ex_list}
 
     json.dump(results, open(f"{args.output_dir}/results-{args.dataset}.json", 'w'), indent=2, sort_keys=True)
     return scores

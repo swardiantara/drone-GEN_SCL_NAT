@@ -101,10 +101,12 @@ def compute_f1_scores(pred_pt, gold_pt, silent=True):
         # loop over quads in gold labels
         for j in range(len(gold_pt[i])):
             gold_quad = gold_pt[i][j]       # check if the quad exists in pred_quad
-            if gold_quad in pred_pt[i]:
+            if gold_quad in pred_pt[i]:     # count misordered quad as TP
                 quad_tp += 1                # strict quad-level true positive
             
             # prevent out of range index error
+            # count per-element TP
+            # the quad order must be the correct
             if j < len(pred_pt[i]):
                 gold_ac, gold_at, gold_sp, gold_ot = gold_quad
                 pred_ac, pred_at, pred_sp, pred_ot = pred_pt[i][j]
@@ -116,7 +118,7 @@ def compute_f1_scores(pred_pt, gold_pt, silent=True):
     if not silent:
         print(f"number of gold spans: {n_gold}, predicted spans: {n_pred}, hit: {quad_tp}")
         
-    # compute quad-level F1-score
+    # compute F1-score
     quad_scores = f1_score(quad_tp, n_gold, n_pred)
     ac_scores = f1_score(tp_ac, n_gold, n_pred)
     at_scores = f1_score(tp_at, n_gold, n_pred)
@@ -139,7 +141,7 @@ def compute_f1_scores(pred_pt, gold_pt, silent=True):
     }
 
 
-def compute_scores(pred_seqs, gold_seqs, task, silent=True):
+def compute_scores(pred_seqs, gold_seqs, task, silent=False):
     """
     Compute model performance
     """
@@ -163,3 +165,20 @@ def compute_scores(pred_seqs, gold_seqs, task, silent=True):
         scores = compute_f1_scores(all_preds, all_labels, silent)
 
     return scores, all_labels, all_preds
+
+
+def compute_gen_metrics(pred_sents, gold_sents, silent=False):
+    bleu = evaluate.load('bleu')
+    bleu_score = bleu.compute(predictions=pred_sents, references=gold_sents)
+
+    wer = evaluate.load('wer')
+    wer_score = wer.compute(predictions=pred_sents, references=gold_sents)
+
+    rouge = evaluate.load('rouge')
+    rouge_score = rouge.compute(predictions=pred_sents, references=gold_sents)
+
+    return {
+        'bleu_score': bleu_score,
+        'wer_score': wer_score,
+        'wer_score': rouge_score
+    }
