@@ -183,128 +183,15 @@ class GenSCLNatDataset(ABSADataset):
             self.targets.append(tokenized_target)
 
         def get_sentiment_labels(labels_in):
-            sentiment_dict = {
-                'negative': 0,
-                'neutral': 1,
-                'positive': 2,
-                'mixed': 3
-            }
-            sentiment_labels = []
-            for ex in labels_in:
-                label = list(set([quad[2] for quad in ex]))
-                if len(label) == 1:
-                    label = sentiment_dict[label[0]]
-                else:
-                    label = sentiment_dict['mixed']
-                assert label in [0,1,2,3]
-                sentiment_labels.append(label)
-            from collections import Counter
-            print("Sentiment distribution")
-            print(Counter(sentiment_labels))
-            return sentiment_labels
+            drone_sp = self.data_dir.split('_')[-1]
 
-        def get_opinion_labels(labels_in):
-            opinion_dict = {
-                'NULL': 0,
-                'EXPLICIT': 1,
-                'BOTH': 2,
-            }
-            opinion_labels = []
-            for ex in labels_in:
-                opinions = set([quad[3] for quad in ex])
-
-                if 'NULL' not in opinions:
-                    label = opinion_dict['EXPLICIT']
-                else:
-                    if len(opinions) == 1:
-                        label = opinion_dict['NULL']
-                    else:
-                        label = opinion_dict['BOTH']
-
-                opinion_labels.append(label)
-            return opinion_labels
-
-        def get_aspect_labels(labels_in):
-            aspect_dict = {
-                'NULL': 0,
-                'EXPLICIT': 1,
-                'BOTH': 2,
-            }
-            aspect_labels = []
-            for ex in labels_in:
-                aspects = set([quad[0] for quad in ex])
-
-                if 'NULL' not in aspects:
-                    label = aspect_dict['EXPLICIT']
-                else:
-                    if len(aspects) == 1:
-                        label = aspect_dict['NULL']
-                    else:
-                        label = aspect_dict['BOTH']
-
-                aspect_labels.append(label)
-            return aspect_labels
-        
-        self.contrastive_labels['sentiment'] = get_sentiment_labels(labels)
-        self.contrastive_labels['opinion'] = get_opinion_labels(labels)
-        self.contrastive_labels['aspect'] = get_aspect_labels(labels)
-
-
-class DroneAcosDataset(GenSCLNatDataset):
-
-    def __getitem__(self, index):
-        source_ids = self.inputs[index]["input_ids"].squeeze()
-        target_ids = self.targets[index]["input_ids"].squeeze()
-
-        src_mask = self.inputs[index]["attention_mask"].squeeze()  # might need to squeeze
-        target_mask = self.targets[index]["attention_mask"].squeeze()  # might need to squeeze
-
-        sentiment_label = torch.tensor(self.contrastive_labels['sentiment'][index])
-        aspect_label = torch.tensor(self.contrastive_labels['aspect'][index])
-        opinion_label = torch.tensor(self.contrastive_labels['opinion'][index])
-        
-        return {"source_ids": source_ids,
-                "source_mask": src_mask, 
-                "target_ids": target_ids,
-                "target_mask": target_mask,
-                'sentiment_labels': sentiment_label,
-                'opinion_labels': opinion_label,
-                'aspect_labels': aspect_label,
-                }
-    
-    def _build_examples(self):
-        inputs, targets, labels = get_transformed_io(self.data_path, self.data_dir, self.task, self.data_type, self.truncate)
-        
-        self.sentence_strings = inputs
-        for i in range(len(inputs)):
-            # change input and target to two strings
-
-            input = ' '.join(inputs[i])
-            target = targets[i]
-            if isinstance(targets[i], list):
-                target = " ".join(targets[i])
-
-            tokenized_input = self.tokenizer.batch_encode_plus(
-              [input], max_length=self.max_len, padding="max_length",
-              truncation=True, return_tensors="pt"
-            )
-            tokenized_target = self.tokenizer.batch_encode_plus(
-              [target], max_length=self.max_len, padding="max_length",
-              truncation=True, return_tensors="pt"
-            )
-
-            self.inputs.append(tokenized_input)
-            self.targets.append(tokenized_target)
-        
-        def get_sentiment_labels(labels_in):
-
-            if self.data_dir.split('_')[-1] == 'binary':
+            if drone_sp == 'binary':
                 sentiment_dict = {
                     'negative': 0,
                     'positive': 1,
                     'mixed': 2,
                 }
-            else:
+            elif drone_sp == 'multi':
                 sentiment_dict = {
                     'normal': 0,
                     'minor': 1,
@@ -312,7 +199,13 @@ class DroneAcosDataset(GenSCLNatDataset):
                     'severe': 3,
                     'mixed': 4,
                 }
-        
+            else:
+                sentiment_dict = {
+                    'negative': 0,
+                    'neutral': 1,
+                    'positive': 2,
+                    'mixed': 3
+                }
             sentiment_labels = []
             for ex in labels_in:
                 label = list(set([quad[2] for quad in ex]))
@@ -320,7 +213,6 @@ class DroneAcosDataset(GenSCLNatDataset):
                     label = sentiment_dict[label[0]]
                 else:
                     label = sentiment_dict['mixed']
-                assert label in [0,1,2,3,4]
                 sentiment_labels.append(label)
             from collections import Counter
             print("Sentiment distribution")

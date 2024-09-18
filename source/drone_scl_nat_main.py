@@ -33,7 +33,7 @@ from pytorch_lightning import seed_everything
 from pytorch_lightning.callbacks.early_stopping import EarlyStopping
 from losses import SupConLoss
 
-from transformers import AdamW, T5ForConditionalGeneration, T5Tokenizer, AutoModel, AutoTokenizer
+from transformers import T5ForConditionalGeneration, T5Tokenizer, AutoModel, AutoTokenizer
 from transformers import get_linear_schedule_with_warmup
 
 from data_utils import DroneAcosDataset
@@ -343,7 +343,7 @@ class T5FineTuner(pl.LightningModule):
                 "weight_decay": 0.0,
             },
         ]
-        optimizer = AdamW(optimizer_grouped_parameters, lr=self.hparams.learning_rate, eps=self.hparams.adam_epsilon)
+        optimizer = torch.optim.AdamW(optimizer_grouped_parameters, lr=self.hparams.learning_rate, eps=self.hparams.adam_epsilon)
         self.opt = optimizer
         return [optimizer]
 
