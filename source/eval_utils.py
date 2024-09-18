@@ -177,9 +177,13 @@ def compute_gen_metrics(pred_sents, gold_sents, silent=False):
 
     rouge = evaluate.load('rouge')
     rouge_score = rouge.compute(predictions=pred_sents, references=gold_sents)
+    
+    meteor = evaluate.load('meteor')
+    meteor_score = meteor.compute(predictions=pred_sents, references=gold_sents)
 
     return {
         'bleu_score': bleu_score,
         'wer_score': wer_score,
-        'rouge_score': rouge_score
+        'rouge_score': rouge_score,
+        'meteor_score': meteor_score
     }
