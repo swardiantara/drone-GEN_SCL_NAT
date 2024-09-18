@@ -67,6 +67,22 @@ def extract_spans_para(task, seq, seq_type):
     else:
         raise NotImplementedError
     return quads
+
+
+def f1_score(n_tp, n_gold, n_pred):
+    precision = float(n_tp) / float(n_pred) if n_pred != 0 else 0
+    recall = float(n_tp) / float(n_gold) if n_gold != 0 else 0
+    if recall > 1.0:
+        import pdb
+        pdb.set_trace()
+    f1 = 2 * precision * recall / (precision + recall) if precision != 0 or recall != 0 else 0
+
+    return {
+        'precision': precision,
+        'recall': recall,
+        'f1_score': f1
+    }
+
     
 def compute_f1_scores(pred_pt, gold_pt, silent=True):
     """
@@ -74,28 +90,53 @@ def compute_f1_scores(pred_pt, gold_pt, silent=True):
     The input needs to be already processed
     """
     # number of true postive, gold standard, predictions
-    n_tp, n_gold, n_pred = 0, 0, 0
+    quad_tp, n_gold, n_pred = 0, 0, 0
+    tp_ac, tp_at, tp_ot, tp_sp = 0, 0, 0, 0
 
-    for i in range(len(pred_pt)):
-        n_gold += len(set(gold_pt[i]))
-        n_pred += len(set(pred_pt[i]))
-
-        for t in set(pred_pt[i]):
-            if t in gold_pt[i]:
-                n_tp += 1
+    # loop over all samples
+    for i in range(len(gold_pt)):
+        n_gold += len(gold_pt[i])   # num of quads in gold sample
+        n_pred += len(pred_pt[i])   # num of quads in pred sample
+        
+        # loop over quads in gold labels
+        for j in range(len(gold_pt[i])):
+            gold_quad = gold_pt[i][j]       # check if the quad exists in pred_quad
+            if gold_quad in pred_pt[i]:
+                quad_tp += 1                # strict quad-level true positive
+            
+            # prevent out of range index error
+            if j < len(pred_pt[i]):
+                gold_ac, gold_at, gold_sp, gold_ot = gold_quad
+                pred_ac, pred_at, pred_sp, pred_ot = pred_pt[i][j]
+                tp_ac += 1 if pred_ac == gold_ac else 0
+                tp_at += 1 if pred_at == gold_at else 0
+                tp_ot += 1 if pred_ot == gold_ot else 0
+                tp_sp += 1 if pred_sp == gold_sp else 0
 
     if not silent:
-        print(f"number of gold spans: {n_gold}, predicted spans: {n_pred}, hit: {n_tp}")
-    
-    precision = float(n_tp) / float(n_pred) if n_pred != 0 else 0
-    recall = float(n_tp) / float(n_gold) if n_gold != 0 else 0
-    if recall > 1.0:
-        import pdb
-        pdb.set_trace()
-    f1 = 2 * precision * recall / (precision + recall) if precision != 0 or recall != 0 else 0
-    scores = {'precision': precision, 'recall': recall, 'f1': f1}
+        print(f"number of gold spans: {n_gold}, predicted spans: {n_pred}, hit: {quad_tp}")
+        
+    # compute quad-level F1-score
+    quad_scores = f1_score(quad_tp, n_gold, n_pred)
+    ac_scores = f1_score(tp_ac, n_gold, n_pred)
+    at_scores = f1_score(tp_at, n_gold, n_pred)
+    ot_scores = f1_score(tp_ot, n_gold, n_pred)
+    sp_scores = f1_score(tp_sp, n_gold, n_pred)
+    total_tp = tp_ac + tp_at + tp_ot + tp_sp
+    micro_average = f1_score(total_tp, (n_gold * 4),  (n_pred * 4))
+    if not silent:
+        print(f"number of gold quads: {n_gold}, predicted quads: {n_pred}, hit: {quad_tp}")
+        print(f'Quad-level eval: {quad_scores}')
+        print(f'Element-level eval: {micro_average}')
 
-    return scores
+    return {
+        'quad_score': quad_scores,
+        'ac_score': ac_scores,
+        'at_score': at_scores,
+        'ot_score': ot_scores,
+        'sp_score': sp_scores,
+        'micro_average': micro_average
+    }
 
 
 def compute_scores(pred_seqs, gold_seqs, task, silent=True):
