@@ -7,6 +7,7 @@ opinion2word_under_o2m = {'good': 'positive', 'great': 'positive', 'best': 'posi
 
 numopinion2word = {'SP1': 'positive', 'SP2': 'negative', 'SP3': 'neutral'}
 import parse
+import evaluate
 
 def extract_spans_para(task, seq, seq_type):
     quads = []
