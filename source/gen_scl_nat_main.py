@@ -65,7 +65,7 @@ def init_args():
     # other parameters
     parser.add_argument("--accelerator", default='gpu', type=str,
                         help="Device for accelerator: [cpu, gpu]")
-    parser.add_argument('--scenario', choices=['t5', 'bert2gpt2', 'bert2bert'], default='t5', 
+    parser.add_argument('--scenario', choices=['t5', 'bert2gpt2', 'bert2bert', 'roberta2roberta', 'roberta2gpt2'], default='t5', 
                         help="Model scenario to fine-tune for paraphrasing task. Default: t5")
     parser.add_argument("--max_seq_length", default=128, type=int)
     parser.add_argument("--n_gpu", default=0)
@@ -439,6 +439,29 @@ def evaluate(data_loader, model, device, tokenizer, sents, task):
     json.dump(results, open(f"{args.output_dir}/results-{args.dataset}.json", 'w'), indent=2, sort_keys=True)
     return scores
 
+
+def get_seq2seq_model(args):
+    # initialize the tokenizer and seq2seq model
+    if args.scenario == 't5':
+        tokenizer = T5Tokenizer.from_pretrained(args.model_name_or_path)
+        seq2seq_model = T5ForConditionalGeneration.from_pretrained(args.model_name_or_path)
+    elif args.scenario == 'bert2gpt2':
+        tokenizer = AutoTokenizer.from_pretrained("google-bert/bert-base-cased")
+        seq2seq_model = EncoderDecoderModel.from_encoder_decoder_pretrained("google-bert/bert-base-cased", "gpt2")
+    elif args.scenario == 'bert2bert':
+        tokenizer = AutoTokenizer.from_pretrained("google-bert/bert-base-cased")
+        seq2seq_model = EncoderDecoderModel.from_encoder_decoder_pretrained("google-bert/bert-base-cased", "google-bert/-base-cased")
+    elif args.scenario == 'roberta2gpt2':
+        tokenizer = AutoTokenizer.from_pretrained("FacebookAI/roberta-base")
+        seq2seq_model = EncoderDecoderModel.from_encoder_decoder_pretrained("FacebookAI/roberta-base", "gpt2")
+    elif args.scenario == 'roberta2roberta':
+        tokenizer = AutoTokenizer.from_pretrained("FacebookAI/roberta-base")
+        seq2seq_model = EncoderDecoderModel.from_encoder_decoder_pretrained("FacebookAI/roberta-base", "FacebookAI/roberta-base")
+    else:
+        raise NotImplementedError
+    
+    return tokenizer, seq2seq_model
+
     
 # check for top-level environment
 if __name__ == '__main__':
@@ -447,19 +470,7 @@ if __name__ == '__main__':
     seed_everything(args.seed, workers=True)
     device = torch.device('cpu' if args.accelerator == 'cpu' else 'cuda')
 
-    # initialize the tokenizer and seq2seq model
-    if args.scenario == 't5':
-        tokenizer = T5Tokenizer.from_pretrained(args.model_name_or_path)
-        seq2seq_model = T5ForConditionalGeneration.from_pretrained(args.model_name_or_path)
-    elif args.scenario == 'bert2gpt2':
-        seq2seq_model = EncoderDecoderModel.from_encoder_decoder_pretrained("bert-base-cased", "gpt2")
-        tokenizer = AutoTokenizer.from_pretrained("bert-base-cased")
-    elif args.scenario == 'bert2bert':
-        seq2seq_model = EncoderDecoderModel.from_encoder_decoder_pretrained("bert-base-cased", "bert-base-cased")
-        tokenizer = AutoTokenizer.from_pretrained("bert-base-cased")
-    else:
-        raise NotImplementedError
-    
+    tokenizer, seq2seq_model = get_seq2seq_model(args)
     tokenizer.add_tokens(['[SSEP]'])
 
     # Get example from the train set
