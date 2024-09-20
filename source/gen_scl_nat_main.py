@@ -65,7 +65,7 @@ def init_args():
     # other parameters
     parser.add_argument("--accelerator", default='gpu', type=str,
                         help="Device for accelerator: [cpu, gpu]")
-    parser.add_argument('--scenario', choices=['t5', 'bert2gpt2', 'bert2bert', 'roberta2roberta', 'roberta2gpt2'], default='t5', 
+    parser.add_argument('--scenario', choices=['t5', 'flan-t5', 'bert2gpt2', 'bert2bert', 'roberta2roberta', 'roberta2gpt2'], default='t5', 
                         help="Model scenario to fine-tune for paraphrasing task. Default: t5")
     parser.add_argument("--max_seq_length", default=128, type=int)
     parser.add_argument("--n_gpu", default=0)
@@ -443,18 +443,25 @@ def evaluate(data_loader, model, device, tokenizer, sents, task):
 def get_seq2seq_model(args):
     # initialize the tokenizer and seq2seq model
     if args.scenario == 't5':
-        tokenizer = T5Tokenizer.from_pretrained(args.model_name_or_path)
-        seq2seq_model = T5ForConditionalGeneration.from_pretrained(args.model_name_or_path)
+        tokenizer = AutoTokenizer.from_pretrained(args.model_name_or_path)
+        seq2seq_model = AutoModelForSeq2SeqLM.from_pretrained(args.model_name_or_path)
+    elif args.scenario == 'flan-t5':
+        tokenizer = AutoTokenizer.from_pretrained(args.model_name_or_path)
+        seq2seq_model = AutoModelForSeq2SeqLM.from_pretrained(args.model_name_or_path)
     elif args.scenario == 'bert2gpt2':
+        args.model_name_or_path = 'bert-base-cased'
         tokenizer = AutoTokenizer.from_pretrained("google-bert/bert-base-cased")
         seq2seq_model = EncoderDecoderModel.from_encoder_decoder_pretrained("google-bert/bert-base-cased", "gpt2")
     elif args.scenario == 'bert2bert':
+        args.model_name_or_path = 'bert-base-cased'
         tokenizer = AutoTokenizer.from_pretrained("google-bert/bert-base-cased")
         seq2seq_model = EncoderDecoderModel.from_encoder_decoder_pretrained("google-bert/bert-base-cased", "google-bert/-base-cased")
     elif args.scenario == 'roberta2gpt2':
+        args.model_name_or_path = 'roberta-base'
         tokenizer = AutoTokenizer.from_pretrained("FacebookAI/roberta-base")
         seq2seq_model = EncoderDecoderModel.from_encoder_decoder_pretrained("FacebookAI/roberta-base", "gpt2")
     elif args.scenario == 'roberta2roberta':
+        args.model_name_or_path = 'roberta-base'
         tokenizer = AutoTokenizer.from_pretrained("FacebookAI/roberta-base")
         seq2seq_model = EncoderDecoderModel.from_encoder_decoder_pretrained("FacebookAI/roberta-base", "FacebookAI/roberta-base")
     else:
@@ -503,10 +510,10 @@ if __name__ == '__main__':
 
 
         # initialize characteristic-specific representation models
-        cont_model = LinearModel(args.model_name_or_path)
-        op_model = LinearModel(args.model_name_or_path)
-        as_model = LinearModel(args.model_name_or_path)
-        cat_model = LinearModel(args.model_name_or_path)
+        cont_model = LinearModel(seq2seq_model.config.d_model)
+        op_model = LinearModel(seq2seq_model.config.d_model)
+        as_model = LinearModel(seq2seq_model.config.d_model)
+        cat_model = LinearModel(seq2seq_model.config.d_model)
         model = T5FineTuner(args, seq2seq_model, tokenizer, cont_model, op_model, as_model, cat_model)
 
         if args.early_stopping:
@@ -572,10 +579,10 @@ if __name__ == '__main__':
                 raise NotImplementedError
 
         # representations are only used during loss calculation
-        cont_model = LinearModel(args.model_name_or_path)
-        op_model = LinearModel(args.model_name_or_path)
-        as_model = LinearModel(args.model_name_or_path)
-        cat_model = LinearModel(args.model_name_or_path)
+        cont_model = LinearModel(seq2seq_model.config.d_model)
+        op_model = LinearModel(seq2seq_model.config.d_model)
+        as_model = LinearModel(seq2seq_model.config.d_model)
+        cat_model = LinearModel(seq2seq_model.config.d_model)
         model = T5FineTuner(args, seq2seq_model, tokenizer, cont_model, op_model, as_model, cat_model)
 
         sents, _ = read_line_examples_from_file(f'data/{args.dataset}/test.txt')
