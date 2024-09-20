@@ -64,7 +64,6 @@ def construct_dataset(args, silence=False) -> pd.DataFrame:
             line = line.strip()
             if line != '':
                 words, tuples = line.split('####')
-                print(f'tuples: {eval(tuples)}')
                 for tuple in eval(tuples):
                     _, ac, sp, _ = tuple
                     if args.dataset.split('_')[-1] == 'data':
