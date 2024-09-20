@@ -2,10 +2,10 @@ python source/gen_scl_nat_main.py \
    --task asqp \
    --do_train \
    --do_direct_eval \
-   --embedding t5 \
+   --embedding flan-t5 \
    --dataset acos_drone_multi \
-   --model_name_or_path t5-base \
-   --output_folder drone_multi_asqp \
+   --model_name_or_path google/flan-t5-base \
+   --output_folder train_outputs \
    --n_gpu 1 \
    --accelerator gpu \
    --train_batch_size 16 \
