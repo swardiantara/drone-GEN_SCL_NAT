@@ -498,7 +498,9 @@ if __name__ == '__main__':
     if args.do_train:
         print("\n****** Conducting Training ******")
 
-        if not args.scenario == 't5':
+        if args.scenario == 't5' or args.scenario == 'flan-t5':
+            seq2seq_model.resize_token_embeddings(len(tokenizer))
+        else:
             # Adjust special token's IDs
             seq2seq_model.encoder.resize_token_embeddings(len(tokenizer))
             seq2seq_model.decoder.resize_token_embeddings(len(tokenizer))
@@ -506,8 +508,6 @@ if __name__ == '__main__':
             seq2seq_model.config.eos_token_id = tokenizer.sep_token_id
             seq2seq_model.config.pad_token_id = tokenizer.pad_token_id
             seq2seq_model.config.vocab_size = seq2seq_model.config.encoder.vocab_size
-        else:
-            seq2seq_model.resize_token_embeddings(len(tokenizer))
 
 
         # initialize characteristic-specific representation models
