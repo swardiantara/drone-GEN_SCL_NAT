@@ -155,14 +155,15 @@ class LinearModel(nn.Module):
     """
     Linear models used for the aspect/opinion/sentiment-specific representations
     """
-    def __init__(self, model_path):
+    def __init__(self, d_model):
         super().__init__()
-        if model_path == 't5-small':
-            self.layer_1 = nn.Linear(512, 1024)
-        elif model_path == 't5-base':
-            self.layer_1 = nn.Linear(768, 1024)
-        else:
-            self.layer_1 = nn.Linear(1024, 1024)
+        self.layer_1 = nn.Linear(d_model, 1024)
+        # if model_path == 't5-small':
+        #     self.layer_1 = nn.Linear(512, 1024)
+        # elif model_path == 't5-base':
+        #     self.layer_1 = nn.Linear(768, 1024)
+        # else:
+        #     self.layer_1 = nn.Linear(1024, 1024)
         self.dropout = nn.Dropout(0.1)
 
     def forward(self, x, attention_mask):

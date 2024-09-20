@@ -4,7 +4,7 @@ python source/gen_scl_nat_main.py \
    --do_direct_eval \
    --scenario flan-t5 \
    --dataset acos_laptop_data \
-   --model_name_or_path flan-t5-base \
+   --model_name_or_path google/flan-t5-base \
    --output_folder train_outputs \
    --n_gpu 1 \
    --accelerator gpu \
