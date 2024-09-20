@@ -97,7 +97,7 @@ def create_pairs(args, dataset: pd.DataFrame) -> list[InputExample]:
             for i, row in cluster_df.iterrows():
                 for j, other_row in cluster_df.iterrows():
                     # construct positive pairs
-                    if i != j:
+                    if i != j and row['text'] != other_row['text']:
                         examples.append(InputExample(texts=[row['text'], other_row['text']], label=1.0))
                 for j, other_row in other_df.iterrows():
                     # construct negative pairs
