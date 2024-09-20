@@ -34,7 +34,7 @@ from pytorch_lightning import seed_everything
 from pytorch_lightning.callbacks.early_stopping import EarlyStopping
 from losses import SupConLoss
 
-from transformers import AdamW, T5ForConditionalGeneration, T5Tokenizer, AutoModel, AutoTokenizer
+from transformers import AdamW, T5ForConditionalGeneration, T5Tokenizer, AutoModel, AutoTokenizer, AutoModelForSeq2SeqLM, EncoderDecoderModel
 from transformers import get_linear_schedule_with_warmup
 
 from data_utils import GenSCLNatDataset
@@ -65,8 +65,8 @@ def init_args():
     # other parameters
     parser.add_argument("--accelerator", default='gpu', type=str,
                         help="Device for accelerator: [cpu, gpu]")
-    parser.add_argument('--embedding', choices=['t5', 'sbert'], default='t5', 
-                        help="Embedding model to extract the log's feature. Default: t5")
+    parser.add_argument('--scenario', choices=['t5', 'bert2gpt2'], default='t5', 
+                        help="Model scenario to fine-tune for paraphrasing task. Default: t5")
     parser.add_argument("--max_seq_length", default=128, type=int)
     parser.add_argument("--n_gpu", default=0)
     parser.add_argument("--train_batch_size", default=16, type=int,
@@ -119,13 +119,15 @@ def init_args():
         print(output_fold)
     else:
         # dump params as part of folder_path
-        params = "I".join([elt for elts in params for elt in elts])
-        output_fold = "I".join([args.dataset, args.task,args.model_name_or_path, params, args.model_prefix])
-        #output_fold = "_".join([args.dataset, args.task, args.model_prefix, args.model_name_or_path])
+        # params = "I".join([elt for elts in params for elt in elts])
+        # output_fold = "I".join([args.dataset, args.task,args.model_name_or_path, params, args.model_prefix])
+        # output_fold = "_".join([args.dataset, args.task, args.model_prefix, args.model_name_or_path])
+        output_fold = os.path.join(args.dataset, args.scenario, args.task)
+
         print(output_fold)
-    output_dir = f"{args.output_folder}/{output_fold}"
-    if not os.path.exists(args.output_folder):
-        os.mkdir(args.output_folder)
+    output_dir = os.path.join(args.output_folder, output_fold)
+    # if not os.path.exists(args.output_folder):
+    #     os.mkdir(args.output_folder)
     if not os.path.exists(output_dir):
         os.mkdir(output_dir)
     args.output_dir = output_dir
@@ -176,10 +178,10 @@ class T5FineTuner(pl.LightningModule):
     """
     Fine tune a pre-trained T5 model
     """
-    def __init__(self, hparams, tfm_model, tokenizer, cont_model, op_model, as_model, cat_model):
+    def __init__(self, hparams, seq2seq_model, tokenizer, cont_model, op_model, as_model, cat_model):
         super(T5FineTuner, self).__init__()
         self.hparams.update(vars(hparams))
-        self.model = tfm_model
+        self.model = seq2seq_model
         self.cont_model = cont_model
         self.op_model = op_model
         self.as_model = as_model
@@ -444,10 +446,16 @@ if __name__ == '__main__':
     seed_everything(args.seed, workers=True)
     device = torch.device('cpu' if args.accelerator == 'cpu' else 'cuda')
 
-    if args.embedding == 'sbert':
+    # initialize the tokenizer and seq2seq model
+    if args.scenario == 't5':
+        tokenizer = T5Tokenizer.from_pretrained(args.model_name_or_path)
+        seq2seq_model = T5ForConditionalGeneration.from_pretrained(args.model_name_or_path)
+    elif args.scenario == 'bert2gpt2':
+        seq2seq_model = EncoderDecoderModel.from_encoder_decoder_pretrained("bert-base-cased", "gpt2")
         tokenizer = AutoTokenizer.from_pretrained("sentence-transformers/all-mpnet-base-v2")
     else:
-        tokenizer = T5Tokenizer.from_pretrained(args.model_name_or_path)
+        raise NotImplementedError
+    
     tokenizer.add_tokens(['[SSEP]'])
 
     # Get example from the train set
@@ -467,24 +475,14 @@ if __name__ == '__main__':
     if args.do_train:
         print("\n****** Conducting Training ******")
 
-        # initialize the T5 model
-        tfm_model = T5ForConditionalGeneration.from_pretrained(args.model_name_or_path)
-
-        if args.embedding == 'sbert':
+        if not args.scenario == 't5':
             # Load fine-tuned SBERT model
-            sbert_model = AutoModel.from_pretrained("sentence-transformers/all-mpnet-base-v2")
-            sbert_model.tokenizer = tokenizer
-            sbert_model.resize_token_embeddings(len(tokenizer))
-            tfm_model.config.update({'vocab_size': tokenizer.vocab_size})
-            tfm_model.config.eos_token_id = tokenizer.eos_token_id
-            tfm_model.config.bos_token_id = tokenizer.bos_token_id
-            tfm_model.config.pad_token_id = tokenizer.pad_token_id
-            tfm_model.config.sep_token_id = tokenizer.sep_token_id
-            tfm_model.config.decoder_start_token_id = tokenizer.bos_token_id
-            tfm_model.encoder.embed_tokens = sbert_model.embeddings
-            tfm_model.decoder.embed_tokens = sbert_model.embeddings
+            seq2seq_model.config.decoder_start_token_id = tokenizer.cls_token_id
+            seq2seq_model.config.eos_token_id = tokenizer.sep_token_id
+            seq2seq_model.config.pad_token_id = tokenizer.pad_token_id
+            seq2seq_model.config.vocab_size = seq2seq_model.config.encoder.vocab_size
         else:
-            tfm_model.resize_token_embeddings(len(tokenizer))
+            seq2seq_model.resize_token_embeddings(len(tokenizer))
 
 
         # initialize characteristic-specific representation models
@@ -492,7 +490,7 @@ if __name__ == '__main__':
         op_model = LinearModel(args.model_name_or_path)
         as_model = LinearModel(args.model_name_or_path)
         cat_model = LinearModel(args.model_name_or_path)
-        model = T5FineTuner(args, tfm_model, tokenizer, cont_model, op_model, as_model, cat_model)
+        model = T5FineTuner(args, seq2seq_model, tokenizer, cont_model, op_model, as_model, cat_model)
 
         if args.early_stopping:
             checkpoint_callback = pl.callbacks.model_checkpoint.ModelCheckpoint(
@@ -507,7 +505,7 @@ if __name__ == '__main__':
             default_root_dir=args.output_dir,
             accumulate_grad_batches=args.gradient_accumulation_steps,
             accelerator=args.accelerator,
-            gpus=args.n_gpu,
+            devices=args.n_gpu,
             gradient_clip_val=1.0,
             max_epochs=args.num_train_epochs,
             auto_lr_find=False,
@@ -548,17 +546,20 @@ if __name__ == '__main__':
         print("\n****** Conduct inference on trained checkpoint ******")
 
         if not args.do_train:
-            # initialize the T5 model from previous checkpoint
-            print(f"Loading trained model from {args.model_name_or_path}")
-            tokenizer = T5Tokenizer.from_pretrained(args.model_name_or_path)
-            tfm_model = T5ForConditionalGeneration.from_pretrained(args.model_name_or_path)
+            # initialize the seq2seq model from previous checkpoint
+            if args.scenario == 't5':
+                print(f"Loading trained model from {args.model_name_or_path}")
+                tokenizer = T5Tokenizer.from_pretrained(args.model_name_or_path)
+                seq2seq_model = T5ForConditionalGeneration.from_pretrained(args.model_name_or_path)
+            else:
+                raise NotImplementedError
 
         # representations are only used during loss calculation
         cont_model = LinearModel(args.model_name_or_path)
         op_model = LinearModel(args.model_name_or_path)
         as_model = LinearModel(args.model_name_or_path)
         cat_model = LinearModel(args.model_name_or_path)
-        model = T5FineTuner(args, tfm_model, tokenizer, cont_model, op_model, as_model, cat_model)
+        model = T5FineTuner(args, seq2seq_model, tokenizer, cont_model, op_model, as_model, cat_model)
 
         sents, _ = read_line_examples_from_file(f'data/{args.dataset}/test.txt')
 
