@@ -504,8 +504,8 @@ if __name__ == '__main__':
         train_params = dict(
             default_root_dir=args.output_dir,
             accumulate_grad_batches=args.gradient_accumulation_steps,
-            accelerator=args.accelerator,
-            devices=args.n_gpu,
+            # accelerator=args.accelerator,
+            gpus=args.n_gpu,
             gradient_clip_val=1.0,
             max_epochs=args.num_train_epochs,
             auto_lr_find=False,
