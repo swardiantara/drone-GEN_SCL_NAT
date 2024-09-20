@@ -2,12 +2,12 @@ python source/gen_scl_nat_main.py \
    --task gen_scl_nat \
    --do_train \
    --do_direct_eval \
-   --scenario bert2gpt2 \
+   --scenario bert2bert \
    --dataset acos_laptop_data \
    --model_name_or_path t5-base \
    --output_folder train_outputs \
    --n_gpu 1 \
-   --accelerator 1 \
+   --accelerator gpu \
    --train_batch_size 16 \
    --eval_batch_size 16 \
    --learning_rate 9e-5 \

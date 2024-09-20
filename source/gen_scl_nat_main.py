@@ -65,7 +65,7 @@ def init_args():
     # other parameters
     parser.add_argument("--accelerator", default='gpu', type=str,
                         help="Device for accelerator: [cpu, gpu]")
-    parser.add_argument('--scenario', choices=['t5', 'bert2gpt2'], default='t5', 
+    parser.add_argument('--scenario', choices=['t5', 'bert2gpt2', 'bert2bert'], default='t5', 
                         help="Model scenario to fine-tune for paraphrasing task. Default: t5")
     parser.add_argument("--max_seq_length", default=128, type=int)
     parser.add_argument("--n_gpu", default=0)
@@ -454,6 +454,9 @@ if __name__ == '__main__':
     elif args.scenario == 'bert2gpt2':
         seq2seq_model = EncoderDecoderModel.from_encoder_decoder_pretrained("bert-base-cased", "gpt2")
         tokenizer = AutoTokenizer.from_pretrained("bert-base-cased")
+    elif args.scenario == 'bert2bert':
+        seq2seq_model = EncoderDecoderModel.from_encoder_decoder_pretrained("bert-base-cased", "bert-base-cased")
+        tokenizer = AutoTokenizer.from_pretrained("bert-base-cased")
     else:
         raise NotImplementedError
     
@@ -477,7 +480,7 @@ if __name__ == '__main__':
         print("\n****** Conducting Training ******")
 
         if not args.scenario == 't5':
-            # Load fine-tuned SBERT model
+            # Adjust special token's IDs
             seq2seq_model.encoder.resize_token_embeddings(len(tokenizer))
             seq2seq_model.decoder.resize_token_embeddings(len(tokenizer))
             seq2seq_model.config.decoder_start_token_id = tokenizer.cls_token_id
