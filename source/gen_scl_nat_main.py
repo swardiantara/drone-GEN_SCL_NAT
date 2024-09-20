@@ -453,7 +453,7 @@ if __name__ == '__main__':
         seq2seq_model = T5ForConditionalGeneration.from_pretrained(args.model_name_or_path)
     elif args.scenario == 'bert2gpt2':
         seq2seq_model = EncoderDecoderModel.from_encoder_decoder_pretrained("bert-base-cased", "gpt2")
-        tokenizer = AutoTokenizer.from_pretrained("sentence-transformers/all-mpnet-base-v2")
+        tokenizer = AutoTokenizer.from_pretrained("bert-base-cased")
     else:
         raise NotImplementedError
     
