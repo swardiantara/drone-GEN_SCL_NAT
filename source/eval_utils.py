@@ -121,6 +121,7 @@ def compute_f1_scores(pred_pt, gold_pt, silent=True):
         
     # compute F1-score
     quad_scores = f1_score(quad_tp, n_gold, n_pred)
+    acsp_scores = f1_score(tp_ac + tp_sp, n_gold * 2, n_pred * 2)
     ac_scores = f1_score(tp_ac, n_gold, n_pred)
     at_scores = f1_score(tp_at, n_gold, n_pred)
     ot_scores = f1_score(tp_ot, n_gold, n_pred)
@@ -135,6 +136,7 @@ def compute_f1_scores(pred_pt, gold_pt, silent=True):
     return {
         'quad_score': quad_scores,
         'ac_score': ac_scores,
+        'acsp_score': acsp_scores,
         'at_score': at_scores,
         'ot_score': ot_scores,
         'sp_score': sp_scores,
