@@ -498,7 +498,7 @@ if __name__ == '__main__':
     if args.do_train:
         print("\n****** Conducting Training ******")
 
-        if args.scenario == 't5' or args.scenario == 'flan-t5':
+        if args.scenario == 't5' or args.scenario == 'flan-t5' or args.scenario == 'flan-t5-large':
             seq2seq_model.resize_token_embeddings(len(tokenizer))
         else:
             # Adjust special token's IDs
