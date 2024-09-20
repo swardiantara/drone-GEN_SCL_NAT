@@ -477,6 +477,7 @@ if __name__ == '__main__':
 
         if not args.scenario == 't5':
             # Load fine-tuned SBERT model
+            seq2seq_model.resize_token_embeddings(len(tokenizer))
             seq2seq_model.config.decoder_start_token_id = tokenizer.cls_token_id
             seq2seq_model.config.eos_token_id = tokenizer.sep_token_id
             seq2seq_model.config.pad_token_id = tokenizer.pad_token_id
