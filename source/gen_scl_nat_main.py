@@ -129,7 +129,7 @@ def init_args():
     # if not os.path.exists(args.output_folder):
     #     os.mkdir(args.output_folder)
     if not os.path.exists(output_dir):
-        os.mkdir(output_dir)
+        os.mkdirs(output_dir)
     args.output_dir = output_dir
 
     return args
