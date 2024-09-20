@@ -446,7 +446,7 @@ def get_seq2seq_model(args):
     if args.scenario == 't5':
         tokenizer = AutoTokenizer.from_pretrained(args.model_name_or_path)
         seq2seq_model = AutoModelForSeq2SeqLM.from_pretrained(args.model_name_or_path)
-    elif args.scenario == 'flan-t5':
+    elif args.scenario == 'flan-t5' or args.scenario == 'flan-t5-large':
         tokenizer = AutoTokenizer.from_pretrained(args.model_name_or_path)
         seq2seq_model = AutoModelForSeq2SeqLM.from_pretrained(args.model_name_or_path)
     elif args.scenario == 'bert2gpt2':
