@@ -2,7 +2,7 @@ python source/gen_scl_nat_main.py \
    --task gen_scl_nat \
    --do_train \
    --do_direct_eval \
-   --embedding flan-t5 \
+   --scenario flan-t5 \
    --dataset acos_drone_binary \
    --model_name_or_path google/flan-t5-base \
    --output_folder train_outputs \
