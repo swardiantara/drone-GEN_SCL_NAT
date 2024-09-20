@@ -65,7 +65,7 @@ def init_args():
     # other parameters
     parser.add_argument("--accelerator", default='gpu', type=str,
                         help="Device for accelerator: [cpu, gpu]")
-    parser.add_argument('--scenario', choices=['t5', 'flan-t5', 'bert2gpt2', 'bert2bert', 'roberta2roberta', 'roberta2gpt2'], default='t5', 
+    parser.add_argument('--scenario', choices=['t5', 'flan-t5', 'flan-t5-large', 'bert2gpt2', 'bert2bert', 'roberta2roberta', 'roberta2gpt2'], default='t5', 
                         help="Model scenario to fine-tune for paraphrasing task. Default: t5")
     parser.add_argument("--max_seq_length", default=128, type=int)
     parser.add_argument("--n_gpu", default=0)
