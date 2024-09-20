@@ -2,17 +2,17 @@ python source/gen_scl_nat_main.py \
    --task asqp \
    --do_train \
    --do_direct_eval \
-   --embedding t5 \
+   --scenario flan-t5 \
    --dataset acos_drone_binary \
-   --model_name_or_path t5-base \
-   --output_folder drone_binary_asqp \
+   --model_name_or_path google/flan-t5-base \
+   --output_folder train_outputs \
    --n_gpu 1 \
    --accelerator gpu \
    --train_batch_size 16 \
    --eval_batch_size 16 \
    --learning_rate 9e-5 \
    --gradient_accumulation_steps 1 \
-   --num_train_epochs 100 \
+   --num_train_epochs 50 \
    --num_beams 5 \
    --weight_decay 0.0 \
    --seed 123 \
