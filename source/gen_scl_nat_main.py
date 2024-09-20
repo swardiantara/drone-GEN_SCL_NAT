@@ -126,7 +126,7 @@ def init_args():
 
         print(output_fold)
     output_dir = os.path.join(args.output_folder, output_fold)
-    if os.path.exists(output_dir, f'results-{args.dataset}.json'):
+    if os.path.exists(os.path.join(output_dir, f'results-{args.dataset}.json')):
         print('This scenario has been executed.')
         return 0
     if not os.path.exists(output_dir):
