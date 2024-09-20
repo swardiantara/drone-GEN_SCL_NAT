@@ -126,8 +126,9 @@ def init_args():
 
         print(output_fold)
     output_dir = os.path.join(args.output_folder, output_fold)
-    # if not os.path.exists(args.output_folder):
-    #     os.mkdir(args.output_folder)
+    if os.path.exists(output_dir, f'results-{args.dataset}.json'):
+        print('This scenario has been executed.')
+        return 0
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
     args.output_dir = output_dir
