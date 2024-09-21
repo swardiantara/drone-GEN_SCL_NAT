@@ -1,0 +1,14 @@
+{
+  "output_dir": "embeddings\\acos_drone_binary\\ac-sp_single_1",
+  "model_name_or_path": "bert-base-cased",
+  "dataset": "acos_drone_binary",
+  "label_name": "ac-sp",
+  "strategy": "single",
+  "stage": 1,
+  "num_epochs": 3,
+  "batch_size": 64,
+  "model_name": "drone_binary_ac-sp_single_1",
+  "margin": 0.5,
+  "exclude_duplicate_negative": true,
+  "scenario": "ac-sp_single_1"
+}
