@@ -156,7 +156,7 @@ class LinearModel(nn.Module):
     """
     Linear models used for the aspect/opinion/sentiment-specific representations
     """
-    def __init__(self, d_model):
+    def __init__(self, d_model=768):
         super().__init__()
         self.layer_1 = nn.Linear(d_model, 1024)
         # if model_path == 't5-small':
@@ -518,10 +518,10 @@ if __name__ == '__main__':
 
 
         # initialize characteristic-specific representation models
-        cont_model = LinearModel(seq2seq_model.config.d_model)
-        op_model = LinearModel(seq2seq_model.config.d_model)
-        as_model = LinearModel(seq2seq_model.config.d_model)
-        cat_model = LinearModel(seq2seq_model.config.d_model)
+        cont_model = LinearModel()
+        op_model = LinearModel()
+        as_model = LinearModel()
+        cat_model = LinearModel()
         model = T5FineTuner(args, seq2seq_model, tokenizer, cont_model, op_model, as_model, cat_model)
 
         if args.early_stopping:
@@ -587,10 +587,10 @@ if __name__ == '__main__':
                 raise NotImplementedError
 
         # representations are only used during loss calculation
-        cont_model = LinearModel(seq2seq_model.config.d_model)
-        op_model = LinearModel(seq2seq_model.config.d_model)
-        as_model = LinearModel(seq2seq_model.config.d_model)
-        cat_model = LinearModel(seq2seq_model.config.d_model)
+        cont_model = LinearModel()
+        op_model = LinearModel()
+        as_model = LinearModel()
+        cat_model = LinearModel()
         model = T5FineTuner(args, seq2seq_model, tokenizer, cont_model, op_model, as_model, cat_model)
 
         sents, _ = read_line_examples_from_file(f'data/{args.dataset}/test.txt')
