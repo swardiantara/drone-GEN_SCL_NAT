@@ -2,9 +2,9 @@ python source/gen_scl_nat_main.py \
    --task asqp \
    --do_train \
    --do_direct_eval \
-   --scenario flan-t5 \
+   --scenario drone_binary_ac-sp_single_1 \
    --dataset acos_drone_binary \
-   --model_name_or_path google/flan-t5-base \
+   --model_name_or_path bert-base-cased \
    --output_folder train_outputs \
    --n_gpu 1 \
    --accelerator gpu \

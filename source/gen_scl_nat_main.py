@@ -442,8 +442,14 @@ def evaluate(data_loader, model, device, tokenizer, sents, task):
 
 
 def get_seq2seq_model(args):
+    scenarios = args.scenario.split('_')
     # initialize the tokenizer and seq2seq model
-    if args.scenario == 't5':
+    if scenarios[0] in ['drone', 'laptop', 'restaurant']:
+        emb_scenario = '_'.join([scenarios[2], scenarios[3], scenarios[4]])
+        model_path = os.path.join('embeddings', f"acos_{scenarios[0]}_{'data' if scenarios[1] != 'drone' else scenarios[1]}", emb_scenario)
+        tokenizer = AutoTokenizer.from_pretrained(model_path)
+        seq2seq_model = EncoderDecoderModel.from_encoder_decoder_pretrained(model_path, model_path)
+    elif args.scenario == 't5':
         tokenizer = AutoTokenizer.from_pretrained(args.model_name_or_path)
         seq2seq_model = AutoModelForSeq2SeqLM.from_pretrained(args.model_name_or_path)
     elif args.scenario == 'flan-t5' or args.scenario == 'flan-t5-large':
