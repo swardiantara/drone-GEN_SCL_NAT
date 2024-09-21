@@ -49,9 +49,9 @@ def init_args():
     parser = argparse.ArgumentParser()
     # basic settings
     parser.add_argument("--task", default='asqp', type=str, required=True,
-                        help="The name of the task, selected from: [asqp, tasd, aste]")
+                        help="The name of the task, selected from: [`asqp`, `tasd`, `aste`]")
     parser.add_argument("--dataset", default='rest15', type=str, required=True,
-                        help="The name of the dataset, selected from: [rest15, rest16]")
+                        help="The name of the dataset, selected from: [`rest15`, `rest16`]")
     parser.add_argument("--model_name_or_path", default='t5-base', type=str,
                         help="Path to pre-trained model or shortcut name")
     parser.add_argument("--do_train", action='store_true',
@@ -64,9 +64,10 @@ def init_args():
                         help="Whether to run inference with trained checkpoints")
     # other parameters
     parser.add_argument("--accelerator", default='gpu', type=str,
-                        help="Device for accelerator: [cpu, gpu]")
-    parser.add_argument('--scenario', choices=['t5', 'flan-t5', 'flan-t5-large', 'bert2gpt2', 'bert2bert', 'roberta2roberta', 'roberta2gpt2'], default='t5', 
-                        help="Model scenario to fine-tune for paraphrasing task. Default: t5")
+                        help="Device for accelerator: [`cpu`, `gpu`]")
+    parser.add_argument('--scenario',  default='t5', required=True,
+                        help="Model scenario to fine-tune for paraphrasing task. Default: `t5`")
+    # choices=['t5', 'flan-t5', 'flan-t5-large', 'bert2gpt2', 'bert2bert', 'roberta2roberta', 'roberta2gpt2'],
     parser.add_argument("--max_seq_length", default=128, type=int)
     parser.add_argument("--n_gpu", default=0)
     parser.add_argument("--train_batch_size", default=16, type=int,
