@@ -4,6 +4,7 @@ python source/train_embedding.py \
     --dataset acos_drone_binary \
     --label_name ac-sp \
     --strategy multi \
+    --source_scenario ac_single_1 \
     --stage 2 \
     --margin 0.5 \
     --num_epochs 2 \

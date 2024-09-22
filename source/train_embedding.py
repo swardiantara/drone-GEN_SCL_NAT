@@ -27,7 +27,7 @@ def init_args():
     parser.add_argument("--num_epochs", type=int, default=3)
     parser.add_argument("--batch_size", type=int, default=64)
     parser.add_argument("--model_name", type=str)
-    parser.add_argument("--source_scenario", type=str)
+    parser.add_argument("--source_scenario", type=str, default='ac_single_1')
     parser.add_argument("--margin", type=float, default=0.5, help="Hyperparam to push the negative pair at least $m$ margin apart. Default: 0.5")
     parser.add_argument("--exclude_duplicate_negative", action='store_true', help="Whether to exclude negative pair of the same sample.")
     
