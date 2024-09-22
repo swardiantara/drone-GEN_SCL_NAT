@@ -28,7 +28,7 @@ def init_args():
     parser.add_argument("--batch_size", type=int, default=64)
     parser.add_argument("--model_name", type=str)
     parser.add_argument("--margin", type=float, default=0.5, help="Hyperparam to push the negative pair at least $m$ margin apart. Default: 0.5")
-    parser.add_argument('--exclude_duplicate_negative', action='store_true', help="Whether to exclude negative pair of the same sample.")
+    parser.add_argument("--exclude_duplicate_negative", action='store_true', help="Whether to exclude negative pair of the same sample.")
     
     args = parser.parse_args()
 
@@ -43,46 +43,72 @@ def init_args():
         os.makedirs(output_dir)
 
     args.output_dir = output_dir
+
+    with open(os.path.join(args.output_dir, 'args.json'), 'w') as f:
+            json.dump(args.__dict__, f, indent=2)
     return args
 
 
-def construct_dataset(args, silence=False) -> pd.DataFrame:
+def construct_dataset(args, silence=False):
     """
     Read data from file, each line is: sent####labels
-    Return a pd.DataFrame that has columns: [`text`, `ac`, `sp`]
-    depends on the `label_name` params
+    Return a pd.DataFrame that has columns: [`text`, `ac`, `sp`, `ac-sp`]
     Args:
             data_path (str): The location of the dataset in a .txt file.
             silence (bool): Whether to print the number of samples.
     Returns:
-        A pandas DataFrame.
+        (df, quad_df):  Pandas DataFrame(s).
     """
     data_path = os.path.join('data', args.dataset, 'train.txt')
-    sents, acs, sps, acsps = [], [], [], []
+    sentsq, acsq, spsq, acspsq = [], [], [], []
+    sentss, acss, spss, acspss = [], [], [], []
     with open(data_path, 'r', encoding='UTF-8') as fp:
         for line in fp:
             line = line.strip()
             if line != '':
                 words, tuples = line.split('####')
+                acs, sps= [], []
+
+                # one sample per quad
                 for tuple in eval(tuples):
                     _, ac, sp, _ = tuple
+                    acsp = f'{ac}-{sp}'
                     if args.dataset.split('_')[-1] == 'data':
                         ac = ac.split('#')[-1]
-                    sents.append(words)
+                    sentsq.append(words)
+                    acsq.append(ac)
+                    spsq.append(sp)
+                    acspsq.append(acsp)
                     acs.append(ac)
                     sps.append(sp)
-                    acsps.append(f'{ac}-{sp}')
+
+                # original sample per row
+                acs, sps = '-'.join(set(acs)), '-'.join(set(sps))
+                acsps = f'{acs}-{sps}'
+                sentss.append(words)
+                acss.append(acs)
+                spss.append(sps)
+                acspss.append(acsps)
+
     if not silence:
-        print(f"Total examples = {len(sents)}")
+        print(f"Total examples = {len(sentss)}")
+        print(f"Total quad examples = {len(sentsq)}")
     
-    dataframe = pd.DataFrame({
-        'text': sents,
-        'ac': acs,
-        'sp': sps,
-        'ac-sp': acsps
+    dataframe_quad = pd.DataFrame({
+        'text': sentsq,
+        'ac': acsq,
+        'sp': spsq,
+        'ac-sp': acspsq
     })
 
-    return dataframe
+    dataframe = pd.DataFrame({
+        'text': sentss,
+        'ac': acss,
+        'sp': spss,
+        'ac-sp': acspss
+    })
+
+    return dataframe, dataframe_quad 
 
 
 # Create pairs for contrastive learning
@@ -122,10 +148,11 @@ def main():
     args = init_args()
     
     # Step 1: Load a pre-trained model
-    if args.strategy == 'multi' and args.stage > 1:
+    if args.strategy == 'multi' or args.stage > 1:
         # Load the model from the previous stage
-        scenario = "_".join([args.label_name, args.strategy, str(args.stage - 1)])
-        model_path = os.path.join(args.output_dir, args.dataset, scenario)
+
+        source_scenario = "_".join([args.label_name, 'single' if args.stage == 2 else 'multi', str(args.stage - 1)])
+        model_path = os.path.join('embeddings', args.dataset, source_scenario)
         model = SentenceTransformer(model_path)
     else:
         word_embedding_model = models.Transformer(args.model_name_or_path, do_lower_case=False)
@@ -133,7 +160,8 @@ def main():
         model = SentenceTransformer(modules=[word_embedding_model, pooling_model])
 
     # Load your dataset
-    quad_dataframe = construct_dataset(args)
+    dataframe, quad_dataframe = construct_dataset(args)
+    dataframe.to_excel(os.path.join(args.output_dir, f'{args.dataset}.xlsx'), index=False)
     quad_dataframe.to_excel(os.path.join(args.output_dir, f'quad_{args.dataset}.xlsx'), index=False)
 
     contrastive_samples = create_pairs(args, quad_dataframe)
@@ -161,8 +189,7 @@ def main():
     bert_model = next(model.modules)
     bert_model.auto_model.save_pretrained(args.output_dir, args.model_name)
 
-    with open(os.path.join(args.output_dir, 'args.json'), 'w') as f:
-            json.dump(args.__dict__, f, indent=2)
+    return 0
 
 
 if __name__ == '__main__':
