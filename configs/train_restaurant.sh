@@ -1,0 +1,44 @@
+python source/gen_scl_nat_main.py \
+   --task asqp \
+   --do_train \
+   --do_direct_eval \
+   --scenario flan-t5 \
+   --dataset acos_restaurant_data \
+   --model_name_or_path google/flan-t5 \
+   --output_folder train_outputs \
+   --n_gpu 1 \
+   --accelerator gpu \
+   --train_batch_size 16 \
+   --eval_batch_size 16 \
+   --learning_rate 9e-5 \
+   --gradient_accumulation_steps 1 \
+   --num_train_epochs 45 \
+   --num_beams 5 \
+   --weight_decay 0.0 \
+   --seed 123 \
+   --cont_loss 0.05 \
+   --cont_temp 0.25 \
+   --model_prefix restaurant_asqp 
+
+
+python source/gen_scl_nat_main.py \
+   --task gen_scl_nat \
+   --do_train \
+   --do_direct_eval \
+   --scenario flan-t5 \
+   --dataset acos_restaurant_data \
+   --model_name_or_path google/flan-t5 \
+   --output_folder train_outputs \
+   --n_gpu 1 \
+   --accelerator gpu \
+   --train_batch_size 16 \
+   --eval_batch_size 16 \
+   --learning_rate 9e-5 \
+   --gradient_accumulation_steps 1 \
+   --num_train_epochs 45 \
+   --num_beams 5 \
+   --weight_decay 0.0 \
+   --seed 123 \
+   --cont_loss 0.05 \
+   --cont_temp 0.25 \
+   --model_prefix restaurant_scl
