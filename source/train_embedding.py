@@ -27,6 +27,7 @@ def init_args():
     parser.add_argument("--num_epochs", type=int, default=3)
     parser.add_argument("--batch_size", type=int, default=64)
     parser.add_argument("--model_name", type=str)
+    parser.add_argument("--source_scenario", type=str)
     parser.add_argument("--margin", type=float, default=0.5, help="Hyperparam to push the negative pair at least $m$ margin apart. Default: 0.5")
     parser.add_argument("--exclude_duplicate_negative", action='store_true', help="Whether to exclude negative pair of the same sample.")
     
@@ -148,11 +149,9 @@ def main():
     args = init_args()
     
     # Step 1: Load a pre-trained model
-    if args.strategy == 'multi' or args.stage > 1:
+    if args.strategy == 'multi':
         # Load the model from the previous stage
-
-        source_scenario = "_".join([args.label_name, 'single' if args.stage == 2 else 'multi', str(args.stage - 1)])
-        model_path = os.path.join('embeddings', args.dataset, source_scenario)
+        model_path = os.path.join('embeddings', args.dataset, args.source_scenario)
         model = SentenceTransformer(model_path)
     else:
         word_embedding_model = models.Transformer(args.model_name_or_path, do_lower_case=False)
