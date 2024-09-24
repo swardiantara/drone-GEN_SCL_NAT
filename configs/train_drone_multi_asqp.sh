@@ -2,9 +2,9 @@ python source/gen_scl_nat_main.py \
    --task asqp \
    --do_train \
    --do_direct_eval \
-   --scenario flan-t5 \
+   --scenario drone_multi_ac_single_1 \
    --dataset acos_drone_multi \
-   --model_name_or_path google/flan-t5-base \
+   --model_name_or_path drone_multi_ac_single_1 \
    --output_folder train_outputs \
    --n_gpu 1 \
    --accelerator gpu \
@@ -12,7 +12,7 @@ python source/gen_scl_nat_main.py \
    --eval_batch_size 16 \
    --learning_rate 9e-5 \
    --gradient_accumulation_steps 1 \
-   --num_train_epochs 100 \
+   --num_train_epochs 10 \
    --num_beams 5 \
    --weight_decay 0.0 \
    --seed 123 \
