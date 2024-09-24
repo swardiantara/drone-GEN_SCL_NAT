@@ -6,6 +6,6 @@ python source/train_embedding.py \
     --strategy single \
     --stage 1 \
     --margin 0.5 \
-    --num_epochs 2 \
+    --num_epochs 1 \
     --batch_size 64 \
     --exclude_duplicate_negative

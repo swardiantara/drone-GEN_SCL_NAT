@@ -157,7 +157,6 @@ def main():
         word_embedding_model = models.Transformer(args.model_name_or_path, do_lower_case=False)
         pooling_model = models.Pooling(word_embedding_dimension=word_embedding_model.get_word_embedding_dimension(), pooling_mode='cls')
         model = SentenceTransformer(modules=[word_embedding_model, pooling_model])
-        model.modules
 
     # Load your dataset
     dataframe, quad_dataframe = construct_dataset(args)
@@ -187,7 +186,8 @@ def main():
     )
 
     bert_model = next(model.modules())
-    bert_model.auto_model.save_pretrained(save_directory=args.output_dir, safe_serialization=False, variant=args.scenario)
+    bert_model.save(path=args.output_dir, model_name=args.scenario, safe_serialization=False)
+    # bert_model.save_pretrained(save_directory=args.output_dir, safe_serialization=False, variant=args.scenario)
 
     return 0
 
