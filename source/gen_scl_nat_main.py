@@ -523,7 +523,6 @@ if __name__ == '__main__':
         as_model = LinearModel()
         cat_model = LinearModel()
         model = T5FineTuner(args, seq2seq_model, tokenizer, cont_model, op_model, as_model, cat_model)
-        model.model.train()
 
         if args.early_stopping:
             checkpoint_callback = pl.callbacks.model_checkpoint.ModelCheckpoint(
@@ -543,6 +542,7 @@ if __name__ == '__main__':
             max_epochs=args.num_train_epochs,
             auto_lr_find=False,
             deterministic=True,
+            logger=None,
             #auto_scale_batch_size=True,
             #callbacks=[checkpoint_callback, EarlyStopping(monitor="val_loss", mode='min'), LoggingCallback()],
             callbacks=callback_list
