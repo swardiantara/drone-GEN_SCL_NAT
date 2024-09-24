@@ -1,8 +1,8 @@
 python source/train_embedding.py \
     --output_dir embeddings \
     --model_name_or_path bert-base-cased \
-    --dataset acos_drone_binary \
-    --label_name ac-sp \
+    --dataset acos_drone_multi \
+    --label_name ac \
     --strategy single \
     --stage 1 \
     --margin 0.5 \
