@@ -186,7 +186,7 @@ def main():
     )
 
     bert_model = next(model.modules)
-    bert_model.auto_model.save_pretrained(save_directory=args.output_dir, safe_serialization=False)
+    bert_model.auto_model.save_pretrained(save_directory=args.output_dir, safe_serialization=False, variant=args.scenario)
 
     return 0
 
