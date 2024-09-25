@@ -1,0 +1,4179 @@
+{
+  "examples": [
+    {
+      "labels_correct": [
+        [
+          "feature",
+          "Downlink",
+          "positive",
+          "Restored"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "Downlink",
+          "positive",
+          "Restored"
+        ]
+      ],
+      "output_correct": "feature | THE Downlink IS Restored | positive",
+      "output_pred": "feature | THE Downlink IS Restored | positive",
+      "utterances": [
+        "Downlink",
+        "Restored",
+        "(after",
+        "0m",
+        "1.5s)."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "aircraft",
+          "negative",
+          "at an Authorization Zone boundary"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "aircraft",
+          "negative",
+          "at the boundary of an Authorization Zone"
+        ]
+      ],
+      "output_correct": "component | THE aircraft IS at an Authorization Zone boundary | negative",
+      "output_pred": "component | THE aircraft IS at the boundary of an Authorization Zone | negative",
+      "utterances": [
+        "Your",
+        "aircraft",
+        "is",
+        "at",
+        "the",
+        "boundary",
+        "of",
+        "an",
+        "Authorization",
+        "Zone.",
+        "Please",
+        "fly",
+        "away",
+        "with",
+        "caution."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "RTH Altitude",
+          "positive",
+          "98FT"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "RTH Altitude",
+          "positive",
+          "98FT"
+        ]
+      ],
+      "output_correct": "parameter | THE RTH Altitude IS 98FT | positive",
+      "output_pred": "parameter | THE RTH Altitude IS 98FT | positive",
+      "utterances": [
+        "RTH",
+        "Altitude",
+        ":",
+        "98FT."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Auxiliary Bottom Light",
+          "positive",
+          "set to automatic mode"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Auxiliary Bottom Light",
+          "positive",
+          "set to automatic mode"
+        ]
+      ],
+      "output_correct": "parameter | THE Auxiliary Bottom Light IS set to automatic mode | positive",
+      "output_pred": "component | THE Auxiliary Bottom Light IS set to automatic mode | positive",
+      "utterances": [
+        "Auxiliary",
+        "Bottom",
+        "Light",
+        "set",
+        "to",
+        "automatic",
+        "mode."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "feature",
+          "signal",
+          "negative",
+          "weak"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "signal",
+          "negative",
+          "Weak"
+        ]
+      ],
+      "output_correct": "feature | THE signal IS weak | negative",
+      "output_pred": "feature | THE signal IS Weak | negative",
+      "utterances": [
+        "Weak",
+        "signal.",
+        "Adjust",
+        "antenna",
+        "and",
+        "avoid",
+        "signal",
+        "block."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "feature",
+          "File system",
+          "negative",
+          "error"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "File system",
+          "negative",
+          "error"
+        ]
+      ],
+      "output_correct": "feature | THE File system IS error | negative",
+      "output_pred": "feature | THE File system IS error | negative",
+      "utterances": [
+        "File",
+        "system",
+        "error.",
+        "Change",
+        "SD",
+        "card."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "action",
+          "Braking",
+          "negative",
+          "now"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "action",
+          "Braking",
+          "negative",
+          "now"
+        ]
+      ],
+      "output_correct": "action | THE Braking IS now | negative",
+      "output_pred": "action | THE Braking IS now | negative",
+      "utterances": [
+        "Braking",
+        "now!",
+        "No",
+        "use",
+        "to",
+        "move",
+        "the",
+        "stick",
+        "right.",
+        "Avoid",
+        "the",
+        "obstacle."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Barometer",
+          "negative",
+          "Dead in Air"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Barometer",
+          "negative",
+          "Dead in Air"
+        ]
+      ],
+      "output_correct": "component | THE Barometer IS Dead in Air | negative",
+      "output_pred": "component | THE Barometer IS Dead in Air | negative",
+      "utterances": [
+        "Barometer",
+        "Dead",
+        "in",
+        "Air."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Motor",
+          "negative",
+          "error"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Motor",
+          "negative",
+          "error"
+        ]
+      ],
+      "output_correct": "component | THE Motor IS error | negative",
+      "output_pred": "component | THE Motor IS error | negative",
+      "utterances": [
+        "Motor",
+        "error.",
+        "Check",
+        "propellers",
+        "and",
+        "fly",
+        "with",
+        "caution."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Aircraft",
+          "positive",
+          "not enter S-mode"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Aircraft",
+          "negative",
+          "not enter S-mode"
+        ]
+      ],
+      "output_correct": "component | THE Aircraft IS not enter S-mode | positive",
+      "output_pred": "component | THE Aircraft IS not enter S-mode | negative",
+      "utterances": [
+        "Aircraft",
+        "will",
+        "not",
+        "enter",
+        "S-mode",
+        "if",
+        "powered",
+        "on",
+        "with",
+        "the",
+        "remote",
+        "controller",
+        "set",
+        "to",
+        "S-mode.",
+        "Please",
+        "switch",
+        "to",
+        "Normal",
+        "mode,",
+        "then",
+        "back",
+        "to",
+        "S-mode",
+        "to",
+        "enable",
+        "it."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "action",
+          "Take off",
+          "negative",
+          "Cannot"
+        ],
+        [
+          "state",
+          "Travel Mode",
+          "positive",
+          "Exit"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "action",
+          "Takeoff",
+          "negative",
+          "Cannot"
+        ]
+      ],
+      "output_correct": "action | THE Take off IS Cannot | negative [SSEP] state | THE Travel Mode IS Exit | positive",
+      "output_pred": "action | THE Takeoff IS Cannot | negative",
+      "utterances": [
+        "Cannot",
+        "Takeoff",
+        "in",
+        "Travel",
+        "Mode.",
+        "Exit",
+        "Travel",
+        "Mode."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Compass",
+          "negative",
+          "Error"
+        ],
+        [
+          "component",
+          "Compass",
+          "negative",
+          "disconnected"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Compass",
+          "negative",
+          "Error"
+        ],
+        [
+          "component",
+          "Compass",
+          "negative",
+          "disconnected"
+        ]
+      ],
+      "output_correct": "component | THE Compass IS Error | negative [SSEP] component | THE Compass IS disconnected | negative",
+      "output_pred": "component | THE Compass IS Error | negative [SSEP] component | THE Compass IS disconnected | negative",
+      "utterances": [
+        "Compass",
+        "Error.",
+        "Compass",
+        "disconnected."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Downward altitude sensor",
+          "negative",
+          "error"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "Downward altitude sensor data",
+          "negative",
+          "error"
+        ]
+      ],
+      "output_correct": "component | THE Downward altitude sensor IS error | negative",
+      "output_pred": "feature | THE Downward altitude sensor data IS error | negative",
+      "utterances": [
+        "Downward",
+        "altitude",
+        "sensor",
+        "data",
+        "error.",
+        "Please",
+        "contact",
+        "DJI",
+        "Support",
+        "for",
+        "help."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Compass",
+          "negative",
+          "Error"
+        ],
+        [
+          "component",
+          "Compass",
+          "negative",
+          "error"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "compass",
+          "negative",
+          "error"
+        ]
+      ],
+      "output_correct": "component | THE Compass IS Error | negative [SSEP] component | THE Compass IS error | negative",
+      "output_pred": "component | THE compass IS error | negative",
+      "utterances": [
+        "Compass",
+        "Error.",
+        "Compass",
+        "error",
+        "Solution:",
+        "Move",
+        "away",
+        "from",
+        "ground",
+        "magnetic",
+        "interference."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Another aircraft",
+          "negative",
+          "nearby"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Another aircraft",
+          "negative",
+          "nearby"
+        ]
+      ],
+      "output_correct": "component | THE Another aircraft IS nearby | negative",
+      "output_pred": "component | THE Another aircraft IS nearby | negative",
+      "utterances": [
+        "Another",
+        "aircraft",
+        "is",
+        "nearby.",
+        "Fly",
+        "with",
+        "caution."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "battery",
+          "negative",
+          "only enough for RTH"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "battery",
+          "negative",
+          "only enough for RTH"
+        ]
+      ],
+      "output_correct": "parameter | THE battery IS only enough for RTH | negative",
+      "output_pred": "parameter | THE battery IS only enough for RTH | negative",
+      "utterances": [
+        "The",
+        "remaining",
+        "battery",
+        "is",
+        "only",
+        "enough",
+        "for",
+        "RTH.",
+        "Return",
+        "home",
+        "now."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "feature",
+          "GPS signal",
+          "negative",
+          "low"
+        ],
+        [
+          "component",
+          "Aircraft",
+          "negative",
+          "unable to auto hover"
+        ],
+        [
+          "action",
+          "takeoff",
+          "negative",
+          "restricted"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Aircraft",
+          "negative",
+          "unable to auto hover"
+        ],
+        [
+          "feature",
+          "takeoff",
+          "negative",
+          "restricted"
+        ],
+        [
+          "feature",
+          "GPS signal",
+          "negative",
+          "low"
+        ]
+      ],
+      "output_correct": "feature | THE GPS signal IS low | negative [SSEP] component | THE Aircraft IS unable to auto hover | negative [SSEP] action | THE takeoff IS restricted | negative",
+      "output_pred": "component | THE Aircraft IS unable to auto hover | negative [SSEP] feature | THE takeoff IS restricted | negative [SSEP] feature | THE GPS signal IS low | negative",
+      "utterances": [
+        "GPS",
+        "signal",
+        "low.",
+        "Aircraft",
+        "unable",
+        "to",
+        "auto",
+        "hover",
+        "and",
+        "takeoff",
+        "restricted.",
+        "Move",
+        "to",
+        "environment",
+        "with",
+        "adequate",
+        "light.",
+        "Unlocking",
+        "takeoff",
+        "restrictions",
+        "not",
+        "recommended."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "feature",
+          "Downward Obstacle Sensing",
+          "negative",
+          "not functioning"
+        ],
+        [
+          "parameter",
+          "ambient light",
+          "negative",
+          "too weak"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "Downward Obstacle Sensing",
+          "negative",
+          "not functioning"
+        ],
+        [
+          "parameter",
+          "Ambient Light",
+          "negative",
+          "too weak"
+        ]
+      ],
+      "output_correct": "feature | THE Downward Obstacle Sensing IS not functioning | negative [SSEP] parameter | THE ambient light IS too weak | negative",
+      "output_pred": "feature | THE Downward Obstacle Sensing IS not functioning | negative [SSEP] parameter | THE Ambient Light IS too weak | negative",
+      "utterances": [
+        "Downward",
+        "Obstacle",
+        "Sensing",
+        "is",
+        "not",
+        "functioning.",
+        "Ambient",
+        "Light",
+        "is",
+        "too",
+        "weak."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "feature",
+          "Visual positioning",
+          "negative",
+          "inaccurate"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "Visual positioning",
+          "negative",
+          "inaccurate"
+        ]
+      ],
+      "output_correct": "feature | THE Visual positioning IS inaccurate | negative",
+      "output_pred": "feature | THE Visual positioning IS inaccurate | negative",
+      "utterances": [
+        "Visual",
+        "positioning",
+        "inaccurate.",
+        "Fly",
+        "with",
+        "caution."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "feature",
+          "Distance limit",
+          "positive",
+          "enabled"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "Distance limit",
+          "positive",
+          "enabled"
+        ]
+      ],
+      "output_correct": "feature | THE Distance limit IS enabled | positive",
+      "output_pred": "parameter | THE Distance limit IS enabled | positive",
+      "utterances": [
+        "Distance",
+        "limit",
+        "enabled.",
+        "Fly",
+        "safely."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Data Recorder File Index",
+          "positive",
+          "65"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "Data Recorder File Index",
+          "positive",
+          "65"
+        ]
+      ],
+      "output_correct": "parameter | THE Data Recorder File Index IS 65 | positive",
+      "output_pred": "parameter | THE Data Recorder File Index IS 65 | positive",
+      "utterances": [
+        "Data",
+        "Recorder",
+        "File",
+        "Index",
+        "is",
+        "65."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "action",
+          "Identify Subject",
+          "negative",
+          "Cannot"
+        ],
+        [
+          "action",
+          "Track Subject",
+          "negative",
+          "Cannot"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "Track Subject",
+          "negative",
+          "Cannot"
+        ],
+        [
+          "action",
+          "Identify Subject",
+          "negative",
+          "Cannot"
+        ]
+      ],
+      "output_correct": "action | THE Identify Subject IS Cannot | negative [SSEP] action | THE Track Subject IS Cannot | negative",
+      "output_pred": "parameter | THE Track Subject IS Cannot | negative [SSEP] action | THE Identify Subject IS Cannot | negative",
+      "utterances": [
+        "Cannot",
+        "Track",
+        "Subject.",
+        "Cannot",
+        "Identify",
+        "Subject."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "feature",
+          "Downlink",
+          "positive",
+          "Restored"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "Downlink",
+          "positive",
+          "Restored"
+        ]
+      ],
+      "output_correct": "feature | THE Downlink IS Restored | positive",
+      "output_pred": "feature | THE Downlink IS Restored | positive",
+      "utterances": [
+        "Downlink",
+        "Restored",
+        "(after",
+        "0m",
+        "1.7s)."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "feature",
+          "Obstacle sensing",
+          "negative",
+          "not available at night"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "Obstacle sensing",
+          "negative",
+          "not available at night"
+        ]
+      ],
+      "output_correct": "feature | THE Obstacle sensing IS not available at night | negative",
+      "output_pred": "feature | THE Obstacle sensing IS not available at night | negative",
+      "utterances": [
+        "Obstacle",
+        "sensing",
+        "not",
+        "available",
+        "at",
+        "night.",
+        "Adjust",
+        "RTH",
+        "altitude",
+        "to",
+        "above",
+        "tallest",
+        "surrounding",
+        "building",
+        "before",
+        "flying."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "state",
+          "GPS signal",
+          "negative",
+          "too weak"
+        ],
+        [
+          "parameter",
+          "Home Point",
+          "negative",
+          "not updated"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "Aircraft GPS signal",
+          "negative",
+          "too weak"
+        ],
+        [
+          "parameter",
+          "Home Point",
+          "negative",
+          "not updated"
+        ]
+      ],
+      "output_correct": "state | THE GPS signal IS too weak | negative [SSEP] parameter | THE Home Point IS not updated | negative",
+      "output_pred": "feature | THE Aircraft GPS signal IS too weak | negative [SSEP] parameter | THE Home Point IS not updated | negative",
+      "utterances": [
+        "Aircraft",
+        "GPS",
+        "signal",
+        "too",
+        "weak.",
+        "Home",
+        "Point",
+        "not",
+        "updated."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "target area",
+          "negative",
+          "in an Altitude Zone"
+        ],
+        [
+          "parameter",
+          "Flight altitude",
+          "negative",
+          "restricted to nnn"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "target area",
+          "positive",
+          "in an Altitude Zone"
+        ],
+        [
+          "parameter",
+          "Flight altitude",
+          "positive",
+          "restricted to nnn"
+        ]
+      ],
+      "output_correct": "parameter | THE target area IS in an Altitude Zone | negative [SSEP] parameter | THE Flight altitude IS restricted to nnn | negative",
+      "output_pred": "parameter | THE target area IS in an Altitude Zone | positive [SSEP] parameter | THE Flight altitude IS restricted to nnn | positive",
+      "utterances": [
+        "GEO",
+        "Zone",
+        "Info:",
+        "The",
+        "target",
+        "area",
+        "is",
+        "in",
+        "an",
+        "Altitude",
+        "Zone.",
+        "Flight",
+        "altitude",
+        "restricted",
+        "to",
+        "nnn."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Manned aircraft",
+          "negative",
+          "approaching"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Manned aircraft",
+          "negative",
+          "approaching"
+        ]
+      ],
+      "output_correct": "component | THE Manned aircraft IS approaching | negative",
+      "output_pred": "component | THE Manned aircraft IS approaching | negative",
+      "utterances": [
+        "Manned",
+        "aircraft",
+        "approaching.",
+        "Fly",
+        "at",
+        "a",
+        "safe",
+        "altitude."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "issue",
+          "Remote Controller Interference",
+          "negative",
+          "Strong"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "issue",
+          "Remote Controller Interference",
+          "negative",
+          "Strong"
+        ]
+      ],
+      "output_correct": "issue | THE Remote Controller Interference IS Strong | negative",
+      "output_pred": "issue | THE Remote Controller Interference IS Strong | negative",
+      "utterances": [
+        "Strong",
+        "Remote",
+        "Controller",
+        "Interference."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "compass",
+          "negative",
+          "abnormal"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "compass",
+          "negative",
+          "abnormal"
+        ]
+      ],
+      "output_correct": "component | THE compass IS abnormal | negative",
+      "output_pred": "component | THE compass IS abnormal | negative",
+      "utterances": [
+        "Fly",
+        "with",
+        "caution.",
+        "Compass",
+        "abnormal",
+        "Solution:",
+        "1.",
+        "Ensure",
+        "there",
+        "are",
+        "no",
+        "magnets",
+        "or",
+        "metal",
+        "objects",
+        "near",
+        "the",
+        "aircraft.",
+        "The",
+        "ground",
+        "or",
+        "walls",
+        "may",
+        "contain",
+        "metal.",
+        "Move",
+        "away",
+        "from",
+        "sources",
+        "of",
+        "interference",
+        "before."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "gimbal vibration",
+          "negative",
+          "excessive"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "gimbal vibration",
+          "negative",
+          "Excessive"
+        ]
+      ],
+      "output_correct": "parameter | THE gimbal vibration IS excessive | negative",
+      "output_pred": "component | THE gimbal vibration IS Excessive | negative",
+      "utterances": [
+        "Excessive",
+        "gimbal",
+        "vibration.",
+        "Check",
+        "whether",
+        "gimbal",
+        "can",
+        "rotate",
+        "freely."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "feature",
+          "compass function",
+          "negative",
+          "Abnormal"
+        ],
+        [
+          "feature",
+          "GPS signal",
+          "negative",
+          "Abnormal"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "compass function",
+          "negative",
+          "abnormal"
+        ],
+        [
+          "feature",
+          "GPS signal",
+          "negative",
+          "detected"
+        ]
+      ],
+      "output_correct": "feature | THE compass function IS Abnormal | negative [SSEP] feature | THE GPS signal IS Abnormal | negative",
+      "output_pred": "parameter | THE compass function IS abnormal | negative [SSEP] feature | THE GPS signal IS detected | negative",
+      "utterances": [
+        "Abnormal",
+        "compass",
+        "function",
+        "or",
+        "GPS",
+        "signal",
+        "detected.",
+        "Aircraft",
+        "switched",
+        "to",
+        "ATTI",
+        "mode."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Ambient light",
+          "negative",
+          "too low"
+        ],
+        [
+          "feature",
+          "Vision system",
+          "negative",
+          "unavailable"
+        ],
+        [
+          "feature",
+          "obstacle sensing",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "Ambient light",
+          "negative",
+          "too low"
+        ],
+        [
+          "feature",
+          "Vision system",
+          "negative",
+          "unavailable"
+        ],
+        [
+          "feature",
+          "obstacle sensing",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "output_correct": "parameter | THE Ambient light IS too low | negative [SSEP] feature | THE Vision system IS unavailable | negative [SSEP] feature | THE obstacle sensing IS unavailable | negative",
+      "output_pred": "parameter | THE Ambient light IS too low | negative [SSEP] feature | THE Vision system IS unavailable | negative [SSEP] feature | THE obstacle sensing IS unavailable | negative",
+      "utterances": [
+        "Ambient",
+        "light",
+        "too",
+        "low.",
+        "Vision",
+        "system",
+        "and",
+        "obstacle",
+        "sensing",
+        "unavailable.",
+        "Fly",
+        "with",
+        "caution."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Payload mode",
+          "positive",
+          "enabled"
+        ],
+        [
+          "parameter",
+          "max altitude",
+          "positive",
+          "set to nnn"
+        ],
+        [
+          "parameter",
+          "max distance",
+          "positive",
+          "set to nnn"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "state",
+          "Payload mode",
+          "positive",
+          "enabled"
+        ],
+        [
+          "parameter",
+          "max altitude",
+          "positive",
+          "set to nnn"
+        ],
+        [
+          "parameter",
+          "max distance",
+          "positive",
+          "set to nnn"
+        ]
+      ],
+      "output_correct": "parameter | THE Payload mode IS enabled | positive [SSEP] parameter | THE max altitude IS set to nnn | positive [SSEP] parameter | THE max distance IS set to nnn | positive",
+      "output_pred": "state | THE Payload mode IS enabled | positive [SSEP] parameter | THE max altitude IS set to nnn | positive [SSEP] parameter | THE max distance IS set to nnn | positive",
+      "utterances": [
+        "Payload",
+        "mode",
+        "enabled.",
+        "Max",
+        "altitude",
+        "set",
+        "to",
+        "nnn",
+        "and",
+        "max",
+        "distance",
+        "set",
+        "to",
+        "nnn",
+        "to",
+        "ensure",
+        "flight",
+        "safety."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Motor",
+          "negative",
+          "idling"
+        ],
+        [
+          "component",
+          "propeller",
+          "negative",
+          "missing"
+        ],
+        [
+          "component",
+          "propeller",
+          "negative",
+          "lost"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Motor",
+          "negative",
+          "idling"
+        ],
+        [
+          "component",
+          "it",
+          "negative",
+          "missing propeller"
+        ]
+      ],
+      "output_correct": "component | THE Motor IS idling | negative [SSEP] component | THE propeller IS missing | negative [SSEP] component | THE propeller IS lost | negative",
+      "output_pred": "component | THE Motor IS idling | negative [SSEP] component | THE it IS missing propeller | negative",
+      "utterances": [
+        "Motor",
+        "is",
+        "idling",
+        "(lost",
+        "or",
+        "missing",
+        "propeller)."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "it",
+          "negative",
+          "unable to take off"
+        ],
+        [
+          "issue",
+          "it",
+          "negative",
+          "low light environment"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "action",
+          "take off",
+          "negative",
+          "Unable"
+        ]
+      ],
+      "output_correct": "component | THE it IS unable to take off | negative [SSEP] issue | THE it IS low light environment | negative",
+      "output_pred": "action | THE take off IS Unable | negative",
+      "utterances": [
+        "Unable",
+        "to",
+        "take",
+        "off",
+        "in",
+        "low",
+        "light",
+        "environment.",
+        "Ensure",
+        "there",
+        "are",
+        "no",
+        "metal",
+        "and",
+        "magnetic",
+        "objects",
+        "near",
+        "the",
+        "aircraft",
+        "and",
+        "calibrate",
+        "compass."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Data Recorder File Index",
+          "positive",
+          "17"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "Data Recorder File Index",
+          "positive",
+          "17"
+        ]
+      ],
+      "output_correct": "parameter | THE Data Recorder File Index IS 17 | positive",
+      "output_pred": "parameter | THE Data Recorder File Index IS 17 | positive",
+      "utterances": [
+        "Data",
+        "Recorder",
+        "File",
+        "Index",
+        "is",
+        "17."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Min Waypoint Distance",
+          "positive",
+          "nnn"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "Min Waypoint Distance",
+          "positive",
+          "nnn"
+        ]
+      ],
+      "output_correct": "parameter | THE Min Waypoint Distance IS nnn | positive",
+      "output_pred": "parameter | THE Min Waypoint Distance IS nnn | positive",
+      "utterances": [
+        "Min",
+        "Waypoint",
+        "Distance:",
+        "nnn."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "video frame rate",
+          "negative",
+          "less than 9Hz"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "Live stream video frame rate",
+          "negative",
+          "less than 9Hz"
+        ]
+      ],
+      "output_correct": "parameter | THE video frame rate IS less than 9Hz | negative",
+      "output_pred": "parameter | THE Live stream video frame rate IS less than 9Hz | negative",
+      "utterances": [
+        "Live",
+        "stream",
+        "video",
+        "frame",
+        "rate",
+        "less",
+        "than",
+        "9Hz.",
+        "Fly",
+        "with",
+        "caution."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "feature",
+          "Advanced RTH Image Transmission",
+          "positive",
+          "Recovered"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "Advanced RTH Image Transmission",
+          "positive",
+          "Recovered"
+        ],
+        [
+          "component",
+          "Aircraft",
+          "positive",
+          "returning home"
+        ]
+      ],
+      "output_correct": "feature | THE Advanced RTH Image Transmission IS Recovered | positive",
+      "output_pred": "feature | THE Advanced RTH Image Transmission IS Recovered | positive [SSEP] component | THE Aircraft IS returning home | positive",
+      "utterances": [
+        "Advanced",
+        "RTH",
+        "Image",
+        "Transmission",
+        "Recovered.",
+        "Aircraft",
+        "is",
+        "returning",
+        "home."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Another aircraft",
+          "negative",
+          "dangerously close"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Another aircraft",
+          "negative",
+          "dangerously close"
+        ]
+      ],
+      "output_correct": "component | THE Another aircraft IS dangerously close | negative",
+      "output_pred": "component | THE Another aircraft IS dangerously close | negative",
+      "utterances": [
+        "Another",
+        "aircraft",
+        "is",
+        "dangerously",
+        "close,",
+        "please",
+        "descend",
+        "to",
+        "a",
+        "safer",
+        "altitude."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "state",
+          "ActiveTrack Flight",
+          "negative",
+          "Ended"
+        ],
+        [
+          "parameter",
+          "subject",
+          "negative",
+          "cannot find"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "state",
+          "ActiveTrack Flight",
+          "negative",
+          "Ended"
+        ],
+        [
+          "component",
+          "it",
+          "negative",
+          "Cannot find subject"
+        ]
+      ],
+      "output_correct": "state | THE ActiveTrack Flight IS Ended | negative [SSEP] parameter | THE subject IS cannot find | negative",
+      "output_pred": "state | THE ActiveTrack Flight IS Ended | negative [SSEP] component | THE it IS Cannot find subject | negative",
+      "utterances": [
+        "ActiveTrack",
+        "Flight",
+        "Ended:",
+        "Cannot",
+        "find",
+        "subject."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "feature",
+          "Remote ID functionality",
+          "positive",
+          "normal"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "Remote ID functionality",
+          "positive",
+          "normal"
+        ]
+      ],
+      "output_correct": "feature | THE Remote ID functionality IS normal | positive",
+      "output_pred": "feature | THE Remote ID functionality IS normal | positive",
+      "utterances": [
+        "Remote",
+        "ID",
+        "functionality",
+        "normal."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Calibration target",
+          "negative",
+          "not far away enough"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "Calibration target",
+          "negative",
+          "not far away"
+        ]
+      ],
+      "output_correct": "parameter | THE Calibration target IS not far away enough | negative",
+      "output_pred": "parameter | THE Calibration target IS not far away | negative",
+      "utterances": [
+        "Calibration",
+        "target",
+        "not",
+        "far",
+        "away",
+        "enough.",
+        "Please",
+        "calibrate",
+        "using",
+        "infinity."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Aircraft max power load",
+          "negative",
+          "reached"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "Aircraft max power load",
+          "negative",
+          "reached"
+        ]
+      ],
+      "output_correct": "parameter | THE Aircraft max power load IS reached | negative",
+      "output_pred": "parameter | THE Aircraft max power load IS reached | negative",
+      "utterances": [
+        "Aircraft",
+        "max",
+        "power",
+        "load",
+        "reached.",
+        "Decrease",
+        "altitude",
+        "and",
+        "fly",
+        "with",
+        "caution.",
+        "If",
+        "this",
+        "issue",
+        "persists,",
+        "land",
+        "immediately."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "action",
+          "Cancel Landing",
+          "negative",
+          "Failed"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "action",
+          "Cancel Landing",
+          "negative",
+          "Failed"
+        ]
+      ],
+      "output_correct": "action | THE Cancel Landing IS Failed | negative",
+      "output_pred": "action | THE Cancel Landing IS Failed | negative",
+      "utterances": [
+        "Cancel",
+        "Landing",
+        "Failed."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Compass",
+          "negative",
+          "Stuck"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Compass",
+          "negative",
+          "Stuck"
+        ]
+      ],
+      "output_correct": "component | THE Compass IS Stuck | negative",
+      "output_pred": "component | THE Compass IS Stuck | negative",
+      "utterances": [
+        "Compass",
+        "Stuck.",
+        "Restart",
+        "Aircraft.",
+        "Contact",
+        "DJI",
+        "Support",
+        "if",
+        "this",
+        "persists."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "action",
+          "track subject",
+          "negative",
+          "Cannot"
+        ],
+        [
+          "parameter",
+          "Gimbal Tilt",
+          "negative",
+          "too Large"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "action",
+          "track subject",
+          "negative",
+          "Cannot"
+        ],
+        [
+          "parameter",
+          "Gimbal Tilt",
+          "negative",
+          "too large"
+        ]
+      ],
+      "output_correct": "action | THE track subject IS Cannot | negative [SSEP] parameter | THE Gimbal Tilt IS too Large | negative",
+      "output_pred": "action | THE track subject IS Cannot | negative [SSEP] parameter | THE Gimbal Tilt IS too large | negative",
+      "utterances": [
+        "Cannot",
+        "track",
+        "subject:",
+        "Gimbal",
+        "Tilt",
+        "too",
+        "Large."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "state",
+          "Aircraft Mode",
+          "negative",
+          "not allowed to change"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "Aircraft Mode",
+          "negative",
+          "Not Allowed to change"
+        ]
+      ],
+      "output_correct": "state | THE Aircraft Mode IS not allowed to change | negative",
+      "output_pred": "parameter | THE Aircraft Mode IS Not Allowed to change | negative",
+      "utterances": [
+        "Not",
+        "Allowed",
+        "to",
+        "change",
+        "Aircraft",
+        "Mode.",
+        "If",
+        "needed."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "state",
+          "TapFly",
+          "negative",
+          "Cannot Enter"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "state",
+          "TapFly",
+          "negative",
+          "Cannot Enter"
+        ],
+        [
+          "component",
+          "it",
+          "negative",
+          "unable enter"
+        ]
+      ],
+      "output_correct": "state | THE TapFly IS Cannot Enter | negative",
+      "output_pred": "state | THE TapFly IS Cannot Enter | negative [SSEP] component | THE it IS unable enter | negative",
+      "utterances": [
+        "Cannot",
+        "Enter",
+        "TapFly",
+        "Cannot",
+        "fly",
+        "in",
+        "that",
+        "direction."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "GPS",
+          "negative",
+          "No"
+        ],
+        [
+          "action",
+          "Return to Home",
+          "negative",
+          "failed"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "GPS",
+          "negative",
+          "No"
+        ],
+        [
+          "component",
+          "return to home",
+          "negative",
+          "failed"
+        ]
+      ],
+      "output_correct": "component | THE GPS IS No | negative [SSEP] action | THE Return to Home IS failed | negative",
+      "output_pred": "feature | THE GPS IS No | negative [SSEP] component | THE return to home IS failed | negative",
+      "utterances": [
+        "No",
+        "GPS.",
+        "Return",
+        "to",
+        "Home",
+        "failed.",
+        "Return",
+        "the",
+        "aircraft",
+        "to",
+        "home",
+        "manually."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Subject",
+          "negative",
+          "too Large"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "Subject",
+          "negative",
+          "too Large"
+        ]
+      ],
+      "output_correct": "parameter | THE Subject IS too Large | negative",
+      "output_pred": "parameter | THE Subject IS too Large | negative",
+      "utterances": [
+        "Subject",
+        "too",
+        "Large.",
+        "Move",
+        "Away",
+        "and",
+        "retry."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Altitude",
+          "positive",
+          "less than nnn"
+        ],
+        [
+          "state",
+          "Follow Me Mode",
+          "positive",
+          "Cannot enable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "Altitude",
+          "negative",
+          "Less than nnn"
+        ],
+        [
+          "state",
+          "Follow Me Mode",
+          "negative",
+          "Cannot enable"
+        ]
+      ],
+      "output_correct": "parameter | THE Altitude IS less than nnn | positive [SSEP] state | THE Follow Me Mode IS Cannot enable | positive",
+      "output_pred": "parameter | THE Altitude IS Less than nnn | negative [SSEP] state | THE Follow Me Mode IS Cannot enable | negative",
+      "utterances": [
+        "Altitude",
+        "Less",
+        "than",
+        "nnn.",
+        "Cannot",
+        "enable",
+        "Follow",
+        "Me",
+        "Mode."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "issue",
+          "Interference",
+          "negative",
+          "Strong"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "issue",
+          "Interference",
+          "negative",
+          "Strong"
+        ]
+      ],
+      "output_correct": "issue | THE Interference IS Strong | negative",
+      "output_pred": "issue | THE Interference IS Strong | negative",
+      "utterances": [
+        "Strong",
+        "Interference",
+        "to",
+        "Remote",
+        "Controller.",
+        "Signal",
+        "interruption",
+        "maybe",
+        "more",
+        "likely.",
+        "Fly",
+        "with",
+        "caution."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Landing Gear",
+          "positive",
+          "Lowering"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Landing Gear",
+          "positive",
+          "Lowering"
+        ]
+      ],
+      "output_correct": "component | THE Landing Gear IS Lowering | positive",
+      "output_pred": "component | THE Landing Gear IS Lowering | positive",
+      "utterances": [
+        "Landing",
+        "Gear",
+        "Lowering."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Ambient Light",
+          "negative",
+          "too Weak"
+        ],
+        [
+          "feature",
+          "Forward obstacle sensing",
+          "positive",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "Ambient Light",
+          "negative",
+          "too Weak"
+        ],
+        [
+          "feature",
+          "Forward obstacle sensing",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "output_correct": "parameter | THE Ambient Light IS too Weak | negative [SSEP] feature | THE Forward obstacle sensing IS unavailable | positive",
+      "output_pred": "parameter | THE Ambient Light IS too Weak | negative [SSEP] feature | THE Forward obstacle sensing IS unavailable | negative",
+      "utterances": [
+        "Ambient",
+        "Light",
+        "too",
+        "Weak,",
+        "Forward",
+        "obstacle",
+        "sensing",
+        "is",
+        "unavailable.",
+        "please",
+        "ensure",
+        "safety",
+        "during",
+        "the",
+        "flight."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Home Point",
+          "positive",
+          "recorded"
+        ],
+        [
+          "parameter",
+          "Return-to-Home Altitude",
+          "positive",
+          "98FT"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "Home Point",
+          "positive",
+          "recorded"
+        ],
+        [
+          "parameter",
+          "Return-to-Home Altitude",
+          "positive",
+          "98FT"
+        ]
+      ],
+      "output_correct": "parameter | THE Home Point IS recorded | positive [SSEP] parameter | THE Return-to-Home Altitude IS 98FT | positive",
+      "output_pred": "parameter | THE Home Point IS recorded | positive [SSEP] parameter | THE Return-to-Home Altitude IS 98FT | positive",
+      "utterances": [
+        "Home",
+        "Point",
+        "recorded.",
+        "Return-to-Home",
+        "Altitude",
+        ":",
+        "98FT."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Aircraft",
+          "positive",
+          "in Altitude Zone"
+        ],
+        [
+          "parameter",
+          "Max altitude",
+          "positive",
+          "set to nnn"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Aircraft",
+          "positive",
+          "in Altitude Zone"
+        ],
+        [
+          "parameter",
+          "Max altitude",
+          "positive",
+          "set to nnn"
+        ]
+      ],
+      "output_correct": "component | THE Aircraft IS in Altitude Zone | positive [SSEP] parameter | THE Max altitude IS set to nnn | positive",
+      "output_pred": "component | THE Aircraft IS in Altitude Zone | positive [SSEP] parameter | THE Max altitude IS set to nnn | positive",
+      "utterances": [
+        "Aircraft",
+        "in",
+        "Altitude",
+        "Zone.",
+        "Max",
+        "altitude",
+        "set",
+        "to",
+        "nnn."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Manned aircraft",
+          "negative",
+          "detected nearby"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Manned aircraft",
+          "negative",
+          "detected nearby"
+        ]
+      ],
+      "output_correct": "component | THE Manned aircraft IS detected nearby | negative",
+      "output_pred": "component | THE Manned aircraft IS detected nearby | negative",
+      "utterances": [
+        "Manned",
+        "aircraft",
+        "detected",
+        "nearby.",
+        "Fly",
+        "with",
+        "caution."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Return-To-Home altitude",
+          "positive",
+          "set to nnn"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "Return-To-Home altitude",
+          "positive",
+          "set to nnn"
+        ]
+      ],
+      "output_correct": "parameter | THE Return-To-Home altitude IS set to nnn | positive",
+      "output_pred": "parameter | THE Return-To-Home altitude IS set to nnn | positive",
+      "utterances": [
+        "Setting",
+        "new",
+        "Return-To-Home",
+        "altitude",
+        "to",
+        "nnn."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "action",
+          "take off",
+          "positive",
+          "in non-P mode"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "action",
+          "take off",
+          "positive",
+          "in non-P mode"
+        ]
+      ],
+      "output_correct": "action | THE take off IS in non-P mode | positive",
+      "output_pred": "action | THE take off IS in non-P mode | positive",
+      "utterances": [
+        "To",
+        "take",
+        "off",
+        "in",
+        "non-P",
+        "mode,",
+        "toggle",
+        "Flight",
+        "Mode",
+        "Switch",
+        "to",
+        "another",
+        "mode",
+        "and",
+        "then",
+        "toggle",
+        "it",
+        "back."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Aircraft Mode",
+          "negative",
+          "Not Allowed to change"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "Aircraft Mode",
+          "negative",
+          "Not Allowed to change"
+        ]
+      ],
+      "output_correct": "parameter | THE Aircraft Mode IS Not Allowed to change | negative",
+      "output_pred": "parameter | THE Aircraft Mode IS Not Allowed to change | negative",
+      "utterances": [
+        "Not",
+        "Allowed",
+        "to",
+        "change",
+        "Aircraft",
+        "Mode.",
+        "If",
+        "needed,",
+        "enable",
+        "it",
+        "in",
+        "Main",
+        "Controller",
+        "Settings."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Another aircraft",
+          "negative",
+          "approaching"
+        ],
+        [
+          "component",
+          "Another aircraft",
+          "negative",
+          "nearby"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Another aircraft",
+          "negative",
+          "nearby"
+        ],
+        [
+          "component",
+          "Another aircraft",
+          "negative",
+          "approaching"
+        ]
+      ],
+      "output_correct": "component | THE Another aircraft IS approaching | negative [SSEP] component | THE Another aircraft IS nearby | negative",
+      "output_pred": "component | THE Another aircraft IS nearby | negative [SSEP] component | THE Another aircraft IS approaching | negative",
+      "utterances": [
+        "Another",
+        "aircraft",
+        "is",
+        "nearby.",
+        "Another",
+        "aircraft",
+        "is",
+        "approaching.",
+        "Descend",
+        "as",
+        "soon",
+        "as",
+        "possible."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "action",
+          "API Automatic Takeoff",
+          "positive",
+          "NULL"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "action",
+          "API Automatic Takeoff",
+          "positive",
+          "NULL"
+        ]
+      ],
+      "output_correct": "action | THE API Automatic Takeoff IS NULL | positive",
+      "output_pred": "action | THE API Automatic Takeoff IS NULL | positive",
+      "utterances": [
+        "API",
+        "Automatic",
+        "Takeoff."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Aircraft",
+          "negative",
+          "entering a restricted area"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Aircraft",
+          "negative",
+          "entering a restricted area"
+        ]
+      ],
+      "output_correct": "component | THE Aircraft IS entering a restricted area | negative",
+      "output_pred": "component | THE Aircraft IS entering a restricted area | negative",
+      "utterances": [
+        "Aircraft",
+        "is",
+        "entering",
+        "a",
+        "restricted",
+        "area."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "aircraft",
+          "negative",
+          "at the boundary of an Altitude Zone"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "aircraft",
+          "negative",
+          "at the boundary of an Altitude Zone"
+        ]
+      ],
+      "output_correct": "component | THE aircraft IS at the boundary of an Altitude Zone | negative",
+      "output_pred": "component | THE aircraft IS at the boundary of an Altitude Zone | negative",
+      "utterances": [
+        "Your",
+        "aircraft",
+        "is",
+        "at",
+        "the",
+        "boundary",
+        "of",
+        "an",
+        "Altitude",
+        "Zone.",
+        "Please",
+        "fly",
+        "away",
+        "or",
+        "land",
+        "with",
+        "caution."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "feature",
+          "signal",
+          "negative",
+          "Weak"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "signal",
+          "negative",
+          "Weak"
+        ]
+      ],
+      "output_correct": "feature | THE signal IS Weak | negative",
+      "output_pred": "feature | THE signal IS Weak | negative",
+      "utterances": [
+        "Weak",
+        "signal.",
+        "Adjust",
+        "antennas."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Subject",
+          "negative",
+          "lost"
+        ],
+        [
+          "action",
+          "Searching",
+          "positive",
+          "NULL"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "Subject",
+          "negative",
+          "lost"
+        ]
+      ],
+      "output_correct": "parameter | THE Subject IS lost | negative [SSEP] action | THE Searching IS NULL | positive",
+      "output_pred": "parameter | THE Subject IS lost | negative",
+      "utterances": [
+        "Subject",
+        "lost.",
+        "Searching",
+        "\u2026."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "feature",
+          "GPS signal",
+          "negative",
+          "Weak"
+        ],
+        [
+          "parameter",
+          "Positioning accuracy",
+          "negative",
+          "compromised"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "Positioning accuracy",
+          "negative",
+          "compromised"
+        ],
+        [
+          "feature",
+          "GPS signal",
+          "negative",
+          "weak"
+        ]
+      ],
+      "output_correct": "feature | THE GPS signal IS Weak | negative [SSEP] parameter | THE Positioning accuracy IS compromised | negative",
+      "output_pred": "parameter | THE Positioning accuracy IS compromised | negative [SSEP] feature | THE GPS signal IS weak | negative",
+      "utterances": [
+        "Weak",
+        "GPS",
+        "signal.",
+        "Positioning",
+        "accuracy",
+        "may",
+        "be",
+        "compromised.",
+        "Please",
+        "fly",
+        "with",
+        "caution."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Landing Position",
+          "positive",
+          "Correcting"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "Landing Position",
+          "positive",
+          "Correcting"
+        ]
+      ],
+      "output_correct": "parameter | THE Landing Position IS Correcting | positive",
+      "output_pred": "parameter | THE Landing Position IS Correcting | positive",
+      "utterances": [
+        "Correcting",
+        "Landing",
+        "Position."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "state",
+          "GPS mode",
+          "positive",
+          "Exiting"
+        ],
+        [
+          "component",
+          "Unknown",
+          "negative",
+          "Error"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "state",
+          "Unknown",
+          "negative",
+          "Error"
+        ]
+      ],
+      "output_correct": "state | THE GPS mode IS Exiting | positive [SSEP] component | THE Unknown IS Error | negative",
+      "output_pred": "state | THE Unknown IS Error | negative",
+      "utterances": [
+        "Exiting",
+        "GPS",
+        "mode:",
+        "Unknown",
+        "Error."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "feature",
+          "Obstacle Sensing",
+          "positive",
+          "disabled"
+        ],
+        [
+          "component",
+          "aircraft",
+          "positive",
+          "landing"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "Obstacle Sensing",
+          "positive",
+          "disabled"
+        ]
+      ],
+      "output_correct": "feature | THE Obstacle Sensing IS disabled | positive [SSEP] component | THE aircraft IS landing | positive",
+      "output_pred": "feature | THE Obstacle Sensing IS disabled | positive",
+      "utterances": [
+        "Obstacle",
+        "Sensing",
+        "will",
+        "be",
+        "disabled",
+        "when",
+        "aircraft",
+        "is",
+        "landing.",
+        "Fly",
+        "with",
+        "caution."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Altitude",
+          "negative",
+          "exceeds nnn"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "altitude",
+          "negative",
+          "above the takeoff point"
+        ]
+      ],
+      "output_correct": "parameter | THE Altitude IS exceeds nnn | negative",
+      "output_pred": "parameter | THE altitude IS above the takeoff point | negative",
+      "utterances": [
+        "Altitude",
+        "above",
+        "the",
+        "takeoff",
+        "point",
+        "exceeds",
+        "nnn.",
+        "Always",
+        "fly",
+        "in",
+        "compliance",
+        "with",
+        "altitude",
+        "limitations."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Battery",
+          "negative",
+          "Overcurrent During Discharge"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Battery",
+          "negative",
+          "Overcurrent"
+        ]
+      ],
+      "output_correct": "component | THE Battery IS Overcurrent During Discharge | negative",
+      "output_pred": "component | THE Battery IS Overcurrent | negative",
+      "utterances": [
+        "Battery:",
+        "Overcurrent",
+        "During",
+        "Discharge."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "feature",
+          "Obstacle Avoidance",
+          "positive",
+          "disabled"
+        ],
+        [
+          "component",
+          "Landing gear",
+          "positive",
+          "lowered"
+        ],
+        [
+          "issue",
+          "wireless interference",
+          "negative",
+          "strong"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "issue",
+          "wireless interference",
+          "negative",
+          "strong"
+        ]
+      ],
+      "output_correct": "feature | THE Obstacle Avoidance IS disabled | positive [SSEP] component | THE Landing gear IS lowered | positive [SSEP] issue | THE wireless interference IS strong | negative",
+      "output_pred": "issue | THE wireless interference IS strong | negative",
+      "utterances": [
+        "Strong",
+        "wireless",
+        "interference.",
+        "Please",
+        "fly",
+        "with",
+        "caution.",
+        "Obstacle",
+        "Avoidance",
+        "Disabled.",
+        "Landing",
+        "gear",
+        "lowered.",
+        "Obstacle",
+        "Avoidance",
+        "Disabled."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "action",
+          "Compass initialization",
+          "negative",
+          "failed"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Compass initialization",
+          "negative",
+          "failed"
+        ]
+      ],
+      "output_correct": "action | THE Compass initialization IS failed | negative",
+      "output_pred": "component | THE Compass initialization IS failed | negative",
+      "utterances": [
+        "Compass",
+        "initialization",
+        "failed.",
+        "Restart",
+        "aircraft."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "feature",
+          "AE",
+          "negative",
+          "locked"
+        ],
+        [
+          "feature",
+          "Metering",
+          "negative",
+          "disabled"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "AE",
+          "negative",
+          "Locked"
+        ],
+        [
+          "feature",
+          "Metering",
+          "positive",
+          "disabled"
+        ]
+      ],
+      "output_correct": "feature | THE AE IS locked | negative [SSEP] feature | THE Metering IS disabled | negative",
+      "output_pred": "parameter | THE AE IS Locked | negative [SSEP] feature | THE Metering IS disabled | positive",
+      "utterances": [
+        "AE",
+        "Locked.",
+        "Metering",
+        "disabled."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Ambient Light",
+          "negative",
+          "too weak"
+        ],
+        [
+          "feature",
+          "Vision Positioning obstacle sensing",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "Ambient Light",
+          "negative",
+          "too Weak"
+        ],
+        [
+          "feature",
+          "Vision Positioning obstacle sensing",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "output_correct": "parameter | THE Ambient Light IS too weak | negative [SSEP] feature | THE Vision Positioning obstacle sensing IS unavailable | negative",
+      "output_pred": "parameter | THE Ambient Light IS too Weak | negative [SSEP] feature | THE Vision Positioning obstacle sensing IS unavailable | negative",
+      "utterances": [
+        "Ambient",
+        "Light",
+        "too",
+        "Weak,",
+        "Vision",
+        "Positioning",
+        "obstacle",
+        "sensing",
+        "is",
+        "unavailable.",
+        "please",
+        "ensure",
+        "safety",
+        "during",
+        "the",
+        "flight."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "compass",
+          "negative",
+          "abnormal"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Compass",
+          "negative",
+          "abnormal"
+        ]
+      ],
+      "output_correct": "component | THE compass IS abnormal | negative",
+      "output_pred": "component | THE Compass IS abnormal | negative",
+      "utterances": [
+        "Compass",
+        "abnormal",
+        "Solution:",
+        "1.",
+        "Ensure",
+        "there",
+        "are",
+        "no",
+        "magnets",
+        "or",
+        "metal",
+        "objects",
+        "near",
+        "the",
+        "aircraft.",
+        "The",
+        "ground",
+        "or",
+        "walls",
+        "may",
+        "contain",
+        "metal.",
+        "Move",
+        "away",
+        "from",
+        "sources",
+        "of",
+        "interference",
+        "before",
+        "attempting",
+        "flight.",
+        "2.",
+        "Calibrate",
+        "Compass",
+        "Before",
+        "Takeoff."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "feature",
+          "Forward Obstacle Sensing",
+          "negative",
+          "not Responding"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "Forward Obstacle Sensing",
+          "negative",
+          "not Responding"
+        ]
+      ],
+      "output_correct": "feature | THE Forward Obstacle Sensing IS not Responding | negative",
+      "output_pred": "feature | THE Forward Obstacle Sensing IS not Responding | negative",
+      "utterances": [
+        "Forward",
+        "Obstacle",
+        "Sensing",
+        "not",
+        "Responding."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "flight attitude angle",
+          "positive",
+          "larger in Sport mode"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "flight attitude angle",
+          "positive",
+          "larger in Sport mode"
+        ]
+      ],
+      "output_correct": "parameter | THE flight attitude angle IS larger in Sport mode | positive",
+      "output_pred": "parameter | THE flight attitude angle IS larger in Sport mode | positive",
+      "utterances": [
+        "The",
+        "flight",
+        "attitude",
+        "angle",
+        "is",
+        "larger",
+        "in",
+        "Sport",
+        "mode.",
+        "The",
+        "gimbal",
+        "will",
+        "rotate",
+        "when",
+        "the",
+        "aircraft",
+        "starts",
+        "or",
+        "stops.",
+        "Use",
+        "Normal",
+        "mode",
+        "if",
+        "required",
+        "for",
+        "stable",
+        "shooting."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "action",
+          "ActiveTrack command",
+          "negative",
+          "Cannot send"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "action",
+          "ActiveTrack command",
+          "negative",
+          "Cannot send"
+        ]
+      ],
+      "output_correct": "action | THE ActiveTrack command IS Cannot send | negative",
+      "output_pred": "action | THE ActiveTrack command IS Cannot send | negative",
+      "utterances": [
+        "Cannot",
+        "send",
+        "ActiveTrack",
+        "command."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "feature",
+          "Downlink",
+          "positive",
+          "Restored"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "Downlink",
+          "positive",
+          "Restored"
+        ]
+      ],
+      "output_correct": "feature | THE Downlink IS Restored | positive",
+      "output_pred": "feature | THE Downlink IS Restored | positive",
+      "utterances": [
+        "Downlink",
+        "Restored",
+        "(after",
+        "0m",
+        "2.3s)."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "gimbal motor",
+          "negative",
+          "overloaded"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Gimbal motor",
+          "negative",
+          "overloaded"
+        ]
+      ],
+      "output_correct": "component | THE gimbal motor IS overloaded | negative",
+      "output_pred": "component | THE Gimbal motor IS overloaded | negative",
+      "utterances": [
+        "Gimbal",
+        "motor",
+        "overloaded.",
+        "Check",
+        "whether",
+        "gimbal",
+        "can",
+        "rotate",
+        "freely."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Data Recorder File Index",
+          "positive",
+          "7"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "Data Recorder File Index",
+          "positive",
+          "7"
+        ]
+      ],
+      "output_correct": "parameter | THE Data Recorder File Index IS 7 | positive",
+      "output_pred": "parameter | THE Data Recorder File Index IS 7 | positive",
+      "utterances": [
+        "Data",
+        "Recorder",
+        "File",
+        "Index",
+        "is",
+        "7."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "action",
+          "RTH",
+          "positive",
+          "Heading alignment"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "state",
+          "RTH",
+          "positive",
+          "Heading alignment"
+        ]
+      ],
+      "output_correct": "action | THE RTH IS Heading alignment | positive",
+      "output_pred": "state | THE RTH IS Heading alignment | positive",
+      "utterances": [
+        "RTH",
+        ":",
+        "Heading",
+        "alignment."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "feature",
+          "GPS module",
+          "negative",
+          "error"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "GPS module",
+          "negative",
+          "error"
+        ]
+      ],
+      "output_correct": "feature | THE GPS module IS error | negative",
+      "output_pred": "component | THE GPS module IS error | negative",
+      "utterances": [
+        "GPS",
+        "module",
+        "error.",
+        "Restart",
+        "aircraft."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "it",
+          "positive",
+          "Arrived at End Point"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "End Point",
+          "positive",
+          "Arrived"
+        ]
+      ],
+      "output_correct": "component | THE it IS Arrived at End Point | positive",
+      "output_pred": "component | THE End Point IS Arrived | positive",
+      "utterances": [
+        "Arrived",
+        "at",
+        "End",
+        "Point."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "SD card",
+          "negative",
+          "malfunction"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "SD card",
+          "negative",
+          "malfunction"
+        ]
+      ],
+      "output_correct": "component | THE SD card IS malfunction | negative",
+      "output_pred": "component | THE SD card IS malfunction | negative",
+      "utterances": [
+        "SD",
+        "card",
+        "malfunction.",
+        "Change",
+        "card."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Motor",
+          "negative",
+          "Blocked"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Motor",
+          "negative",
+          "Blocked"
+        ]
+      ],
+      "output_correct": "component | THE Motor IS Blocked | negative",
+      "output_pred": "component | THE Motor IS Blocked | negative",
+      "utterances": [
+        "Motor",
+        "is",
+        "Blocked."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "action",
+          "Barometer initialization",
+          "negative",
+          "failed"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "action",
+          "Barometer initialization",
+          "negative",
+          "failed"
+        ]
+      ],
+      "output_correct": "action | THE Barometer initialization IS failed | negative",
+      "output_pred": "action | THE Barometer initialization IS failed | negative",
+      "utterances": [
+        "Barometer",
+        "initialization",
+        "failed.",
+        "Restart",
+        "aircraft."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "state",
+          "ActiveTrack Flight",
+          "negative",
+          "Stopped"
+        ],
+        [
+          "component",
+          "Aircraft",
+          "negative",
+          "Entering Restricted Area"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "state",
+          "ActiveTrack Flight",
+          "negative",
+          "Stopped"
+        ],
+        [
+          "component",
+          "Aircraft",
+          "negative",
+          "Entering Restricted Area"
+        ]
+      ],
+      "output_correct": "state | THE ActiveTrack Flight IS Stopped | negative [SSEP] component | THE Aircraft IS Entering Restricted Area | negative",
+      "output_pred": "state | THE ActiveTrack Flight IS Stopped | negative [SSEP] component | THE Aircraft IS Entering Restricted Area | negative",
+      "utterances": [
+        "ActiveTrack",
+        "Flight",
+        "Stopped",
+        "Aircraft",
+        "Entering",
+        "Restricted",
+        "Area."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Camera",
+          "negative",
+          "Error"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Camera",
+          "negative",
+          "Error"
+        ]
+      ],
+      "output_correct": "component | THE Camera IS Error | negative",
+      "output_pred": "component | THE Camera IS Error | negative",
+      "utterances": [
+        "Camera",
+        "Error.",
+        "Solution:",
+        "Restart",
+        "the",
+        "aircraft,",
+        "if",
+        "the",
+        "problem",
+        "persists,",
+        "contact",
+        "DJI",
+        "Support."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Drone",
+          "negative",
+          "Vibrating"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Drone",
+          "positive",
+          "Vibrating"
+        ]
+      ],
+      "output_correct": "component | THE Drone IS Vibrating | negative",
+      "output_pred": "component | THE Drone IS Vibrating | positive",
+      "utterances": [
+        "Drone",
+        "is",
+        "Vibrating."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "action",
+          "Compass Redundancy Switch",
+          "negative",
+          "NULL"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Compass",
+          "negative",
+          "Redundancy Switch"
+        ]
+      ],
+      "output_correct": "action | THE Compass Redundancy Switch IS NULL | negative",
+      "output_pred": "component | THE Compass IS Redundancy Switch | negative",
+      "utterances": [
+        "Compass",
+        "Redundancy",
+        "Switch."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "feature",
+          "APAS",
+          "positive",
+          "enabled"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "action",
+          "APAS",
+          "positive",
+          "enabled"
+        ]
+      ],
+      "output_correct": "feature | THE APAS IS enabled | positive",
+      "output_pred": "action | THE APAS IS enabled | positive",
+      "utterances": [
+        "APAS",
+        "has",
+        "been",
+        "enabled."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Gimbal Pan",
+          "positive",
+          "Recenter"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Gimbal Pan",
+          "positive",
+          "Recenter"
+        ]
+      ],
+      "output_correct": "component | THE Gimbal Pan IS Recenter | positive",
+      "output_pred": "component | THE Gimbal Pan IS Recenter | positive",
+      "utterances": [
+        "Recenter",
+        "Gimbal",
+        "Pan."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Remote controller",
+          "negative",
+          "disconnected from aircraft"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Remote controller",
+          "negative",
+          "disconnected"
+        ]
+      ],
+      "output_correct": "component | THE Remote controller IS disconnected from aircraft | negative",
+      "output_pred": "component | THE Remote controller IS disconnected | negative",
+      "utterances": [
+        "Remote",
+        "controller",
+        "disconnected",
+        "from",
+        "aircraft."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "state",
+          "flight mode",
+          "negative",
+          "cannot enter"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "flight mode",
+          "negative",
+          "Cannot enter"
+        ]
+      ],
+      "output_correct": "state | THE flight mode IS cannot enter | negative",
+      "output_pred": "parameter | THE flight mode IS Cannot enter | negative",
+      "utterances": [
+        "Cannot",
+        "enter",
+        "the",
+        "selected",
+        "flight",
+        "mode.",
+        "Try",
+        "again",
+        "later."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Landing gear",
+          "positive",
+          "lowered"
+        ],
+        [
+          "feature",
+          "Obstacle Avoidance",
+          "positive",
+          "disabled"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Landing gear",
+          "positive",
+          "lowered"
+        ],
+        [
+          "feature",
+          "Obstacle Avoidance",
+          "positive",
+          "disabled"
+        ]
+      ],
+      "output_correct": "component | THE Landing gear IS lowered | positive [SSEP] feature | THE Obstacle Avoidance IS disabled | positive",
+      "output_pred": "component | THE Landing gear IS lowered | positive [SSEP] feature | THE Obstacle Avoidance IS disabled | positive",
+      "utterances": [
+        "Landing",
+        "gear",
+        "lowered.",
+        "Obstacle",
+        "Avoidance",
+        "has",
+        "been",
+        "disabled."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "action",
+          "Gyroscope initialization",
+          "negative",
+          "failed"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "Gyroscope initialization",
+          "negative",
+          "failed"
+        ]
+      ],
+      "output_correct": "action | THE Gyroscope initialization IS failed | negative",
+      "output_pred": "feature | THE Gyroscope initialization IS failed | negative",
+      "utterances": [
+        "Gyroscope",
+        "initialization",
+        "failed.",
+        "Restart",
+        "aircraft."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "state",
+          "Away and Follow",
+          "positive",
+          "in progress"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "action",
+          "Away",
+          "positive",
+          "in progress"
+        ]
+      ],
+      "output_correct": "state | THE Away and Follow IS in progress | positive",
+      "output_pred": "action | THE Away IS in progress | positive",
+      "utterances": [
+        "Away",
+        "and",
+        "Follow",
+        "in",
+        "progress."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Obstacle",
+          "positive",
+          "Avoided"
+        ],
+        [
+          "parameter",
+          "Flight Route",
+          "positive",
+          "Revise"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "issue",
+          "Obstacle",
+          "negative",
+          "Avoided"
+        ]
+      ],
+      "output_correct": "parameter | THE Obstacle IS Avoided | positive [SSEP] parameter | THE Flight Route IS Revise | positive",
+      "output_pred": "issue | THE Obstacle IS Avoided | negative",
+      "utterances": [
+        "Obstacle",
+        "Avoided.",
+        "Revise",
+        "Flight",
+        "Route."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Data Recorder File Index",
+          "positive",
+          "30"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "Data Recorder File Index",
+          "positive",
+          "30"
+        ]
+      ],
+      "output_correct": "parameter | THE Data Recorder File Index IS 30 | positive",
+      "output_pred": "parameter | THE Data Recorder File Index IS 30 | positive",
+      "utterances": [
+        "Data",
+        "Recorder",
+        "File",
+        "Index",
+        "is",
+        "30."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Downward vision sensor",
+          "negative",
+          "calibration error"
+        ],
+        [
+          "action",
+          "Auto calibration",
+          "positive",
+          "in progress"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Downward vision sensor",
+          "negative",
+          "calibration error"
+        ]
+      ],
+      "output_correct": "component | THE Downward vision sensor IS calibration error | negative [SSEP] action | THE Auto calibration IS in progress | positive",
+      "output_pred": "component | THE Downward vision sensor IS calibration error | negative",
+      "utterances": [
+        "Downward",
+        "vision",
+        "sensor",
+        "calibration",
+        "error.",
+        "Auto",
+        "calibration",
+        "in",
+        "progress."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Battery",
+          "negative",
+          "requires maintenance"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Battery",
+          "positive",
+          "required maintenance"
+        ]
+      ],
+      "output_correct": "component | THE Battery IS requires maintenance | negative",
+      "output_pred": "component | THE Battery IS required maintenance | positive",
+      "utterances": [
+        "Battery",
+        "nnn",
+        "requires",
+        "maintenance."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Camera Settings",
+          "positive",
+          "Adjusted to ActiveTrack"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "Camera Settings",
+          "positive",
+          "Adjusted to ActiveTrack"
+        ]
+      ],
+      "output_correct": "parameter | THE Camera Settings IS Adjusted to ActiveTrack | positive",
+      "output_pred": "parameter | THE Camera Settings IS Adjusted to ActiveTrack | positive",
+      "utterances": [
+        "Camera",
+        "Settings",
+        "Adjusted",
+        "to",
+        "ActiveTrack."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Ambient Light",
+          "negative",
+          "too Weak"
+        ],
+        [
+          "feature",
+          "Backward obstacle sensing",
+          "positive",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "Ambient Light",
+          "negative",
+          "too Weak"
+        ],
+        [
+          "feature",
+          "Backward obstacle sensing",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "output_correct": "parameter | THE Ambient Light IS too Weak | negative [SSEP] feature | THE Backward obstacle sensing IS unavailable | positive",
+      "output_pred": "parameter | THE Ambient Light IS too Weak | negative [SSEP] feature | THE Backward obstacle sensing IS unavailable | negative",
+      "utterances": [
+        "Ambient",
+        "Light",
+        "too",
+        "Weak,",
+        "Backward",
+        "obstacle",
+        "sensing",
+        "is",
+        "unavailable.",
+        "please",
+        "ensure",
+        "safety",
+        "during",
+        "the",
+        "flight."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "GPS signal",
+          "negative",
+          "No"
+        ],
+        [
+          "component",
+          "Aircraft",
+          "negative",
+          "unable to hover"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Aircraft",
+          "negative",
+          "unable to hover"
+        ],
+        [
+          "feature",
+          "GPS signal",
+          "negative",
+          "No"
+        ]
+      ],
+      "output_correct": "component | THE GPS signal IS No | negative [SSEP] component | THE Aircraft IS unable to hover | negative",
+      "output_pred": "component | THE Aircraft IS unable to hover | negative [SSEP] feature | THE GPS signal IS No | negative",
+      "utterances": [
+        "No",
+        "GPS",
+        "signal.",
+        "Aircraft",
+        "unable",
+        "to",
+        "hover.",
+        "Fly",
+        "with",
+        "caution."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Motor",
+          "negative",
+          "unable to rotate"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Motor",
+          "negative",
+          "unable to rotate"
+        ]
+      ],
+      "output_correct": "component | THE Motor IS unable to rotate | negative",
+      "output_pred": "component | THE Motor IS unable to rotate | negative",
+      "utterances": [
+        "Motor",
+        "unable",
+        "to",
+        "rotate.",
+        "Check",
+        "for",
+        "objects",
+        "blocking",
+        "motor",
+        "or",
+        "contact",
+        "DJI",
+        "Support",
+        "for",
+        "assistance",
+        "."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "action",
+          "Capture",
+          "negative",
+          "Failed"
+        ],
+        [
+          "action",
+          "Stick movement",
+          "negative",
+          "detected"
+        ],
+        [
+          "state",
+          "Panorama",
+          "negative",
+          "stopped"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "action",
+          "Capture",
+          "negative",
+          "Failed"
+        ],
+        [
+          "feature",
+          "Stick movement",
+          "negative",
+          "detected"
+        ],
+        [
+          "action",
+          "Panorama",
+          "negative",
+          "stopped"
+        ]
+      ],
+      "output_correct": "action | THE Capture IS Failed | negative [SSEP] action | THE Stick movement IS detected | negative [SSEP] state | THE Panorama IS stopped | negative",
+      "output_pred": "action | THE Capture IS Failed | negative [SSEP] feature | THE Stick movement IS detected | negative [SSEP] action | THE Panorama IS stopped | negative",
+      "utterances": [
+        "Capture",
+        "Failed",
+        "Stick",
+        "movement",
+        "detected.",
+        "Panorama",
+        "has",
+        "stopped."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "feature",
+          "GPS signal",
+          "negative",
+          "No"
+        ],
+        [
+          "action",
+          "hover",
+          "negative",
+          "unable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "GPS signal",
+          "negative",
+          "No"
+        ],
+        [
+          "component",
+          "it",
+          "negative",
+          "unable to hover"
+        ]
+      ],
+      "output_correct": "feature | THE GPS signal IS No | negative [SSEP] action | THE hover IS unable | negative",
+      "output_pred": "feature | THE GPS signal IS No | negative [SSEP] component | THE it IS unable to hover | negative",
+      "utterances": [
+        "No",
+        "GPS",
+        "signal.",
+        "Unable",
+        "to",
+        "hover.",
+        "Fly",
+        "with",
+        "caution."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "aircraft braking distance",
+          "positive",
+          "extended"
+        ],
+        [
+          "state",
+          "flight",
+          "negative",
+          "High-altitude"
+        ],
+        [
+          "parameter",
+          "flight time",
+          "positive",
+          "shortened"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "braking distance",
+          "positive",
+          "extended"
+        ],
+        [
+          "parameter",
+          "flight time",
+          "negative",
+          "shortened"
+        ],
+        [
+          "parameter",
+          "altitude flight",
+          "negative",
+          "high"
+        ]
+      ],
+      "output_correct": "parameter | THE aircraft braking distance IS extended | positive [SSEP] state | THE flight IS High-altitude | negative [SSEP] parameter | THE flight time IS shortened | positive",
+      "output_pred": "parameter | THE braking distance IS extended | positive [SSEP] parameter | THE flight time IS shortened | negative [SSEP] parameter | THE altitude flight IS high | negative",
+      "utterances": [
+        "High-altitude",
+        "flight,",
+        "aircraft",
+        "braking",
+        "distance",
+        "is",
+        "extended,",
+        "flight",
+        "time",
+        "is",
+        "shortened.",
+        "Fly",
+        "with",
+        "caution."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "feature",
+          "color display",
+          "positive",
+          "enhanced"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "color display",
+          "positive",
+          "enhanced"
+        ]
+      ],
+      "output_correct": "feature | THE color display IS enhanced | positive",
+      "output_pred": "feature | THE color display IS enhanced | positive",
+      "utterances": [
+        "Color",
+        "display",
+        "in",
+        "the",
+        "Liveview",
+        "has",
+        "been",
+        "enhanced.",
+        "Videos",
+        "and",
+        "photos",
+        "will",
+        "still",
+        "be",
+        "shot",
+        "in",
+        "D-Log",
+        "mode."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "feature",
+          "pano shooting",
+          "positive",
+          "completed"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "action",
+          "Pano shooting",
+          "positive",
+          "completed"
+        ],
+        [
+          "component",
+          "sky part",
+          "positive",
+          "filled automatically"
+        ]
+      ],
+      "output_correct": "feature | THE pano shooting IS completed | positive",
+      "output_pred": "action | THE Pano shooting IS completed | positive [SSEP] component | THE sky part IS filled automatically | positive",
+      "utterances": [
+        "Pano",
+        "shooting",
+        "completed.",
+        "The",
+        "sky",
+        "part",
+        "is",
+        "filled",
+        "automatically."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Ambient Light",
+          "negative",
+          "too weak"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "Ambient Light",
+          "negative",
+          "too weak"
+        ]
+      ],
+      "output_correct": "parameter | THE Ambient Light IS too weak | negative",
+      "output_pred": "parameter | THE Ambient Light IS too weak | negative",
+      "utterances": [
+        "Ambient",
+        "Light",
+        "is",
+        "too",
+        "weak."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Current RTH route",
+          "negative",
+          "pass a No-Fly zone"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "Current RTH route",
+          "negative",
+          "pass a No-Fly zone"
+        ]
+      ],
+      "output_correct": "parameter | THE Current RTH route IS pass a No-Fly zone | negative",
+      "output_pred": "parameter | THE Current RTH route IS pass a No-Fly zone | negative",
+      "utterances": [
+        "Current",
+        "RTH",
+        "route",
+        "will",
+        "pass",
+        "a",
+        "No-Fly",
+        "zone.",
+        "Pay",
+        "attention",
+        "to",
+        "the",
+        "aircraft's",
+        "position",
+        "to",
+        "avoid",
+        "RTH",
+        "failure."
+      ]
+    }
+  ],
+  "generative_score": {
+    "bleu_score": {
+      "bleu": 0.7983505967659604,
+      "brevity_penalty": 0.9416681943143635,
+      "length_ratio": 0.9433051869722557,
+      "precisions": [
+        0.9245524296675192,
+        0.8736187845303868,
+        0.8213213213213213,
+        0.7787828947368421
+      ],
+      "reference_length": 1658,
+      "translation_length": 1564
+    },
+    "meteor_score": {
+      "meteor": 0.9022246515373857
+    },
+    "rouge_score": {
+      "rouge1": 0.9122394832831078,
+      "rouge2": 0.8658392811718896,
+      "rougeL": 0.8894923508584812,
+      "rougeLsum": 0.8897597864092426
+    },
+    "wer_score": 0.18089171974522292
+  },
+  "performance_metrics": {
+    "ac_score": {
+      "f1_score": 0.7307692307692308,
+      "precision": 0.75,
+      "recall": 0.7125
+    },
+    "acsp_score": {
+      "f1_score": 0.7980769230769231,
+      "precision": 0.819078947368421,
+      "recall": 0.778125
+    },
+    "at_score": {
+      "f1_score": 0.75,
+      "precision": 0.7697368421052632,
+      "recall": 0.73125
+    },
+    "micro_average": {
+      "f1_score": 0.7676282051282052,
+      "precision": 0.787828947368421,
+      "recall": 0.7484375
+    },
+    "ot_score": {
+      "f1_score": 0.7243589743589745,
+      "precision": 0.743421052631579,
+      "recall": 0.70625
+    },
+    "quad_score": {
+      "f1_score": 0.5641025641025641,
+      "precision": 0.5789473684210527,
+      "recall": 0.55
+    },
+    "sp_score": {
+      "f1_score": 0.8653846153846154,
+      "precision": 0.8881578947368421,
+      "recall": 0.84375
+    }
+  }
+}

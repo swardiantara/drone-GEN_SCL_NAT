@@ -1,0 +1,4233 @@
+{
+  "examples": [
+    {
+      "labels_correct": [
+        [
+          "feature",
+          "Downlink",
+          "ok",
+          "Restored"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "Downlink",
+          "ok",
+          "Restored"
+        ]
+      ],
+      "output_correct": "feature is ok because Downlink is Restored",
+      "output_pred": "feature is ok because Downlink is Restored",
+      "utterances": [
+        "Downlink",
+        "Restored",
+        "(after",
+        "0m",
+        "1.5s)."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "aircraft",
+          "concerning",
+          "at an Authorization Zone boundary"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "aircraft",
+          "concerning",
+          "at the boundary of an Authorization Zone"
+        ]
+      ],
+      "output_correct": "component is concerning because aircraft is at an Authorization Zone boundary",
+      "output_pred": "component is concerning because aircraft is at the boundary of an Authorization Zone",
+      "utterances": [
+        "Your",
+        "aircraft",
+        "is",
+        "at",
+        "the",
+        "boundary",
+        "of",
+        "an",
+        "Authorization",
+        "Zone.",
+        "Please",
+        "fly",
+        "away",
+        "with",
+        "caution."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "RTH Altitude",
+          "ok",
+          "98FT"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "RTH Altitude",
+          "ok",
+          "98FT"
+        ]
+      ],
+      "output_correct": "parameter is ok because RTH Altitude is 98FT",
+      "output_pred": "parameter is ok because RTH Altitude is 98FT",
+      "utterances": [
+        "RTH",
+        "Altitude",
+        ":",
+        "98FT."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Auxiliary Bottom Light",
+          "ok",
+          "set to automatic mode"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Auxiliary Bottom Light",
+          "ok",
+          "set to automatic mode"
+        ]
+      ],
+      "output_correct": "parameter is ok because Auxiliary Bottom Light is set to automatic mode",
+      "output_pred": "component is ok because Auxiliary Bottom Light is set to automatic mode",
+      "utterances": [
+        "Auxiliary",
+        "Bottom",
+        "Light",
+        "set",
+        "to",
+        "automatic",
+        "mode."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "feature",
+          "signal",
+          "concerning",
+          "weak"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "signal",
+          "concerning",
+          "Weak"
+        ]
+      ],
+      "output_correct": "feature is concerning because signal is weak",
+      "output_pred": "feature is concerning because signal is Weak",
+      "utterances": [
+        "Weak",
+        "signal.",
+        "Adjust",
+        "antenna",
+        "and",
+        "avoid",
+        "signal",
+        "block."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "feature",
+          "File system",
+          "concerning",
+          "error"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "File system",
+          "concerning",
+          "error"
+        ]
+      ],
+      "output_correct": "feature is concerning because File system is error",
+      "output_pred": "feature is concerning because File system is error",
+      "utterances": [
+        "File",
+        "system",
+        "error.",
+        "Change",
+        "SD",
+        "card."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "action",
+          "Braking",
+          "concerning",
+          "now"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "action",
+          "Braking",
+          "concerning",
+          "now"
+        ]
+      ],
+      "output_correct": "action is concerning because Braking is now",
+      "output_pred": "action is concerning because Braking is now",
+      "utterances": [
+        "Braking",
+        "now!",
+        "No",
+        "use",
+        "to",
+        "move",
+        "the",
+        "stick",
+        "right.",
+        "Avoid",
+        "the",
+        "obstacle."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Barometer",
+          "concerning",
+          "Dead in Air"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Barometer",
+          "concerning",
+          "Dead in Air"
+        ]
+      ],
+      "output_correct": "component is concerning because Barometer is Dead in Air",
+      "output_pred": "component is concerning because Barometer is Dead in Air",
+      "utterances": [
+        "Barometer",
+        "Dead",
+        "in",
+        "Air."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Motor",
+          "concerning",
+          "error"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Motor",
+          "concerning",
+          "error"
+        ]
+      ],
+      "output_correct": "component is concerning because Motor is error",
+      "output_pred": "component is concerning because Motor is error",
+      "utterances": [
+        "Motor",
+        "error.",
+        "Check",
+        "propellers",
+        "and",
+        "fly",
+        "with",
+        "caution."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Aircraft",
+          "ok",
+          "not enter S-mode"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Aircraft",
+          "concerning",
+          "not enter S-mode"
+        ]
+      ],
+      "output_correct": "component is ok because Aircraft is not enter S-mode",
+      "output_pred": "component is concerning because Aircraft is not enter S-mode",
+      "utterances": [
+        "Aircraft",
+        "will",
+        "not",
+        "enter",
+        "S-mode",
+        "if",
+        "powered",
+        "on",
+        "with",
+        "the",
+        "remote",
+        "controller",
+        "set",
+        "to",
+        "S-mode.",
+        "Please",
+        "switch",
+        "to",
+        "Normal",
+        "mode,",
+        "then",
+        "back",
+        "to",
+        "S-mode",
+        "to",
+        "enable",
+        "it."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "action",
+          "Take off",
+          "concerning",
+          "Cannot"
+        ],
+        [
+          "state",
+          "Travel Mode",
+          "ok",
+          "Exit"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "action",
+          "Takeoff",
+          "concerning",
+          "Cannot in Travel Mode"
+        ]
+      ],
+      "output_correct": "action is concerning because Take off is Cannot [SSEP] state is ok because Travel Mode is Exit",
+      "output_pred": "action is concerning because Takeoff is Cannot in Travel Mode",
+      "utterances": [
+        "Cannot",
+        "Takeoff",
+        "in",
+        "Travel",
+        "Mode.",
+        "Exit",
+        "Travel",
+        "Mode."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Compass",
+          "concerning",
+          "Error"
+        ],
+        [
+          "component",
+          "Compass",
+          "concerning",
+          "disconnected"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Compass",
+          "concerning",
+          "Error"
+        ],
+        [
+          "component",
+          "Compass",
+          "concerning",
+          "disconnected"
+        ]
+      ],
+      "output_correct": "component is concerning because Compass is Error [SSEP] component is concerning because Compass is disconnected",
+      "output_pred": "component is concerning because Compass is Error [SSEP] component is concerning because Compass is disconnected",
+      "utterances": [
+        "Compass",
+        "Error.",
+        "Compass",
+        "disconnected."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Downward altitude sensor",
+          "concerning",
+          "error"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "Downward altitude sensor data",
+          "concerning",
+          "error"
+        ]
+      ],
+      "output_correct": "component is concerning because Downward altitude sensor is error",
+      "output_pred": "feature is concerning because Downward altitude sensor data is error",
+      "utterances": [
+        "Downward",
+        "altitude",
+        "sensor",
+        "data",
+        "error.",
+        "Please",
+        "contact",
+        "DJI",
+        "Support",
+        "for",
+        "help."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Compass",
+          "concerning",
+          "Error"
+        ],
+        [
+          "component",
+          "Compass",
+          "concerning",
+          "error"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "compass",
+          "concerning",
+          "error"
+        ],
+        [
+          "component",
+          "compass",
+          "concerning",
+          "error"
+        ]
+      ],
+      "output_correct": "component is concerning because Compass is Error [SSEP] component is concerning because Compass is error",
+      "output_pred": "component is concerning because compass is error [SSEP] component is concerning because compass is error",
+      "utterances": [
+        "Compass",
+        "Error.",
+        "Compass",
+        "error",
+        "Solution:",
+        "Move",
+        "away",
+        "from",
+        "ground",
+        "magnetic",
+        "interference."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Another aircraft",
+          "concerning",
+          "nearby"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "aircraft",
+          "concerning",
+          "nearby"
+        ]
+      ],
+      "output_correct": "component is concerning because Another aircraft is nearby",
+      "output_pred": "component is concerning because aircraft is nearby",
+      "utterances": [
+        "Another",
+        "aircraft",
+        "is",
+        "nearby.",
+        "Fly",
+        "with",
+        "caution."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "battery",
+          "concerning",
+          "only enough for RTH"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "battery",
+          "concerning",
+          "only enough for RTH"
+        ]
+      ],
+      "output_correct": "parameter is concerning because battery is only enough for RTH",
+      "output_pred": "parameter is concerning because battery is only enough for RTH",
+      "utterances": [
+        "The",
+        "remaining",
+        "battery",
+        "is",
+        "only",
+        "enough",
+        "for",
+        "RTH.",
+        "Return",
+        "home",
+        "now."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "feature",
+          "GPS signal",
+          "concerning",
+          "low"
+        ],
+        [
+          "component",
+          "Aircraft",
+          "concerning",
+          "unable to auto hover"
+        ],
+        [
+          "action",
+          "takeoff",
+          "concerning",
+          "restricted"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "GPS signal",
+          "concerning",
+          "low"
+        ],
+        [
+          "action",
+          "Aircraft",
+          "concerning",
+          "unable to auto hover"
+        ],
+        [
+          "action",
+          "takeoff",
+          "concerning",
+          "restricted"
+        ]
+      ],
+      "output_correct": "feature is concerning because GPS signal is low [SSEP] component is concerning because Aircraft is unable to auto hover [SSEP] action is concerning because takeoff is restricted",
+      "output_pred": "feature is concerning because GPS signal is low [SSEP] action is concerning because Aircraft is unable to auto hover [SSEP] action is concerning because takeoff is restricted",
+      "utterances": [
+        "GPS",
+        "signal",
+        "low.",
+        "Aircraft",
+        "unable",
+        "to",
+        "auto",
+        "hover",
+        "and",
+        "takeoff",
+        "restricted.",
+        "Move",
+        "to",
+        "environment",
+        "with",
+        "adequate",
+        "light.",
+        "Unlocking",
+        "takeoff",
+        "restrictions",
+        "not",
+        "recommended."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "feature",
+          "Downward Obstacle Sensing",
+          "concerning",
+          "not functioning"
+        ],
+        [
+          "parameter",
+          "ambient light",
+          "concerning",
+          "too weak"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "Downward Obstacle Sensing",
+          "concerning",
+          "not functioning"
+        ],
+        [
+          "parameter",
+          "Ambient Light",
+          "concerning",
+          "too weak"
+        ]
+      ],
+      "output_correct": "feature is concerning because Downward Obstacle Sensing is not functioning [SSEP] parameter is concerning because ambient light is too weak",
+      "output_pred": "feature is concerning because Downward Obstacle Sensing is not functioning [SSEP] parameter is concerning because Ambient Light is too weak",
+      "utterances": [
+        "Downward",
+        "Obstacle",
+        "Sensing",
+        "is",
+        "not",
+        "functioning.",
+        "Ambient",
+        "Light",
+        "is",
+        "too",
+        "weak."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "feature",
+          "Visual positioning",
+          "concerning",
+          "inaccurate"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "Visual positioning",
+          "concerning",
+          "inaccurate"
+        ]
+      ],
+      "output_correct": "feature is concerning because Visual positioning is inaccurate",
+      "output_pred": "feature is concerning because Visual positioning is inaccurate",
+      "utterances": [
+        "Visual",
+        "positioning",
+        "inaccurate.",
+        "Fly",
+        "with",
+        "caution."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "feature",
+          "Distance limit",
+          "ok",
+          "enabled"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "Distance limit",
+          "ok",
+          "enabled"
+        ]
+      ],
+      "output_correct": "feature is ok because Distance limit is enabled",
+      "output_pred": "parameter is ok because Distance limit is enabled",
+      "utterances": [
+        "Distance",
+        "limit",
+        "enabled.",
+        "Fly",
+        "safely."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Data Recorder File Index",
+          "ok",
+          "65"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "Data Recorder File Index",
+          "ok",
+          "65"
+        ]
+      ],
+      "output_correct": "parameter is ok because Data Recorder File Index is 65",
+      "output_pred": "parameter is ok because Data Recorder File Index is 65",
+      "utterances": [
+        "Data",
+        "Recorder",
+        "File",
+        "Index",
+        "is",
+        "65."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "action",
+          "Track Subject",
+          "concerning",
+          "Cannot"
+        ],
+        [
+          "action",
+          "Identify Subject",
+          "concerning",
+          "Cannot"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "action",
+          "Track Subject",
+          "concerning",
+          "Cannot"
+        ],
+        [
+          "action",
+          "Identify Subject",
+          "concerning",
+          "Cannot"
+        ]
+      ],
+      "output_correct": "action is concerning because Track Subject is Cannot [SSEP] action is concerning because Identify Subject is Cannot",
+      "output_pred": "action is concerning because Track Subject is Cannot [SSEP] action is concerning because Identify Subject is Cannot",
+      "utterances": [
+        "Cannot",
+        "Track",
+        "Subject.",
+        "Cannot",
+        "Identify",
+        "Subject."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "feature",
+          "Downlink",
+          "ok",
+          "Restored"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "Downlink",
+          "ok",
+          "Restored"
+        ]
+      ],
+      "output_correct": "feature is ok because Downlink is Restored",
+      "output_pred": "feature is ok because Downlink is Restored",
+      "utterances": [
+        "Downlink",
+        "Restored",
+        "(after",
+        "0m",
+        "1.7s)."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "feature",
+          "Obstacle sensing",
+          "concerning",
+          "not available at night"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "Obstacle sensing",
+          "concerning",
+          "not available at night"
+        ]
+      ],
+      "output_correct": "feature is concerning because Obstacle sensing is not available at night",
+      "output_pred": "feature is concerning because Obstacle sensing is not available at night",
+      "utterances": [
+        "Obstacle",
+        "sensing",
+        "not",
+        "available",
+        "at",
+        "night.",
+        "Adjust",
+        "RTH",
+        "altitude",
+        "to",
+        "above",
+        "tallest",
+        "surrounding",
+        "building",
+        "before",
+        "flying."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "state",
+          "GPS signal",
+          "concerning",
+          "too weak"
+        ],
+        [
+          "parameter",
+          "Home Point",
+          "concerning",
+          "not updated"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "Aircraft GPS signal",
+          "concerning",
+          "too weak"
+        ],
+        [
+          "parameter",
+          "Home Point",
+          "concerning",
+          "not updated"
+        ]
+      ],
+      "output_correct": "state is concerning because GPS signal is too weak [SSEP] parameter is concerning because Home Point is not updated",
+      "output_pred": "feature is concerning because Aircraft GPS signal is too weak [SSEP] parameter is concerning because Home Point is not updated",
+      "utterances": [
+        "Aircraft",
+        "GPS",
+        "signal",
+        "too",
+        "weak.",
+        "Home",
+        "Point",
+        "not",
+        "updated."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "target area",
+          "concerning",
+          "in an Altitude Zone"
+        ],
+        [
+          "parameter",
+          "Flight altitude",
+          "concerning",
+          "restricted to nnn"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "target area",
+          "concerning",
+          "in an Altitude Zone"
+        ],
+        [
+          "parameter",
+          "Flight altitude",
+          "ok",
+          "restricted to nnn"
+        ]
+      ],
+      "output_correct": "parameter is concerning because target area is in an Altitude Zone [SSEP] parameter is concerning because Flight altitude is restricted to nnn",
+      "output_pred": "parameter is concerning because target area is in an Altitude Zone [SSEP] parameter is ok because Flight altitude is restricted to nnn",
+      "utterances": [
+        "GEO",
+        "Zone",
+        "Info:",
+        "The",
+        "target",
+        "area",
+        "is",
+        "in",
+        "an",
+        "Altitude",
+        "Zone.",
+        "Flight",
+        "altitude",
+        "restricted",
+        "to",
+        "nnn."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Manned aircraft",
+          "concerning",
+          "approaching"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Manned aircraft",
+          "concerning",
+          "approaching"
+        ]
+      ],
+      "output_correct": "component is concerning because Manned aircraft is approaching",
+      "output_pred": "component is concerning because Manned aircraft is approaching",
+      "utterances": [
+        "Manned",
+        "aircraft",
+        "approaching.",
+        "Fly",
+        "at",
+        "a",
+        "safe",
+        "altitude."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "issue",
+          "Remote Controller Interference",
+          "concerning",
+          "Strong"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "issue",
+          "Remote Controller Interference",
+          "concerning",
+          "Strong"
+        ]
+      ],
+      "output_correct": "issue is concerning because Remote Controller Interference is Strong",
+      "output_pred": "issue is concerning because Remote Controller Interference is Strong",
+      "utterances": [
+        "Strong",
+        "Remote",
+        "Controller",
+        "Interference."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "compass",
+          "concerning",
+          "abnormal"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "compass",
+          "concerning",
+          "abnormal"
+        ]
+      ],
+      "output_correct": "component is concerning because compass is abnormal",
+      "output_pred": "component is concerning because compass is abnormal",
+      "utterances": [
+        "Fly",
+        "with",
+        "caution.",
+        "Compass",
+        "abnormal",
+        "Solution:",
+        "1.",
+        "Ensure",
+        "there",
+        "are",
+        "no",
+        "magnets",
+        "or",
+        "metal",
+        "objects",
+        "near",
+        "the",
+        "aircraft.",
+        "The",
+        "ground",
+        "or",
+        "walls",
+        "may",
+        "contain",
+        "metal.",
+        "Move",
+        "away",
+        "from",
+        "sources",
+        "of",
+        "interference",
+        "before."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "gimbal vibration",
+          "concerning",
+          "excessive"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "issue",
+          "gimbal vibration",
+          "concerning",
+          "Excessive"
+        ]
+      ],
+      "output_correct": "parameter is concerning because gimbal vibration is excessive",
+      "output_pred": "issue is concerning because gimbal vibration is Excessive",
+      "utterances": [
+        "Excessive",
+        "gimbal",
+        "vibration.",
+        "Check",
+        "whether",
+        "gimbal",
+        "can",
+        "rotate",
+        "freely."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "feature",
+          "compass function",
+          "concerning",
+          "Abnormal"
+        ],
+        [
+          "feature",
+          "GPS signal",
+          "concerning",
+          "Abnormal"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "compass function",
+          "concerning",
+          "abnormal"
+        ],
+        [
+          "feature",
+          "GPS signal",
+          "concerning",
+          "detected"
+        ],
+        [
+          "component",
+          "Aircraft",
+          "ok",
+          "switched to ATTI mode"
+        ]
+      ],
+      "output_correct": "feature is concerning because compass function is Abnormal [SSEP] feature is concerning because GPS signal is Abnormal",
+      "output_pred": "parameter is concerning because compass function is abnormal [SSEP] feature is concerning because GPS signal is detected [SSEP] component is ok because Aircraft is switched to ATTI mode",
+      "utterances": [
+        "Abnormal",
+        "compass",
+        "function",
+        "or",
+        "GPS",
+        "signal",
+        "detected.",
+        "Aircraft",
+        "switched",
+        "to",
+        "ATTI",
+        "mode."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Ambient light",
+          "concerning",
+          "too low"
+        ],
+        [
+          "feature",
+          "Vision system",
+          "concerning",
+          "unavailable"
+        ],
+        [
+          "feature",
+          "obstacle sensing",
+          "concerning",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "ambient light",
+          "concerning",
+          "too low"
+        ],
+        [
+          "feature",
+          "Vision system",
+          "concerning",
+          "unavailable"
+        ],
+        [
+          "feature",
+          "obstacle sensing",
+          "concerning",
+          "unavailable"
+        ]
+      ],
+      "output_correct": "parameter is concerning because Ambient light is too low [SSEP] feature is concerning because Vision system is unavailable [SSEP] feature is concerning because obstacle sensing is unavailable",
+      "output_pred": "parameter is concerning because ambient light is too low [SSEP] feature is concerning because Vision system is unavailable [SSEP] feature is concerning because obstacle sensing is unavailable",
+      "utterances": [
+        "Ambient",
+        "light",
+        "too",
+        "low.",
+        "Vision",
+        "system",
+        "and",
+        "obstacle",
+        "sensing",
+        "unavailable.",
+        "Fly",
+        "with",
+        "caution."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Payload mode",
+          "ok",
+          "enabled"
+        ],
+        [
+          "parameter",
+          "max altitude",
+          "ok",
+          "set to nnn"
+        ],
+        [
+          "parameter",
+          "max distance",
+          "ok",
+          "set to nnn"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "state",
+          "Payload mode",
+          "ok",
+          "enabled"
+        ],
+        [
+          "parameter",
+          "max altitude",
+          "ok",
+          "set to nnn"
+        ],
+        [
+          "parameter",
+          "max distance",
+          "ok",
+          "set to nnn"
+        ]
+      ],
+      "output_correct": "parameter is ok because Payload mode is enabled [SSEP] parameter is ok because max altitude is set to nnn [SSEP] parameter is ok because max distance is set to nnn",
+      "output_pred": "state is ok because Payload mode is enabled [SSEP] parameter is ok because max altitude is set to nnn [SSEP] parameter is ok because max distance is set to nnn",
+      "utterances": [
+        "Payload",
+        "mode",
+        "enabled.",
+        "Max",
+        "altitude",
+        "set",
+        "to",
+        "nnn",
+        "and",
+        "max",
+        "distance",
+        "set",
+        "to",
+        "nnn",
+        "to",
+        "ensure",
+        "flight",
+        "safety."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Motor",
+          "concerning",
+          "idling"
+        ],
+        [
+          "component",
+          "propeller",
+          "concerning",
+          "lost"
+        ],
+        [
+          "component",
+          "propeller",
+          "concerning",
+          "missing"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Motor",
+          "concerning",
+          "idling"
+        ],
+        [
+          "component",
+          "propeller",
+          "concerning",
+          "lost"
+        ],
+        [
+          "component",
+          "Motor",
+          "concerning",
+          "missing"
+        ]
+      ],
+      "output_correct": "component is concerning because Motor is idling [SSEP] component is concerning because propeller is lost [SSEP] component is concerning because propeller is missing",
+      "output_pred": "component is concerning because Motor is idling [SSEP] component is concerning because propeller is lost [SSEP] component is concerning because Motor is missing",
+      "utterances": [
+        "Motor",
+        "is",
+        "idling",
+        "(lost",
+        "or",
+        "missing",
+        "propeller)."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "NULL",
+          "concerning",
+          "unable to take off"
+        ],
+        [
+          "issue",
+          "NULL",
+          "concerning",
+          "low light environment"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "action",
+          "take off",
+          "concerning",
+          "unable"
+        ]
+      ],
+      "output_correct": "component is concerning because it is unable to take off [SSEP] issue is concerning because it is low light environment",
+      "output_pred": "action is concerning because take off is unable",
+      "utterances": [
+        "Unable",
+        "to",
+        "take",
+        "off",
+        "in",
+        "low",
+        "light",
+        "environment.",
+        "Ensure",
+        "there",
+        "are",
+        "no",
+        "metal",
+        "and",
+        "magnetic",
+        "objects",
+        "near",
+        "the",
+        "aircraft",
+        "and",
+        "calibrate",
+        "compass."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Data Recorder File Index",
+          "ok",
+          "17"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "Data Recorder File Index",
+          "ok",
+          "17"
+        ]
+      ],
+      "output_correct": "parameter is ok because Data Recorder File Index is 17",
+      "output_pred": "parameter is ok because Data Recorder File Index is 17",
+      "utterances": [
+        "Data",
+        "Recorder",
+        "File",
+        "Index",
+        "is",
+        "17."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Min Waypoint Distance",
+          "ok",
+          "nnn"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "Min Waypoint Distance",
+          "ok",
+          "nnn"
+        ]
+      ],
+      "output_correct": "parameter is ok because Min Waypoint Distance is nnn",
+      "output_pred": "parameter is ok because Min Waypoint Distance is nnn",
+      "utterances": [
+        "Min",
+        "Waypoint",
+        "Distance:",
+        "nnn."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "video frame rate",
+          "concerning",
+          "less than 9Hz"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "Live stream video frame rate",
+          "concerning",
+          "less than 9Hz"
+        ]
+      ],
+      "output_correct": "parameter is concerning because video frame rate is less than 9Hz",
+      "output_pred": "parameter is concerning because Live stream video frame rate is less than 9Hz",
+      "utterances": [
+        "Live",
+        "stream",
+        "video",
+        "frame",
+        "rate",
+        "less",
+        "than",
+        "9Hz.",
+        "Fly",
+        "with",
+        "caution."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "feature",
+          "Advanced RTH Image Transmission",
+          "ok",
+          "Recovered"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "Advanced RTH Image Transmission",
+          "ok",
+          "Recovered"
+        ],
+        [
+          "component",
+          "Aircraft",
+          "ok",
+          "returning home"
+        ]
+      ],
+      "output_correct": "feature is ok because Advanced RTH Image Transmission is Recovered",
+      "output_pred": "feature is ok because Advanced RTH Image Transmission is Recovered [SSEP] component is ok because Aircraft is returning home",
+      "utterances": [
+        "Advanced",
+        "RTH",
+        "Image",
+        "Transmission",
+        "Recovered.",
+        "Aircraft",
+        "is",
+        "returning",
+        "home."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Another aircraft",
+          "concerning",
+          "dangerously close"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "another aircraft",
+          "concerning",
+          "dangerously close"
+        ]
+      ],
+      "output_correct": "component is concerning because Another aircraft is dangerously close",
+      "output_pred": "component is concerning because another aircraft is dangerously close",
+      "utterances": [
+        "Another",
+        "aircraft",
+        "is",
+        "dangerously",
+        "close,",
+        "please",
+        "descend",
+        "to",
+        "a",
+        "safer",
+        "altitude."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "state",
+          "ActiveTrack Flight",
+          "concerning",
+          "Ended"
+        ],
+        [
+          "parameter",
+          "subject",
+          "concerning",
+          "cannot find"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "state",
+          "ActiveTrack Flight",
+          "concerning",
+          "Ended"
+        ],
+        [
+          "parameter",
+          "subject",
+          "concerning",
+          "Cannot find"
+        ]
+      ],
+      "output_correct": "state is concerning because ActiveTrack Flight is Ended [SSEP] parameter is concerning because subject is cannot find",
+      "output_pred": "state is concerning because ActiveTrack Flight is Ended [SSEP] parameter is concerning because subject is Cannot find",
+      "utterances": [
+        "ActiveTrack",
+        "Flight",
+        "Ended:",
+        "Cannot",
+        "find",
+        "subject."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "feature",
+          "Remote ID functionality",
+          "ok",
+          "normal"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "Remote ID functionality",
+          "ok",
+          "normal"
+        ]
+      ],
+      "output_correct": "feature is ok because Remote ID functionality is normal",
+      "output_pred": "feature is ok because Remote ID functionality is normal",
+      "utterances": [
+        "Remote",
+        "ID",
+        "functionality",
+        "normal."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Calibration target",
+          "concerning",
+          "not far away enough"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "Calibration target",
+          "concerning",
+          "not far away enough"
+        ]
+      ],
+      "output_correct": "parameter is concerning because Calibration target is not far away enough",
+      "output_pred": "parameter is concerning because Calibration target is not far away enough",
+      "utterances": [
+        "Calibration",
+        "target",
+        "not",
+        "far",
+        "away",
+        "enough.",
+        "Please",
+        "calibrate",
+        "using",
+        "infinity."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Aircraft max power load",
+          "concerning",
+          "reached"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "Aircraft max power load",
+          "concerning",
+          "reached"
+        ]
+      ],
+      "output_correct": "parameter is concerning because Aircraft max power load is reached",
+      "output_pred": "parameter is concerning because Aircraft max power load is reached",
+      "utterances": [
+        "Aircraft",
+        "max",
+        "power",
+        "load",
+        "reached.",
+        "Decrease",
+        "altitude",
+        "and",
+        "fly",
+        "with",
+        "caution.",
+        "If",
+        "this",
+        "issue",
+        "persists,",
+        "land",
+        "immediately."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "action",
+          "Cancel Landing",
+          "concerning",
+          "Failed"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "action",
+          "Cancel Landing",
+          "concerning",
+          "Failed"
+        ]
+      ],
+      "output_correct": "action is concerning because Cancel Landing is Failed",
+      "output_pred": "action is concerning because Cancel Landing is Failed",
+      "utterances": [
+        "Cancel",
+        "Landing",
+        "Failed."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Compass",
+          "concerning",
+          "Stuck"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Compass",
+          "concerning",
+          "Stuck"
+        ]
+      ],
+      "output_correct": "component is concerning because Compass is Stuck",
+      "output_pred": "component is concerning because Compass is Stuck",
+      "utterances": [
+        "Compass",
+        "Stuck.",
+        "Restart",
+        "Aircraft.",
+        "Contact",
+        "DJI",
+        "Support",
+        "if",
+        "this",
+        "persists."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "action",
+          "track subject",
+          "concerning",
+          "Cannot"
+        ],
+        [
+          "parameter",
+          "Gimbal Tilt",
+          "concerning",
+          "too Large"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "action",
+          "track subject",
+          "concerning",
+          "Cannot"
+        ],
+        [
+          "component",
+          "Gimbal Tilt",
+          "concerning",
+          "too large"
+        ]
+      ],
+      "output_correct": "action is concerning because track subject is Cannot [SSEP] parameter is concerning because Gimbal Tilt is too Large",
+      "output_pred": "action is concerning because track subject is Cannot [SSEP] component is concerning because Gimbal Tilt is too large",
+      "utterances": [
+        "Cannot",
+        "track",
+        "subject:",
+        "Gimbal",
+        "Tilt",
+        "too",
+        "Large."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "state",
+          "Aircraft Mode",
+          "concerning",
+          "not allowed to change"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "Aircraft Mode",
+          "ok",
+          "Not Allowed to change"
+        ]
+      ],
+      "output_correct": "state is concerning because Aircraft Mode is not allowed to change",
+      "output_pred": "parameter is ok because Aircraft Mode is Not Allowed to change",
+      "utterances": [
+        "Not",
+        "Allowed",
+        "to",
+        "change",
+        "Aircraft",
+        "Mode.",
+        "If",
+        "needed."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "state",
+          "TapFly",
+          "concerning",
+          "Cannot Enter"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "state",
+          "TapFly",
+          "concerning",
+          "Cannot Enter"
+        ],
+        [
+          "action",
+          "fly in that direction",
+          "concerning",
+          "Cannot enter"
+        ]
+      ],
+      "output_correct": "state is concerning because TapFly is Cannot Enter",
+      "output_pred": "state is concerning because TapFly is Cannot Enter [SSEP] action is concerning because fly in that direction is Cannot enter",
+      "utterances": [
+        "Cannot",
+        "Enter",
+        "TapFly",
+        "Cannot",
+        "fly",
+        "in",
+        "that",
+        "direction."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "GPS",
+          "concerning",
+          "No"
+        ],
+        [
+          "action",
+          "Return to Home",
+          "concerning",
+          "failed"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "GPS",
+          "concerning",
+          "No"
+        ],
+        [
+          "action",
+          "return to home",
+          "concerning",
+          "failed"
+        ]
+      ],
+      "output_correct": "component is concerning because GPS is No [SSEP] action is concerning because Return to Home is failed",
+      "output_pred": "feature is concerning because GPS is No [SSEP] action is concerning because return to home is failed",
+      "utterances": [
+        "No",
+        "GPS.",
+        "Return",
+        "to",
+        "Home",
+        "failed.",
+        "Return",
+        "the",
+        "aircraft",
+        "to",
+        "home",
+        "manually."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Subject",
+          "concerning",
+          "too Large"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "Subject",
+          "concerning",
+          "too Large"
+        ]
+      ],
+      "output_correct": "parameter is concerning because Subject is too Large",
+      "output_pred": "parameter is concerning because Subject is too Large",
+      "utterances": [
+        "Subject",
+        "too",
+        "Large.",
+        "Move",
+        "Away",
+        "and",
+        "retry."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Altitude",
+          "ok",
+          "less than nnn"
+        ],
+        [
+          "state",
+          "Follow Me Mode",
+          "ok",
+          "Cannot enable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "altitude",
+          "concerning",
+          "Less than nnn"
+        ],
+        [
+          "state",
+          "Follow Me Mode",
+          "concerning",
+          "Cannot enable"
+        ]
+      ],
+      "output_correct": "parameter is ok because Altitude is less than nnn [SSEP] state is ok because Follow Me Mode is Cannot enable",
+      "output_pred": "parameter is concerning because altitude is Less than nnn [SSEP] state is concerning because Follow Me Mode is Cannot enable",
+      "utterances": [
+        "Altitude",
+        "Less",
+        "than",
+        "nnn.",
+        "Cannot",
+        "enable",
+        "Follow",
+        "Me",
+        "Mode."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "issue",
+          "Interference",
+          "concerning",
+          "Strong"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "issue",
+          "Interference",
+          "concerning",
+          "Strong"
+        ]
+      ],
+      "output_correct": "issue is concerning because Interference is Strong",
+      "output_pred": "issue is concerning because Interference is Strong",
+      "utterances": [
+        "Strong",
+        "Interference",
+        "to",
+        "Remote",
+        "Controller.",
+        "Signal",
+        "interruption",
+        "maybe",
+        "more",
+        "likely.",
+        "Fly",
+        "with",
+        "caution."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Landing Gear",
+          "ok",
+          "Lowering"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Landing Gear",
+          "ok",
+          "Lowering"
+        ]
+      ],
+      "output_correct": "component is ok because Landing Gear is Lowering",
+      "output_pred": "component is ok because Landing Gear is Lowering",
+      "utterances": [
+        "Landing",
+        "Gear",
+        "Lowering."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Ambient Light",
+          "concerning",
+          "too Weak"
+        ],
+        [
+          "feature",
+          "Forward obstacle sensing",
+          "ok",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "Ambient Light",
+          "concerning",
+          "too Weak"
+        ],
+        [
+          "feature",
+          "Forward obstacle sensing",
+          "concerning",
+          "unavailable"
+        ]
+      ],
+      "output_correct": "parameter is concerning because Ambient Light is too Weak [SSEP] feature is ok because Forward obstacle sensing is unavailable",
+      "output_pred": "parameter is concerning because Ambient Light is too Weak [SSEP] feature is concerning because Forward obstacle sensing is unavailable",
+      "utterances": [
+        "Ambient",
+        "Light",
+        "too",
+        "Weak,",
+        "Forward",
+        "obstacle",
+        "sensing",
+        "is",
+        "unavailable.",
+        "please",
+        "ensure",
+        "safety",
+        "during",
+        "the",
+        "flight."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Home Point",
+          "ok",
+          "recorded"
+        ],
+        [
+          "parameter",
+          "Return-to-Home Altitude",
+          "ok",
+          "98FT"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "Home Point",
+          "ok",
+          "recorded"
+        ],
+        [
+          "parameter",
+          "Return-to-Home Altitude",
+          "ok",
+          "98FT"
+        ]
+      ],
+      "output_correct": "parameter is ok because Home Point is recorded [SSEP] parameter is ok because Return-to-Home Altitude is 98FT",
+      "output_pred": "parameter is ok because Home Point is recorded [SSEP] parameter is ok because Return-to-Home Altitude is 98FT",
+      "utterances": [
+        "Home",
+        "Point",
+        "recorded.",
+        "Return-to-Home",
+        "Altitude",
+        ":",
+        "98FT."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Aircraft",
+          "ok",
+          "in Altitude Zone"
+        ],
+        [
+          "parameter",
+          "Max altitude",
+          "ok",
+          "set to nnn"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Aircraft",
+          "concerning",
+          "in Altitude Zone"
+        ],
+        [
+          "parameter",
+          "Max altitude",
+          "ok",
+          "set to nnn"
+        ]
+      ],
+      "output_correct": "component is ok because Aircraft is in Altitude Zone [SSEP] parameter is ok because Max altitude is set to nnn",
+      "output_pred": "component is concerning because Aircraft is in Altitude Zone [SSEP] parameter is ok because Max altitude is set to nnn",
+      "utterances": [
+        "Aircraft",
+        "in",
+        "Altitude",
+        "Zone.",
+        "Max",
+        "altitude",
+        "set",
+        "to",
+        "nnn."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Manned aircraft",
+          "concerning",
+          "detected nearby"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Manned aircraft",
+          "concerning",
+          "detected nearby"
+        ]
+      ],
+      "output_correct": "component is concerning because Manned aircraft is detected nearby",
+      "output_pred": "component is concerning because Manned aircraft is detected nearby",
+      "utterances": [
+        "Manned",
+        "aircraft",
+        "detected",
+        "nearby.",
+        "Fly",
+        "with",
+        "caution."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Return-To-Home altitude",
+          "ok",
+          "set to nnn"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "Return-To-Home altitude",
+          "ok",
+          "set to nnn"
+        ]
+      ],
+      "output_correct": "parameter is ok because Return-To-Home altitude is set to nnn",
+      "output_pred": "parameter is ok because Return-To-Home altitude is set to nnn",
+      "utterances": [
+        "Setting",
+        "new",
+        "Return-To-Home",
+        "altitude",
+        "to",
+        "nnn."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "action",
+          "take off",
+          "ok",
+          "in non-P mode"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "state",
+          "Flight Mode",
+          "ok",
+          "Switch to another mode"
+        ]
+      ],
+      "output_correct": "action is ok because take off is in non-P mode",
+      "output_pred": "state is ok because Flight Mode is Switch to another mode",
+      "utterances": [
+        "To",
+        "take",
+        "off",
+        "in",
+        "non-P",
+        "mode,",
+        "toggle",
+        "Flight",
+        "Mode",
+        "Switch",
+        "to",
+        "another",
+        "mode",
+        "and",
+        "then",
+        "toggle",
+        "it",
+        "back."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Aircraft Mode",
+          "concerning",
+          "Not Allowed to change"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "Aircraft Mode",
+          "ok",
+          "Not Allowed"
+        ]
+      ],
+      "output_correct": "parameter is concerning because Aircraft Mode is Not Allowed to change",
+      "output_pred": "parameter is ok because Aircraft Mode is Not Allowed",
+      "utterances": [
+        "Not",
+        "Allowed",
+        "to",
+        "change",
+        "Aircraft",
+        "Mode.",
+        "If",
+        "needed,",
+        "enable",
+        "it",
+        "in",
+        "Main",
+        "Controller",
+        "Settings."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Another aircraft",
+          "concerning",
+          "nearby"
+        ],
+        [
+          "component",
+          "Another aircraft",
+          "concerning",
+          "approaching"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "another aircraft",
+          "concerning",
+          "nearby"
+        ],
+        [
+          "component",
+          "another aircraft",
+          "concerning",
+          "approaching"
+        ]
+      ],
+      "output_correct": "component is concerning because Another aircraft is nearby [SSEP] component is concerning because Another aircraft is approaching",
+      "output_pred": "component is concerning because another aircraft is nearby [SSEP] component is concerning because another aircraft is approaching",
+      "utterances": [
+        "Another",
+        "aircraft",
+        "is",
+        "nearby.",
+        "Another",
+        "aircraft",
+        "is",
+        "approaching.",
+        "Descend",
+        "as",
+        "soon",
+        "as",
+        "possible."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "action",
+          "API Automatic Takeoff",
+          "ok",
+          "NULL"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "action",
+          "API Automatic Takeoff",
+          "ok",
+          "NULL"
+        ]
+      ],
+      "output_correct": "action is ok because API Automatic Takeoff is NULL",
+      "output_pred": "action is ok because API Automatic Takeoff is NULL",
+      "utterances": [
+        "API",
+        "Automatic",
+        "Takeoff."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Aircraft",
+          "concerning",
+          "entering a restricted area"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Aircraft",
+          "concerning",
+          "entering a restricted area"
+        ]
+      ],
+      "output_correct": "component is concerning because Aircraft is entering a restricted area",
+      "output_pred": "component is concerning because Aircraft is entering a restricted area",
+      "utterances": [
+        "Aircraft",
+        "is",
+        "entering",
+        "a",
+        "restricted",
+        "area."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "aircraft",
+          "concerning",
+          "at the boundary of an Altitude Zone"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "aircraft",
+          "concerning",
+          "at the boundary of an Altitude Zone"
+        ]
+      ],
+      "output_correct": "component is concerning because aircraft is at the boundary of an Altitude Zone",
+      "output_pred": "component is concerning because aircraft is at the boundary of an Altitude Zone",
+      "utterances": [
+        "Your",
+        "aircraft",
+        "is",
+        "at",
+        "the",
+        "boundary",
+        "of",
+        "an",
+        "Altitude",
+        "Zone.",
+        "Please",
+        "fly",
+        "away",
+        "or",
+        "land",
+        "with",
+        "caution."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "feature",
+          "signal",
+          "concerning",
+          "Weak"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "signal",
+          "concerning",
+          "Weak"
+        ]
+      ],
+      "output_correct": "feature is concerning because signal is Weak",
+      "output_pred": "feature is concerning because signal is Weak",
+      "utterances": [
+        "Weak",
+        "signal.",
+        "Adjust",
+        "antennas."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Subject",
+          "concerning",
+          "lost"
+        ],
+        [
+          "action",
+          "Searching",
+          "ok",
+          "NULL"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "Subject",
+          "concerning",
+          "lost"
+        ]
+      ],
+      "output_correct": "parameter is concerning because Subject is lost [SSEP] action is ok because Searching is NULL",
+      "output_pred": "parameter is concerning because Subject is lost",
+      "utterances": [
+        "Subject",
+        "lost.",
+        "Searching",
+        "\u2026."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "feature",
+          "GPS signal",
+          "concerning",
+          "Weak"
+        ],
+        [
+          "parameter",
+          "Positioning accuracy",
+          "concerning",
+          "compromised"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "GPS signal",
+          "concerning",
+          "weak"
+        ],
+        [
+          "parameter",
+          "Positioning accuracy",
+          "concerning",
+          "compromised"
+        ]
+      ],
+      "output_correct": "feature is concerning because GPS signal is Weak [SSEP] parameter is concerning because Positioning accuracy is compromised",
+      "output_pred": "feature is concerning because GPS signal is weak [SSEP] parameter is concerning because Positioning accuracy is compromised",
+      "utterances": [
+        "Weak",
+        "GPS",
+        "signal.",
+        "Positioning",
+        "accuracy",
+        "may",
+        "be",
+        "compromised.",
+        "Please",
+        "fly",
+        "with",
+        "caution."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Landing Position",
+          "ok",
+          "Correcting"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "Landing Position",
+          "ok",
+          "Correcting"
+        ]
+      ],
+      "output_correct": "parameter is ok because Landing Position is Correcting",
+      "output_pred": "parameter is ok because Landing Position is Correcting",
+      "utterances": [
+        "Correcting",
+        "Landing",
+        "Position."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "state",
+          "GPS mode",
+          "ok",
+          "Exiting"
+        ],
+        [
+          "component",
+          "Unknown",
+          "concerning",
+          "Error"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "state",
+          "GPS mode",
+          "concerning",
+          "Exiting"
+        ],
+        [
+          "component",
+          "Unknown",
+          "concerning",
+          "Error"
+        ]
+      ],
+      "output_correct": "state is ok because GPS mode is Exiting [SSEP] component is concerning because Unknown is Error",
+      "output_pred": "state is concerning because GPS mode is Exiting [SSEP] component is concerning because Unknown is Error",
+      "utterances": [
+        "Exiting",
+        "GPS",
+        "mode:",
+        "Unknown",
+        "Error."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "feature",
+          "Obstacle Sensing",
+          "ok",
+          "disabled"
+        ],
+        [
+          "component",
+          "aircraft",
+          "ok",
+          "landing"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "Obstacle Sensing",
+          "ok",
+          "disabled when aircraft is landing"
+        ]
+      ],
+      "output_correct": "feature is ok because Obstacle Sensing is disabled [SSEP] component is ok because aircraft is landing",
+      "output_pred": "feature is ok because Obstacle Sensing is disabled when aircraft is landing",
+      "utterances": [
+        "Obstacle",
+        "Sensing",
+        "will",
+        "be",
+        "disabled",
+        "when",
+        "aircraft",
+        "is",
+        "landing.",
+        "Fly",
+        "with",
+        "caution."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Altitude",
+          "concerning",
+          "exceeds nnn"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "altitude",
+          "concerning",
+          "exceeds nnn"
+        ]
+      ],
+      "output_correct": "parameter is concerning because Altitude is exceeds nnn",
+      "output_pred": "parameter is concerning because altitude is exceeds nnn",
+      "utterances": [
+        "Altitude",
+        "above",
+        "the",
+        "takeoff",
+        "point",
+        "exceeds",
+        "nnn.",
+        "Always",
+        "fly",
+        "in",
+        "compliance",
+        "with",
+        "altitude",
+        "limitations."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Battery",
+          "concerning",
+          "Overcurrent During Discharge"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Battery",
+          "concerning",
+          "Overcurrent"
+        ],
+        [
+          "action",
+          "Discharge",
+          "concerning",
+          "NULL"
+        ]
+      ],
+      "output_correct": "component is concerning because Battery is Overcurrent During Discharge",
+      "output_pred": "component is concerning because Battery is Overcurrent [SSEP] action is concerning because Discharge is NULL",
+      "utterances": [
+        "Battery:",
+        "Overcurrent",
+        "During",
+        "Discharge."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "issue",
+          "wireless interference",
+          "concerning",
+          "strong"
+        ],
+        [
+          "feature",
+          "Obstacle Avoidance",
+          "ok",
+          "disabled"
+        ],
+        [
+          "component",
+          "Landing gear",
+          "ok",
+          "lowered"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "issue",
+          "wireless interference",
+          "concerning",
+          "strong"
+        ],
+        [
+          "feature",
+          "Obstacle Avoidance",
+          "ok",
+          "Disabled"
+        ],
+        [
+          "component",
+          "Landing gear",
+          "ok",
+          "lowered"
+        ],
+        [
+          "feature",
+          "Obstacle Avoidance",
+          "ok",
+          "Disabled"
+        ]
+      ],
+      "output_correct": "issue is concerning because wireless interference is strong [SSEP] feature is ok because Obstacle Avoidance is disabled [SSEP] component is ok because Landing gear is lowered",
+      "output_pred": "issue is concerning because wireless interference is strong [SSEP] feature is ok because Obstacle Avoidance is Disabled [SSEP] component is ok because Landing gear is lowered [SSEP] feature is ok because Obstacle Avoidance is Disabled",
+      "utterances": [
+        "Strong",
+        "wireless",
+        "interference.",
+        "Please",
+        "fly",
+        "with",
+        "caution.",
+        "Obstacle",
+        "Avoidance",
+        "Disabled.",
+        "Landing",
+        "gear",
+        "lowered.",
+        "Obstacle",
+        "Avoidance",
+        "Disabled."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "action",
+          "Compass initialization",
+          "concerning",
+          "failed"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "Compass initialization",
+          "concerning",
+          "failed"
+        ]
+      ],
+      "output_correct": "action is concerning because Compass initialization is failed",
+      "output_pred": "feature is concerning because Compass initialization is failed",
+      "utterances": [
+        "Compass",
+        "initialization",
+        "failed.",
+        "Restart",
+        "aircraft."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "feature",
+          "AE",
+          "concerning",
+          "locked"
+        ],
+        [
+          "feature",
+          "Metering",
+          "concerning",
+          "disabled"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "AE",
+          "concerning",
+          "Locked"
+        ],
+        [
+          "feature",
+          "Metering",
+          "ok",
+          "disabled"
+        ]
+      ],
+      "output_correct": "feature is concerning because AE is locked [SSEP] feature is concerning because Metering is disabled",
+      "output_pred": "feature is concerning because AE is Locked [SSEP] feature is ok because Metering is disabled",
+      "utterances": [
+        "AE",
+        "Locked.",
+        "Metering",
+        "disabled."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Ambient Light",
+          "concerning",
+          "too weak"
+        ],
+        [
+          "feature",
+          "Vision Positioning obstacle sensing",
+          "concerning",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "Ambient Light",
+          "concerning",
+          "too Weak"
+        ],
+        [
+          "feature",
+          "Vision Positioning obstacle sensing",
+          "concerning",
+          "unavailable"
+        ]
+      ],
+      "output_correct": "parameter is concerning because Ambient Light is too weak [SSEP] feature is concerning because Vision Positioning obstacle sensing is unavailable",
+      "output_pred": "parameter is concerning because Ambient Light is too Weak [SSEP] feature is concerning because Vision Positioning obstacle sensing is unavailable",
+      "utterances": [
+        "Ambient",
+        "Light",
+        "too",
+        "Weak,",
+        "Vision",
+        "Positioning",
+        "obstacle",
+        "sensing",
+        "is",
+        "unavailable.",
+        "please",
+        "ensure",
+        "safety",
+        "during",
+        "the",
+        "flight."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "compass",
+          "concerning",
+          "abnormal"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "compass",
+          "concerning",
+          "abnormal"
+        ]
+      ],
+      "output_correct": "component is concerning because compass is abnormal",
+      "output_pred": "component is concerning because compass is abnormal",
+      "utterances": [
+        "Compass",
+        "abnormal",
+        "Solution:",
+        "1.",
+        "Ensure",
+        "there",
+        "are",
+        "no",
+        "magnets",
+        "or",
+        "metal",
+        "objects",
+        "near",
+        "the",
+        "aircraft.",
+        "The",
+        "ground",
+        "or",
+        "walls",
+        "may",
+        "contain",
+        "metal.",
+        "Move",
+        "away",
+        "from",
+        "sources",
+        "of",
+        "interference",
+        "before",
+        "attempting",
+        "flight.",
+        "2.",
+        "Calibrate",
+        "Compass",
+        "Before",
+        "Takeoff."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "feature",
+          "Forward Obstacle Sensing",
+          "concerning",
+          "not Responding"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "Forward Obstacle Sensing",
+          "concerning",
+          "not Responding"
+        ]
+      ],
+      "output_correct": "feature is concerning because Forward Obstacle Sensing is not Responding",
+      "output_pred": "feature is concerning because Forward Obstacle Sensing is not Responding",
+      "utterances": [
+        "Forward",
+        "Obstacle",
+        "Sensing",
+        "not",
+        "Responding."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "flight attitude angle",
+          "ok",
+          "larger in Sport mode"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "flight attitude angle",
+          "ok",
+          "larger in Sport mode"
+        ],
+        [
+          "component",
+          "gimbal",
+          "ok",
+          "rotated"
+        ]
+      ],
+      "output_correct": "parameter is ok because flight attitude angle is larger in Sport mode",
+      "output_pred": "parameter is ok because flight attitude angle is larger in Sport mode [SSEP] component is ok because gimbal is rotated",
+      "utterances": [
+        "The",
+        "flight",
+        "attitude",
+        "angle",
+        "is",
+        "larger",
+        "in",
+        "Sport",
+        "mode.",
+        "The",
+        "gimbal",
+        "will",
+        "rotate",
+        "when",
+        "the",
+        "aircraft",
+        "starts",
+        "or",
+        "stops.",
+        "Use",
+        "Normal",
+        "mode",
+        "if",
+        "required",
+        "for",
+        "stable",
+        "shooting."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "action",
+          "ActiveTrack command",
+          "concerning",
+          "Cannot send"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "action",
+          "ActiveTrack command",
+          "concerning",
+          "Cannot send"
+        ]
+      ],
+      "output_correct": "action is concerning because ActiveTrack command is Cannot send",
+      "output_pred": "action is concerning because ActiveTrack command is Cannot send",
+      "utterances": [
+        "Cannot",
+        "send",
+        "ActiveTrack",
+        "command."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "feature",
+          "Downlink",
+          "ok",
+          "Restored"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "Downlink",
+          "ok",
+          "Restored"
+        ]
+      ],
+      "output_correct": "feature is ok because Downlink is Restored",
+      "output_pred": "feature is ok because Downlink is Restored",
+      "utterances": [
+        "Downlink",
+        "Restored",
+        "(after",
+        "0m",
+        "2.3s)."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "gimbal motor",
+          "concerning",
+          "overloaded"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Gimbal motor",
+          "concerning",
+          "overloaded"
+        ]
+      ],
+      "output_correct": "component is concerning because gimbal motor is overloaded",
+      "output_pred": "component is concerning because Gimbal motor is overloaded",
+      "utterances": [
+        "Gimbal",
+        "motor",
+        "overloaded.",
+        "Check",
+        "whether",
+        "gimbal",
+        "can",
+        "rotate",
+        "freely."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Data Recorder File Index",
+          "ok",
+          "7"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "Data Recorder File Index",
+          "ok",
+          "7"
+        ]
+      ],
+      "output_correct": "parameter is ok because Data Recorder File Index is 7",
+      "output_pred": "parameter is ok because Data Recorder File Index is 7",
+      "utterances": [
+        "Data",
+        "Recorder",
+        "File",
+        "Index",
+        "is",
+        "7."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "action",
+          "RTH",
+          "ok",
+          "Heading alignment"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "state",
+          "RTH",
+          "ok",
+          "Heading alignment"
+        ]
+      ],
+      "output_correct": "action is ok because RTH is Heading alignment",
+      "output_pred": "state is ok because RTH is Heading alignment",
+      "utterances": [
+        "RTH",
+        ":",
+        "Heading",
+        "alignment."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "feature",
+          "GPS module",
+          "concerning",
+          "error"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "GPS module",
+          "concerning",
+          "error"
+        ]
+      ],
+      "output_correct": "feature is concerning because GPS module is error",
+      "output_pred": "feature is concerning because GPS module is error",
+      "utterances": [
+        "GPS",
+        "module",
+        "error.",
+        "Restart",
+        "aircraft."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "NULL",
+          "ok",
+          "Arrived at End Point"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "End Point",
+          "ok",
+          "Arrived"
+        ]
+      ],
+      "output_correct": "component is ok because it is Arrived at End Point",
+      "output_pred": "parameter is ok because End Point is Arrived",
+      "utterances": [
+        "Arrived",
+        "at",
+        "End",
+        "Point."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "SD card",
+          "concerning",
+          "malfunction"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "SD card",
+          "concerning",
+          "malfunction"
+        ]
+      ],
+      "output_correct": "component is concerning because SD card is malfunction",
+      "output_pred": "component is concerning because SD card is malfunction",
+      "utterances": [
+        "SD",
+        "card",
+        "malfunction.",
+        "Change",
+        "card."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Motor",
+          "concerning",
+          "Blocked"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Motor",
+          "concerning",
+          "Blocked"
+        ]
+      ],
+      "output_correct": "component is concerning because Motor is Blocked",
+      "output_pred": "component is concerning because Motor is Blocked",
+      "utterances": [
+        "Motor",
+        "is",
+        "Blocked."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "action",
+          "Barometer initialization",
+          "concerning",
+          "failed"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "Barometer initialization",
+          "concerning",
+          "failed"
+        ]
+      ],
+      "output_correct": "action is concerning because Barometer initialization is failed",
+      "output_pred": "feature is concerning because Barometer initialization is failed",
+      "utterances": [
+        "Barometer",
+        "initialization",
+        "failed.",
+        "Restart",
+        "aircraft."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "state",
+          "ActiveTrack Flight",
+          "concerning",
+          "Stopped"
+        ],
+        [
+          "component",
+          "Aircraft",
+          "concerning",
+          "Entering Restricted Area"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "state",
+          "ActiveTrack Flight",
+          "concerning",
+          "Stopped"
+        ],
+        [
+          "component",
+          "Aircraft",
+          "concerning",
+          "Entering Restricted Area"
+        ]
+      ],
+      "output_correct": "state is concerning because ActiveTrack Flight is Stopped [SSEP] component is concerning because Aircraft is Entering Restricted Area",
+      "output_pred": "state is concerning because ActiveTrack Flight is Stopped [SSEP] component is concerning because Aircraft is Entering Restricted Area",
+      "utterances": [
+        "ActiveTrack",
+        "Flight",
+        "Stopped",
+        "Aircraft",
+        "Entering",
+        "Restricted",
+        "Area."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Camera",
+          "concerning",
+          "Error"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Camera",
+          "concerning",
+          "Error"
+        ]
+      ],
+      "output_correct": "component is concerning because Camera is Error",
+      "output_pred": "component is concerning because Camera is Error",
+      "utterances": [
+        "Camera",
+        "Error.",
+        "Solution:",
+        "Restart",
+        "the",
+        "aircraft,",
+        "if",
+        "the",
+        "problem",
+        "persists,",
+        "contact",
+        "DJI",
+        "Support."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Drone",
+          "concerning",
+          "Vibrating"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Drone",
+          "ok",
+          "Vibrating"
+        ]
+      ],
+      "output_correct": "component is concerning because Drone is Vibrating",
+      "output_pred": "component is ok because Drone is Vibrating",
+      "utterances": [
+        "Drone",
+        "is",
+        "Vibrating."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "action",
+          "Compass Redundancy Switch",
+          "concerning",
+          "NULL"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Compass",
+          "concerning",
+          "Redundancy Switch"
+        ]
+      ],
+      "output_correct": "action is concerning because Compass Redundancy Switch is NULL",
+      "output_pred": "component is concerning because Compass is Redundancy Switch",
+      "utterances": [
+        "Compass",
+        "Redundancy",
+        "Switch."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "feature",
+          "APAS",
+          "ok",
+          "enabled"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "APAS",
+          "ok",
+          "enabled"
+        ]
+      ],
+      "output_correct": "feature is ok because APAS is enabled",
+      "output_pred": "feature is ok because APAS is enabled",
+      "utterances": [
+        "APAS",
+        "has",
+        "been",
+        "enabled."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Gimbal Pan",
+          "ok",
+          "Recenter"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Recenter Gimbal Pan",
+          "ok",
+          "NULL"
+        ]
+      ],
+      "output_correct": "component is ok because Gimbal Pan is Recenter",
+      "output_pred": "component is ok because Recenter Gimbal Pan is NULL",
+      "utterances": [
+        "Recenter",
+        "Gimbal",
+        "Pan."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Remote controller",
+          "concerning",
+          "disconnected from aircraft"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "Remote controller",
+          "concerning",
+          "disconnected from aircraft"
+        ]
+      ],
+      "output_correct": "component is concerning because Remote controller is disconnected from aircraft",
+      "output_pred": "feature is concerning because Remote controller is disconnected from aircraft",
+      "utterances": [
+        "Remote",
+        "controller",
+        "disconnected",
+        "from",
+        "aircraft."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "state",
+          "flight mode",
+          "concerning",
+          "cannot enter"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "flight mode",
+          "concerning",
+          "Cannot enter"
+        ]
+      ],
+      "output_correct": "state is concerning because flight mode is cannot enter",
+      "output_pred": "parameter is concerning because flight mode is Cannot enter",
+      "utterances": [
+        "Cannot",
+        "enter",
+        "the",
+        "selected",
+        "flight",
+        "mode.",
+        "Try",
+        "again",
+        "later."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Landing gear",
+          "ok",
+          "lowered"
+        ],
+        [
+          "feature",
+          "Obstacle Avoidance",
+          "ok",
+          "disabled"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Landing gear",
+          "ok",
+          "lowered"
+        ],
+        [
+          "feature",
+          "Obstacle Avoidance",
+          "ok",
+          "disabled"
+        ]
+      ],
+      "output_correct": "component is ok because Landing gear is lowered [SSEP] feature is ok because Obstacle Avoidance is disabled",
+      "output_pred": "component is ok because Landing gear is lowered [SSEP] feature is ok because Obstacle Avoidance is disabled",
+      "utterances": [
+        "Landing",
+        "gear",
+        "lowered.",
+        "Obstacle",
+        "Avoidance",
+        "has",
+        "been",
+        "disabled."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "action",
+          "Gyroscope initialization",
+          "concerning",
+          "failed"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "Gyroscope initialization",
+          "concerning",
+          "failed"
+        ]
+      ],
+      "output_correct": "action is concerning because Gyroscope initialization is failed",
+      "output_pred": "feature is concerning because Gyroscope initialization is failed",
+      "utterances": [
+        "Gyroscope",
+        "initialization",
+        "failed.",
+        "Restart",
+        "aircraft."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "state",
+          "Away and Follow",
+          "ok",
+          "in progress"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "action",
+          "Away",
+          "ok",
+          "in progress"
+        ]
+      ],
+      "output_correct": "state is ok because Away and Follow is in progress",
+      "output_pred": "action is ok because Away is in progress",
+      "utterances": [
+        "Away",
+        "and",
+        "Follow",
+        "in",
+        "progress."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Obstacle",
+          "ok",
+          "Avoided"
+        ],
+        [
+          "parameter",
+          "Flight Route",
+          "ok",
+          "Revise"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "Obstacle",
+          "concerning",
+          "Avoided"
+        ]
+      ],
+      "output_correct": "parameter is ok because Obstacle is Avoided [SSEP] parameter is ok because Flight Route is Revise",
+      "output_pred": "feature is concerning because Obstacle is Avoided",
+      "utterances": [
+        "Obstacle",
+        "Avoided.",
+        "Revise",
+        "Flight",
+        "Route."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Data Recorder File Index",
+          "ok",
+          "30"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "Data Recorder File Index",
+          "ok",
+          "30"
+        ]
+      ],
+      "output_correct": "parameter is ok because Data Recorder File Index is 30",
+      "output_pred": "parameter is ok because Data Recorder File Index is 30",
+      "utterances": [
+        "Data",
+        "Recorder",
+        "File",
+        "Index",
+        "is",
+        "30."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Downward vision sensor",
+          "concerning",
+          "calibration error"
+        ],
+        [
+          "action",
+          "Auto calibration",
+          "ok",
+          "in progress"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Downward vision sensor",
+          "concerning",
+          "calibration error"
+        ]
+      ],
+      "output_correct": "component is concerning because Downward vision sensor is calibration error [SSEP] action is ok because Auto calibration is in progress",
+      "output_pred": "component is concerning because Downward vision sensor is calibration error",
+      "utterances": [
+        "Downward",
+        "vision",
+        "sensor",
+        "calibration",
+        "error.",
+        "Auto",
+        "calibration",
+        "in",
+        "progress."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Battery",
+          "concerning",
+          "requires maintenance"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Battery",
+          "concerning",
+          "nnn"
+        ]
+      ],
+      "output_correct": "component is concerning because Battery is requires maintenance",
+      "output_pred": "component is concerning because Battery is nnn",
+      "utterances": [
+        "Battery",
+        "nnn",
+        "requires",
+        "maintenance."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Camera Settings",
+          "ok",
+          "Adjusted to ActiveTrack"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "Camera Settings",
+          "ok",
+          "Adjusted to ActiveTrack"
+        ]
+      ],
+      "output_correct": "parameter is ok because Camera Settings is Adjusted to ActiveTrack",
+      "output_pred": "parameter is ok because Camera Settings is Adjusted to ActiveTrack",
+      "utterances": [
+        "Camera",
+        "Settings",
+        "Adjusted",
+        "to",
+        "ActiveTrack."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Ambient Light",
+          "concerning",
+          "too Weak"
+        ],
+        [
+          "feature",
+          "Backward obstacle sensing",
+          "ok",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "Ambient Light",
+          "concerning",
+          "too Weak"
+        ],
+        [
+          "feature",
+          "Backward obstacle sensing",
+          "concerning",
+          "unavailable"
+        ]
+      ],
+      "output_correct": "parameter is concerning because Ambient Light is too Weak [SSEP] feature is ok because Backward obstacle sensing is unavailable",
+      "output_pred": "parameter is concerning because Ambient Light is too Weak [SSEP] feature is concerning because Backward obstacle sensing is unavailable",
+      "utterances": [
+        "Ambient",
+        "Light",
+        "too",
+        "Weak,",
+        "Backward",
+        "obstacle",
+        "sensing",
+        "is",
+        "unavailable.",
+        "please",
+        "ensure",
+        "safety",
+        "during",
+        "the",
+        "flight."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "GPS signal",
+          "concerning",
+          "No"
+        ],
+        [
+          "component",
+          "Aircraft",
+          "concerning",
+          "unable to hover"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "GPS signal",
+          "concerning",
+          "No"
+        ],
+        [
+          "component",
+          "Aircraft",
+          "concerning",
+          "unable to hover"
+        ]
+      ],
+      "output_correct": "component is concerning because GPS signal is No [SSEP] component is concerning because Aircraft is unable to hover",
+      "output_pred": "feature is concerning because GPS signal is No [SSEP] component is concerning because Aircraft is unable to hover",
+      "utterances": [
+        "No",
+        "GPS",
+        "signal.",
+        "Aircraft",
+        "unable",
+        "to",
+        "hover.",
+        "Fly",
+        "with",
+        "caution."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Motor",
+          "concerning",
+          "unable to rotate"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Motor",
+          "concerning",
+          "unable to rotate"
+        ]
+      ],
+      "output_correct": "component is concerning because Motor is unable to rotate",
+      "output_pred": "component is concerning because Motor is unable to rotate",
+      "utterances": [
+        "Motor",
+        "unable",
+        "to",
+        "rotate.",
+        "Check",
+        "for",
+        "objects",
+        "blocking",
+        "motor",
+        "or",
+        "contact",
+        "DJI",
+        "Support",
+        "for",
+        "assistance",
+        "."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "action",
+          "Capture",
+          "concerning",
+          "Failed"
+        ],
+        [
+          "action",
+          "Stick movement",
+          "concerning",
+          "detected"
+        ],
+        [
+          "state",
+          "Panorama",
+          "concerning",
+          "stopped"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "action",
+          "Capture",
+          "concerning",
+          "Failed"
+        ],
+        [
+          "feature",
+          "Stick movement",
+          "concerning",
+          "detected"
+        ],
+        [
+          "action",
+          "Panorama",
+          "concerning",
+          "stopped"
+        ]
+      ],
+      "output_correct": "action is concerning because Capture is Failed [SSEP] action is concerning because Stick movement is detected [SSEP] state is concerning because Panorama is stopped",
+      "output_pred": "action is concerning because Capture is Failed [SSEP] feature is concerning because Stick movement is detected [SSEP] action is concerning because Panorama is stopped",
+      "utterances": [
+        "Capture",
+        "Failed",
+        "Stick",
+        "movement",
+        "detected.",
+        "Panorama",
+        "has",
+        "stopped."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "feature",
+          "GPS signal",
+          "concerning",
+          "No"
+        ],
+        [
+          "action",
+          "hover",
+          "concerning",
+          "unable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "GPS signal",
+          "concerning",
+          "No"
+        ],
+        [
+          "action",
+          "hover",
+          "concerning",
+          "Unable"
+        ]
+      ],
+      "output_correct": "feature is concerning because GPS signal is No [SSEP] action is concerning because hover is unable",
+      "output_pred": "feature is concerning because GPS signal is No [SSEP] action is concerning because hover is Unable",
+      "utterances": [
+        "No",
+        "GPS",
+        "signal.",
+        "Unable",
+        "to",
+        "hover.",
+        "Fly",
+        "with",
+        "caution."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "state",
+          "flight",
+          "concerning",
+          "High-altitude"
+        ],
+        [
+          "parameter",
+          "aircraft braking distance",
+          "ok",
+          "extended"
+        ],
+        [
+          "parameter",
+          "flight time",
+          "ok",
+          "shortened"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "flight",
+          "concerning",
+          "high altitude"
+        ],
+        [
+          "parameter",
+          "braking distance",
+          "ok",
+          "extended"
+        ],
+        [
+          "parameter",
+          "flight time",
+          "concerning",
+          "shortened"
+        ]
+      ],
+      "output_correct": "state is concerning because flight is High-altitude [SSEP] parameter is ok because aircraft braking distance is extended [SSEP] parameter is ok because flight time is shortened",
+      "output_pred": "parameter is concerning because flight is high altitude [SSEP] parameter is ok because braking distance is extended [SSEP] parameter is concerning because flight time is shortened",
+      "utterances": [
+        "High-altitude",
+        "flight,",
+        "aircraft",
+        "braking",
+        "distance",
+        "is",
+        "extended,",
+        "flight",
+        "time",
+        "is",
+        "shortened.",
+        "Fly",
+        "with",
+        "caution."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "feature",
+          "color display",
+          "ok",
+          "enhanced"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "color display",
+          "ok",
+          "enhanced"
+        ]
+      ],
+      "output_correct": "feature is ok because color display is enhanced",
+      "output_pred": "feature is ok because color display is enhanced",
+      "utterances": [
+        "Color",
+        "display",
+        "in",
+        "the",
+        "Liveview",
+        "has",
+        "been",
+        "enhanced.",
+        "Videos",
+        "and",
+        "photos",
+        "will",
+        "still",
+        "be",
+        "shot",
+        "in",
+        "D-Log",
+        "mode."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "feature",
+          "pano shooting",
+          "ok",
+          "completed"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "action",
+          "Pano shooting",
+          "ok",
+          "completed"
+        ],
+        [
+          "component",
+          "sky part",
+          "ok",
+          "filled automatically"
+        ]
+      ],
+      "output_correct": "feature is ok because pano shooting is completed",
+      "output_pred": "action is ok because Pano shooting is completed [SSEP] component is ok because sky part is filled automatically",
+      "utterances": [
+        "Pano",
+        "shooting",
+        "completed.",
+        "The",
+        "sky",
+        "part",
+        "is",
+        "filled",
+        "automatically."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Ambient Light",
+          "concerning",
+          "too weak"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "Ambient Light",
+          "concerning",
+          "too weak"
+        ]
+      ],
+      "output_correct": "parameter is concerning because Ambient Light is too weak",
+      "output_pred": "parameter is concerning because Ambient Light is too weak",
+      "utterances": [
+        "Ambient",
+        "Light",
+        "is",
+        "too",
+        "weak."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Current RTH route",
+          "concerning",
+          "pass a No-Fly zone"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "current RTH route",
+          "concerning",
+          "pass a No-Fly zone"
+        ]
+      ],
+      "output_correct": "parameter is concerning because Current RTH route is pass a No-Fly zone",
+      "output_pred": "component is concerning because current RTH route is pass a No-Fly zone",
+      "utterances": [
+        "Current",
+        "RTH",
+        "route",
+        "will",
+        "pass",
+        "a",
+        "No-Fly",
+        "zone.",
+        "Pay",
+        "attention",
+        "to",
+        "the",
+        "aircraft's",
+        "position",
+        "to",
+        "avoid",
+        "RTH",
+        "failure."
+      ]
+    }
+  ],
+  "generative_score": {
+    "bleu_score": {
+      "bleu": 0.801958789591798,
+      "brevity_penalty": 1.0,
+      "length_ratio": 1.0106809078771695,
+      "precisions": [
+        0.8863936591809776,
+        0.8304721030042919,
+        0.7753510140405616,
+        0.7246998284734134
+      ],
+      "reference_length": 1498,
+      "translation_length": 1514
+    },
+    "meteor_score": {
+      "meteor": 0.9097883700381156
+    },
+    "rouge_score": {
+      "rouge1": 0.9213817451399793,
+      "rouge2": 0.8854558837064874,
+      "rougeL": 0.9151929939754878,
+      "rougeLsum": 0.9155994356091499
+    },
+    "wer_score": 0.16170212765957448
+  },
+  "performance_metrics": {
+    "ac_score": {
+      "f1_score": 0.778816199376947,
+      "precision": 0.7763975155279503,
+      "recall": 0.78125
+    },
+    "acsp_score": {
+      "f1_score": 0.8255451713395638,
+      "precision": 0.8229813664596274,
+      "recall": 0.828125
+    },
+    "at_score": {
+      "f1_score": 0.7975077881619939,
+      "precision": 0.7950310559006211,
+      "recall": 0.8
+    },
+    "micro_average": {
+      "f1_score": 0.8099688473520249,
+      "precision": 0.8074534161490683,
+      "recall": 0.8125
+    },
+    "ot_score": {
+      "f1_score": 0.7912772585669782,
+      "precision": 0.7888198757763976,
+      "recall": 0.79375
+    },
+    "quad_score": {
+      "f1_score": 0.529595015576324,
+      "precision": 0.5279503105590062,
+      "recall": 0.53125
+    },
+    "sp_score": {
+      "f1_score": 0.8722741433021807,
+      "precision": 0.8695652173913043,
+      "recall": 0.875
+    }
+  }
+}

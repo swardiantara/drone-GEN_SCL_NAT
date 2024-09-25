@@ -1,0 +1,4214 @@
+{
+  "examples": [
+    {
+      "labels_correct": [
+        [
+          "feature",
+          "Downlink",
+          "normal",
+          "Restored"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "Downlink",
+          "normal",
+          "Restored"
+        ]
+      ],
+      "output_correct": "feature is normal because Downlink is Restored",
+      "output_pred": "feature is normal because Downlink is Restored",
+      "utterances": [
+        "Downlink",
+        "Restored",
+        "(after",
+        "0m",
+        "1.5s)."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "aircraft",
+          "minor",
+          "at an Authorization Zone boundary"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "aircraft",
+          "minor",
+          "at the boundary of an Authorization Zone"
+        ]
+      ],
+      "output_correct": "component is minor because aircraft is at an Authorization Zone boundary",
+      "output_pred": "component is minor because aircraft is at the boundary of an Authorization Zone",
+      "utterances": [
+        "Your",
+        "aircraft",
+        "is",
+        "at",
+        "the",
+        "boundary",
+        "of",
+        "an",
+        "Authorization",
+        "Zone.",
+        "Please",
+        "fly",
+        "away",
+        "with",
+        "caution."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "RTH Altitude",
+          "normal",
+          "98FT"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "RTH Altitude",
+          "normal",
+          "98FT"
+        ]
+      ],
+      "output_correct": "parameter is normal because RTH Altitude is 98FT",
+      "output_pred": "parameter is normal because RTH Altitude is 98FT",
+      "utterances": [
+        "RTH",
+        "Altitude",
+        ":",
+        "98FT."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Auxiliary Bottom Light",
+          "normal",
+          "set to automatic mode"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Auxiliary Bottom Light",
+          "normal",
+          "set to automatic mode"
+        ]
+      ],
+      "output_correct": "parameter is normal because Auxiliary Bottom Light is set to automatic mode",
+      "output_pred": "component is normal because Auxiliary Bottom Light is set to automatic mode",
+      "utterances": [
+        "Auxiliary",
+        "Bottom",
+        "Light",
+        "set",
+        "to",
+        "automatic",
+        "mode."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "feature",
+          "signal",
+          "moderate",
+          "weak"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "signal",
+          "moderate",
+          "Weak"
+        ]
+      ],
+      "output_correct": "feature is moderate because signal is weak",
+      "output_pred": "feature is moderate because signal is Weak",
+      "utterances": [
+        "Weak",
+        "signal.",
+        "Adjust",
+        "antenna",
+        "and",
+        "avoid",
+        "signal",
+        "block."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "feature",
+          "File system",
+          "severe",
+          "error"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "File system",
+          "minor",
+          "error"
+        ]
+      ],
+      "output_correct": "feature is severe because File system is error",
+      "output_pred": "feature is minor because File system is error",
+      "utterances": [
+        "File",
+        "system",
+        "error.",
+        "Change",
+        "SD",
+        "card."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "action",
+          "Braking",
+          "minor",
+          "now"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "action",
+          "Braking",
+          "minor",
+          "now"
+        ],
+        [
+          "",
+          "",
+          "",
+          ""
+        ]
+      ],
+      "output_correct": "action is minor because Braking is now",
+      "output_pred": "action is minor because Braking is now [SSEP] component is minor because move the stick right",
+      "utterances": [
+        "Braking",
+        "now!",
+        "No",
+        "use",
+        "to",
+        "move",
+        "the",
+        "stick",
+        "right.",
+        "Avoid",
+        "the",
+        "obstacle."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Barometer",
+          "severe",
+          "Dead in Air"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Barometer",
+          "severe",
+          "Dead in Air"
+        ]
+      ],
+      "output_correct": "component is severe because Barometer is Dead in Air",
+      "output_pred": "component is severe because Barometer is Dead in Air",
+      "utterances": [
+        "Barometer",
+        "Dead",
+        "in",
+        "Air."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Motor",
+          "moderate",
+          "error"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Motor",
+          "moderate",
+          "error"
+        ]
+      ],
+      "output_correct": "component is moderate because Motor is error",
+      "output_pred": "component is moderate because Motor is error",
+      "utterances": [
+        "Motor",
+        "error.",
+        "Check",
+        "propellers",
+        "and",
+        "fly",
+        "with",
+        "caution."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Aircraft",
+          "normal",
+          "not enter S-mode"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Aircraft",
+          "moderate",
+          "not enter S-mode"
+        ]
+      ],
+      "output_correct": "component is normal because Aircraft is not enter S-mode",
+      "output_pred": "component is moderate because Aircraft is not enter S-mode",
+      "utterances": [
+        "Aircraft",
+        "will",
+        "not",
+        "enter",
+        "S-mode",
+        "if",
+        "powered",
+        "on",
+        "with",
+        "the",
+        "remote",
+        "controller",
+        "set",
+        "to",
+        "S-mode.",
+        "Please",
+        "switch",
+        "to",
+        "Normal",
+        "mode,",
+        "then",
+        "back",
+        "to",
+        "S-mode",
+        "to",
+        "enable",
+        "it."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "action",
+          "Take off",
+          "minor",
+          "Cannot"
+        ],
+        [
+          "state",
+          "Travel Mode",
+          "normal",
+          "Exit"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "action",
+          "Takeoff",
+          "moderate",
+          "Cannot"
+        ]
+      ],
+      "output_correct": "action is minor because Take off is Cannot [SSEP] state is normal because Travel Mode is Exit",
+      "output_pred": "action is moderate because Takeoff is Cannot",
+      "utterances": [
+        "Cannot",
+        "Takeoff",
+        "in",
+        "Travel",
+        "Mode.",
+        "Exit",
+        "Travel",
+        "Mode."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Compass",
+          "minor",
+          "Error"
+        ],
+        [
+          "component",
+          "Compass",
+          "minor",
+          "disconnected"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Compass",
+          "minor",
+          "Error"
+        ],
+        [
+          "component",
+          "Compass",
+          "minor",
+          "disconnected"
+        ]
+      ],
+      "output_correct": "component is minor because Compass is Error [SSEP] component is minor because Compass is disconnected",
+      "output_pred": "component is minor because Compass is Error [SSEP] component is minor because Compass is disconnected",
+      "utterances": [
+        "Compass",
+        "Error.",
+        "Compass",
+        "disconnected."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Downward altitude sensor",
+          "minor",
+          "error"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "Downward altitude sensor data",
+          "minor",
+          "error"
+        ]
+      ],
+      "output_correct": "component is minor because Downward altitude sensor is error",
+      "output_pred": "feature is minor because Downward altitude sensor data is error",
+      "utterances": [
+        "Downward",
+        "altitude",
+        "sensor",
+        "data",
+        "error.",
+        "Please",
+        "contact",
+        "DJI",
+        "Support",
+        "for",
+        "help."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Compass",
+          "minor",
+          "Error"
+        ],
+        [
+          "component",
+          "Compass",
+          "minor",
+          "error"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "compass",
+          "minor",
+          "error"
+        ]
+      ],
+      "output_correct": "component is minor because Compass is Error [SSEP] component is minor because Compass is error",
+      "output_pred": "component is minor because compass is error",
+      "utterances": [
+        "Compass",
+        "Error.",
+        "Compass",
+        "error",
+        "Solution:",
+        "Move",
+        "away",
+        "from",
+        "ground",
+        "magnetic",
+        "interference."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Another aircraft",
+          "moderate",
+          "nearby"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "another aircraft",
+          "minor",
+          "nearby"
+        ]
+      ],
+      "output_correct": "component is moderate because Another aircraft is nearby",
+      "output_pred": "component is minor because another aircraft is nearby",
+      "utterances": [
+        "Another",
+        "aircraft",
+        "is",
+        "nearby.",
+        "Fly",
+        "with",
+        "caution."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "battery",
+          "severe",
+          "only enough for RTH"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "battery",
+          "severe",
+          "only enough for RTH"
+        ]
+      ],
+      "output_correct": "parameter is severe because battery is only enough for RTH",
+      "output_pred": "parameter is severe because battery is only enough for RTH",
+      "utterances": [
+        "The",
+        "remaining",
+        "battery",
+        "is",
+        "only",
+        "enough",
+        "for",
+        "RTH.",
+        "Return",
+        "home",
+        "now."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "feature",
+          "GPS signal",
+          "moderate",
+          "low"
+        ],
+        [
+          "component",
+          "Aircraft",
+          "moderate",
+          "unable to auto hover"
+        ],
+        [
+          "action",
+          "takeoff",
+          "moderate",
+          "restricted"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "GPS signal",
+          "moderate",
+          "low"
+        ],
+        [
+          "component",
+          "Aircraft",
+          "minor",
+          "unable to auto hover"
+        ],
+        [
+          "action",
+          "takeoff",
+          "minor",
+          "restricted"
+        ]
+      ],
+      "output_correct": "feature is moderate because GPS signal is low [SSEP] component is moderate because Aircraft is unable to auto hover [SSEP] action is moderate because takeoff is restricted",
+      "output_pred": "feature is moderate because GPS signal is low [SSEP] component is minor because Aircraft is unable to auto hover [SSEP] action is minor because takeoff is restricted",
+      "utterances": [
+        "GPS",
+        "signal",
+        "low.",
+        "Aircraft",
+        "unable",
+        "to",
+        "auto",
+        "hover",
+        "and",
+        "takeoff",
+        "restricted.",
+        "Move",
+        "to",
+        "environment",
+        "with",
+        "adequate",
+        "light.",
+        "Unlocking",
+        "takeoff",
+        "restrictions",
+        "not",
+        "recommended."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "feature",
+          "Downward Obstacle Sensing",
+          "minor",
+          "not functioning"
+        ],
+        [
+          "parameter",
+          "ambient light",
+          "minor",
+          "too weak"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "downward obstacle sensing",
+          "minor",
+          "not functioning"
+        ],
+        [
+          "component",
+          "ambient light",
+          "minor",
+          "too weak"
+        ]
+      ],
+      "output_correct": "feature is minor because Downward Obstacle Sensing is not functioning [SSEP] parameter is minor because ambient light is too weak",
+      "output_pred": "feature is minor because downward obstacle sensing is not functioning [SSEP] component is minor because ambient light is too weak",
+      "utterances": [
+        "Downward",
+        "Obstacle",
+        "Sensing",
+        "is",
+        "not",
+        "functioning.",
+        "Ambient",
+        "Light",
+        "is",
+        "too",
+        "weak."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "feature",
+          "Visual positioning",
+          "minor",
+          "inaccurate"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "Visual positioning",
+          "minor",
+          "inaccurate"
+        ]
+      ],
+      "output_correct": "feature is minor because Visual positioning is inaccurate",
+      "output_pred": "feature is minor because Visual positioning is inaccurate",
+      "utterances": [
+        "Visual",
+        "positioning",
+        "inaccurate.",
+        "Fly",
+        "with",
+        "caution."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "feature",
+          "Distance limit",
+          "normal",
+          "enabled"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "Distance limit",
+          "normal",
+          "enabled"
+        ]
+      ],
+      "output_correct": "feature is normal because Distance limit is enabled",
+      "output_pred": "parameter is normal because Distance limit is enabled",
+      "utterances": [
+        "Distance",
+        "limit",
+        "enabled.",
+        "Fly",
+        "safely."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Data Recorder File Index",
+          "normal",
+          "65"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "Data Recorder File Index",
+          "normal",
+          "65"
+        ]
+      ],
+      "output_correct": "parameter is normal because Data Recorder File Index is 65",
+      "output_pred": "parameter is normal because Data Recorder File Index is 65",
+      "utterances": [
+        "Data",
+        "Recorder",
+        "File",
+        "Index",
+        "is",
+        "65."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "action",
+          "Track Subject",
+          "minor",
+          "Cannot"
+        ],
+        [
+          "action",
+          "Identify Subject",
+          "minor",
+          "Cannot"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "action",
+          "Track Subject",
+          "minor",
+          "Cannot"
+        ],
+        [
+          "component",
+          "Identify Subject",
+          "minor",
+          "Cannot"
+        ]
+      ],
+      "output_correct": "action is minor because Track Subject is Cannot [SSEP] action is minor because Identify Subject is Cannot",
+      "output_pred": "action is minor because Track Subject is Cannot [SSEP] component is minor because Identify Subject is Cannot",
+      "utterances": [
+        "Cannot",
+        "Track",
+        "Subject.",
+        "Cannot",
+        "Identify",
+        "Subject."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "feature",
+          "Downlink",
+          "normal",
+          "Restored"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "Downlink",
+          "normal",
+          "Restored"
+        ]
+      ],
+      "output_correct": "feature is normal because Downlink is Restored",
+      "output_pred": "feature is normal because Downlink is Restored",
+      "utterances": [
+        "Downlink",
+        "Restored",
+        "(after",
+        "0m",
+        "1.7s)."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "feature",
+          "Obstacle sensing",
+          "minor",
+          "not available at night"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "Obstacle sensing",
+          "minor",
+          "not available at night"
+        ]
+      ],
+      "output_correct": "feature is minor because Obstacle sensing is not available at night",
+      "output_pred": "feature is minor because Obstacle sensing is not available at night",
+      "utterances": [
+        "Obstacle",
+        "sensing",
+        "not",
+        "available",
+        "at",
+        "night.",
+        "Adjust",
+        "RTH",
+        "altitude",
+        "to",
+        "above",
+        "tallest",
+        "surrounding",
+        "building",
+        "before",
+        "flying."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "state",
+          "GPS signal",
+          "moderate",
+          "too weak"
+        ],
+        [
+          "parameter",
+          "Home Point",
+          "moderate",
+          "not updated"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "Aircraft GPS signal",
+          "moderate",
+          "too weak"
+        ],
+        [
+          "parameter",
+          "Home Point",
+          "minor",
+          "not updated"
+        ]
+      ],
+      "output_correct": "state is moderate because GPS signal is too weak [SSEP] parameter is moderate because Home Point is not updated",
+      "output_pred": "feature is moderate because Aircraft GPS signal is too weak [SSEP] parameter is minor because Home Point is not updated",
+      "utterances": [
+        "Aircraft",
+        "GPS",
+        "signal",
+        "too",
+        "weak.",
+        "Home",
+        "Point",
+        "not",
+        "updated."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "target area",
+          "minor",
+          "in an Altitude Zone"
+        ],
+        [
+          "parameter",
+          "Flight altitude",
+          "minor",
+          "restricted to nnn"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "target area",
+          "minor",
+          "in an Altitude Zone"
+        ],
+        [
+          "parameter",
+          "flight altitude",
+          "minor",
+          "restricted to nnn"
+        ]
+      ],
+      "output_correct": "parameter is minor because target area is in an Altitude Zone [SSEP] parameter is minor because Flight altitude is restricted to nnn",
+      "output_pred": "parameter is minor because target area is in an Altitude Zone [SSEP] parameter is minor because flight altitude is restricted to nnn",
+      "utterances": [
+        "GEO",
+        "Zone",
+        "Info:",
+        "The",
+        "target",
+        "area",
+        "is",
+        "in",
+        "an",
+        "Altitude",
+        "Zone.",
+        "Flight",
+        "altitude",
+        "restricted",
+        "to",
+        "nnn."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Manned aircraft",
+          "moderate",
+          "approaching"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Manned aircraft",
+          "moderate",
+          "approaching"
+        ]
+      ],
+      "output_correct": "component is moderate because Manned aircraft is approaching",
+      "output_pred": "component is moderate because Manned aircraft is approaching",
+      "utterances": [
+        "Manned",
+        "aircraft",
+        "approaching.",
+        "Fly",
+        "at",
+        "a",
+        "safe",
+        "altitude."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "issue",
+          "Remote Controller Interference",
+          "moderate",
+          "Strong"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "issue",
+          "Remote Controller Interference",
+          "moderate",
+          "Strong"
+        ]
+      ],
+      "output_correct": "issue is moderate because Remote Controller Interference is Strong",
+      "output_pred": "issue is moderate because Remote Controller Interference is Strong",
+      "utterances": [
+        "Strong",
+        "Remote",
+        "Controller",
+        "Interference."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "compass",
+          "minor",
+          "abnormal"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "compass",
+          "minor",
+          "abnormal"
+        ]
+      ],
+      "output_correct": "component is minor because compass is abnormal",
+      "output_pred": "component is minor because compass is abnormal",
+      "utterances": [
+        "Fly",
+        "with",
+        "caution.",
+        "Compass",
+        "abnormal",
+        "Solution:",
+        "1.",
+        "Ensure",
+        "there",
+        "are",
+        "no",
+        "magnets",
+        "or",
+        "metal",
+        "objects",
+        "near",
+        "the",
+        "aircraft.",
+        "The",
+        "ground",
+        "or",
+        "walls",
+        "may",
+        "contain",
+        "metal.",
+        "Move",
+        "away",
+        "from",
+        "sources",
+        "of",
+        "interference",
+        "before."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "gimbal vibration",
+          "minor",
+          "excessive"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "issue",
+          "gimbal vibration",
+          "moderate",
+          "Excessive"
+        ]
+      ],
+      "output_correct": "parameter is minor because gimbal vibration is excessive",
+      "output_pred": "issue is moderate because gimbal vibration is Excessive",
+      "utterances": [
+        "Excessive",
+        "gimbal",
+        "vibration.",
+        "Check",
+        "whether",
+        "gimbal",
+        "can",
+        "rotate",
+        "freely."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "feature",
+          "compass function",
+          "moderate",
+          "Abnormal"
+        ],
+        [
+          "feature",
+          "GPS signal",
+          "moderate",
+          "Abnormal"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "compass function",
+          "moderate",
+          "abnormal"
+        ],
+        [
+          "feature",
+          "GPS signal",
+          "moderate",
+          "detected"
+        ],
+        [
+          "component",
+          "Aircraft",
+          "normal",
+          "switched to ATTI mode"
+        ]
+      ],
+      "output_correct": "feature is moderate because compass function is Abnormal [SSEP] feature is moderate because GPS signal is Abnormal",
+      "output_pred": "feature is moderate because compass function is abnormal [SSEP] feature is moderate because GPS signal is detected [SSEP] component is normal because Aircraft is switched to ATTI mode",
+      "utterances": [
+        "Abnormal",
+        "compass",
+        "function",
+        "or",
+        "GPS",
+        "signal",
+        "detected.",
+        "Aircraft",
+        "switched",
+        "to",
+        "ATTI",
+        "mode."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Ambient light",
+          "minor",
+          "too low"
+        ],
+        [
+          "feature",
+          "Vision system",
+          "minor",
+          "unavailable"
+        ],
+        [
+          "feature",
+          "obstacle sensing",
+          "minor",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "Ambient light",
+          "minor",
+          "too low"
+        ],
+        [
+          "feature",
+          "Vision system",
+          "minor",
+          "unavailable"
+        ],
+        [
+          "feature",
+          "obstacle sensing",
+          "minor",
+          "unavailable"
+        ]
+      ],
+      "output_correct": "parameter is minor because Ambient light is too low [SSEP] feature is minor because Vision system is unavailable [SSEP] feature is minor because obstacle sensing is unavailable",
+      "output_pred": "parameter is minor because Ambient light is too low [SSEP] feature is minor because Vision system is unavailable [SSEP] feature is minor because obstacle sensing is unavailable",
+      "utterances": [
+        "Ambient",
+        "light",
+        "too",
+        "low.",
+        "Vision",
+        "system",
+        "and",
+        "obstacle",
+        "sensing",
+        "unavailable.",
+        "Fly",
+        "with",
+        "caution."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Payload mode",
+          "normal",
+          "enabled"
+        ],
+        [
+          "parameter",
+          "max altitude",
+          "normal",
+          "set to nnn"
+        ],
+        [
+          "parameter",
+          "max distance",
+          "normal",
+          "set to nnn"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "state",
+          "Payload mode",
+          "normal",
+          "enabled"
+        ],
+        [
+          "parameter",
+          "max altitude",
+          "normal",
+          "set to nnn"
+        ],
+        [
+          "parameter",
+          "max distance",
+          "normal",
+          "set to nnn"
+        ]
+      ],
+      "output_correct": "parameter is normal because Payload mode is enabled [SSEP] parameter is normal because max altitude is set to nnn [SSEP] parameter is normal because max distance is set to nnn",
+      "output_pred": "state is normal because Payload mode is enabled [SSEP] parameter is normal because max altitude is set to nnn [SSEP] parameter is normal because max distance is set to nnn",
+      "utterances": [
+        "Payload",
+        "mode",
+        "enabled.",
+        "Max",
+        "altitude",
+        "set",
+        "to",
+        "nnn",
+        "and",
+        "max",
+        "distance",
+        "set",
+        "to",
+        "nnn",
+        "to",
+        "ensure",
+        "flight",
+        "safety."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Motor",
+          "moderate",
+          "idling"
+        ],
+        [
+          "component",
+          "propeller",
+          "severe",
+          "lost"
+        ],
+        [
+          "component",
+          "propeller",
+          "severe",
+          "missing"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Motor",
+          "severe",
+          "idling"
+        ],
+        [
+          "component",
+          "propeller",
+          "severe",
+          "lost"
+        ]
+      ],
+      "output_correct": "component is moderate because Motor is idling [SSEP] component is severe because propeller is lost [SSEP] component is severe because propeller is missing",
+      "output_pred": "component is severe because Motor is idling [SSEP] component is severe because propeller is lost",
+      "utterances": [
+        "Motor",
+        "is",
+        "idling",
+        "(lost",
+        "or",
+        "missing",
+        "propeller)."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "NULL",
+          "minor",
+          "unable to take off"
+        ],
+        [
+          "issue",
+          "NULL",
+          "minor",
+          "low light environment"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "action",
+          "take off",
+          "moderate",
+          "unable"
+        ]
+      ],
+      "output_correct": "component is minor because it is unable to take off [SSEP] issue is minor because it is low light environment",
+      "output_pred": "action is moderate because take off is unable",
+      "utterances": [
+        "Unable",
+        "to",
+        "take",
+        "off",
+        "in",
+        "low",
+        "light",
+        "environment.",
+        "Ensure",
+        "there",
+        "are",
+        "no",
+        "metal",
+        "and",
+        "magnetic",
+        "objects",
+        "near",
+        "the",
+        "aircraft",
+        "and",
+        "calibrate",
+        "compass."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Data Recorder File Index",
+          "normal",
+          "17"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "Data Recorder File Index",
+          "normal",
+          "17"
+        ]
+      ],
+      "output_correct": "parameter is normal because Data Recorder File Index is 17",
+      "output_pred": "parameter is normal because Data Recorder File Index is 17",
+      "utterances": [
+        "Data",
+        "Recorder",
+        "File",
+        "Index",
+        "is",
+        "17."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Min Waypoint Distance",
+          "normal",
+          "nnn"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "Waypoint Distance",
+          "normal",
+          "nnn"
+        ]
+      ],
+      "output_correct": "parameter is normal because Min Waypoint Distance is nnn",
+      "output_pred": "parameter is normal because Waypoint Distance is nnn",
+      "utterances": [
+        "Min",
+        "Waypoint",
+        "Distance:",
+        "nnn."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "video frame rate",
+          "minor",
+          "less than 9Hz"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "Live stream video frame rate",
+          "minor",
+          "less than 9Hz"
+        ]
+      ],
+      "output_correct": "parameter is minor because video frame rate is less than 9Hz",
+      "output_pred": "parameter is minor because Live stream video frame rate is less than 9Hz",
+      "utterances": [
+        "Live",
+        "stream",
+        "video",
+        "frame",
+        "rate",
+        "less",
+        "than",
+        "9Hz.",
+        "Fly",
+        "with",
+        "caution."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "feature",
+          "Advanced RTH Image Transmission",
+          "normal",
+          "Recovered"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "Advanced RTH Image Transmission",
+          "normal",
+          "Recovered"
+        ],
+        [
+          "component",
+          "Aircraft",
+          "normal",
+          "returning home"
+        ]
+      ],
+      "output_correct": "feature is normal because Advanced RTH Image Transmission is Recovered",
+      "output_pred": "feature is normal because Advanced RTH Image Transmission is Recovered [SSEP] component is normal because Aircraft is returning home",
+      "utterances": [
+        "Advanced",
+        "RTH",
+        "Image",
+        "Transmission",
+        "Recovered.",
+        "Aircraft",
+        "is",
+        "returning",
+        "home."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Another aircraft",
+          "moderate",
+          "dangerously close"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "aircraft",
+          "moderate",
+          "dangerously close"
+        ]
+      ],
+      "output_correct": "component is moderate because Another aircraft is dangerously close",
+      "output_pred": "component is moderate because aircraft is dangerously close",
+      "utterances": [
+        "Another",
+        "aircraft",
+        "is",
+        "dangerously",
+        "close,",
+        "please",
+        "descend",
+        "to",
+        "a",
+        "safer",
+        "altitude."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "state",
+          "ActiveTrack Flight",
+          "minor",
+          "Ended"
+        ],
+        [
+          "parameter",
+          "subject",
+          "minor",
+          "cannot find"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "state",
+          "ActiveTrack Flight",
+          "minor",
+          "Ended"
+        ],
+        [
+          "component",
+          "subject",
+          "minor",
+          "Cannot find"
+        ]
+      ],
+      "output_correct": "state is minor because ActiveTrack Flight is Ended [SSEP] parameter is minor because subject is cannot find",
+      "output_pred": "state is minor because ActiveTrack Flight is Ended [SSEP] component is minor because subject is Cannot find",
+      "utterances": [
+        "ActiveTrack",
+        "Flight",
+        "Ended:",
+        "Cannot",
+        "find",
+        "subject."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "feature",
+          "Remote ID functionality",
+          "normal",
+          "normal"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "Remote ID functionality",
+          "normal",
+          "normal"
+        ]
+      ],
+      "output_correct": "feature is normal because Remote ID functionality is normal",
+      "output_pred": "feature is normal because Remote ID functionality is normal",
+      "utterances": [
+        "Remote",
+        "ID",
+        "functionality",
+        "normal."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Calibration target",
+          "minor",
+          "not far away enough"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "Calibration target",
+          "minor",
+          "not far away enough"
+        ]
+      ],
+      "output_correct": "parameter is minor because Calibration target is not far away enough",
+      "output_pred": "parameter is minor because Calibration target is not far away enough",
+      "utterances": [
+        "Calibration",
+        "target",
+        "not",
+        "far",
+        "away",
+        "enough.",
+        "Please",
+        "calibrate",
+        "using",
+        "infinity."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Aircraft max power load",
+          "minor",
+          "reached"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "Aircraft max power load",
+          "moderate",
+          "reached"
+        ]
+      ],
+      "output_correct": "parameter is minor because Aircraft max power load is reached",
+      "output_pred": "parameter is moderate because Aircraft max power load is reached",
+      "utterances": [
+        "Aircraft",
+        "max",
+        "power",
+        "load",
+        "reached.",
+        "Decrease",
+        "altitude",
+        "and",
+        "fly",
+        "with",
+        "caution.",
+        "If",
+        "this",
+        "issue",
+        "persists,",
+        "land",
+        "immediately."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "action",
+          "Cancel Landing",
+          "minor",
+          "Failed"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "action",
+          "Cancel Landing",
+          "minor",
+          "Failed"
+        ]
+      ],
+      "output_correct": "action is minor because Cancel Landing is Failed",
+      "output_pred": "action is minor because Cancel Landing is Failed",
+      "utterances": [
+        "Cancel",
+        "Landing",
+        "Failed."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Compass",
+          "minor",
+          "Stuck"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Compass",
+          "minor",
+          "Stuck"
+        ]
+      ],
+      "output_correct": "component is minor because Compass is Stuck",
+      "output_pred": "component is minor because Compass is Stuck",
+      "utterances": [
+        "Compass",
+        "Stuck.",
+        "Restart",
+        "Aircraft.",
+        "Contact",
+        "DJI",
+        "Support",
+        "if",
+        "this",
+        "persists."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "action",
+          "track subject",
+          "minor",
+          "Cannot"
+        ],
+        [
+          "parameter",
+          "Gimbal Tilt",
+          "minor",
+          "too Large"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "action",
+          "track subject",
+          "minor",
+          "Cannot"
+        ],
+        [
+          "parameter",
+          "Gimbal Tilt",
+          "minor",
+          "too large"
+        ]
+      ],
+      "output_correct": "action is minor because track subject is Cannot [SSEP] parameter is minor because Gimbal Tilt is too Large",
+      "output_pred": "action is minor because track subject is Cannot [SSEP] parameter is minor because Gimbal Tilt is too large",
+      "utterances": [
+        "Cannot",
+        "track",
+        "subject:",
+        "Gimbal",
+        "Tilt",
+        "too",
+        "Large."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "state",
+          "Aircraft Mode",
+          "minor",
+          "not allowed to change"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "Aircraft Mode",
+          "minor",
+          "Not Allowed"
+        ]
+      ],
+      "output_correct": "state is minor because Aircraft Mode is not allowed to change",
+      "output_pred": "parameter is minor because Aircraft Mode is Not Allowed",
+      "utterances": [
+        "Not",
+        "Allowed",
+        "to",
+        "change",
+        "Aircraft",
+        "Mode.",
+        "If",
+        "needed."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "state",
+          "TapFly",
+          "minor",
+          "Cannot Enter"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "state",
+          "TapFly",
+          "minor",
+          "Cannot enter"
+        ],
+        [
+          "",
+          "",
+          "",
+          ""
+        ]
+      ],
+      "output_correct": "state is minor because TapFly is Cannot Enter",
+      "output_pred": "state is minor because TapFly is Cannot enter [SSEP] parameter is minor because fly in that direction",
+      "utterances": [
+        "Cannot",
+        "Enter",
+        "TapFly",
+        "Cannot",
+        "fly",
+        "in",
+        "that",
+        "direction."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "GPS",
+          "moderate",
+          "No"
+        ],
+        [
+          "action",
+          "Return to Home",
+          "moderate",
+          "failed"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "GPS",
+          "minor",
+          "No"
+        ],
+        [
+          "feature",
+          "Return to Home",
+          "minor",
+          "failed"
+        ]
+      ],
+      "output_correct": "component is moderate because GPS is No [SSEP] action is moderate because Return to Home is failed",
+      "output_pred": "feature is minor because GPS is No [SSEP] feature is minor because Return to Home is failed",
+      "utterances": [
+        "No",
+        "GPS.",
+        "Return",
+        "to",
+        "Home",
+        "failed.",
+        "Return",
+        "the",
+        "aircraft",
+        "to",
+        "home",
+        "manually."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Subject",
+          "minor",
+          "too Large"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "Subject",
+          "minor",
+          "too Large"
+        ]
+      ],
+      "output_correct": "parameter is minor because Subject is too Large",
+      "output_pred": "parameter is minor because Subject is too Large",
+      "utterances": [
+        "Subject",
+        "too",
+        "Large.",
+        "Move",
+        "Away",
+        "and",
+        "retry."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Altitude",
+          "normal",
+          "less than nnn"
+        ],
+        [
+          "state",
+          "Follow Me Mode",
+          "normal",
+          "Cannot enable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "Altitude",
+          "minor",
+          "Less than nnn"
+        ],
+        [
+          "state",
+          "Follow Me Mode",
+          "minor",
+          "Cannot enable"
+        ]
+      ],
+      "output_correct": "parameter is normal because Altitude is less than nnn [SSEP] state is normal because Follow Me Mode is Cannot enable",
+      "output_pred": "parameter is minor because Altitude is Less than nnn [SSEP] state is minor because Follow Me Mode is Cannot enable",
+      "utterances": [
+        "Altitude",
+        "Less",
+        "than",
+        "nnn.",
+        "Cannot",
+        "enable",
+        "Follow",
+        "Me",
+        "Mode."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "issue",
+          "Interference",
+          "minor",
+          "Strong"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "issue",
+          "Interference",
+          "minor",
+          "Strong"
+        ]
+      ],
+      "output_correct": "issue is minor because Interference is Strong",
+      "output_pred": "issue is minor because Interference is Strong",
+      "utterances": [
+        "Strong",
+        "Interference",
+        "to",
+        "Remote",
+        "Controller.",
+        "Signal",
+        "interruption",
+        "maybe",
+        "more",
+        "likely.",
+        "Fly",
+        "with",
+        "caution."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Landing Gear",
+          "normal",
+          "Lowering"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Landing Gear",
+          "normal",
+          "Lowering"
+        ]
+      ],
+      "output_correct": "component is normal because Landing Gear is Lowering",
+      "output_pred": "component is normal because Landing Gear is Lowering",
+      "utterances": [
+        "Landing",
+        "Gear",
+        "Lowering."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Ambient Light",
+          "minor",
+          "too Weak"
+        ],
+        [
+          "feature",
+          "Forward obstacle sensing",
+          "normal",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "Ambient Light",
+          "minor",
+          "too Weak"
+        ],
+        [
+          "feature",
+          "Forward obstacle sensing",
+          "minor",
+          "unavailable"
+        ]
+      ],
+      "output_correct": "parameter is minor because Ambient Light is too Weak [SSEP] feature is normal because Forward obstacle sensing is unavailable",
+      "output_pred": "parameter is minor because Ambient Light is too Weak [SSEP] feature is minor because Forward obstacle sensing is unavailable",
+      "utterances": [
+        "Ambient",
+        "Light",
+        "too",
+        "Weak,",
+        "Forward",
+        "obstacle",
+        "sensing",
+        "is",
+        "unavailable.",
+        "please",
+        "ensure",
+        "safety",
+        "during",
+        "the",
+        "flight."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Home Point",
+          "normal",
+          "recorded"
+        ],
+        [
+          "parameter",
+          "Return-to-Home Altitude",
+          "normal",
+          "98FT"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "Home Point",
+          "normal",
+          "recorded"
+        ],
+        [
+          "parameter",
+          "Return-to-Home Altitude",
+          "normal",
+          "98FT"
+        ]
+      ],
+      "output_correct": "parameter is normal because Home Point is recorded [SSEP] parameter is normal because Return-to-Home Altitude is 98FT",
+      "output_pred": "parameter is normal because Home Point is recorded [SSEP] parameter is normal because Return-to-Home Altitude is 98FT",
+      "utterances": [
+        "Home",
+        "Point",
+        "recorded.",
+        "Return-to-Home",
+        "Altitude",
+        ":",
+        "98FT."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Aircraft",
+          "normal",
+          "in Altitude Zone"
+        ],
+        [
+          "parameter",
+          "Max altitude",
+          "normal",
+          "set to nnn"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Aircraft",
+          "normal",
+          "in Altitude Zone"
+        ],
+        [
+          "parameter",
+          "Max altitude",
+          "normal",
+          "set to nnn"
+        ]
+      ],
+      "output_correct": "component is normal because Aircraft is in Altitude Zone [SSEP] parameter is normal because Max altitude is set to nnn",
+      "output_pred": "component is normal because Aircraft is in Altitude Zone [SSEP] parameter is normal because Max altitude is set to nnn",
+      "utterances": [
+        "Aircraft",
+        "in",
+        "Altitude",
+        "Zone.",
+        "Max",
+        "altitude",
+        "set",
+        "to",
+        "nnn."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Manned aircraft",
+          "moderate",
+          "detected nearby"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Manned aircraft",
+          "minor",
+          "detected nearby"
+        ]
+      ],
+      "output_correct": "component is moderate because Manned aircraft is detected nearby",
+      "output_pred": "component is minor because Manned aircraft is detected nearby",
+      "utterances": [
+        "Manned",
+        "aircraft",
+        "detected",
+        "nearby.",
+        "Fly",
+        "with",
+        "caution."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Return-To-Home altitude",
+          "normal",
+          "set to nnn"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "Return-To-Home altitude",
+          "normal",
+          "set to nnn"
+        ]
+      ],
+      "output_correct": "parameter is normal because Return-To-Home altitude is set to nnn",
+      "output_pred": "parameter is normal because Return-To-Home altitude is set to nnn",
+      "utterances": [
+        "Setting",
+        "new",
+        "Return-To-Home",
+        "altitude",
+        "to",
+        "nnn."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "action",
+          "take off",
+          "normal",
+          "in non-P mode"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "action",
+          "Flight Mode",
+          "normal",
+          "Switch to another mode"
+        ]
+      ],
+      "output_correct": "action is normal because take off is in non-P mode",
+      "output_pred": "action is normal because Flight Mode is Switch to another mode",
+      "utterances": [
+        "To",
+        "take",
+        "off",
+        "in",
+        "non-P",
+        "mode,",
+        "toggle",
+        "Flight",
+        "Mode",
+        "Switch",
+        "to",
+        "another",
+        "mode",
+        "and",
+        "then",
+        "toggle",
+        "it",
+        "back."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Aircraft Mode",
+          "minor",
+          "Not Allowed to change"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "Aircraft Mode",
+          "minor",
+          "Not Allowed"
+        ]
+      ],
+      "output_correct": "parameter is minor because Aircraft Mode is Not Allowed to change",
+      "output_pred": "parameter is minor because Aircraft Mode is Not Allowed",
+      "utterances": [
+        "Not",
+        "Allowed",
+        "to",
+        "change",
+        "Aircraft",
+        "Mode.",
+        "If",
+        "needed,",
+        "enable",
+        "it",
+        "in",
+        "Main",
+        "Controller",
+        "Settings."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Another aircraft",
+          "moderate",
+          "nearby"
+        ],
+        [
+          "component",
+          "Another aircraft",
+          "severe",
+          "approaching"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "another aircraft",
+          "minor",
+          "nearby"
+        ],
+        [
+          "component",
+          "another aircraft",
+          "minor",
+          "approaching"
+        ]
+      ],
+      "output_correct": "component is moderate because Another aircraft is nearby [SSEP] component is severe because Another aircraft is approaching",
+      "output_pred": "component is minor because another aircraft is nearby [SSEP] component is minor because another aircraft is approaching",
+      "utterances": [
+        "Another",
+        "aircraft",
+        "is",
+        "nearby.",
+        "Another",
+        "aircraft",
+        "is",
+        "approaching.",
+        "Descend",
+        "as",
+        "soon",
+        "as",
+        "possible."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "action",
+          "API Automatic Takeoff",
+          "normal",
+          "NULL"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "action",
+          "API Automatic Takeoff",
+          "normal",
+          "NULL"
+        ]
+      ],
+      "output_correct": "action is normal because API Automatic Takeoff is NULL",
+      "output_pred": "action is normal because API Automatic Takeoff is NULL",
+      "utterances": [
+        "API",
+        "Automatic",
+        "Takeoff."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Aircraft",
+          "severe",
+          "entering a restricted area"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Aircraft",
+          "minor",
+          "entering a restricted area"
+        ]
+      ],
+      "output_correct": "component is severe because Aircraft is entering a restricted area",
+      "output_pred": "component is minor because Aircraft is entering a restricted area",
+      "utterances": [
+        "Aircraft",
+        "is",
+        "entering",
+        "a",
+        "restricted",
+        "area."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "aircraft",
+          "minor",
+          "at the boundary of an Altitude Zone"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "aircraft",
+          "minor",
+          "at the boundary of an Altitude Zone"
+        ]
+      ],
+      "output_correct": "component is minor because aircraft is at the boundary of an Altitude Zone",
+      "output_pred": "component is minor because aircraft is at the boundary of an Altitude Zone",
+      "utterances": [
+        "Your",
+        "aircraft",
+        "is",
+        "at",
+        "the",
+        "boundary",
+        "of",
+        "an",
+        "Altitude",
+        "Zone.",
+        "Please",
+        "fly",
+        "away",
+        "or",
+        "land",
+        "with",
+        "caution."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "feature",
+          "signal",
+          "minor",
+          "Weak"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "signal",
+          "minor",
+          "Weak"
+        ]
+      ],
+      "output_correct": "feature is minor because signal is Weak",
+      "output_pred": "feature is minor because signal is Weak",
+      "utterances": [
+        "Weak",
+        "signal.",
+        "Adjust",
+        "antennas."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Subject",
+          "minor",
+          "lost"
+        ],
+        [
+          "action",
+          "Searching",
+          "normal",
+          "NULL"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "Subject",
+          "minor",
+          "lost"
+        ]
+      ],
+      "output_correct": "parameter is minor because Subject is lost [SSEP] action is normal because Searching is NULL",
+      "output_pred": "parameter is minor because Subject is lost",
+      "utterances": [
+        "Subject",
+        "lost.",
+        "Searching."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "feature",
+          "GPS signal",
+          "moderate",
+          "Weak"
+        ],
+        [
+          "parameter",
+          "Positioning accuracy",
+          "minor",
+          "compromised"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "GPS signal",
+          "moderate",
+          "weak"
+        ],
+        [
+          "parameter",
+          "Positioning accuracy",
+          "minor",
+          "compromised"
+        ]
+      ],
+      "output_correct": "feature is moderate because GPS signal is Weak [SSEP] parameter is minor because Positioning accuracy is compromised",
+      "output_pred": "feature is moderate because GPS signal is weak [SSEP] parameter is minor because Positioning accuracy is compromised",
+      "utterances": [
+        "Weak",
+        "GPS",
+        "signal.",
+        "Positioning",
+        "accuracy",
+        "may",
+        "be",
+        "compromised.",
+        "Please",
+        "fly",
+        "with",
+        "caution."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Landing Position",
+          "normal",
+          "Correcting"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "Landing Position",
+          "normal",
+          "Correcting"
+        ]
+      ],
+      "output_correct": "parameter is normal because Landing Position is Correcting",
+      "output_pred": "parameter is normal because Landing Position is Correcting",
+      "utterances": [
+        "Correcting",
+        "Landing",
+        "Position."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "state",
+          "GPS mode",
+          "normal",
+          "Exiting"
+        ],
+        [
+          "component",
+          "Unknown",
+          "moderate",
+          "Error"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "state",
+          "Exiting GPS mode",
+          "minor",
+          "Unknown"
+        ]
+      ],
+      "output_correct": "state is normal because GPS mode is Exiting [SSEP] component is moderate because Unknown is Error",
+      "output_pred": "state is minor because Exiting GPS mode is Unknown",
+      "utterances": [
+        "Exiting",
+        "GPS",
+        "mode:",
+        "Unknown",
+        "Error."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "feature",
+          "Obstacle Sensing",
+          "normal",
+          "disabled"
+        ],
+        [
+          "component",
+          "aircraft",
+          "normal",
+          "landing"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "Obstacle Sensing",
+          "normal",
+          "disabled"
+        ]
+      ],
+      "output_correct": "feature is normal because Obstacle Sensing is disabled [SSEP] component is normal because aircraft is landing",
+      "output_pred": "feature is normal because Obstacle Sensing is disabled",
+      "utterances": [
+        "Obstacle",
+        "Sensing",
+        "will",
+        "be",
+        "disabled",
+        "when",
+        "aircraft",
+        "is",
+        "landing.",
+        "Fly",
+        "with",
+        "caution."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Altitude",
+          "minor",
+          "exceeds nnn"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "altitude",
+          "minor",
+          "above the takeoff point"
+        ]
+      ],
+      "output_correct": "parameter is minor because Altitude is exceeds nnn",
+      "output_pred": "parameter is minor because altitude is above the takeoff point",
+      "utterances": [
+        "Altitude",
+        "above",
+        "the",
+        "takeoff",
+        "point",
+        "exceeds",
+        "nnn.",
+        "Always",
+        "fly",
+        "in",
+        "compliance",
+        "with",
+        "altitude",
+        "limitations."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Battery",
+          "moderate",
+          "Overcurrent During Discharge"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Battery",
+          "severe",
+          "Overcurrent"
+        ],
+        [
+          "action",
+          "Discharge",
+          "severe",
+          "NULL"
+        ]
+      ],
+      "output_correct": "component is moderate because Battery is Overcurrent During Discharge",
+      "output_pred": "component is severe because Battery is Overcurrent [SSEP] action is severe because Discharge is NULL",
+      "utterances": [
+        "Battery:",
+        "Overcurrent",
+        "During",
+        "Discharge."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "issue",
+          "wireless interference",
+          "moderate",
+          "strong"
+        ],
+        [
+          "feature",
+          "Obstacle Avoidance",
+          "normal",
+          "disabled"
+        ],
+        [
+          "component",
+          "Landing gear",
+          "normal",
+          "lowered"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "issue",
+          "wireless interference",
+          "moderate",
+          "strong"
+        ],
+        [
+          "component",
+          "Landing gear",
+          "normal",
+          "lowered"
+        ],
+        [
+          "feature",
+          "Obstacle Avoidance",
+          "normal",
+          "Disabled"
+        ]
+      ],
+      "output_correct": "issue is moderate because wireless interference is strong [SSEP] feature is normal because Obstacle Avoidance is disabled [SSEP] component is normal because Landing gear is lowered",
+      "output_pred": "issue is moderate because wireless interference is strong [SSEP] component is normal because Landing gear is lowered [SSEP] feature is normal because Obstacle Avoidance is Disabled",
+      "utterances": [
+        "Strong",
+        "wireless",
+        "interference.",
+        "Please",
+        "fly",
+        "with",
+        "caution.",
+        "Obstacle",
+        "Avoidance",
+        "Disabled.",
+        "Landing",
+        "gear",
+        "lowered.",
+        "Obstacle",
+        "Avoidance",
+        "Disabled."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "action",
+          "Compass initialization",
+          "minor",
+          "failed"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "Compass initialization",
+          "minor",
+          "failed"
+        ]
+      ],
+      "output_correct": "action is minor because Compass initialization is failed",
+      "output_pred": "feature is minor because Compass initialization is failed",
+      "utterances": [
+        "Compass",
+        "initialization",
+        "failed.",
+        "Restart",
+        "aircraft."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "feature",
+          "AE",
+          "minor",
+          "locked"
+        ],
+        [
+          "feature",
+          "Metering",
+          "minor",
+          "disabled"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "AE",
+          "normal",
+          "Locked"
+        ],
+        [
+          "feature",
+          "Metering",
+          "normal",
+          "disabled"
+        ]
+      ],
+      "output_correct": "feature is minor because AE is locked [SSEP] feature is minor because Metering is disabled",
+      "output_pred": "component is normal because AE is Locked [SSEP] feature is normal because Metering is disabled",
+      "utterances": [
+        "AE",
+        "Locked.",
+        "Metering",
+        "disabled."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Ambient Light",
+          "minor",
+          "too weak"
+        ],
+        [
+          "feature",
+          "Vision Positioning obstacle sensing",
+          "minor",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "Ambient Light",
+          "minor",
+          "too Weak"
+        ],
+        [
+          "feature",
+          "Vision Positioning obstacle sensing",
+          "minor",
+          "unavailable"
+        ]
+      ],
+      "output_correct": "parameter is minor because Ambient Light is too weak [SSEP] feature is minor because Vision Positioning obstacle sensing is unavailable",
+      "output_pred": "parameter is minor because Ambient Light is too Weak [SSEP] feature is minor because Vision Positioning obstacle sensing is unavailable",
+      "utterances": [
+        "Ambient",
+        "Light",
+        "too",
+        "Weak,",
+        "Vision",
+        "Positioning",
+        "obstacle",
+        "sensing",
+        "is",
+        "unavailable.",
+        "please",
+        "ensure",
+        "safety",
+        "during",
+        "the",
+        "flight."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "compass",
+          "minor",
+          "abnormal"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Compass",
+          "minor",
+          "abnormal"
+        ]
+      ],
+      "output_correct": "component is minor because compass is abnormal",
+      "output_pred": "component is minor because Compass is abnormal",
+      "utterances": [
+        "Compass",
+        "abnormal",
+        "Solution:",
+        "1.",
+        "Ensure",
+        "there",
+        "are",
+        "no",
+        "magnets",
+        "or",
+        "metal",
+        "objects",
+        "near",
+        "the",
+        "aircraft.",
+        "The",
+        "ground",
+        "or",
+        "walls",
+        "may",
+        "contain",
+        "metal.",
+        "Move",
+        "away",
+        "from",
+        "sources",
+        "of",
+        "interference",
+        "before",
+        "attempting",
+        "flight.",
+        "2.",
+        "Calibrate",
+        "Compass",
+        "Before",
+        "Takeoff."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "feature",
+          "Forward Obstacle Sensing",
+          "minor",
+          "not Responding"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "Forward Obstacle Sensing",
+          "minor",
+          "not Responding"
+        ]
+      ],
+      "output_correct": "feature is minor because Forward Obstacle Sensing is not Responding",
+      "output_pred": "feature is minor because Forward Obstacle Sensing is not Responding",
+      "utterances": [
+        "Forward",
+        "Obstacle",
+        "Sensing",
+        "not",
+        "Responding."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "flight attitude angle",
+          "normal",
+          "larger in Sport mode"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "flight attitude angle",
+          "normal",
+          "larger in Sport mode"
+        ],
+        [
+          "component",
+          "gimbal",
+          "normal",
+          "rotate"
+        ]
+      ],
+      "output_correct": "parameter is normal because flight attitude angle is larger in Sport mode",
+      "output_pred": "parameter is normal because flight attitude angle is larger in Sport mode [SSEP] component is normal because gimbal is rotate",
+      "utterances": [
+        "The",
+        "flight",
+        "attitude",
+        "angle",
+        "is",
+        "larger",
+        "in",
+        "Sport",
+        "mode.",
+        "The",
+        "gimbal",
+        "will",
+        "rotate",
+        "when",
+        "the",
+        "aircraft",
+        "starts",
+        "or",
+        "stops.",
+        "Use",
+        "Normal",
+        "mode",
+        "if",
+        "required",
+        "for",
+        "stable",
+        "shooting."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "action",
+          "ActiveTrack command",
+          "moderate",
+          "Cannot send"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "action",
+          "ActiveTrack command",
+          "minor",
+          "Cannot send"
+        ]
+      ],
+      "output_correct": "action is moderate because ActiveTrack command is Cannot send",
+      "output_pred": "action is minor because ActiveTrack command is Cannot send",
+      "utterances": [
+        "Cannot",
+        "send",
+        "ActiveTrack",
+        "command."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "feature",
+          "Downlink",
+          "normal",
+          "Restored"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "Downlink",
+          "normal",
+          "Restored"
+        ]
+      ],
+      "output_correct": "feature is normal because Downlink is Restored",
+      "output_pred": "feature is normal because Downlink is Restored",
+      "utterances": [
+        "Downlink",
+        "Restored",
+        "(after",
+        "0m",
+        "2.3s)."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "gimbal motor",
+          "minor",
+          "overloaded"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Gimbal motor",
+          "moderate",
+          "overloaded"
+        ]
+      ],
+      "output_correct": "component is minor because gimbal motor is overloaded",
+      "output_pred": "component is moderate because Gimbal motor is overloaded",
+      "utterances": [
+        "Gimbal",
+        "motor",
+        "overloaded.",
+        "Check",
+        "whether",
+        "gimbal",
+        "can",
+        "rotate",
+        "freely."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Data Recorder File Index",
+          "normal",
+          "7"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "Data Recorder File Index",
+          "normal",
+          "7"
+        ]
+      ],
+      "output_correct": "parameter is normal because Data Recorder File Index is 7",
+      "output_pred": "parameter is normal because Data Recorder File Index is 7",
+      "utterances": [
+        "Data",
+        "Recorder",
+        "File",
+        "Index",
+        "is",
+        "7."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "action",
+          "RTH",
+          "normal",
+          "Heading alignment"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "state",
+          "RTH",
+          "normal",
+          "Heading alignment"
+        ]
+      ],
+      "output_correct": "action is normal because RTH is Heading alignment",
+      "output_pred": "state is normal because RTH is Heading alignment",
+      "utterances": [
+        "RTH",
+        ":",
+        "Heading",
+        "alignment."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "feature",
+          "GPS module",
+          "minor",
+          "error"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "GPS module",
+          "moderate",
+          "error"
+        ]
+      ],
+      "output_correct": "feature is minor because GPS module is error",
+      "output_pred": "component is moderate because GPS module is error",
+      "utterances": [
+        "GPS",
+        "module",
+        "error.",
+        "Restart",
+        "aircraft."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "NULL",
+          "normal",
+          "Arrived at End Point"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "End Point",
+          "normal",
+          "Arrived"
+        ]
+      ],
+      "output_correct": "component is normal because it is Arrived at End Point",
+      "output_pred": "parameter is normal because End Point is Arrived",
+      "utterances": [
+        "Arrived",
+        "at",
+        "End",
+        "Point."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "SD card",
+          "minor",
+          "malfunction"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "SD card",
+          "minor",
+          "malfunction"
+        ]
+      ],
+      "output_correct": "component is minor because SD card is malfunction",
+      "output_pred": "component is minor because SD card is malfunction",
+      "utterances": [
+        "SD",
+        "card",
+        "malfunction.",
+        "Change",
+        "card."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Motor",
+          "moderate",
+          "Blocked"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Motor",
+          "severe",
+          "Blocked"
+        ]
+      ],
+      "output_correct": "component is moderate because Motor is Blocked",
+      "output_pred": "component is severe because Motor is Blocked",
+      "utterances": [
+        "Motor",
+        "is",
+        "Blocked."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "action",
+          "Barometer initialization",
+          "minor",
+          "failed"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "Barometer initialization",
+          "minor",
+          "failed"
+        ]
+      ],
+      "output_correct": "action is minor because Barometer initialization is failed",
+      "output_pred": "feature is minor because Barometer initialization is failed",
+      "utterances": [
+        "Barometer",
+        "initialization",
+        "failed.",
+        "Restart",
+        "aircraft."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "state",
+          "ActiveTrack Flight",
+          "minor",
+          "Stopped"
+        ],
+        [
+          "component",
+          "Aircraft",
+          "severe",
+          "Entering Restricted Area"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "ActiveTrack Flight",
+          "severe",
+          "Stopped"
+        ],
+        [
+          "component",
+          "Aircraft",
+          "minor",
+          "entering Restricted Area"
+        ]
+      ],
+      "output_correct": "state is minor because ActiveTrack Flight is Stopped [SSEP] component is severe because Aircraft is Entering Restricted Area",
+      "output_pred": "feature is severe because ActiveTrack Flight is Stopped [SSEP] component is minor because Aircraft is entering Restricted Area",
+      "utterances": [
+        "ActiveTrack",
+        "Flight",
+        "Stopped",
+        "Aircraft",
+        "Entering",
+        "Restricted",
+        "Area."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Camera",
+          "minor",
+          "Error"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Camera",
+          "minor",
+          "Error"
+        ]
+      ],
+      "output_correct": "component is minor because Camera is Error",
+      "output_pred": "component is minor because Camera is Error",
+      "utterances": [
+        "Camera",
+        "Error.",
+        "Solution:",
+        "Restart",
+        "the",
+        "aircraft,",
+        "if",
+        "the",
+        "problem",
+        "persists,",
+        "contact",
+        "DJI",
+        "Support."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Drone",
+          "minor",
+          "Vibrating"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Drone",
+          "normal",
+          "Vibrating"
+        ]
+      ],
+      "output_correct": "component is minor because Drone is Vibrating",
+      "output_pred": "component is normal because Drone is Vibrating",
+      "utterances": [
+        "Drone",
+        "is",
+        "Vibrating."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "action",
+          "Compass Redundancy Switch",
+          "minor",
+          "NULL"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Compass",
+          "minor",
+          "Redundancy Switch"
+        ]
+      ],
+      "output_correct": "action is minor because Compass Redundancy Switch is NULL",
+      "output_pred": "component is minor because Compass is Redundancy Switch",
+      "utterances": [
+        "Compass",
+        "Redundancy",
+        "Switch."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "feature",
+          "APAS",
+          "normal",
+          "enabled"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "APAS",
+          "normal",
+          "enabled"
+        ]
+      ],
+      "output_correct": "feature is normal because APAS is enabled",
+      "output_pred": "feature is normal because APAS is enabled",
+      "utterances": [
+        "APAS",
+        "has",
+        "been",
+        "enabled."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Gimbal Pan",
+          "normal",
+          "Recenter"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Gimbal Pan",
+          "normal",
+          "Recenter"
+        ]
+      ],
+      "output_correct": "component is normal because Gimbal Pan is Recenter",
+      "output_pred": "component is normal because Gimbal Pan is Recenter",
+      "utterances": [
+        "Recenter",
+        "Gimbal",
+        "Pan."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Remote controller",
+          "minor",
+          "disconnected from aircraft"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Remote controller",
+          "moderate",
+          "disconnected from aircraft"
+        ]
+      ],
+      "output_correct": "component is minor because Remote controller is disconnected from aircraft",
+      "output_pred": "component is moderate because Remote controller is disconnected from aircraft",
+      "utterances": [
+        "Remote",
+        "controller",
+        "disconnected",
+        "from",
+        "aircraft."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "state",
+          "flight mode",
+          "moderate",
+          "cannot enter"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "state",
+          "flight mode",
+          "minor",
+          "Cannot enter"
+        ]
+      ],
+      "output_correct": "state is moderate because flight mode is cannot enter",
+      "output_pred": "state is minor because flight mode is Cannot enter",
+      "utterances": [
+        "Cannot",
+        "enter",
+        "the",
+        "selected",
+        "flight",
+        "mode.",
+        "Try",
+        "again",
+        "later."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Landing gear",
+          "normal",
+          "lowered"
+        ],
+        [
+          "feature",
+          "Obstacle Avoidance",
+          "normal",
+          "disabled"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Landing gear",
+          "normal",
+          "lowered"
+        ],
+        [
+          "feature",
+          "Obstacle Avoidance",
+          "normal",
+          "disabled"
+        ]
+      ],
+      "output_correct": "component is normal because Landing gear is lowered [SSEP] feature is normal because Obstacle Avoidance is disabled",
+      "output_pred": "component is normal because Landing gear is lowered [SSEP] feature is normal because Obstacle Avoidance is disabled",
+      "utterances": [
+        "Landing",
+        "gear",
+        "lowered.",
+        "Obstacle",
+        "Avoidance",
+        "has",
+        "been",
+        "disabled."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "action",
+          "Gyroscope initialization",
+          "moderate",
+          "failed"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "Gyroscope initialization",
+          "minor",
+          "failed"
+        ]
+      ],
+      "output_correct": "action is moderate because Gyroscope initialization is failed",
+      "output_pred": "feature is minor because Gyroscope initialization is failed",
+      "utterances": [
+        "Gyroscope",
+        "initialization",
+        "failed.",
+        "Restart",
+        "aircraft."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "state",
+          "Away and Follow",
+          "normal",
+          "in progress"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "action",
+          "Away",
+          "normal",
+          "in progress"
+        ]
+      ],
+      "output_correct": "state is normal because Away and Follow is in progress",
+      "output_pred": "action is normal because Away is in progress",
+      "utterances": [
+        "Away",
+        "and",
+        "Follow",
+        "in",
+        "progress."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Obstacle",
+          "normal",
+          "Avoided"
+        ],
+        [
+          "parameter",
+          "Flight Route",
+          "normal",
+          "Revise"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "issue",
+          "Obstacle",
+          "minor",
+          "Avoided"
+        ]
+      ],
+      "output_correct": "parameter is normal because Obstacle is Avoided [SSEP] parameter is normal because Flight Route is Revise",
+      "output_pred": "issue is minor because Obstacle is Avoided",
+      "utterances": [
+        "Obstacle",
+        "Avoided.",
+        "Revise",
+        "Flight",
+        "Route."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Data Recorder File Index",
+          "normal",
+          "30"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "Data Recorder File Index",
+          "normal",
+          "30"
+        ]
+      ],
+      "output_correct": "parameter is normal because Data Recorder File Index is 30",
+      "output_pred": "parameter is normal because Data Recorder File Index is 30",
+      "utterances": [
+        "Data",
+        "Recorder",
+        "File",
+        "Index",
+        "is",
+        "30."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Downward vision sensor",
+          "severe",
+          "calibration error"
+        ],
+        [
+          "action",
+          "Auto calibration",
+          "normal",
+          "in progress"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Downward vision sensor",
+          "severe",
+          "calibration error"
+        ]
+      ],
+      "output_correct": "component is severe because Downward vision sensor is calibration error [SSEP] action is normal because Auto calibration is in progress",
+      "output_pred": "component is severe because Downward vision sensor is calibration error",
+      "utterances": [
+        "Downward",
+        "vision",
+        "sensor",
+        "calibration",
+        "error.",
+        "Auto",
+        "calibration",
+        "in",
+        "progress."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Battery",
+          "minor",
+          "requires maintenance"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Battery",
+          "severe",
+          "nnn"
+        ]
+      ],
+      "output_correct": "component is minor because Battery is requires maintenance",
+      "output_pred": "component is severe because Battery is nnn",
+      "utterances": [
+        "Battery",
+        "nnn",
+        "requires",
+        "maintenance."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Camera Settings",
+          "normal",
+          "Adjusted to ActiveTrack"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "Camera Settings",
+          "normal",
+          "Adjusted to ActiveTrack"
+        ]
+      ],
+      "output_correct": "parameter is normal because Camera Settings is Adjusted to ActiveTrack",
+      "output_pred": "parameter is normal because Camera Settings is Adjusted to ActiveTrack",
+      "utterances": [
+        "Camera",
+        "Settings",
+        "Adjusted",
+        "to",
+        "ActiveTrack."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Ambient Light",
+          "minor",
+          "too Weak"
+        ],
+        [
+          "feature",
+          "Backward obstacle sensing",
+          "normal",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "Ambient Light",
+          "minor",
+          "too Weak"
+        ],
+        [
+          "feature",
+          "Backward obstacle sensing",
+          "minor",
+          "unavailable"
+        ]
+      ],
+      "output_correct": "parameter is minor because Ambient Light is too Weak [SSEP] feature is normal because Backward obstacle sensing is unavailable",
+      "output_pred": "parameter is minor because Ambient Light is too Weak [SSEP] feature is minor because Backward obstacle sensing is unavailable",
+      "utterances": [
+        "Ambient",
+        "Light",
+        "too",
+        "Weak,",
+        "Backward",
+        "obstacle",
+        "sensing",
+        "is",
+        "unavailable.",
+        "please",
+        "ensure",
+        "safety",
+        "during",
+        "the",
+        "flight."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "GPS signal",
+          "moderate",
+          "No"
+        ],
+        [
+          "component",
+          "Aircraft",
+          "moderate",
+          "unable to hover"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "GPS signal",
+          "moderate",
+          "No"
+        ],
+        [
+          "component",
+          "Aircraft",
+          "minor",
+          "unable to hover"
+        ]
+      ],
+      "output_correct": "component is moderate because GPS signal is No [SSEP] component is moderate because Aircraft is unable to hover",
+      "output_pred": "feature is moderate because GPS signal is No [SSEP] component is minor because Aircraft is unable to hover",
+      "utterances": [
+        "No",
+        "GPS",
+        "signal.",
+        "Aircraft",
+        "unable",
+        "to",
+        "hover.",
+        "Fly",
+        "with",
+        "caution."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "component",
+          "Motor",
+          "severe",
+          "unable to rotate"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "component",
+          "Motor",
+          "severe",
+          "unable to rotate"
+        ]
+      ],
+      "output_correct": "component is severe because Motor is unable to rotate",
+      "output_pred": "component is severe because Motor is unable to rotate",
+      "utterances": [
+        "Motor",
+        "unable",
+        "to",
+        "rotate.",
+        "Check",
+        "for",
+        "objects",
+        "blocking",
+        "motor",
+        "or",
+        "contact",
+        "DJI",
+        "Support",
+        "for",
+        "assistance",
+        "."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "action",
+          "Capture",
+          "minor",
+          "Failed"
+        ],
+        [
+          "action",
+          "Stick movement",
+          "minor",
+          "detected"
+        ],
+        [
+          "state",
+          "Panorama",
+          "minor",
+          "stopped"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "action",
+          "Capture",
+          "minor",
+          "Failed"
+        ],
+        [
+          "feature",
+          "Stick movement",
+          "minor",
+          "detected"
+        ],
+        [
+          "action",
+          "Panorama",
+          "minor",
+          "stopped"
+        ]
+      ],
+      "output_correct": "action is minor because Capture is Failed [SSEP] action is minor because Stick movement is detected [SSEP] state is minor because Panorama is stopped",
+      "output_pred": "action is minor because Capture is Failed [SSEP] feature is minor because Stick movement is detected [SSEP] action is minor because Panorama is stopped",
+      "utterances": [
+        "Capture",
+        "Failed",
+        "Stick",
+        "movement",
+        "detected.",
+        "Panorama",
+        "has",
+        "stopped."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "feature",
+          "GPS signal",
+          "moderate",
+          "No"
+        ],
+        [
+          "action",
+          "hover",
+          "moderate",
+          "unable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "GPS signal",
+          "moderate",
+          "No"
+        ],
+        [
+          "action",
+          "hover",
+          "minor",
+          "Unable"
+        ]
+      ],
+      "output_correct": "feature is moderate because GPS signal is No [SSEP] action is moderate because hover is unable",
+      "output_pred": "feature is moderate because GPS signal is No [SSEP] action is minor because hover is Unable",
+      "utterances": [
+        "No",
+        "GPS",
+        "signal.",
+        "Unable",
+        "to",
+        "hover.",
+        "Fly",
+        "with",
+        "caution."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "state",
+          "flight",
+          "minor",
+          "High-altitude"
+        ],
+        [
+          "parameter",
+          "aircraft braking distance",
+          "normal",
+          "extended"
+        ],
+        [
+          "parameter",
+          "flight time",
+          "normal",
+          "shortened"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "flight",
+          "minor",
+          "high"
+        ],
+        [
+          "parameter",
+          "braking distance",
+          "minor",
+          "extended"
+        ],
+        [
+          "parameter",
+          "flight time",
+          "minor",
+          "shortened"
+        ]
+      ],
+      "output_correct": "state is minor because flight is High-altitude [SSEP] parameter is normal because aircraft braking distance is extended [SSEP] parameter is normal because flight time is shortened",
+      "output_pred": "parameter is minor because flight is high [SSEP] parameter is minor because braking distance is extended [SSEP] parameter is minor because flight time is shortened",
+      "utterances": [
+        "High-altitude",
+        "flight,",
+        "aircraft",
+        "braking",
+        "distance",
+        "is",
+        "extended,",
+        "flight",
+        "time",
+        "is",
+        "shortened.",
+        "Fly",
+        "with",
+        "caution."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "feature",
+          "color display",
+          "normal",
+          "enhanced"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "feature",
+          "color display",
+          "normal",
+          "enhanced"
+        ]
+      ],
+      "output_correct": "feature is normal because color display is enhanced",
+      "output_pred": "feature is normal because color display is enhanced",
+      "utterances": [
+        "Color",
+        "display",
+        "in",
+        "the",
+        "Liveview",
+        "has",
+        "been",
+        "enhanced.",
+        "Videos",
+        "and",
+        "photos",
+        "will",
+        "still",
+        "be",
+        "shot",
+        "in",
+        "D-Log",
+        "mode."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "feature",
+          "pano shooting",
+          "normal",
+          "completed"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "action",
+          "Pano shooting",
+          "normal",
+          "completed"
+        ],
+        [
+          "component",
+          "sky part",
+          "normal",
+          "filled automatically"
+        ]
+      ],
+      "output_correct": "feature is normal because pano shooting is completed",
+      "output_pred": "action is normal because Pano shooting is completed [SSEP] component is normal because sky part is filled automatically",
+      "utterances": [
+        "Pano",
+        "shooting",
+        "completed.",
+        "The",
+        "sky",
+        "part",
+        "is",
+        "filled",
+        "automatically."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Ambient Light",
+          "minor",
+          "too weak"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "Ambient Light",
+          "minor",
+          "too weak"
+        ]
+      ],
+      "output_correct": "parameter is minor because Ambient Light is too weak",
+      "output_pred": "parameter is minor because Ambient Light is too weak",
+      "utterances": [
+        "Ambient",
+        "Light",
+        "is",
+        "too",
+        "weak."
+      ]
+    },
+    {
+      "labels_correct": [
+        [
+          "parameter",
+          "Current RTH route",
+          "moderate",
+          "pass a No-Fly zone"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "parameter",
+          "Current RTH route",
+          "moderate",
+          "pass a No-Fly zone"
+        ]
+      ],
+      "output_correct": "parameter is moderate because Current RTH route is pass a No-Fly zone",
+      "output_pred": "parameter is moderate because Current RTH route is pass a No-Fly zone",
+      "utterances": [
+        "Current",
+        "RTH",
+        "route",
+        "will",
+        "pass",
+        "a",
+        "No-Fly",
+        "zone.",
+        "Pay",
+        "attention",
+        "to",
+        "the",
+        "aircraft's",
+        "position",
+        "to",
+        "avoid",
+        "RTH",
+        "failure."
+      ]
+    }
+  ],
+  "generative_score": {
+    "bleu_score": {
+      "bleu": 0.7488247878368338,
+      "brevity_penalty": 0.9824920336869484,
+      "length_ratio": 0.9826435246995995,
+      "precisions": [
+        0.8709239130434783,
+        0.7971976401179941,
+        0.7274193548387097,
+        0.6681494661921709
+      ],
+      "reference_length": 1498,
+      "translation_length": 1472
+    },
+    "meteor_score": {
+      "meteor": 0.8670733181061204
+    },
+    "rouge_score": {
+      "rouge1": 0.8889451019036649,
+      "rouge2": 0.8256082088986454,
+      "rougeL": 0.8784854463859855,
+      "rougeLsum": 0.8784909032831043
+    },
+    "wer_score": 0.20567375886524822
+  },
+  "performance_metrics": {
+    "ac_score": {
+      "f1_score": 0.7547169811320755,
+      "precision": 0.759493670886076,
+      "recall": 0.75
+    },
+    "acsp_score": {
+      "f1_score": 0.7232704402515724,
+      "precision": 0.7278481012658228,
+      "recall": 0.71875
+    },
+    "at_score": {
+      "f1_score": 0.7924528301886793,
+      "precision": 0.7974683544303798,
+      "recall": 0.7875
+    },
+    "micro_average": {
+      "f1_score": 0.7515723270440251,
+      "precision": 0.7563291139240507,
+      "recall": 0.746875
+    },
+    "ot_score": {
+      "f1_score": 0.7672955974842767,
+      "precision": 0.7721518987341772,
+      "recall": 0.7625
+    },
+    "quad_score": {
+      "f1_score": 0.4465408805031446,
+      "precision": 0.44936708860759494,
+      "recall": 0.44375
+    },
+    "sp_score": {
+      "f1_score": 0.6918238993710691,
+      "precision": 0.6962025316455697,
+      "recall": 0.6875
+    }
+  }
+}
