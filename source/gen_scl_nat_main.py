@@ -427,8 +427,6 @@ def evaluate(data_loader, model, device, tokenizer, sents, args):
     if args.constrained_decoding:
         special_tokens = mappings['special_tokens'][args.task]
         aspect_categories = get_aspect_category(args)
-    print(f'special_tokens: {special_tokens}')
-    print(f'aspect_categories: {aspect_categories}')
     logits_processor = ToggleableConstrainedLogitsProcessor(tokenizer, aspect_categories=aspect_categories, special_tokens=special_tokens, use_constraints=args.constrained_decoding)
 
 
@@ -509,8 +507,6 @@ if __name__ == '__main__':
 
     tokenizer, seq2seq_model = get_seq2seq_model(args)
     tokenizer.add_tokens(['[SSEP]'])
-    print(f'len: {len(tokenizer)}')
-    print(f'vocab_size: {tokenizer.vocab_size}')
     # Get example from the train set
     dataset = GenSCLNatDataset(tokenizer=tokenizer, data_dir=args.dataset, 
                         data_type='train', max_len=args.max_seq_length, task=args.task, truncate=args.truncate)

@@ -45,15 +45,13 @@ class BatchConstrainedLogitsProcessor(LogitsProcessor):
     
 
 class ToggleableConstrainedLogitsProcessor(LogitsProcessor):
-    def __init__(self, tokenizer, aspect_categories, special_tokens, use_constraints=True):
+    def __init__(self, tokenizer, aspect_categories=None, special_tokens=None, use_constraints=False):
         self.tokenizer = tokenizer
         self.aspect_category_tokens = set(tokenizer.encode(' '.join(aspect_categories), add_special_tokens=False)) if aspect_categories is not None else None
         self.special_tokens = set(tokenizer.encode(' '.join(special_tokens), add_special_tokens=False)) if special_tokens is not None else None
         self.use_constraints = use_constraints
         
         # Pre-compute a mask for aspect categories and special tokens
-        print(f'aspect_category_tokens: {self.aspect_category_tokens}')
-        print(f'special_tokens: {self.special_tokens}')
         self.static_mask = torch.zeros(len(tokenizer), dtype=torch.bool)
         # self.static_mask[list(self.aspect_category_tokens.union(self.special_tokens))] = True
         allowed_tokens = self.aspect_category_tokens.union(self.special_tokens)
