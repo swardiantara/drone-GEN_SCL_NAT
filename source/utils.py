@@ -54,6 +54,8 @@ class ToggleableConstrainedLogitsProcessor(LogitsProcessor):
         # Pre-compute a mask for aspect categories and special tokens
         self.static_mask = torch.zeros(tokenizer.vocab_size, dtype=torch.bool)
         self.static_mask[list(self.aspect_category_tokens.union(self.special_tokens))] = True
+        print(f'aspect_category_tokens: {self.aspect_category_tokens}')
+        print(f'special_tokens: {self.special_tokens}')
 
     def __call__(self, input_ids: torch.LongTensor, scores: torch.FloatTensor) -> torch.FloatTensor:
         if not self.use_constraints:
