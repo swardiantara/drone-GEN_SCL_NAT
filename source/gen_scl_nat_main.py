@@ -509,7 +509,8 @@ if __name__ == '__main__':
 
     tokenizer, seq2seq_model = get_seq2seq_model(args)
     tokenizer.add_tokens(['[SSEP]', '|'])
-
+    print(f'len: {len(tokenizer)}')
+    print(f'vocab_size: {len(tokenizer.vocab_size)}')
     # Get example from the train set
     dataset = GenSCLNatDataset(tokenizer=tokenizer, data_dir=args.dataset, 
                         data_type='train', max_len=args.max_seq_length, task=args.task, truncate=args.truncate)
