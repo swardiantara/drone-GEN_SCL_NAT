@@ -92,7 +92,7 @@ def compute_f1_scores(pred_pt, gold_pt, silent=True):
     """
     # number of true postive, gold standard, predictions
     quad_tp, n_gold, n_pred = 0, 0, 0
-    tp_ac, tp_at, tp_ot, tp_sp = 0, 0, 0, 0
+    tp_ac, tp_at, tp_ot, tp_sp, tp_acsp = 0, 0, 0, 0, 0
 
     # loop over all samples
     for i in range(len(gold_pt)):
@@ -115,13 +115,14 @@ def compute_f1_scores(pred_pt, gold_pt, silent=True):
                 tp_at += 1 if pred_at == gold_at else 0
                 tp_ot += 1 if pred_ot == gold_ot else 0
                 tp_sp += 1 if pred_sp == gold_sp else 0
+                tp_acsp += 1 if (pred_ac == gold_ac and pred_sp == gold_sp) else 0
 
     if not silent:
         print(f"number of gold spans: {n_gold}, predicted spans: {n_pred}, hit: {quad_tp}")
         
     # compute F1-score
     quad_scores = f1_score(quad_tp, n_gold, n_pred)
-    acsp_scores = f1_score(tp_ac + tp_sp, n_gold * 2, n_pred * 2)
+    acsp_scores = f1_score(tp_acsp, n_gold, n_pred)
     ac_scores = f1_score(tp_ac, n_gold, n_pred)
     at_scores = f1_score(tp_at, n_gold, n_pred)
     ot_scores = f1_score(tp_ot, n_gold, n_pred)

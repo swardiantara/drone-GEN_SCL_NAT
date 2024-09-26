@@ -5,7 +5,7 @@ python source/gen_scl_nat_main.py \
    --scenario roberta2gpt2 \
    --dataset acos_restaurant_data \
    --model_name_or_path roberta2gpt2 \
-   --output_folder train_outputs \
+   --output_folder train_outputs_2 \
    --n_gpu 1 \
    --accelerator gpu \
    --train_batch_size 16 \
@@ -18,7 +18,8 @@ python source/gen_scl_nat_main.py \
    --seed 123 \
    --cont_loss 0.05 \
    --cont_temp 0.25 \
-   --model_prefix restaurant_asqp 
+   --model_prefix restaurant_asqp \
+   --constrained_decoding
 
 
 python source/gen_scl_nat_main.py \
@@ -28,7 +29,7 @@ python source/gen_scl_nat_main.py \
    --scenario roberta2gpt2 \
    --dataset acos_restaurant_data \
    --model_name_or_path roberta2gpt2 \
-   --output_folder train_outputs \
+   --output_folder train_outputs_2 \
    --n_gpu 1 \
    --accelerator gpu \
    --train_batch_size 16 \
@@ -41,4 +42,5 @@ python source/gen_scl_nat_main.py \
    --seed 123 \
    --cont_loss 0.05 \
    --cont_temp 0.25 \
-   --model_prefix restaurant_scl
+   --model_prefix restaurant_scl \
+   --constrained_decoding

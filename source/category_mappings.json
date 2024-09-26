@@ -3,6 +3,18 @@
     "senttag2word": {"POS": "positive", "NEG": "negative", "NEU": "neutral"},
     "senttag2opinion": {"POS": "great", "NEG": "bad", "NEU": "ok"},
     "sentword2opinion": {"positive": "great", "negative": "bad", "neutral": "ok"},
+    "special_tokens": {
+        "asqp": ["is", "because", "great", "bad", "ok", "it", "[SSEP]"],
+        "gen_scl_nat": ["|", "[SSEP]", "the", "it", "NULL", "null", "THE", "IS", "positive", "neutral", "negative"]
+    },
+    "drone_full_mapping": [
+        ["the component", "component"],
+        ["the parameter", "parameter"],
+        ["the feature", "feature"],
+        ["the action", "action"],
+        ["the state", "state"],
+        ["the issue", "issue"]
+    ],
     "restaurant_full_mapping": [
         ["the location", "LOCATION#GENERAL"],
         ["the food prices", "FOOD#PRICES"],

@@ -40,7 +40,9 @@ from transformers import get_linear_schedule_with_warmup
 from data_utils import GenSCLNatDataset
 from data_utils import read_line_examples_from_file
 from eval_utils import compute_scores, compute_gen_metrics
+from utils import load_mappings, ToggleableConstrainedLogitsProcessor
 
+mappings = load_mappings()
 logger = logging.getLogger(__name__)
 os.environ['CUDA_LAUNCH_BLOCKING'] = "1"
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
@@ -94,6 +96,7 @@ def init_args():
     parser.add_argument("--cont_temp", type=float, default=0.1)
     parser.add_argument('--truncate', action='store_true')
     parser.add_argument('--save_model', action='store_true')
+    parser.add_argument('--constrained_decoding', action='store_true')
 
 
     args = parser.parse_args()
@@ -135,6 +138,7 @@ def init_args():
     args.output_dir = output_dir
 
     return args
+
 
 def get_dataset(tokenizer, type_path, args):
     return GenSCLNatDataset(tokenizer=tokenizer, data_dir=args.dataset, 
@@ -402,7 +406,14 @@ class LoggingCallback(pl.Callback):
                     writer.write("{} = {}\n".format(key, str(metrics[key])))
 
 
-def evaluate(data_loader, model, device, tokenizer, sents, task):
+def get_aspect_category(args):
+    domain = args.dataset.split('_')[1]
+    acs = mappings[f'{domain}_full_mapping']
+    categories = [ac[1] for ac in acs] if args.task == 'asqp' else [ac[0] for ac in acs]    # later for gen_scl_nat-based aspect category
+    return categories
+
+
+def evaluate(data_loader, model, device, tokenizer, sents, args):
     """
     Compute scores given the predictions and gold labels and dump to file
     """
@@ -411,12 +422,22 @@ def evaluate(data_loader, model, device, tokenizer, sents, task):
     model.eval()
     model.model.eval()
 
+    special_tokens = None
+    aspect_categories = None
+    if args.constrained_decoding:
+        special_tokens = mappings['special_tokens'][args.task]
+        aspect_categories = get_aspect_category(args)
+
+    logits_processor = ToggleableConstrainedLogitsProcessor(tokenizer, aspect_categories=aspect_categories, special_tokens=special_tokens, use_constraints=args.constrained_decoding)
+
+
     outputs, targets = [], []
     for batch in tqdm(data_loader):
 
         outs = model.model.generate(input_ids=batch['source_ids'].to(device), 
                                     attention_mask=batch['source_mask'].to(device), 
-                                    max_length=args.max_seq_length*2,
+                                    max_length=args.max_seq_length * 2,
+                                    logits_processor=[logits_processor],
                                     num_beams=args.num_beams)
 
         dec = [tokenizer.decode(ids, skip_special_tokens=True) for ids in outs]
@@ -425,7 +446,7 @@ def evaluate(data_loader, model, device, tokenizer, sents, task):
         outputs.extend(dec)
         targets.extend(target)
 
-    scores, all_labels, all_preds = compute_scores(outputs, targets, task, False)
+    scores, all_labels, all_preds = compute_scores(outputs, targets, args.task, False)
     results = {'labels_correct': all_labels, 'labels_pred': all_preds, 'output_pred': outputs, 'output_correct': targets, 'utterances': sents}
     gen_scores = compute_gen_metrics(outputs, targets, False)
     ex_list = []
@@ -573,7 +594,7 @@ if __name__ == '__main__':
         test_loader = DataLoader(test_dataset, args.eval_batch_size, num_workers=4)
 
         # compute the performance scores
-        evaluate(test_loader, model, device, tokenizer, test_dataset.sentence_strings, args.task)
+        evaluate(test_loader, model, device, tokenizer, test_dataset.sentence_strings, args)
 
     if args.do_inference:
         print("\n****** Conduct inference on trained checkpoint ******")
@@ -601,5 +622,5 @@ if __name__ == '__main__':
         test_loader = DataLoader(test_dataset, batch_size=args.eval_batch_size, num_workers=4)
 
         # compute the performance scores
-        evaluate(test_loader, model, device, tokenizer, test_dataset.sentence_strings, args.task)
+        evaluate(test_loader, model, device, tokenizer, test_dataset.sentence_strings, args)
     

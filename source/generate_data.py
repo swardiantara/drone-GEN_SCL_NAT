@@ -14,6 +14,7 @@ dronesent2opinion = {'positive': 'ok', 'negative': 'concerning'}
 laptop_parent_mapping = mappings['laptop_parent_mapping']
 laptop_full_mapping = mappings['laptop_full_mapping']
 rest_full_mapping = mappings['restaurant_full_mapping']
+drone_full_mapping = mappings['drone_full_mapping']
 
 
 laptop_dict = {}
@@ -32,17 +33,23 @@ rest_full_dict = {}
 for elt in rest_full_mapping:
     rest_full_dict[elt[1]] = elt[0]
 
+drone_full_dict = {}
+for elt in drone_full_mapping:
+    drone_full_dict[elt[1]] = elt[0]
+
 
 domain_map = {
     'restaurant': rest_full_dict,
     'laptop': laptop_full_dict,
-    'laptop_parent': laptop_parent_dict
+    'laptop_parent': laptop_parent_dict,
+    'drone': drone_full_dict
 }
 
 domain_map_inverted = {
     'restaurant': rest_full_mapping,
     'laptop': laptop_full_mapping,
-    'laptop_parent': laptop_parent_mapping
+    'laptop_parent': laptop_parent_mapping,
+    'drone': drone_full_mapping,
 }
 
 def get_domain(label):
@@ -123,14 +130,14 @@ def get_gen_scl_nat_data(sents, labels, task, drone_sp=None, truncated=False):
                 # if we can produce the quad using the seen aspects, then generate the summary
                 if quad[0] in seen_aspects and quad[3] in seen_aspects and tuple(quad) not in covered:
                     if len(quad) == 4:
-                        at, ac, sp, ot = quad
+                        at, raw_ac, sp, ot = quad
                     # Use this just for the truncated labelsets dataset
                     if truncated == True:
-                        ac = ac.split("#")[0]
+                        raw_ac = raw_ac.split("#")[0]
 
-                    if drone_sp is None:
-                        domain = get_domain(ac)
-                        ac = domain_map[domain].get(ac, ac)
+                    # if drone_sp is None:
+                    domain = get_domain(raw_ac)
+                    ac = domain_map[domain].get(raw_ac, raw_ac)
                     
 
                     covered.add(tuple(quad))
