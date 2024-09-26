@@ -52,10 +52,13 @@ class ToggleableConstrainedLogitsProcessor(LogitsProcessor):
         self.use_constraints = use_constraints
         
         # Pre-compute a mask for aspect categories and special tokens
-        self.static_mask = torch.zeros(tokenizer.vocab_size, dtype=torch.bool)
-        self.static_mask[list(self.aspect_category_tokens.union(self.special_tokens))] = True
         print(f'aspect_category_tokens: {self.aspect_category_tokens}')
         print(f'special_tokens: {self.special_tokens}')
+        self.static_mask = torch.zeros(tokenizer.vocab_size, dtype=torch.bool)
+        # self.static_mask[list(self.aspect_category_tokens.union(self.special_tokens))] = True
+        allowed_tokens = self.aspect_category_tokens.union(self.special_tokens)
+        allowed_tokens = [token for token in allowed_tokens if token < tokenizer.vocab_size]
+        self.static_mask[allowed_tokens] = True
 
     def __call__(self, input_ids: torch.LongTensor, scores: torch.FloatTensor) -> torch.FloatTensor:
         if not self.use_constraints:
@@ -67,7 +70,9 @@ class ToggleableConstrainedLogitsProcessor(LogitsProcessor):
         # Create a mask for input tokens (varies for each item in the batch)
         input_mask = torch.zeros((batch_size, vocab_size), dtype=torch.bool, device=device)
         for i, seq in enumerate(input_ids):
-            input_mask[i, seq.unique()] = True
+            # input_mask[i, seq.unique()] = True
+            valid_tokens = seq[seq < vocab_size].unique()
+            input_mask[i, valid_tokens] = True
 
         # Combine with the static mask (same for all items in the batch)
         combined_mask = input_mask | self.static_mask.to(device)
