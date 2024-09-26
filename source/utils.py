@@ -24,7 +24,7 @@ class BatchConstrainedLogitsProcessor(LogitsProcessor):
         self.special_tokens = set(tokenizer.encode(' '.join(special_tokens), add_special_tokens=False)) if special_tokens is not None else None
         
         # Pre-compute a mask for aspect categories and special tokens
-        self.static_mask = torch.zeros(tokenizer.vocab_size, dtype=torch.bool)
+        self.static_mask = torch.zeros(len(tokenizer), dtype=torch.bool)
         self.static_mask[list(self.aspect_category_tokens.union(self.special_tokens))] = True
 
     def __call__(self, input_ids: torch.LongTensor, scores: torch.FloatTensor) -> torch.FloatTensor:
@@ -54,10 +54,10 @@ class ToggleableConstrainedLogitsProcessor(LogitsProcessor):
         # Pre-compute a mask for aspect categories and special tokens
         print(f'aspect_category_tokens: {self.aspect_category_tokens}')
         print(f'special_tokens: {self.special_tokens}')
-        self.static_mask = torch.zeros(tokenizer.vocab_size, dtype=torch.bool)
+        self.static_mask = torch.zeros(len(tokenizer), dtype=torch.bool)
         # self.static_mask[list(self.aspect_category_tokens.union(self.special_tokens))] = True
         allowed_tokens = self.aspect_category_tokens.union(self.special_tokens)
-        allowed_tokens = [token for token in allowed_tokens if token < tokenizer.vocab_size]
+        allowed_tokens = [token for token in allowed_tokens if token < len(tokenizer)]
         self.static_mask[allowed_tokens] = True
 
     def __call__(self, input_ids: torch.LongTensor, scores: torch.FloatTensor) -> torch.FloatTensor:

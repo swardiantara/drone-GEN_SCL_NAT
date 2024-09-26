@@ -508,7 +508,7 @@ if __name__ == '__main__':
     device = torch.device('cpu' if args.accelerator == 'cpu' else 'cuda')
 
     tokenizer, seq2seq_model = get_seq2seq_model(args)
-    tokenizer.add_tokens(['[SSEP]', '|'])
+    tokenizer.add_tokens(['[SSEP]'])
     print(f'len: {len(tokenizer)}')
     print(f'vocab_size: {tokenizer.vocab_size}')
     # Get example from the train set
