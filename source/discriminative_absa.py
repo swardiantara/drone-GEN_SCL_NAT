@@ -3,7 +3,7 @@ import torch
 import torch.nn as nn
 from torch.utils.data import Dataset, DataLoader
 from transformers import BertTokenizer, BertModel, AdamW, get_linear_schedule_with_warmup
-from torchcrf import CRF
+from TorchCRF import CRF
 from sklearn.preprocessing import MultiLabelBinarizer
 from seqeval.metrics import classification_report
 import numpy as np
@@ -84,8 +84,8 @@ class QuadrupleABSAModel(nn.Module):
         self.aspect_classifier = nn.Linear(self.bert.config.hidden_size, 3)
         self.opinion_classifier = nn.Linear(self.bert.config.hidden_size, 3)
         self.joint_classifier = nn.Linear(self.bert.config.hidden_size, num_labels)
-        self.aspect_crf = CRF(3, batch_first=True)
-        self.opinion_crf = CRF(3, batch_first=True)
+        self.aspect_crf = CRF(3)
+        self.opinion_crf = CRF(3)
 
     def forward(self, input_ids, attention_mask, aspect_labels=None, opinion_labels=None):
         outputs = self.bert(input_ids=input_ids, attention_mask=attention_mask)
@@ -99,8 +99,8 @@ class QuadrupleABSAModel(nn.Module):
         outputs = {'joint_logits': joint_logits}
 
         if aspect_labels is not None and opinion_labels is not None:
-            aspect_loss = -self.aspect_crf(aspect_emissions, aspect_labels, mask=attention_mask.bool())
-            opinion_loss = -self.opinion_crf(opinion_emissions, opinion_labels, mask=attention_mask.bool())
+            aspect_loss = -self.aspect_crf(aspect_emissions, aspect_labels, mask=attention_mask.bool(), reduction='mean')
+            opinion_loss = -self.opinion_crf(opinion_emissions, opinion_labels, mask=attention_mask.bool(), reduction='mean')
             outputs['aspect_loss'] = aspect_loss
             outputs['opinion_loss'] = opinion_loss
 
