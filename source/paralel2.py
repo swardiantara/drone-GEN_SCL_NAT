@@ -10,7 +10,7 @@ import os
 # Define constants
 scenario = 'binary'
 output_dir = os.path.join('train_outputs', 'discriminative')
-MAX_QUADS = 5
+MAX_QUADS = 4
 MAX_LENGTH = 128
 BATCH_SIZE = 16
 EPOCHS = 10
@@ -18,8 +18,8 @@ LEARNING_RATE = 2e-5
 DEVICE = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 # Define aspect categories and sentiment polarities
-ASPECT_CATEGORIES = ['component', 'other_category1', 'other_category2']  # Add all your categories
-SENTIMENT_POLARITIES = ['positive', 'negative', 'neutral']
+ASPECT_CATEGORIES = ['component', 'parameter', 'feature', 'action', 'state', 'issue']  # Add all your categories
+SENTIMENT_POLARITIES = ['positive', 'negative'] if scenario == 'binary' else ['normal', 'minor', 'moderate', 'severe']
 
 # Define IOB2 tags
 IOB2_TAGS = ['O', 'B-ASPECT', 'I-ASPECT', 'B-OPINION', 'I-OPINION']
