@@ -2,11 +2,14 @@ import torch
 from torch import nn
 from torch.utils.data import Dataset, DataLoader
 from transformers import BertTokenizer, BertModel, AdamW
-from torchcrf import CRF
+from TorchCRF import CRF
 from sklearn.metrics import f1_score
 import numpy as np
+import os
 
 # Define constants
+scenario = 'binary'
+output_dir = os.path.join('train_outputs', 'discriminative')
 MAX_QUADS = 5
 MAX_LENGTH = 128
 BATCH_SIZE = 16
@@ -71,8 +74,12 @@ class QuadrupleDataset(Dataset):
 
 # Prepare datasets and dataloaders
 tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
-train_dataset = QuadrupleDataset('train.txt', tokenizer)
-test_dataset = QuadrupleDataset('test.txt', tokenizer)
+if scenario == 'binary':
+    train_dataset = QuadrupleDataset(os.path.join('data', 'acos_drone_binary', 'train.txt'), tokenizer)
+    test_dataset = QuadrupleDataset(os.path.join('data', 'acos_drone_binary', 'test.txt'), tokenizer)
+else:
+    train_dataset = QuadrupleDataset(os.path.join('data', 'acos_drone_multi', 'train.txt'), tokenizer)
+    test_dataset = QuadrupleDataset(os.path.join('data', 'acos_drone_multi', 'test.txt'), tokenizer)
 train_loader = DataLoader(train_dataset, batch_size=BATCH_SIZE, shuffle=True)
 test_loader = DataLoader(test_dataset, batch_size=BATCH_SIZE)
 
@@ -166,7 +173,7 @@ for epoch in range(EPOCHS):
     f1 = evaluate(model, test_loader)
     if f1 > best_f1:
         best_f1 = f1
-        torch.save(model.state_dict(), 'best_model.pth')
+        torch.save(model.state_dict(), os.path.join(output_dir, 'best_model.pth'))
 
 print(f"Best F1 Score: {best_f1:.4f}")
 
@@ -220,7 +227,7 @@ def inference(model, tokenizer, text):
     return quadruples
 
 # Example usage
-model.load_state_dict(torch.load('best_model.pth'))
+model.load_state_dict(torch.load(os.path.join(output_dir, 'best_model.pth')))
 text = "Barometer Dead in Air."
 result = inference(model, tokenizer, text)
 print(result)
