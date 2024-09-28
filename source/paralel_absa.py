@@ -83,8 +83,8 @@ test_loader = DataLoader(test_dataset, batch_size=BATCH_SIZE)
 class QuadHead(nn.Module):
     def __init__(self, input_dim, num_categories, num_sentiments):
         super().__init__()
-        self.aspect_crf = CRF(2, batch_first=True)
-        self.opinion_crf = CRF(2, batch_first=True)
+        self.aspect_crf = CRF(2)
+        self.opinion_crf = CRF(2)
         self.aspect_linear = nn.Linear(input_dim, 2)
         self.opinion_linear = nn.Linear(input_dim, 2)
         self.category_linear = nn.Linear(input_dim, num_categories)
@@ -99,10 +99,10 @@ class QuadHead(nn.Module):
         return aspect_emissions, opinion_emissions, category_logits, sentiment_logits
     
     def aspect_loss(self, emissions, labels, mask):
-        return -self.aspect_crf(emissions, labels, mask=mask, reduction='mean')
+        return -self.aspect_crf(emissions, labels, mask=mask)
     
     def opinion_loss(self, emissions, labels, mask):
-        return -self.opinion_crf(emissions, labels, mask=mask, reduction='mean')
+        return -self.opinion_crf(emissions, labels, mask=mask)
 
 class QuadrupleExtractionModel(nn.Module):
     def __init__(self, num_categories, num_sentiments):
