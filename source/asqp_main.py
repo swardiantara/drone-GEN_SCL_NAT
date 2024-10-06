@@ -137,7 +137,7 @@ def init_args():
     return args
 
 def get_dataset(tokenizer, type_path, args):
-    return ABSADataset(tokenizer=tokenizer, data_dir=args.dataset, 
+    return GenSCLNatDataset(tokenizer=tokenizer, data_dir=args.dataset, 
                        data_type=type_path, max_len=args.max_seq_length, task=args.task, truncate=args.truncate)
 
 """
@@ -463,7 +463,7 @@ if __name__ == '__main__':
     tokenizer.add_tokens(['[SSEP]'])
 
     # Get example from the train set
-    dataset = ABSADataset(tokenizer=tokenizer, data_dir=args.dataset, 
+    dataset = GenSCLNatDataset(tokenizer=tokenizer, data_dir=args.dataset, 
                         data_type='train', max_len=args.max_seq_length, task=args.task, truncate=args.truncate)
     data_sample = dataset[0]
 
@@ -542,7 +542,7 @@ if __name__ == '__main__':
 
         sents, _ = read_line_examples_from_file(f'data/{args.dataset}/test.txt')
 
-        test_dataset = ABSADataset(tokenizer, data_dir=args.dataset, 
+        test_dataset = GenSCLNatDataset(tokenizer, data_dir=args.dataset, 
                                 data_type='test', max_len=args.max_seq_length, task=args.task, truncate=args.truncate)
         test_loader = DataLoader(test_dataset, args.eval_batch_size, num_workers=4)
 
@@ -570,7 +570,7 @@ if __name__ == '__main__':
 
         sents, _ = read_line_examples_from_file(f'data/{args.dataset}/test.txt')
 
-        test_dataset = ABSADataset(tokenizer, data_dir=args.dataset, 
+        test_dataset = GenSCLNatDataset(tokenizer, data_dir=args.dataset, 
                                 data_type='test', max_len=args.max_seq_length, task=args.task, truncate=args.truncate)
         test_loader = DataLoader(test_dataset, batch_size=args.eval_batch_size, num_workers=4)
 
