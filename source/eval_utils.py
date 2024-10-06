@@ -115,7 +115,7 @@ def compute_f1_scores(pred_pt, gold_pt, silent=True):
                 tp_at += 1 if pred_at == gold_at else 0
                 tp_ot += 1 if pred_ot == gold_ot else 0
                 tp_sp += 1 if pred_sp == gold_sp else 0
-                tp_acsp += 1 if (pred_ac == gold_ac and pred_sp == gold_sp) else 0
+                tp_acsp += 1 if (pred_ac, gold_ac) == (pred_sp, gold_sp) else 0
 
     if not silent:
         print(f"number of gold spans: {n_gold}, predicted spans: {n_pred}, hit: {quad_tp}")
