@@ -52,6 +52,8 @@ def init_args():
     # basic settings
     parser.add_argument("--task", default='asqp', type=str, required=True,
                         help="The name of the task, selected from: [`asqp`, `tasd`, `aste`]")
+    parser.add_argument("--absa_task", default='quad', type=str, required=True,
+                        help="The name of the ABSA task, selected from: [`quad`, `triplet`, `pair`]")
     parser.add_argument("--dataset", default='rest15', type=str, required=True,
                         help="The name of the dataset, selected from: [`rest15`, `rest16`]")
     parser.add_argument("--model_name_or_path", default='t5-base', type=str,
@@ -185,14 +187,14 @@ class T5FineTuner(pl.LightningModule):
     """
     Fine tune a pre-trained T5 model
     """
-    def __init__(self, hparams, seq2seq_model, tokenizer, cont_model, op_model, as_model, cat_model):
+    def __init__(self, hparams, seq2seq_model, tokenizer, cont_model, op_model, as_model):
         super(T5FineTuner, self).__init__()
         self.hparams.update(vars(hparams))
         self.model = seq2seq_model
         self.cont_model = cont_model
         self.op_model = op_model
         self.as_model = as_model
-        self.cat_model = cat_model
+        # self.cat_model = cat_model
         self.tokenizer = tokenizer
 
     def is_logger(self):
@@ -422,12 +424,12 @@ def evaluate(data_loader, model, device, tokenizer, sents, args):
     model.eval()
     model.model.eval()
 
-    special_tokens = None
-    aspect_categories = None
-    if args.constrained_decoding:
-        special_tokens = mappings['special_tokens'][args.task]
-        aspect_categories = get_aspect_category(args)
-    logits_processor = ToggleableConstrainedLogitsProcessor(tokenizer, aspect_categories=aspect_categories, special_tokens=special_tokens, use_constraints=args.constrained_decoding)
+    # special_tokens = None
+    # aspect_categories = None
+    # if args.constrained_decoding:
+    #     special_tokens = mappings['special_tokens'][args.task]
+    #     aspect_categories = get_aspect_category(args)
+    # logits_processor = ToggleableConstrainedLogitsProcessor(tokenizer, aspect_categories=aspect_categories, special_tokens=special_tokens, use_constraints=args.constrained_decoding)
 
 
     outputs, targets = [], []
@@ -436,7 +438,7 @@ def evaluate(data_loader, model, device, tokenizer, sents, args):
         outs = model.model.generate(input_ids=batch['source_ids'].to(device), 
                                     attention_mask=batch['source_mask'].to(device), 
                                     max_length=args.max_seq_length * 2,
-                                    logits_processor=[logits_processor],
+                                    # logits_processor=[logits_processor],
                                     num_beams=args.num_beams)
 
         dec = [tokenizer.decode(ids, skip_special_tokens=True) for ids in outs]
@@ -542,8 +544,8 @@ if __name__ == '__main__':
         cont_model = LinearModel()
         op_model = LinearModel()
         as_model = LinearModel()
-        cat_model = LinearModel()
-        model = T5FineTuner(args, seq2seq_model, tokenizer, cont_model, op_model, as_model, cat_model)
+        # cat_model = LinearModel()
+        model = T5FineTuner(args, seq2seq_model, tokenizer, cont_model, op_model, as_model)
 
         if args.early_stopping:
             checkpoint_callback = pl.callbacks.model_checkpoint.ModelCheckpoint(
@@ -612,8 +614,8 @@ if __name__ == '__main__':
         cont_model = LinearModel()
         op_model = LinearModel()
         as_model = LinearModel()
-        cat_model = LinearModel()
-        model = T5FineTuner(args, seq2seq_model, tokenizer, cont_model, op_model, as_model, cat_model)
+        # cat_model = LinearModel()
+        model = T5FineTuner(args, seq2seq_model, tokenizer, cont_model, op_model, as_model)
 
         sents, _ = read_line_examples_from_file(f'data/{args.dataset}/test.txt')
 
