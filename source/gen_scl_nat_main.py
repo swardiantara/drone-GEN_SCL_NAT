@@ -52,7 +52,7 @@ def init_args():
     # basic settings
     parser.add_argument("--task", default='asqp', type=str, required=True,
                         help="The name of the task, selected from: [`asqp`, `tasd`, `aste`]")
-    parser.add_argument("--absa_task", default='quad', type=str, required=True,
+    parser.add_argument("--absa_task", default='quad', type=str, required=False,
                         help="The name of the ABSA task, selected from: [`quad`, `triplet`, `pair`]")
     parser.add_argument("--dataset", default='rest15', type=str, required=True,
                         help="The name of the dataset, selected from: [`rest15`, `rest16`]")
