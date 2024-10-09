@@ -9,7 +9,7 @@ numopinion2word = {'SP1': 'positive', 'SP2': 'negative', 'SP3': 'neutral'}
 import parse
 import evaluate
 
-def extract_spans_para(task, seq, seq_type):
+def extract_spans_para(task, absa_task, seq, seq_type):
     quads = []
     sents = [s.strip() for s in seq.split('[SSEP]')]
 
@@ -32,15 +32,24 @@ def extract_spans_para(task, seq, seq_type):
                     # print(f'In {seq_type} seq, a string cannot be decoded')
                     pass
                 try:
-                    result = list(parse.parse('{0} is {1} because {2} is{3}', s, case_sensitive=True))
-                    ac, sp, at, ot = result[0], result[1], result[2], result[3].lstrip(' ')
+                    if absa_task == 'quad':
+                        result = list(parse.parse('{0} is {1} because {2} is {3}', s, case_sensitive=True))
+                        ac, sp, at, ot = [elt.strip(' ') for elt in result]
+                    elif absa_task == 'tasd':
+                        result = list(parse.parse('{0} is {1} because {2} is {3}', s, case_sensitive=True))
+                        ac, sp, at, ot = [elt.strip(' ') for elt in result]
+                    elif absa_task == 'aste':
+                        result = list(parse.parse('it is {0} because {1} is {2}', s, case_sensitive=True))
+                        sp, at, ot =[elt.strip(' ') for elt in result]
+                        ac = 'NULL'
+                    else:
+                        raise NotImplementedError
+                    # ac, sp, at, ot = result[0], result[1], result[2], result[3].lstrip(' ')
                 except:
                     print(s)
                     ac, at, sp, ot = '', '', '', ''
 
             quads.append((ac, at, sp, ot))
-
-
     elif task.startswith('gen_scl_nat'):
         if seq:
             for s in sents:
@@ -145,7 +154,7 @@ def compute_f1_scores(pred_pt, gold_pt, silent=True):
     }
 
 
-def compute_scores(pred_seqs, gold_seqs, task, silent=False):
+def compute_scores(pred_seqs, gold_seqs, task, absa_task, silent=False):
     """
     Compute model performance
     """
@@ -155,8 +164,8 @@ def compute_scores(pred_seqs, gold_seqs, task, silent=False):
     all_labels, all_preds = [], []
 
     for i in range(num_samples):
-        gold_list = extract_spans_para(task, gold_seqs[i], 'gold')
-        pred_list = extract_spans_para(task, pred_seqs[i], 'pred')
+        gold_list = extract_spans_para(task, absa_task, gold_seqs[i], 'gold')
+        pred_list = extract_spans_para(task, absa_task, pred_seqs[i], 'pred')
 
         all_labels.append(gold_list)
         all_preds.append(pred_list)

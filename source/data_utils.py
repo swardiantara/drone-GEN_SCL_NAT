@@ -5,7 +5,7 @@
 import random
 from torch.utils.data import Dataset
 import torch
-from generate_data import sentword2opinion, dronesent2opinion, get_gen_scl_nat_data
+from generate_data import sentword2opinion, dronesent2opinion, senttag2opinion, get_gen_scl_nat_data
 
 
 def read_line_examples_from_file(data_path, silence=False):
@@ -57,7 +57,52 @@ def get_para_asqp_targets(sents, labels, drone_sp=None, truncated=False):
     return sents.copy(), targets
 
 
-def get_transformed_io(data_path, data_dir, task, data_type, truncate=False):
+def get_para_tasd_targets(sents, labels, drone_sp=None, truncated=False):
+
+    targets = []
+    for label in labels:
+        all_tri_sentences = []
+        for quad in label:
+            at, ac, sp, _ = quad
+
+            if drone_sp is None:
+                man_ot = sentword2opinion[sp]  # 'positive' -> 'good'    
+            else:
+                man_ot = dronesent2opinion[sp] if drone_sp == 'binary' else sp
+
+            if at == 'NULL':
+                at = 'it'
+            one_tri = f"{ac} is {man_ot} because {at} is {man_ot}"
+            all_tri_sentences.append(one_tri)
+
+        target = ' [SSEP] '.join(all_tri_sentences)
+        targets.append(target)
+    return sents.copy(), targets
+
+
+def get_para_aste_targets(sents, labels, drone_sp=None, truncated=False):
+    targets = []
+    for label in labels:
+        all_tri_sentences = []
+        for quad in label:
+            at, ac, sp, ot = quad
+
+            if drone_sp is None:
+                man_ot = sentword2opinion[sp]  # 'positive' -> 'good'    
+            else:
+                man_ot = dronesent2opinion[sp] if drone_sp == 'binary' else sp
+
+            if at == 'NULL':
+                at = 'it'
+            one_tri = f"It is {man_ot} because {at} is {ot}"
+            all_tri_sentences.append(one_tri)
+
+        target = ' [SSEP] '.join(all_tri_sentences)
+        targets.append(target)
+    return sents.copy(), targets
+
+
+def get_transformed_io(data_path, data_dir, task, absa_task, data_type, truncate=False):
     """
     The main function to transform input & target according to the task
     """
@@ -66,8 +111,14 @@ def get_transformed_io(data_path, data_dir, task, data_type, truncate=False):
 
     # the input is just the raw sentence
     if task == 'asqp':
-        inputs, targets = get_para_asqp_targets(sents, labels, drone_sp, truncate)
-
+        if absa_task == 'quad':
+            inputs, targets = get_para_asqp_targets(sents, labels, drone_sp, truncate)
+        elif absa_task == 'tasd':
+            inputs, targets = get_para_tasd_targets(sents, labels, drone_sp, truncate)
+        elif absa_task == 'aste':
+            inputs, targets = get_para_aste_targets(sents, labels, drone_sp, truncate)
+        else:
+            raise NotImplementedError
         return inputs, targets, labels
         
     elif task.startswith('gen_scl_nat'):
@@ -78,7 +129,7 @@ def get_transformed_io(data_path, data_dir, task, data_type, truncate=False):
 
 
 class ABSADataset(Dataset):
-    def __init__(self, tokenizer, data_dir, data_type, task, max_len=256, data_path=None, truncate=False):
+    def __init__(self, tokenizer, data_dir, data_type, task, absa_task, max_len=256, data_path=None, truncate=False):
         # './data/rest16/train.txt'
         if data_path:
             self.data_path = data_path
@@ -88,6 +139,7 @@ class ABSADataset(Dataset):
         self.tokenizer = tokenizer
         self.data_dir = data_dir
         self.task = task
+        self.absa_task = absa_task
         self.data_type = data_type
         self.inputs = []
         self.targets = []
@@ -110,12 +162,12 @@ class ABSADataset(Dataset):
                 "target_ids": target_ids, "target_mask": target_mask}
 
     def get_raw_labels(self):
-        results = get_transformed_io(self.data_path, self.data_dir, self.task, self.data_type, self.truncate)
+        results = get_transformed_io(self.data_path, self.data_dir, self.task, self.absa_task, self.data_type, self.truncate)
         return results
         
     def _build_examples(self):
 
-        inputs, targets = get_transformed_io(self.data_path, self.data_dir, self.task, self.data_type, self.truncate)
+        inputs, targets = get_transformed_io(self.data_path, self.data_dir, self.task, self.absa_task, self.data_type, self.truncate)
         self.sentence_strings = inputs
         for i in range(len(inputs)):
             # change input and target to two strings
@@ -159,7 +211,7 @@ class GenSCLNatDataset(ABSADataset):
 
     def _build_examples(self):
 
-        inputs, targets, labels = get_transformed_io(self.data_path, self.data_dir, self.task, self.data_type, self.truncate)
+        inputs, targets, labels = get_transformed_io(self.data_path, self.data_dir, self.task, self.absa_task, self.data_type, self.truncate)
         
         self.sentence_strings = inputs
         for i in range(len(inputs)):

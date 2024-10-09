@@ -50,6 +50,8 @@ def init_args():
     # basic settings
     parser.add_argument("--task", default='asqp', type=str, required=True,
                         help="The name of the task, selected from: [`asqp`, `tasd`, `aste`]")
+    parser.add_argument("--absa_task", default='quad', type=str, required=False,
+                        help="The name of the ABSA task, selected from: [`quad`, `tasd`, `aste`, `acsp`]")
     parser.add_argument("--dataset", default='rest15', type=str, required=True,
                         help="The name of the dataset, selected from: [`rest15`, `rest16`]")
     parser.add_argument("--model_name_or_path", default='t5-base', type=str,
@@ -123,7 +125,7 @@ def init_args():
         # params = "I".join([elt for elts in params for elt in elts])
         # output_fold = "I".join([args.dataset, args.task,args.model_name_or_path, params, args.model_prefix])
         # output_fold = "_".join([args.dataset, args.task, args.model_prefix, args.model_name_or_path])
-        output_fold = os.path.join(args.dataset, args.scenario, args.task)
+        output_fold = os.path.join(args.dataset, args.scenario, args.task, args.absa_task)
 
         print(output_fold)
     output_dir = os.path.join(args.output_folder, output_fold)
@@ -138,7 +140,7 @@ def init_args():
 
 def get_dataset(tokenizer, type_path, args):
     return GenSCLNatDataset(tokenizer=tokenizer, data_dir=args.dataset, 
-                       data_type=type_path, max_len=args.max_seq_length, task=args.task, truncate=args.truncate)
+                       data_type=type_path, max_len=args.max_seq_length, task=args.task, absa_task=args.absa_task, truncate=args.truncate)
 
 """
 Uncomment for tsne logging
@@ -374,7 +376,7 @@ class LoggingCallback(pl.Callback):
                     writer.write("{} = {}\n".format(key, str(metrics[key])))
 
 
-def evaluate(data_loader, model, device, tokenizer, sents, task):
+def evaluate(data_loader, model, device, tokenizer, sents, task, absa_task):
     """
     Compute scores given the predictions and gold labels and dump to file
     """
@@ -397,7 +399,7 @@ def evaluate(data_loader, model, device, tokenizer, sents, task):
         outputs.extend(dec)
         targets.extend(target)
 
-    scores, all_labels, all_preds = compute_scores(outputs, targets, task, False)
+    scores, all_labels, all_preds = compute_scores(outputs, targets, task, absa_task, False)
     results = {'labels_correct': all_labels, 'labels_pred': all_preds, 'output_pred': outputs, 'output_correct': targets, 'utterances': sents}
     gen_scores = compute_gen_metrics(outputs, targets, False)
     ex_list = []
@@ -519,7 +521,7 @@ if __name__ == '__main__':
             logger=None,
             #auto_scale_batch_size=True,
             #callbacks=[checkpoint_callback, EarlyStopping(monitor="val_loss", mode='min'), LoggingCallback()],
-            callbacks=callback_list
+            # callbacks=callback_list
         )
         trainer = pl.Trainer(**train_params)
         trainer.fit(model)
@@ -547,7 +549,7 @@ if __name__ == '__main__':
         test_loader = DataLoader(test_dataset, args.eval_batch_size, num_workers=4)
 
         # compute the performance scores
-        evaluate(test_loader, model, device, tokenizer, test_dataset.sentence_strings, args.task)
+        evaluate(test_loader, model, device, tokenizer, test_dataset.sentence_strings, args.task, args.absa_task)
 
     if args.do_inference:
         print("\n****** Conduct inference on trained checkpoint ******")
@@ -575,5 +577,5 @@ if __name__ == '__main__':
         test_loader = DataLoader(test_dataset, batch_size=args.eval_batch_size, num_workers=4)
 
         # compute the performance scores
-        evaluate(test_loader, model, device, tokenizer, test_dataset.sentence_strings, args.task)
+        evaluate(test_loader, model, device, tokenizer, test_dataset.sentence_strings, args.task, args.absa_task)
     

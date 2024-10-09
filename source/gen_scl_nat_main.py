@@ -51,9 +51,9 @@ def init_args():
     parser = argparse.ArgumentParser()
     # basic settings
     parser.add_argument("--task", default='asqp', type=str, required=True,
-                        help="The name of the task, selected from: [`asqp`, `tasd`, `aste`]")
+                        help="The name of the task, selected from: [`asqp`, `gen_scl_nat`]")
     parser.add_argument("--absa_task", default='quad', type=str, required=False,
-                        help="The name of the ABSA task, selected from: [`quad`, `triplet`, `pair`]")
+                        help="The name of the ABSA task, selected from: [`quad`, `tasd`, `aste`, `acsp`]")
     parser.add_argument("--dataset", default='rest15', type=str, required=True,
                         help="The name of the dataset, selected from: [`rest15`, `rest16`]")
     parser.add_argument("--model_name_or_path", default='t5-base', type=str,
@@ -144,7 +144,7 @@ def init_args():
 
 def get_dataset(tokenizer, type_path, args):
     return GenSCLNatDataset(tokenizer=tokenizer, data_dir=args.dataset, 
-                       data_type=type_path, max_len=args.max_seq_length, task=args.task, truncate=args.truncate)
+                       data_type=type_path, max_len=args.max_seq_length, task=args.task, absa_task=args.absa_task, truncate=args.truncate)
 
 """
 Uncomment for tsne logging
@@ -447,7 +447,7 @@ def evaluate(data_loader, model, device, tokenizer, sents, args):
         outputs.extend(dec)
         targets.extend(target)
 
-    scores, all_labels, all_preds = compute_scores(outputs, targets, args.task, False)
+    scores, all_labels, all_preds = compute_scores(outputs, targets, args.task, args.absa_task, False)
     results = {'labels_correct': all_labels, 'labels_pred': all_preds, 'output_pred': outputs, 'output_correct': targets, 'utterances': sents}
     gen_scores = compute_gen_metrics(outputs, targets, False)
     ex_list = []
@@ -568,7 +568,7 @@ if __name__ == '__main__':
             logger=None,
             #auto_scale_batch_size=True,
             #callbacks=[checkpoint_callback, EarlyStopping(monitor="val_loss", mode='min'), LoggingCallback()],
-            callbacks=callback_list
+            # callbacks=callback_list
         )
         trainer = pl.Trainer(**train_params)
         trainer.fit(model)
