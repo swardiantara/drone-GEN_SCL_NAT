@@ -466,7 +466,7 @@ if __name__ == '__main__':
 
     # Get example from the train set
     dataset = GenSCLNatDataset(tokenizer=tokenizer, data_dir=args.dataset, 
-                        data_type='train', max_len=args.max_seq_length, task=args.task, task=args.absa_task, truncate=args.truncate)
+                        data_type='train', max_len=args.max_seq_length, task=args.task, absa_task=args.absa_task, truncate=args.truncate)
     data_sample = dataset[0]
 
     # sanity check
