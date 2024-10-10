@@ -1,6 +1,6 @@
-datasets=( acos_drone_binary acos_drone_multi acos_laptop_data acos_restaurant_data )
+datasets=( acos_laptop_data acos_restaurant_data )
 scenarios=( t5 flan-t5 )
-tasks=( aste tasd )
+tasks=( quad )
 for dataset in "${datasets[@]}"; do
     for scenario in "${scenarios[@]}"; do
         for task in "${tasks[@]}"; do
@@ -12,7 +12,7 @@ for dataset in "${datasets[@]}"; do
                 --scenario "$scenario" \
                 --dataset "$dataset" \
                 --model_name_or_path bert-base-cased \
-                --output_folder train_outputs \
+                --output_folder train_outputs_asqp \
                 --n_gpu 1 \
                 --accelerator gpu \
                 --train_batch_size 16 \
