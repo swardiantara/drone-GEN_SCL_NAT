@@ -501,7 +501,7 @@ if __name__ == '__main__':
             deterministic=True,
             #auto_scale_batch_size=True,
             #callbacks=[checkpoint_callback, EarlyStopping(monitor="val_loss", mode='min'), LoggingCallback()],
-            callbacks=callback_list
+            # callbacks=callback_list
         )
         trainer = pl.Trainer(**train_params)
         trainer.fit(model)

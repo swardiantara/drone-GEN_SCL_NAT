@@ -138,7 +138,6 @@ def get_gen_scl_nat_data(sents, labels, task, drone_sp=None, truncated=False):
                     # if drone_sp is None:
                     domain = get_domain(raw_ac)
                     ac = domain_map[domain].get(raw_ac, raw_ac)
-                    
 
                     covered.add(tuple(quad))
                     if drone_sp is None:

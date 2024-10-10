@@ -5,7 +5,7 @@
 import random
 from torch.utils.data import Dataset
 import torch
-from generate_data import sentword2opinion, dronesent2opinion, senttag2opinion, get_gen_scl_nat_data
+from generate_data import sentword2opinion, dronesent2opinion, get_domain, domain_map, senttag2opinion, get_gen_scl_nat_data
 
 
 def read_line_examples_from_file(data_path, silence=False):
@@ -36,10 +36,13 @@ def get_para_asqp_targets(sents, labels, drone_sp=None, truncated=False):
     for label in labels:
         all_quad_sentences = []
         for quad in label:
-            at, ac, sp, ot = quad
+            at, raw_ac, sp, ot = quad
             # TRUNCATED
             if truncated == True:
-                ac = ac.split("#")[0]
+                raw_ac = raw_ac.split("#")[0]
+
+            domain = get_domain(raw_ac)
+            ac = domain_map[domain].get(raw_ac, raw_ac)
             
             if drone_sp is None:
                 man_ot = sentword2opinion[sp]  # 'positive' -> 'good'    
@@ -63,7 +66,10 @@ def get_para_tasd_targets(sents, labels, drone_sp=None, truncated=False):
     for label in labels:
         all_tri_sentences = []
         for quad in label:
-            at, ac, sp, _ = quad
+            at, raw_ac, sp, _ = quad
+
+            domain = get_domain(raw_ac)
+            ac = domain_map[domain].get(raw_ac, raw_ac)
 
             if drone_sp is None:
                 man_ot = sentword2opinion[sp]  # 'positive' -> 'good'    
@@ -85,7 +91,7 @@ def get_para_aste_targets(sents, labels, drone_sp=None, truncated=False):
     for label in labels:
         all_tri_sentences = []
         for quad in label:
-            at, ac, sp, ot = quad
+            at, _, sp, ot = quad
 
             if drone_sp is None:
                 man_ot = sentword2opinion[sp]  # 'positive' -> 'good'    
