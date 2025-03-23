@@ -424,8 +424,8 @@ def evaluate(data_loader, model, device, tokenizer, sents, args):
     model.eval()
     model.model.eval()
 
-    # special_tokens = None
-    # aspect_categories = None
+    special_tokens = None
+    aspect_categories = None
     if args.constrained_decoding:
         special_tokens = mappings['special_tokens'][args.task]
         aspect_categories = get_aspect_category(args)
