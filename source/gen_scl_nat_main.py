@@ -473,7 +473,7 @@ def get_seq2seq_model(args):
         tokenizer = AutoTokenizer.from_pretrained(model_path)
         seq2seq_model = EncoderDecoderModel.from_encoder_decoder_pretrained(model_path, model_path)
     elif str(args.scenario).startswith('t5'):
-        args.model_name_or_path = f'google/{args.scenario}'
+        args.model_name_or_path = f'google-t5/{args.scenario}'
         tokenizer = AutoTokenizer.from_pretrained(args.model_name_or_path)
         seq2seq_model = AutoModelForSeq2SeqLM.from_pretrained(args.model_name_or_path)
     elif args.scenario == 'flan-t5' or args.scenario == 'flan-t5-large':
