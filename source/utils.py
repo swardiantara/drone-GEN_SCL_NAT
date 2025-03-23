@@ -61,9 +61,10 @@ class ToggleableConstrainedLogitsProcessor(LogitsProcessor):
     def __call__(self, input_ids: torch.LongTensor, scores: torch.FloatTensor) -> torch.FloatTensor:
         if not self.use_constraints:
             return scores  # Return original scores if constraints are disabled
-
-        batch_size, vocab_size = scores.shape
-        device = scores.device
+        # Apply softmax to convert logits to probabilities
+        probs = torch.nn.functional.softmax(scores, dim=-1)
+        batch_size, vocab_size = probs.shape
+        device = probs.device
 
         # Create a mask for input tokens (varies for each item in the batch)
         input_mask = torch.zeros((batch_size, vocab_size), dtype=torch.bool, device=device)
@@ -76,7 +77,7 @@ class ToggleableConstrainedLogitsProcessor(LogitsProcessor):
         combined_mask = input_mask | self.static_mask.to(device)
 
         # Apply the mask
-        scores = scores.masked_fill(~combined_mask, -float('inf'))
+        scores = probs.masked_fill(~combined_mask, -float('inf'))
         return scores
 
     def toggle_constraints(self, use_constraints):

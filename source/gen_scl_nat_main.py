@@ -53,7 +53,7 @@ def init_args():
     parser.add_argument("--task", default='asqp', type=str, required=True,
                         help="The name of the task, selected from: [`asqp`, `gen_scl_nat`]")
     parser.add_argument("--absa_task", default='quad', type=str, required=False,
-                        help="The name of the ABSA task, selected from: [`quad`, `tasd`, `aste`, `acsp`]")
+                        help="The name of the ABSA task, selected from: [`quad`, `tasd`, `aste`, `acsp`, `atsp`]")
     parser.add_argument("--dataset", default='rest15', type=str, required=True,
                         help="The name of the dataset, selected from: [`rest15`, `rest16`]")
     parser.add_argument("--model_name_or_path", default='t5-base', type=str,
@@ -128,7 +128,7 @@ def init_args():
         # params = "I".join([elt for elts in params for elt in elts])
         # output_fold = "I".join([args.dataset, args.task,args.model_name_or_path, params, args.model_prefix])
         # output_fold = "_".join([args.dataset, args.task, args.model_prefix, args.model_name_or_path])
-        output_fold = os.path.join(args.dataset, args.scenario, args.task)
+        output_fold = os.path.join(args.dataset, args.scenario, args.task, args.absa_task, args.seed)
 
         print(output_fold)
     output_dir = os.path.join(args.output_folder, output_fold)
@@ -426,10 +426,10 @@ def evaluate(data_loader, model, device, tokenizer, sents, args):
 
     # special_tokens = None
     # aspect_categories = None
-    # if args.constrained_decoding:
-    #     special_tokens = mappings['special_tokens'][args.task]
-    #     aspect_categories = get_aspect_category(args)
-    # logits_processor = ToggleableConstrainedLogitsProcessor(tokenizer, aspect_categories=aspect_categories, special_tokens=special_tokens, use_constraints=args.constrained_decoding)
+    if args.constrained_decoding:
+        special_tokens = mappings['special_tokens'][args.task]
+        aspect_categories = get_aspect_category(args)
+    logits_processor = ToggleableConstrainedLogitsProcessor(tokenizer, aspect_categories=aspect_categories, special_tokens=special_tokens, use_constraints=args.constrained_decoding)
 
 
     outputs, targets = [], []
@@ -438,7 +438,7 @@ def evaluate(data_loader, model, device, tokenizer, sents, args):
         outs = model.model.generate(input_ids=batch['source_ids'].to(device), 
                                     attention_mask=batch['source_mask'].to(device), 
                                     max_length=args.max_seq_length * 2,
-                                    # logits_processor=[logits_processor],
+                                    logits_processor=[logits_processor],
                                     num_beams=args.num_beams)
 
         dec = [tokenizer.decode(ids, skip_special_tokens=True) for ids in outs]
