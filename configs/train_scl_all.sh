@@ -28,6 +28,7 @@ for dataset in "${datasets[@]}"; do
                     --cont_temp 0.25 \
                     --model_prefix drone_binary_asqp \
                     --constrained_decoding 
+            done
         done
     done
 done
