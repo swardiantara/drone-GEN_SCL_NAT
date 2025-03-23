@@ -128,7 +128,7 @@ def init_args():
         # params = "I".join([elt for elts in params for elt in elts])
         # output_fold = "I".join([args.dataset, args.task,args.model_name_or_path, params, args.model_prefix])
         # output_fold = "_".join([args.dataset, args.task, args.model_prefix, args.model_name_or_path])
-        output_fold = os.path.join(args.dataset, args.scenario, args.task, args.absa_task, args.seed)
+        output_fold = os.path.join(args.dataset, args.scenario, args.task, args.absa_task, str(args.seed))
 
         print(output_fold)
     output_dir = os.path.join(args.output_folder, output_fold)
