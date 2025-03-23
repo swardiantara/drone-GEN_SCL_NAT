@@ -424,12 +424,12 @@ def evaluate(data_loader, model, device, tokenizer, sents, args):
     model.eval()
     model.model.eval()
 
-    special_tokens = None
-    aspect_categories = None
-    if args.constrained_decoding:
-        special_tokens = mappings['special_tokens'][args.task]
-        aspect_categories = get_aspect_category(args)
-    logits_processor = ToggleableConstrainedLogitsProcessor(tokenizer, aspect_categories=aspect_categories, special_tokens=special_tokens, use_constraints=args.constrained_decoding)
+    # special_tokens = None
+    # aspect_categories = None
+    # if args.constrained_decoding:
+    #     special_tokens = mappings['special_tokens'][args.task]
+    #     aspect_categories = get_aspect_category(args)
+    # logits_processor = ToggleableConstrainedLogitsProcessor(tokenizer, aspect_categories=aspect_categories, special_tokens=special_tokens, use_constraints=args.constrained_decoding)
 
 
     outputs, targets = [], []
@@ -438,7 +438,7 @@ def evaluate(data_loader, model, device, tokenizer, sents, args):
         outs = model.model.generate(input_ids=batch['source_ids'].to(device), 
                                     attention_mask=batch['source_mask'].to(device), 
                                     max_length=args.max_seq_length * 2,
-                                    logits_processor=[logits_processor],
+                                    # logits_processor=[logits_processor],
                                     num_beams=args.num_beams)
 
         dec = [tokenizer.decode(ids, skip_special_tokens=True) for ids in outs]
