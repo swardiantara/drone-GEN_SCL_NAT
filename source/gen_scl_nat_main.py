@@ -476,7 +476,7 @@ def get_seq2seq_model(args):
         args.model_name_or_path = f'google-t5/{args.scenario}'
         tokenizer = AutoTokenizer.from_pretrained(args.model_name_or_path)
         seq2seq_model = AutoModelForSeq2SeqLM.from_pretrained(args.model_name_or_path)
-    elif args.scenario == 'flan-t5' or args.scenario == 'flan-t5-large':
+    elif str(args.scenario).startswith('flan'):
         args.model_name_or_path = f'google/{args.scenario}'
         tokenizer = AutoTokenizer.from_pretrained(args.model_name_or_path)
         seq2seq_model = AutoModelForSeq2SeqLM.from_pretrained(args.model_name_or_path)
@@ -528,7 +528,7 @@ if __name__ == '__main__':
     if args.do_train:
         print("\n****** Conducting Training ******")
 
-        if args.scenario == 't5' or args.scenario == 'flan-t5' or args.scenario == 'flan-t5-large':
+        if str(args.scenario).startswith('t5') or str(args.scenario).startswith('flan'):
             seq2seq_model.resize_token_embeddings(len(tokenizer))
         else:
             # Adjust special token's IDs
