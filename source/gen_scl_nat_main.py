@@ -472,12 +472,12 @@ def get_seq2seq_model(args):
         model_path = os.path.join('embeddings', f"acos_{scenarios[0]}_{'data' if scenarios[0] != 'drone' else scenarios[1]}", emb_scenario)
         tokenizer = AutoTokenizer.from_pretrained(model_path)
         seq2seq_model = EncoderDecoderModel.from_encoder_decoder_pretrained(model_path, model_path)
-    elif args.scenario == 't5':
-        args.model_name_or_path = 't5-base'
+    elif str(args.scenario).startswith('t5'):
+        args.model_name_or_path = args.scenario
         tokenizer = AutoTokenizer.from_pretrained(args.model_name_or_path)
         seq2seq_model = AutoModelForSeq2SeqLM.from_pretrained(args.model_name_or_path)
     elif args.scenario == 'flan-t5' or args.scenario == 'flan-t5-large':
-        args.model_name_or_path = 'google/flan-t5-base'
+        args.model_name_or_path = f'google/{args.scenario}'
         tokenizer = AutoTokenizer.from_pretrained(args.model_name_or_path)
         seq2seq_model = AutoModelForSeq2SeqLM.from_pretrained(args.model_name_or_path)
     elif args.scenario == 'bert2gpt2':
