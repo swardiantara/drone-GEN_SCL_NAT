@@ -40,6 +40,69 @@ Module Usage:
 3. Run `main_gen_scl_nat.py` for model training/inference. 
 	`configs/` contains example scripts for running evaluation on each model from the paper
 
+## Drone forensics extensions
+
+This fork extends the original GEN-SCL-NAT / PARAPHRASE (ABSA-QUAD) codebase for
+descriptive-diagnostic quadruple extraction from drone flight-log messages, for
+forensic investigation support. Added on top of the original pipeline:
+
+**1. Duplicate quadruple analysis** (`source/analyze_duplicates.py`) — quantifies
+how often a single example's gold label list contains the exact same quadruple
+more than once, per split. Run from the repo root:
+```
+python source/analyze_duplicates.py --dataset acos_drone_data --show_examples
+```
+This is what justifies extension (2) below: on this drone dataset, ~1% of
+training examples contain a duplicated gold quadruple, which set-based
+evaluation silently collapses.
+
+**2. Set- and multiset-based evaluation** (`source/eval_utils.py`) — every
+`--do_train`/`--do_direct_eval`/`--do_inference` run now reports both:
+- **set-based**: the original ABSA-QUAD/GEN-SCL-NAT scoring (duplicates within
+  an example collapsed to one occurrence), and
+- **multiset (bag) based**: duplicate quadruples are matched with
+  multiplicity (via `collections.Counter` intersection), so a repeated gold
+  quadruple must be predicted the matching number of times to be fully
+  credited.
+
+Each is reported with **micro** (global TP/gold/pred aggregation), **macro**
+(unweighted mean of per-example P/R/F1), and **weighted** (per-example P/R/F1
+averaged, weighted by each example's gold-quadruple count) averaging. See the
+`performance_metrics` field of the dumped `results-*.json` for the full
+`{set, multiset} x {micro, macro, weighted}` breakdown.
+
+**3. Constrained decoding** (`source/constrained_decoding.py`, flag
+`--constrained_decoding`) — optionally restricts generation, at every step, to
+the union of: the current example's own input tokens (copy vocabulary), the
+closed category/sentiment surface-form vocabulary observed in the training
+targets, the task's fixed template tokens (e.g. `is`/`because`/`[SSEP]` for
+PARAPHRASE, `|`/`THE`/`IS`/`[SSEP]` for GEN-SCL-NAT), and special tokens. This
+is vocabulary-restricted constrained decoding (not a full output-grammar
+decoder), intended as an ablation switch.
+
+**4. Optional inference-time sentence segmentation** (`source/segmentation_utils.py`,
+flags `--use_segmentation --segmentation_model_dir <path>`) — using
+[LogNexus](https://pypi.org/project/LogNexs/) (`pip install LogNexs`),
+inspired by [ATOSS](https://github.com/ryang1119/ATOSS): each input message is
+segmented into sub-sentences, inference is run independently per sub-sentence,
+and predicted quadruples are merged back per original message (duplicates
+kept, not deduplicated), before scoring against the original gold labels with
+both set- and multiset-based metrics. This applies to inference only —
+training always uses the original, unsegmented sentences/labels. LogNexus
+requires a separately trained segmentation model directory (a
+`simpletransformers` NER-style checkpoint); point `--segmentation_model_dir`
+at it.
+
+**5. Reproducible per-method drone scripts** — `configs/run_drone_paraphrase.sh`
+and `configs/run_drone_gen_scl_nat.sh` each train + evaluate one method on the
+drone dataset, with `USE_CONSTRAINED_DECODING` / `USE_SEGMENTATION` /
+`SEGMENTATION_MODEL_DIR` environment-variable toggles for the ablations above, e.g.:
+```
+bash configs/run_drone_paraphrase.sh
+USE_CONSTRAINED_DECODING=true bash configs/run_drone_paraphrase.sh
+USE_SEGMENTATION=true SEGMENTATION_MODEL_DIR=models/lognexus_drone bash configs/run_drone_gen_scl_nat.sh
+```
+
 Please cite our paper as such:
 ```
 @InProceedings{peper22generativeacos,
