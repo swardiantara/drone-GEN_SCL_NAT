@@ -37,8 +37,10 @@ from transformers import AdamW, T5ForConditionalGeneration, T5Tokenizer
 from transformers import get_linear_schedule_with_warmup
 
 from data_utils import GenSCLNatDataset
-from data_utils import read_line_examples_from_file
-from eval_utils import compute_scores
+from data_utils import read_line_examples_from_file, get_transformed_io
+from eval_utils import compute_scores, compute_scores_from_quads, extract_spans_para
+from constrained_decoding import build_label_vocab, build_constrained_logits_processor
+from segmentation_utils import SentenceSegmenter
 
 logger = logging.getLogger(__name__)
 
@@ -88,8 +90,23 @@ def init_args():
     parser.add_argument("--cont_temp", type=float, default=0.1)
     parser.add_argument('--truncate', action='store_true')
 
+    # ablation options
+    parser.add_argument('--constrained_decoding', action='store_true',
+                        help="Restrict generation to source-copy + closed label vocabulary + template tokens.")
+    parser.add_argument('--use_segmentation', action='store_true',
+                        help="Segment each input message into sub-sentences (via LogNexus) before inference, "
+                             "run inference per sub-sentence, then merge predictions per message (keeping "
+                             "duplicates). Inference-only; has no effect on training.")
+    parser.add_argument('--segmentation_model_dir', type=str, default=None,
+                        help="Path to a trained LogNexus segmentation model directory. Required if "
+                             "--use_segmentation is set.")
+    parser.add_argument('--segmentation_use_cuda', action='store_true',
+                        help="Run the LogNexus segmentation model on GPU.")
 
     args = parser.parse_args()
+
+    if args.use_segmentation and not args.segmentation_model_dir:
+        parser.error("--use_segmentation requires --segmentation_model_dir")
 
     # create output folder if needed
     if not os.path.exists(args.output_folder):
@@ -393,7 +410,7 @@ class LoggingCallback(pl.Callback):
                     writer.write("{} = {}\n".format(key, str(metrics[key])))
 
 
-def evaluate(data_loader, model, sents, task):
+def evaluate(data_loader, model, sents, task, constrained_decoding=False, category_vocab=None, sentiment_vocab=None):
     """
     Compute scores given the predictions and gold labels and dump to file
     """
@@ -406,10 +423,19 @@ def evaluate(data_loader, model, sents, task):
     outputs, targets = [], []
     for batch in tqdm(data_loader):
 
-        outs = model.model.generate(input_ids=batch['source_ids'].to(device), 
-                                    attention_mask=batch['source_mask'].to(device), 
-                                    max_length=args.max_seq_length*2,
-                                    num_beams=args.num_beams)
+        gen_kwargs = dict(input_ids=batch['source_ids'].to(device),
+                           attention_mask=batch['source_mask'].to(device),
+                           max_length=args.max_seq_length*2,
+                           num_beams=args.num_beams)
+
+        if constrained_decoding:
+            source_texts = [tokenizer.decode(ids, skip_special_tokens=True) for ids in batch['source_ids']]
+            logits_processor = build_constrained_logits_processor(
+                tokenizer, task, source_texts, category_vocab, sentiment_vocab, args.num_beams)
+            if logits_processor is not None:
+                gen_kwargs['logits_processor'] = logits_processor
+
+        outs = model.model.generate(**gen_kwargs)
 
         dec = [tokenizer.decode(ids, skip_special_tokens=True) for ids in outs]
         target = [tokenizer.decode(ids, skip_special_tokens=True) for ids in batch["target_ids"]]
@@ -426,13 +452,97 @@ def evaluate(data_loader, model, sents, task):
         for key in results:
             new_dict[key] = results[key][idx]
         ex_list.append(new_dict)
-    
+
     results = {'performance_metrics': scores, 'examples': ex_list}
 
     json.dump(results, open(f"{args.output_dir}/results-{args.dataset}.json", 'w'), indent=2, sort_keys=True)
     return scores
 
-    
+
+def evaluate_segmented(model, sents, task, category_vocab=None, sentiment_vocab=None):
+    """
+    Optional inference-time pipeline: segment each input message into
+    sub-sentences (LogNexus), run inference independently per sub-sentence,
+    then merge the predicted quadruples back per original message
+    (concatenation, so duplicate quadruples are preserved), and score
+    against the gold quadruples for the *original* (unsegmented) message.
+    """
+    device = torch.device(DEVICE)
+    model.model.to(device)
+    model.eval()
+    model.model.eval()
+
+    # gold quadruples: derived from the standard, unsegmented target-text
+    # formatting/parsing pipeline, so scoring stays comparable to non-segmented runs
+    data_path = f'data/{args.dataset}/test.txt'
+    _, gold_targets, _ = get_transformed_io(data_path, args.dataset, task, 'test', args.truncate)
+    gold_target_texts = [t if isinstance(t, str) else " ".join(t) for t in gold_targets]
+    all_labels = [extract_spans_para(task, t, 'gold') for t in gold_target_texts]
+
+    segmenter = SentenceSegmenter(args.segmentation_model_dir, use_cuda=args.segmentation_use_cuda)
+    messages = [' '.join(sent) for sent in sents]
+    segmented = segmenter.segment(messages)
+
+    all_preds = []
+    per_example_outputs = []
+    for segments in tqdm(segmented):
+        merged_quads = []
+        merged_texts = []
+        for segment_text in segments:
+            tokenized = tokenizer.batch_encode_plus(
+                [segment_text], max_length=args.max_seq_length, padding='max_length',
+                truncation=True, return_tensors='pt')
+
+            gen_kwargs = dict(input_ids=tokenized['input_ids'].to(device),
+                               attention_mask=tokenized['attention_mask'].to(device),
+                               max_length=args.max_seq_length*2,
+                               num_beams=args.num_beams)
+
+            if args.constrained_decoding:
+                logits_processor = build_constrained_logits_processor(
+                    tokenizer, task, [segment_text], category_vocab, sentiment_vocab, args.num_beams)
+                if logits_processor is not None:
+                    gen_kwargs['logits_processor'] = logits_processor
+
+            outs = model.model.generate(**gen_kwargs)
+            dec = tokenizer.decode(outs[0], skip_special_tokens=True)
+            merged_texts.append(dec)
+            merged_quads.extend(extract_spans_para(task, dec, 'pred'))
+
+        all_preds.append(merged_quads)
+        per_example_outputs.append(' [SSEP] '.join(merged_texts))
+
+    scores = compute_scores_from_quads(all_preds, all_labels, silent=False)
+
+    results = {'labels_correct': all_labels, 'labels_pred': all_preds, 'output_pred': per_example_outputs,
+               'utterances': sents, 'segments': segmented}
+    ex_list = []
+    for idx in range(len(all_preds)):
+        new_dict = {}
+        for key in results:
+            new_dict[key] = results[key][idx]
+        ex_list.append(new_dict)
+
+    results = {'performance_metrics': scores, 'examples': ex_list}
+    json.dump(results, open(f"{args.output_dir}/results-{args.dataset}-segmented.json", 'w'), indent=2, sort_keys=True)
+    return scores
+
+
+def run_evaluation(data_loader, model, sents, task):
+    """
+    Dispatches to the segmented or standard evaluation pipeline based on
+    --use_segmentation, wiring up constrained decoding (--constrained_decoding)
+    for either path.
+    """
+    category_vocab, sentiment_vocab = None, None
+    if args.constrained_decoding:
+        category_vocab, sentiment_vocab = build_label_vocab(task, args.dataset, args.truncate)
+
+    if args.use_segmentation:
+        return evaluate_segmented(model, sents, task, category_vocab, sentiment_vocab)
+    return evaluate(data_loader, model, sents, task, args.constrained_decoding, category_vocab, sentiment_vocab)
+
+
 # check for top-level environment
 if __name__ == '__main__':
     # initialization
@@ -519,7 +629,7 @@ if __name__ == '__main__':
         test_loader = DataLoader(test_dataset, args.eval_batch_size, num_workers=4)
 
         # compute the performance scores
-        evaluate(test_loader, model, test_dataset.sentence_strings, args.task)
+        run_evaluation(test_loader, model, test_dataset.sentence_strings, args.task)
 
     if args.do_inference:
         print("\n****** Conduct inference on trained checkpoint ******")
@@ -545,5 +655,5 @@ if __name__ == '__main__':
         test_loader = DataLoader(test_dataset, batch_size=args.eval_batch_size, num_workers=4)
 
         # compute the performance scores
-        evaluate(test_loader, model, test_dataset.sentence_strings, args.task)
+        run_evaluation(test_loader, model, test_dataset.sentence_strings, args.task)
     
