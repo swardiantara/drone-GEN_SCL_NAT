@@ -6,7 +6,8 @@
 # Usage:
 #   bash configs/run_drone_paraphrase.sh
 #   USE_CONSTRAINED_DECODING=true bash configs/run_drone_paraphrase.sh
-#   USE_SEGMENTATION=true SEGMENTATION_MODEL_DIR=models/lognexus_drone bash configs/run_drone_paraphrase.sh
+#   USE_SEGMENTATION=true bash configs/run_drone_paraphrase.sh   # uses the default ADFLER hub model
+#   USE_SEGMENTATION=true SEGMENTATION_MODEL_DIR=path/to/local/adfler/checkpoint bash configs/run_drone_paraphrase.sh
 #   DATASET=acos_drone_binary bash configs/run_drone_paraphrase.sh
 
 set -e
@@ -22,7 +23,10 @@ SEED=${SEED:-42}
 # Set to "true" to enable each option; both are off by default.
 USE_CONSTRAINED_DECODING=${USE_CONSTRAINED_DECODING:-false}
 USE_SEGMENTATION=${USE_SEGMENTATION:-false}
+# defaults to the published swardiantara/ADFLER-bert-base-cased checkpoint
+# (source/gen_scl_nat_main.py's own default) when left unset
 SEGMENTATION_MODEL_DIR=${SEGMENTATION_MODEL_DIR:-}
+SEGMENTATION_MODEL_TYPE=${SEGMENTATION_MODEL_TYPE:-bert}
 SEGMENTATION_USE_CUDA=${SEGMENTATION_USE_CUDA:-false}
 # -------------------------------------------------------------------------
 
@@ -31,11 +35,10 @@ if [ "$USE_CONSTRAINED_DECODING" = "true" ]; then
     EXTRA_FLAGS+=(--constrained_decoding)
 fi
 if [ "$USE_SEGMENTATION" = "true" ]; then
-    if [ -z "$SEGMENTATION_MODEL_DIR" ]; then
-        echo "USE_SEGMENTATION=true requires SEGMENTATION_MODEL_DIR to be set" >&2
-        exit 1
+    EXTRA_FLAGS+=(--use_segmentation --segmentation_model_type "$SEGMENTATION_MODEL_TYPE")
+    if [ -n "$SEGMENTATION_MODEL_DIR" ]; then
+        EXTRA_FLAGS+=(--segmentation_model_dir "$SEGMENTATION_MODEL_DIR")
     fi
-    EXTRA_FLAGS+=(--use_segmentation --segmentation_model_dir "$SEGMENTATION_MODEL_DIR")
     if [ "$SEGMENTATION_USE_CUDA" = "true" ]; then
         EXTRA_FLAGS+=(--segmentation_use_cuda)
     fi

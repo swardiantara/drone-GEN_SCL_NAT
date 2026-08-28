@@ -104,19 +104,23 @@ def init_args():
                         help="Restrict generation to source-copy tokens + closed category/sentiment "
                              "vocabulary (from training targets + category_mappings.json) + template tokens.")
     parser.add_argument('--use_segmentation', action='store_true',
-                        help="Segment each input message into sub-sentences (via LogNexus) before inference, "
-                             "run inference per sub-sentence, then merge predictions per message (keeping "
-                             "duplicates). Inference-only; has no effect on training.")
-    parser.add_argument('--segmentation_model_dir', type=str, default=None,
-                        help="Path to a trained LogNexus segmentation model directory. Required if "
-                             "--use_segmentation is set.")
+                        help="Segment each input message into Event sub-sentences (via ADFLER, dropping "
+                             "NonEvent sentences since they cannot contain a quad) before inference, run "
+                             "inference per sub-sentence, then merge predictions per message (keeping "
+                             "duplicates). Inference-only; has no effect on training. See "
+                             "https://github.com/swardiantara/ADFLER / "
+                             "https://huggingface.co/swardiantara/ADFLER-bert-base-cased")
+    parser.add_argument('--segmentation_model_dir', type=str, default='swardiantara/ADFLER-bert-base-cased',
+                        help="Path or Hugging Face Hub id of a trained ADFLER-style token-classification "
+                             "(simpletransformers NER) model. Defaults to the published "
+                             "swardiantara/ADFLER-bert-base-cased checkpoint, auto-downloaded on first use.")
+    parser.add_argument('--segmentation_model_type', type=str, default='bert',
+                        help="simpletransformers model_type for --segmentation_model_dir (e.g. 'bert', "
+                             "'electra', 'xlnet') -- must match how that checkpoint was fine-tuned.")
     parser.add_argument('--segmentation_use_cuda', action='store_true',
-                        help="Run the LogNexus segmentation model on GPU.")
+                        help="Run the ADFLER segmentation model on GPU.")
 
     args = parser.parse_args()
-
-    if args.use_segmentation and not args.segmentation_model_dir:
-        parser.error("--use_segmentation requires --segmentation_model_dir")
 
     # create output folder if needed
     if not os.path.exists(args.output_folder):
@@ -491,11 +495,12 @@ def evaluate(data_loader, model, device, tokenizer, sents, args, category_vocab=
 
 def evaluate_segmented(model, device, tokenizer, sents, args, category_vocab=None, sentiment_vocab=None):
     """
-    Optional inference-time pipeline: segment each input message into
-    sub-sentences (LogNexus), run inference independently per sub-sentence,
-    then merge the predicted quadruples back per original message
-    (concatenation, so duplicate quadruples are preserved), and score
-    against the gold quadruples for the *original* (unsegmented) message.
+    Optional inference-time pipeline: segment each input message into Event
+    sub-sentences (ADFLER; NonEvent sentences are dropped), run inference
+    independently per surviving sub-sentence, then merge the predicted
+    quadruples back per original message (concatenation, so duplicate
+    quadruples are preserved), and score against the gold quadruples for the
+    *original* (unsegmented) message.
     """
     model.model.to(device)
     model.eval()
@@ -514,7 +519,8 @@ def evaluate_segmented(model, device, tokenizer, sents, args, category_vocab=Non
         except (KeyError, IndexError):
             extra_category_words = None
 
-    segmenter = SentenceSegmenter(args.segmentation_model_dir, use_cuda=args.segmentation_use_cuda)
+    segmenter = SentenceSegmenter(args.segmentation_model_dir, use_cuda=args.segmentation_use_cuda,
+                                   model_type=args.segmentation_model_type)
     messages = [' '.join(sent) for sent in sents]
     segmented = segmenter.segment(messages)
 

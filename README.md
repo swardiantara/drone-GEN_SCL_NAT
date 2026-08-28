@@ -85,17 +85,29 @@ This is vocabulary-restricted constrained decoding (not a full output-grammar
 decoder), intended as an ablation switch.
 
 **4. Optional inference-time sentence segmentation** (`source/segmentation_utils.py`,
-flags `--use_segmentation --segmentation_model_dir <path>`) — using
-[LogNexus](https://pypi.org/project/LogNexs/) (`pip install LogNexs`),
+flags `--use_segmentation --segmentation_model_dir <path_or_hub_id>
+--segmentation_model_type <simpletransformers model_type>`) — using
+[ADFLER](https://github.com/swardiantara/ADFLER) (`pip install simpletransformers`;
+model card: [swardiantara/ADFLER-bert-base-cased](https://huggingface.co/swardiantara/ADFLER-bert-base-cased)),
 inspired by [ATOSS](https://github.com/ryang1119/ATOSS): each input message is
-segmented into sub-sentences, inference is run independently per sub-sentence,
-and predicted quadruples are merged back per original message (duplicates
-kept, not deduplicated), before scoring against the original gold labels with
-both set- and multiset-based metrics (dumped to `results-<dataset>-segmented.json`).
-This applies to inference only — training always uses the original,
-unsegmented sentences/labels. LogNexus requires a separately trained
-segmentation model directory (a `simpletransformers` NER-style checkpoint);
-point `--segmentation_model_dir` at it.
+segmented into sentences via ADFLER's BIOES token classification, which
+simultaneously classifies each sentence as **Event** or **NonEvent**.
+**NonEvent sentences are dropped** before ASQP inference — per the paper's
+annotation criteria they are informational/advisory/state-descriptive and
+cannot contain a quadruple, so this keeps the number of extracted quads
+aligned with the actual quads in the message. If a message ends up with zero
+Event sentences (e.g. misclassified entirely as NonEvent), the pipeline falls
+back to running inference on the original, unsegmented message so a
+classifier mistake doesn't silently drop real quads. Inference is then run
+independently per surviving Event sentence, and predicted quadruples are
+merged back per original message (duplicates kept, not deduplicated), before
+scoring against the original gold labels with both set- and multiset-based
+metrics (dumped to `results-<dataset>-segmented.json`). This applies to
+inference only — training always uses the original, unsegmented
+sentences/labels. `--segmentation_model_dir` defaults to the published
+`swardiantara/ADFLER-bert-base-cased` checkpoint (auto-downloaded via
+`transformers`), and can be pointed at any other ADFLER-style
+`simpletransformers` NER checkpoint (local path or Hub id) instead.
 
 **5. Reproducible per-method drone scripts** — `configs/run_drone_paraphrase.sh`
 and `configs/run_drone_gen_scl_nat.sh` each train + evaluate one method on a
@@ -105,7 +117,8 @@ above, e.g.:
 ```
 bash configs/run_drone_paraphrase.sh
 USE_CONSTRAINED_DECODING=true bash configs/run_drone_paraphrase.sh
-USE_SEGMENTATION=true SEGMENTATION_MODEL_DIR=models/lognexus_drone bash configs/run_drone_gen_scl_nat.sh
+USE_SEGMENTATION=true bash configs/run_drone_gen_scl_nat.sh
+USE_SEGMENTATION=true SEGMENTATION_MODEL_DIR=path/to/local/adfler/checkpoint bash configs/run_drone_gen_scl_nat.sh
 DATASET=acos_drone_binary bash configs/run_drone_gen_scl_nat.sh
 ```
 
