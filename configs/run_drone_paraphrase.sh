@@ -12,7 +12,7 @@
 set -e
 
 DATASET=${DATASET:-acos_drone_multi}
-SCENARIO=${SCENARIO:-t5}
+SCENARIO=${SCENARIO:-t5-base}
 ABSA_TASK=${ABSA_TASK:-quad}
 OUTPUT_FOLDER=${OUTPUT_FOLDER:-train_outputs}
 MODEL_PREFIX=${MODEL_PREFIX:-drone_paraphrase}
