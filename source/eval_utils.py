@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+from collections import Counter
+
 sentiment_word_list = ['positive', 'negative', 'neutral']
 opinion2word = {'great': 'positive', 'bad': 'negative', 'ok': 'neutral'}
 opinion2word_under_o2m = {'good': 'positive', 'great': 'positive', 'best': 'positive',
@@ -154,6 +156,111 @@ def compute_f1_scores(pred_pt, gold_pt, silent=True):
     }
 
 
+def _prf(tp, n_gold, n_pred):
+    precision = float(tp) / float(n_pred) if n_pred else 0.0
+    recall = float(tp) / float(n_gold) if n_gold else 0.0
+    f1 = 2 * precision * recall / (precision + recall) if (precision + recall) else 0.0
+    return precision, recall, f1
+
+
+def _match_counts(pred_quads, gold_quads, multiset):
+    """
+    Computes true-positive/gold/pred counts for one example, either under
+    set semantics (duplicates collapsed) or multiset/bag semantics
+    (duplicates counted with multiplicity, via Counter intersection).
+    """
+    if multiset:
+        pred_counter = Counter(pred_quads)
+        gold_counter = Counter(gold_quads)
+        tp = sum((pred_counter & gold_counter).values())
+        n_pred = sum(pred_counter.values())
+        n_gold = sum(gold_counter.values())
+    else:
+        pred_set = set(pred_quads)
+        gold_set = set(gold_quads)
+        tp = len(pred_set & gold_set)
+        n_pred = len(pred_set)
+        n_gold = len(gold_set)
+    return tp, n_gold, n_pred
+
+
+def compute_prf_averaged(pred_pt, gold_pt, multiset=False, silent=True):
+    """
+    Computes micro/macro/weighted precision, recall and F1 over a list of
+    per-example predicted/gold quadruple lists.
+
+    - set-based (multiset=False): each distinct quadruple within an example
+      counts once, regardless of how many times it occurs. This under-counts
+      examples with repeated gold quadruples (see source/analyze_duplicates.py).
+    - multiset-based (multiset=True): quadruples are matched with
+      multiplicity (bag/multiset intersection via collections.Counter), so
+      repeated gold quadruples must be predicted the matching number of
+      times to all count as true positives.
+
+    micro:    global TP/gold/pred counts aggregated across all examples,
+              then P/R/F1 computed once.
+    macro:    per-example P/R/F1 computed independently, then unweighted
+              mean across examples.
+    weighted: per-example P/R/F1 averaged, weighted by each example's
+              number of gold quadruples (support).
+    """
+    n = len(pred_pt)
+    total_tp = total_gold = total_pred = 0
+    per_example = []
+
+    for i in range(n):
+        tp, n_gold, n_pred = _match_counts(pred_pt[i], gold_pt[i], multiset)
+        total_tp += tp
+        total_gold += n_gold
+        total_pred += n_pred
+        p, r, f = _prf(tp, n_gold, n_pred)
+        per_example.append((p, r, f, n_gold))
+
+    micro_p, micro_r, micro_f = _prf(total_tp, total_gold, total_pred)
+
+    if per_example:
+        macro_p = sum(p for p, r, f, s in per_example) / len(per_example)
+        macro_r = sum(r for p, r, f, s in per_example) / len(per_example)
+        macro_f = sum(f for p, r, f, s in per_example) / len(per_example)
+    else:
+        macro_p = macro_r = macro_f = 0.0
+
+    total_support = sum(s for p, r, f, s in per_example)
+    if total_support > 0:
+        weighted_p = sum(p * s for p, r, f, s in per_example) / total_support
+        weighted_r = sum(r * s for p, r, f, s in per_example) / total_support
+        weighted_f = sum(f * s for p, r, f, s in per_example) / total_support
+    else:
+        weighted_p = weighted_r = weighted_f = 0.0
+
+    scores = {
+        'micro': {'precision': micro_p, 'recall': micro_r, 'f1': micro_f},
+        'macro': {'precision': macro_p, 'recall': macro_r, 'f1': macro_f},
+        'weighted': {'precision': weighted_p, 'recall': weighted_r, 'f1': weighted_f},
+        'support': {'n_gold': total_gold, 'n_pred': total_pred, 'n_tp': total_tp, 'n_examples': n},
+    }
+
+    if not silent:
+        kind = 'multiset' if multiset else 'set'
+        print(f"[{kind}] gold={total_gold} pred={total_pred} tp={total_tp}")
+        print(scores)
+
+    return scores
+
+
+def compute_scores_from_quads(all_preds, all_labels, silent=True):
+    """
+    Computes both set-based and multiset-based (micro/macro/weighted) scores
+    given already-extracted per-example predicted/gold quadruple lists. This
+    is purely additive: it does not alter compute_f1_scores's own (positional,
+    element-level) metrics.
+    """
+    return {
+        'set': compute_prf_averaged(all_preds, all_labels, multiset=False, silent=silent),
+        'multiset': compute_prf_averaged(all_preds, all_labels, multiset=True, silent=silent),
+    }
+
+
 def compute_scores(pred_seqs, gold_seqs, task, absa_task, silent=False):
     """
     Compute model performance
@@ -176,6 +283,10 @@ def compute_scores(pred_seqs, gold_seqs, task, absa_task, silent=False):
         print(scores)
     else:
         scores = compute_f1_scores(all_preds, all_labels, silent)
+
+    # additive: set-based and multiset-based (bag) precision/recall/F1, with
+    # micro/macro/weighted averaging, justified by source/analyze_duplicates.py
+    scores['set_multiset_scores'] = compute_scores_from_quads(all_preds, all_labels, silent)
 
     return scores, all_labels, all_preds
 
