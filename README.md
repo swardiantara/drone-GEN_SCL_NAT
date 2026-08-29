@@ -117,11 +117,32 @@ prediction *before* it gets merged into the message-level `output_pred`.
 decoding and segmentation are decode-time-only ablations but the script
 trains and evaluates in one shot, each ablation combination gets its own
 output folder: `<output_folder>/<dataset>/<scenario>/<task>/<absa_task>/<seed>/cd-{on,off}/seg-{on,off}/`.
-Before training, `gen_scl_nat_main.py` checks whether that folder's
-`results-*.json` already exists (the right filename for whether
-`--use_segmentation` is set) and, if so, prints `[RESUME] Skipping ...` and
-exits immediately instead of re-running — this is what makes the grid search
-below resumable after a crash, preemption, or Ctrl-C.
+`gen_scl_nat_main.py` prints this path (`Output directory for this run: ...`)
+as soon as it's determined, so you always know where a run's artifacts are
+going. Before training, it also checks whether that folder's `results-*.json`
+already exists (the right filename for whether `--use_segmentation` is set)
+and, if so, prints `[RESUME] Skipping ...` and exits immediately instead of
+re-running — this is what makes the grid search below resumable after a
+crash, preemption, or Ctrl-C.
+
+**5b. Best-checkpoint selection** — training now tracks the checkpoint with
+the highest validation-set F1 (multiset/bag micro F1, computed via real
+beam-search generation on the dev set at the end of every epoch — using the
+same `--num_beams`, and the same `--constrained_decoding` setting if enabled,
+as the final test evaluation — not just the teacher-forced validation loss),
+via a `pl.callbacks.ModelCheckpoint(monitor='val_f1', mode='max')`. After
+`trainer.fit()`, that best checkpoint's weights are reloaded before
+evaluation, instead of evaluating whatever the last epoch left in memory
+(which is what happened before — the previous checkpointing code path
+existed but was never actually wired into the `Trainer`, so it was a no-op
+regardless of `--early_stopping`). The selected epoch and its validation F1
+are recorded as `best_epoch` / `best_val_f1` / `best_checkpoint_path` in
+`args.json`. `--early_stopping` remains a separate, optional flag (whether to
+stop training early on validation loss) and is unaffected by this. Note this
+adds real per-epoch cost (a full beam-search decode over the dev set every
+epoch); the raw PyTorch Lightning `.ckpt` used to reload the best weights is
+deleted afterward unless `--save_model` is also passed, to avoid leaving a
+large checkpoint file behind in every grid search run's folder.
 
 **6. Reproducible per-method grid search scripts** — `configs/run_drone_paraphrase.sh`
 and `configs/run_drone_gen_scl_nat.sh` each run the full ablation grid (baseline

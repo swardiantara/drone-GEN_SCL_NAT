@@ -176,6 +176,7 @@ def init_args():
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
     args.output_dir = output_dir
+    print(f"Output directory for this run: {args.output_dir}")
 
     return args
 
@@ -345,12 +346,67 @@ class T5FineTuner(pl.LightningModule):
     def validation_step(self, batch, batch_idx):
         loss, pred_outputs = self._step(batch)
         self.log('val_batch_loss', loss)
-        return {"val_batch_loss": loss}
-        
+        preds, targets = self._generate_val_predictions(batch)
+        return {"val_batch_loss": loss, "preds": preds, "targets": targets}
+
+    def _get_constrained_decoding_vocab(self):
+        """
+        Lazily builds and caches the constrained-decoding vocabulary (see
+        constrained_decoding.py) once per training run, since it's derived
+        from the whole training set and is expensive to recompute every
+        validation batch/epoch.
+        """
+        if not hasattr(self, '_cd_category_vocab'):
+            self._cd_category_vocab, self._cd_sentiment_vocab = build_label_vocab(
+                self.hparams.task, self.hparams.absa_task, self.hparams.dataset, self.hparams.truncate)
+            try:
+                self._cd_extra_category_words = get_aspect_category(self.hparams)
+            except (KeyError, IndexError):
+                self._cd_extra_category_words = None
+        return self._cd_category_vocab, self._cd_sentiment_vocab, self._cd_extra_category_words
+
+    def _generate_val_predictions(self, batch):
+        """
+        Runs actual beam-search generation (not just teacher-forced loss) on
+        a validation batch, using the same --num_beams (and, if enabled, the
+        same constrained decoding) as the final test evaluation -- so the
+        F1 used for best-checkpoint selection matches how the model will
+        actually be decoded at test time.
+        """
+        gen_kwargs = dict(
+            input_ids=batch['source_ids'],
+            attention_mask=batch['source_mask'],
+            max_length=self.hparams.max_seq_length * 2,
+            num_beams=self.hparams.num_beams,
+        )
+
+        if self.hparams.constrained_decoding:
+            category_vocab, sentiment_vocab, extra_category_words = self._get_constrained_decoding_vocab()
+            source_texts = [self.tokenizer.decode(ids, skip_special_tokens=True) for ids in batch['source_ids']]
+            logits_processor = build_constrained_logits_processor(
+                self.tokenizer, self.hparams.task, source_texts, category_vocab, sentiment_vocab,
+                self.hparams.num_beams, mappings=mappings, extra_category_words=extra_category_words)
+            if logits_processor is not None:
+                gen_kwargs['logits_processor'] = logits_processor
+
+        outs = self.model.generate(**gen_kwargs)
+        preds = [self.tokenizer.decode(ids, skip_special_tokens=True) for ids in outs]
+        targets = [self.tokenizer.decode(ids, skip_special_tokens=True) for ids in batch['target_ids']]
+        return preds, targets
+
     def validation_epoch_end(self, outputs):
         avg_loss = torch.stack([x["val_batch_loss"] for x in outputs]).mean()
         print("val_loss:\t", avg_loss )
         self.log('val_loss', avg_loss)
+
+        all_preds = [pred for x in outputs for pred in x["preds"]]
+        all_targets = [target for x in outputs for target in x["targets"]]
+        scores, _, _ = compute_scores(all_preds, all_targets, self.hparams.task, self.hparams.absa_task, silent=True)
+        # multiset (bag) micro F1: the metric used to select the best checkpoint
+        # (see the ModelCheckpoint(monitor='val_f1', ...) callback in __main__)
+        val_f1 = scores['multiset']['micro']['f1']
+        print("val_f1 (multiset micro):\t", val_f1)
+        self.log('val_f1', val_f1)
 
     def configure_optimizers(self):
         """ Prepare optimizer and schedule (linear warmup and decay) """
@@ -700,13 +756,18 @@ if __name__ == '__main__':
         # cat_model = LinearModel()
         model = T5FineTuner(args, seq2seq_model, tokenizer, cont_model, op_model, as_model)
 
+        # always track the best checkpoint by validation-set (multiset micro)
+        # F1 -- see T5FineTuner.validation_epoch_end -- so evaluation uses the
+        # best-performing epoch rather than whatever the last epoch happened
+        # to be. --early_stopping is a separate, optional concern (whether to
+        # stop training early); it still monitors val_loss as before.
+        checkpoint_callback = pl.callbacks.model_checkpoint.ModelCheckpoint(
+            dirpath=args.output_dir, filename='best-{epoch}-{val_f1:.4f}',
+            monitor='val_f1', mode='max', save_top_k=1
+        )
+        callback_list = [checkpoint_callback, LoggingCallback()]
         if args.early_stopping:
-            checkpoint_callback = pl.callbacks.model_checkpoint.ModelCheckpoint(
-            dirpath=args.output_dir, monitor='val_loss', mode='min', save_top_k=1
-            )
-            callback_list = [checkpoint_callback, LoggingCallback(), EarlyStopping(monitor="val_loss", mode='min', patience=3)]
-        else:
-            callback_list = [LoggingCallback()]
+            callback_list.append(EarlyStopping(monitor="val_loss", mode='min', patience=3))
 
         # prepare trainer args
         train_params = dict(
@@ -720,19 +781,31 @@ if __name__ == '__main__':
             deterministic=True,
             logger=None,
             #auto_scale_batch_size=True,
-            #callbacks=[checkpoint_callback, EarlyStopping(monitor="val_loss", mode='min'), LoggingCallback()],
-            # callbacks=callback_list
+            callbacks=callback_list,
         )
         trainer = pl.Trainer(**train_params)
         trainer.fit(model)
 
-        if args.early_stopping:
-            ex_weights = torch.load(checkpoint_callback.best_model_path)['state_dict']
-            model.load_state_dict(ex_weights)
-            
+        # reload the best (highest val_f1) checkpoint's weights for evaluation,
+        # rather than evaluating with whatever the last epoch left in memory
+        best_checkpoint = torch.load(checkpoint_callback.best_model_path)
+        model.load_state_dict(best_checkpoint['state_dict'])
+        args.best_epoch = best_checkpoint.get('epoch')
+        args.best_val_f1 = float(checkpoint_callback.best_model_score) if checkpoint_callback.best_model_score is not None else None
+        args.best_checkpoint_path = checkpoint_callback.best_model_path
+        print(f"Best checkpoint: epoch {args.best_epoch}, val_f1={args.best_val_f1} ({args.best_checkpoint_path})")
+
         if args.save_model:
             model.model.save_pretrained(args.output_dir)
             tokenizer.save_pretrained(args.output_dir)
+        else:
+            # the raw PyTorch Lightning checkpoint (full T5 + auxiliary SCL
+            # heads) is only needed transiently, to select and reload the
+            # best epoch's weights above; without --save_model there's no
+            # HF-format checkpoint kept either, so delete it rather than
+            # leaving a large .ckpt behind in every grid search run's folder
+            if os.path.exists(args.best_checkpoint_path):
+                os.remove(args.best_checkpoint_path)
         with open(os.path.join(args.output_dir, 'args.json'), 'w') as f:
             json.dump(args.__dict__, f, indent=2)
 
