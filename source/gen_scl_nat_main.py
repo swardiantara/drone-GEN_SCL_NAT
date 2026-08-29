@@ -404,7 +404,7 @@ class T5FineTuner(pl.LightningModule):
         scores, _, _ = compute_scores(all_preds, all_targets, self.hparams.task, self.hparams.absa_task, silent=True)
         # multiset (bag) micro F1: the metric used to select the best checkpoint
         # (see the ModelCheckpoint(monitor='val_f1', ...) callback in __main__)
-        val_f1 = scores['multiset']['micro']['f1']
+        val_f1 = scores['set_multiset_scores']['multiset']['micro']['f1']
         print("val_f1 (multiset micro):\t", val_f1)
         self.log('val_f1', val_f1)
 
