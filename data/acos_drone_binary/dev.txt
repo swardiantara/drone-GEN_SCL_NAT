@@ -114,3 +114,8 @@ Color display in the Liveview has been enhanced. Videos and photos will still be
 Pano shooting completed. The sky part is filled automatically. ####[['pano shooting', 'feature', 'positive', 'completed']]
 Ambient Light is too weak. ####[['Ambient Light', 'parameter', 'negative', 'too weak']]
 Current RTH route will pass a No-Fly zone. Pay attention to the aircraft's position to avoid RTH failure. ####[['Current RTH route', 'parameter', 'negative', 'pass a No-Fly zone']]
+Obstacle Avoidance Disabled. Landing gear lowered. Obstacle Avoidance Disabled. ####[['Obstacle Avoidance', 'feature', 'positive', 'Disabled'], ['Landing gear', 'component', 'positive', 'lowered'], ['Obstacle Avoidance', 'feature', 'positive', 'Disabled']]
+Propeller Guard Mounted Propeller Guard mounted. Forward Obstacle Sensing will be automatically switched off. ####[['Propeller Guard', 'component', 'positive', 'Mounted'], ['Propeller Guard', 'component', 'positive', 'Mounted'], ['Forward Obstacle Sensing', 'feature', 'positive', 'automatically switched off']]
+Compass Error. Compass Error. Compass data error. Please contact DJI Support. ####[['Compass', 'component', 'negative', 'Error'], ['Compass', 'component', 'negative', 'Error'], ['Compass data', 'feature', 'negative', 'error']]
+Compass Error. Compass Error. Compass disconnected. ####[['Compass', 'component', 'negative', 'Error'], ['Compass', 'component', 'negative', 'Error'], ['Compass', 'component', 'negative', 'disconnected']]
+Obstacle Avoidance disabled. Landing gear lowered. Obstacle Avoidance has been disabled. ####[['Obstacle Avoidance', 'feature', 'positive', 'disabled'], ['Landing gear', 'component', 'positive', 'lowered'], ['Obstacle Avoidance', 'feature', 'positive', 'disabled']]
