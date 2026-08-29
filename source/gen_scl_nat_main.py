@@ -16,6 +16,7 @@ https://github.com/IsakZhang/ABSA-QUAD
 """
 import argparse
 import os
+import sys
 import logging
 import time
 import pickle
@@ -39,7 +40,7 @@ from transformers import get_linear_schedule_with_warmup
 
 from data_utils import GenSCLNatDataset, get_transformed_io
 from data_utils import read_line_examples_from_file
-from eval_utils import compute_scores, compute_gen_metrics
+from eval_utils import compute_scores, compute_gen_metrics, extract_spans_para
 from utils import load_mappings
 from constrained_decoding import build_label_vocab, build_constrained_logits_processor
 from segmentation_utils import SentenceSegmenter
@@ -137,23 +138,41 @@ def init_args():
               ['trunc', str(args.truncate)], # whether to truncate the category labels
               ['seed', str(args.seed)]]
 
+    # constrained decoding and segmentation are decode-time-only ablations,
+    # but this script always trains + evaluates in one shot, so each
+    # combination needs its own output folder to be resumable / not clobber
+    # another combination's results (see the grid search loops in
+    # configs/run_drone_paraphrase.sh / configs/run_drone_gen_scl_nat.sh)
+    ablation_tag = os.path.join(
+        'cd-{}'.format('on' if args.constrained_decoding else 'off'),
+        'seg-{}'.format('on' if args.use_segmentation else 'off'),
+    )
+
     # TODO CLEANUP TRAINING OUTPUT FOLDER
     # the model path is the prefix
     if args.do_inference and not args.do_train:
-        output_fold = args.model_prefix
+        output_fold = os.path.join(args.model_prefix, ablation_tag)
         print(output_fold)
     else:
         # dump params as part of folder_path
         # params = "I".join([elt for elts in params for elt in elts])
         # output_fold = "I".join([args.dataset, args.task,args.model_name_or_path, params, args.model_prefix])
         # output_fold = "_".join([args.dataset, args.task, args.model_prefix, args.model_name_or_path])
-        output_fold = os.path.join(args.dataset, args.scenario, args.task, args.absa_task, str(args.seed))
+        output_fold = os.path.join(args.dataset, args.scenario, args.task, args.absa_task, str(args.seed), ablation_tag)
 
         print(output_fold)
     output_dir = os.path.join(args.output_folder, output_fold)
-    if os.path.exists(os.path.join(output_dir, f'results-{args.dataset}.json')):
-        raise ValueError('This scenario has been executed.')
-        
+
+    # the result file name differs between the segmented and standard eval
+    # pipelines (see evaluate() / evaluate_segmented()); check for whichever
+    # one this run would produce, so a completed run of either kind is
+    # correctly detected and skipped on resume.
+    result_filename = (f'results-{args.dataset}-segmented.json' if args.use_segmentation
+                        else f'results-{args.dataset}.json')
+    if os.path.exists(os.path.join(output_dir, result_filename)):
+        print(f'[RESUME] Skipping {output_dir}: already completed (found {result_filename})')
+        sys.exit(0)
+
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
     args.output_dir = output_dir
@@ -525,8 +544,13 @@ def evaluate_segmented(model, device, tokenizer, sents, args, category_vocab=Non
     segmented = segmenter.segment(messages)
 
     per_example_outputs = []
+    # per-message list of per-segment prediction details, for error analysis:
+    # what exactly each individual Event sentence was fed and what it predicted,
+    # before it gets concatenated/merged into the message-level prediction above
+    per_example_segment_predictions = []
     for segments in tqdm(segmented):
         merged_texts = []
+        segment_predictions = []
         for segment_text in segments:
             tokenized = tokenizer.batch_encode_plus(
                 [segment_text], max_length=args.max_seq_length, padding='max_length',
@@ -547,10 +571,16 @@ def evaluate_segmented(model, device, tokenizer, sents, args, category_vocab=Non
             outs = model.model.generate(**gen_kwargs)
             dec = tokenizer.decode(outs[0], skip_special_tokens=True)
             merged_texts.append(dec)
+            segment_predictions.append({
+                'segment_text': segment_text,
+                'predicted_output': dec,
+                'predicted_quads': extract_spans_para(args.task, args.absa_task, dec, 'pred'),
+            })
 
         # concatenating each segment's (possibly multi-quad) decoded text with
         # [SSEP] preserves duplicate quadruples across segments once parsed
         per_example_outputs.append(' [SSEP] '.join(merged_texts))
+        per_example_segment_predictions.append(segment_predictions)
 
     # reuses the same extraction/scoring path as the non-segmented pipeline
     # (compute_scores), so all_preds/all_labels here are quads parsed from the
@@ -559,7 +589,7 @@ def evaluate_segmented(model, device, tokenizer, sents, args, category_vocab=Non
     gen_scores = compute_gen_metrics(per_example_outputs, gold_target_texts, False)
 
     results = {'labels_correct': all_labels, 'labels_pred': all_preds, 'output_pred': per_example_outputs,
-               'utterances': sents, 'segments': segmented}
+               'utterances': sents, 'segments': segmented, 'segment_predictions': per_example_segment_predictions}
     ex_list = []
     for idx in range(len(all_preds)):
         new_dict = {}

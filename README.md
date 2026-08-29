@@ -107,19 +107,35 @@ inference only — training always uses the original, unsegmented
 sentences/labels. `--segmentation_model_dir` defaults to the published
 `swardiantara/ADFLER-bert-base-cased` checkpoint (auto-downloaded via
 `transformers`), and can be pointed at any other ADFLER-style
-`simpletransformers` NER checkpoint (local path or Hub id) instead.
+`simpletransformers` NER checkpoint (local path or Hub id) instead. For error
+analysis, each example's `segment_predictions` field in
+`results-<dataset>-segmented.json` records, per surviving Event sentence, its
+input text, raw decoded output, and the quadruples parsed from it — i.e. the
+prediction *before* it gets merged into the message-level `output_pred`.
 
-**5. Reproducible per-method drone scripts** — `configs/run_drone_paraphrase.sh`
-and `configs/run_drone_gen_scl_nat.sh` each train + evaluate one method on a
-drone dataset, with `DATASET` / `USE_CONSTRAINED_DECODING` / `USE_SEGMENTATION`
-/ `SEGMENTATION_MODEL_DIR` environment-variable toggles for the ablations
-above, e.g.:
+**5. Output folder layout & resumable grid search** — since constrained
+decoding and segmentation are decode-time-only ablations but the script
+trains and evaluates in one shot, each ablation combination gets its own
+output folder: `<output_folder>/<dataset>/<scenario>/<task>/<absa_task>/<seed>/cd-{on,off}/seg-{on,off}/`.
+Before training, `gen_scl_nat_main.py` checks whether that folder's
+`results-*.json` already exists (the right filename for whether
+`--use_segmentation` is set) and, if so, prints `[RESUME] Skipping ...` and
+exits immediately instead of re-running — this is what makes the grid search
+below resumable after a crash, preemption, or Ctrl-C.
+
+**6. Reproducible per-method grid search scripts** — `configs/run_drone_paraphrase.sh`
+and `configs/run_drone_gen_scl_nat.sh` each run the full ablation grid (baseline
+/ +constrained-decoding / +segmentation / +both) across 5 fixed seeds — 20
+train+eval runs per script — on a drone dataset, printing a pass/skip/fail
+summary at the end (and exiting non-zero if anything failed, listing which
+combinations to retry). `DATASET` / `SEGMENTATION_MODEL_DIR` /
+`SEGMENTATION_MODEL_TYPE` are configurable via environment variables; re-running
+either script skips every combination it already completed:
 ```
 bash configs/run_drone_paraphrase.sh
-USE_CONSTRAINED_DECODING=true bash configs/run_drone_paraphrase.sh
-USE_SEGMENTATION=true bash configs/run_drone_gen_scl_nat.sh
-USE_SEGMENTATION=true SEGMENTATION_MODEL_DIR=path/to/local/adfler/checkpoint bash configs/run_drone_gen_scl_nat.sh
+bash configs/run_drone_gen_scl_nat.sh
 DATASET=acos_drone_binary bash configs/run_drone_gen_scl_nat.sh
+SEGMENTATION_MODEL_DIR=path/to/local/adfler/checkpoint bash configs/run_drone_gen_scl_nat.sh
 ```
 
 Please cite our paper as such:
