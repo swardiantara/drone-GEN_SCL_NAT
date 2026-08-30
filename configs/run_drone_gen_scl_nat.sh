@@ -17,21 +17,21 @@
 
 set -uo pipefail
 
-DATASET=${DATASET:-acos_drone_multi}
-SCENARIO=${SCENARIO:-t5}
+DATASET=${DATASET:-acos_drone_binary}
+SCENARIO=${SCENARIO:-t5-base}
 ABSA_TASK=${ABSA_TASK:-quad}
 OUTPUT_FOLDER=${OUTPUT_FOLDER:-train_outputs}
 MODEL_PREFIX=${MODEL_PREFIX:-drone_gen_scl_nat}
 
 # defaults to the published swardiantara/ADFLER-bert-base-cased checkpoint
 # (source/gen_scl_nat_main.py's own default) when left unset
-SEGMENTATION_MODEL_DIR=${SEGMENTATION_MODEL_DIR:-}
+SEGMENTATION_MODEL_DIR=${SEGMENTATION_MODEL_DIR:-swardiantara/ADFLER-bert-base-cased}
 SEGMENTATION_MODEL_TYPE=${SEGMENTATION_MODEL_TYPE:-bert}
-SEGMENTATION_USE_CUDA=${SEGMENTATION_USE_CUDA:-false}
+SEGMENTATION_USE_CUDA=${SEGMENTATION_USE_CUDA:-true}
 
 # same 5 seeds used across the other grid scripts in this repo (see
 # configs/train_scl_all.sh), for consistency across experiments
-SEEDS=(14298463 246773155 30288239 82511865 90995999)
+SEEDS=(14298463 246773155 30288239 42511865 50995999)
 # ablation grid: constrained decoding x segmentation, both on/off
 CD_OPTIONS=(false true)
 SEG_OPTIONS=(false true)
