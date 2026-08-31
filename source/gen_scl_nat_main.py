@@ -138,12 +138,18 @@ def init_args():
               ['trunc', str(args.truncate)], # whether to truncate the category labels
               ['seed', str(args.seed)]]
 
-    # constrained decoding and segmentation are decode-time-only ablations,
-    # but this script always trains + evaluates in one shot, so each
-    # combination needs its own output folder to be resumable / not clobber
-    # another combination's results (see the grid search loops in
-    # configs/run_drone_paraphrase.sh / configs/run_drone_gen_scl_nat.sh)
+    # contrastive loss (train-time), and constrained decoding / segmentation
+    # (decode-time-only) are all ablations, but this script always trains +
+    # evaluates in one shot, so each combination needs its own output folder
+    # to be resumable / not clobber another combination's results (see the
+    # grid search loops in configs/run_drone_paraphrase.sh /
+    # configs/run_drone_gen_scl_nat.sh). cont-{on,off} reflects whether
+    # --cont_loss is nonzero, i.e. whether the SCL auxiliary loss actually
+    # contributes to training (see T5FineTuner._step) -- this lets the same
+    # --task (paraphrase template or gen-scl-nat template) be compared both
+    # with and without contrastive learning.
     ablation_tag = os.path.join(
+        'cont-{}'.format('on' if float(args.cont_loss) > 0.0 else 'off'),
         'cd-{}'.format('on' if args.constrained_decoding else 'off'),
         'seg-{}'.format('on' if args.use_segmentation else 'off'),
     )

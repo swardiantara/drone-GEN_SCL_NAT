@@ -42,12 +42,15 @@ def _template_label(task):
 
 def find_run_dirs(root='train_outputs'):
     """
-    Returns sorted list of run directories matching the grid-search layout
-    (dataset/scenario/task/absa_task/seed/cd-*/seg-*/), each containing an
-    args.json.
+    Returns sorted list of run directories matching the grid-search layout:
+    any args.json whose immediate parent directories are cd-*/seg-* (i.e.
+    .../dataset/scenario/task/absa_task/seed/[cont-*/]cd-*/seg-*/args.json).
+    Matching only on the last two path components (rather than a fixed
+    total depth) keeps this working across the cont-on/off folder level
+    added later, and any future ablation levels inserted the same way.
     """
-    pattern = os.path.join(root, '*', '*', '*', '*', '*', 'cd-*', 'seg-*', 'args.json')
-    return sorted(os.path.dirname(p) for p in glob.glob(pattern))
+    pattern = os.path.join(root, '**', 'cd-*', 'seg-*', 'args.json')
+    return sorted(os.path.dirname(p) for p in glob.glob(pattern, recursive=True))
 
 
 def load_run(run_dir):
