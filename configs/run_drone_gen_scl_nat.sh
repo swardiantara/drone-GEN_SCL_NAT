@@ -18,7 +18,7 @@
 set -uo pipefail
 
 DATASET=${DATASET:-acos_drone_binary}
-SCENARIO=${SCENARIO:-t5-base}
+SCENARIO=${SCENARIO:-flan-t5-base}
 ABSA_TASK=${ABSA_TASK:-quad}
 OUTPUT_FOLDER=${OUTPUT_FOLDER:-train_outputs}
 MODEL_PREFIX=${MODEL_PREFIX:-drone_gen_scl_nat}
