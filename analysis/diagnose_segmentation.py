@@ -33,7 +33,9 @@ import sys
 _REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(_REPO_ROOT, 'source'))
 
-from segmentation_utils import SentenceSegmenter, extract_boundaries_with_types, DEFAULT_MODEL_DIR  # noqa: E402
+from segmentation_utils import (  # noqa: E402
+    SentenceSegmenter, extract_boundaries_with_types, DEFAULT_MODEL_DIR, DEFAULT_MODEL_TYPE,
+)
 
 
 def read_messages(dataset, split):
@@ -110,7 +112,7 @@ def main():
     parser.add_argument('--split', default='test', choices=['train', 'dev', 'test'])
     parser.add_argument('--segmentation_model_dir', default=DEFAULT_MODEL_DIR,
                          help="Path or Hugging Face Hub id of the ADFLER-style checkpoint.")
-    parser.add_argument('--segmentation_model_type', default='bert')
+    parser.add_argument('--segmentation_model_type', default=DEFAULT_MODEL_TYPE)
     parser.add_argument('--segmentation_use_cuda', action='store_true')
     parser.add_argument('--output', default=None,
                          help="Output JSON path. Defaults to "

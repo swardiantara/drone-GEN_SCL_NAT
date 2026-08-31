@@ -5,7 +5,7 @@ Drone Flight Log Event Recognizer):
   paper: "Automated event recognition in drone flight logs: a noise-robust
           approach" (Silalahi, Ahmad and Studiawan)
   code:  https://github.com/swardiantara/ADFLER
-  model: https://huggingface.co/swardiantara/ADFLER-bert-base-cased
+  model: https://huggingface.co/swardiantara/ADFLER-xlnet-base-cased
 
 ADFLER is a BIOES token-classification (NER) model that performs sentence
 boundary detection and Event/NonEvent classification in one pass: each token
@@ -28,7 +28,8 @@ unsegmented sentences/labels as authored in the dataset files.
 Requires the `simpletransformers` package (`pip install simpletransformers`).
 """
 
-DEFAULT_MODEL_DIR = 'swardiantara/ADFLER-bert-base-cased'
+DEFAULT_MODEL_DIR = 'swardiantara/ADFLER-xlnet-base-cased'
+DEFAULT_MODEL_TYPE = 'xlnet'
 
 
 def extract_boundaries_with_types(tags):
@@ -98,7 +99,7 @@ class SentenceSegmenter:
     EVENT_TYPE = 'Event'
     NONEVENT_TYPE = 'NonEvent'
 
-    def __init__(self, model_dir, use_cuda=False, model_type='bert'):
+    def __init__(self, model_dir, use_cuda=False, model_type=DEFAULT_MODEL_TYPE):
         try:
             from simpletransformers.ner import NERModel
         except ImportError as exc:

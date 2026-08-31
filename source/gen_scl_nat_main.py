@@ -43,7 +43,8 @@ from data_utils import read_line_examples_from_file
 from eval_utils import compute_scores, compute_gen_metrics, extract_spans_para
 from utils import load_mappings
 from constrained_decoding import build_label_vocab, build_constrained_logits_processor
-from segmentation_utils import SentenceSegmenter
+from segmentation_utils import SentenceSegmenter, DEFAULT_MODEL_DIR as SEGMENTATION_DEFAULT_MODEL_DIR, \
+    DEFAULT_MODEL_TYPE as SEGMENTATION_DEFAULT_MODEL_TYPE
 
 mappings = load_mappings()
 logger = logging.getLogger(__name__)
@@ -110,12 +111,12 @@ def init_args():
                              "inference per sub-sentence, then merge predictions per message (keeping "
                              "duplicates). Inference-only; has no effect on training. See "
                              "https://github.com/swardiantara/ADFLER / "
-                             "https://huggingface.co/swardiantara/ADFLER-bert-base-cased")
-    parser.add_argument('--segmentation_model_dir', type=str, default='swardiantara/ADFLER-bert-base-cased',
+                             "https://huggingface.co/swardiantara/ADFLER-xlnet-base-cased")
+    parser.add_argument('--segmentation_model_dir', type=str, default=SEGMENTATION_DEFAULT_MODEL_DIR,
                         help="Path or Hugging Face Hub id of a trained ADFLER-style token-classification "
                              "(simpletransformers NER) model. Defaults to the published "
-                             "swardiantara/ADFLER-bert-base-cased checkpoint, auto-downloaded on first use.")
-    parser.add_argument('--segmentation_model_type', type=str, default='bert',
+                             f"{SEGMENTATION_DEFAULT_MODEL_DIR} checkpoint, auto-downloaded on first use.")
+    parser.add_argument('--segmentation_model_type', type=str, default=SEGMENTATION_DEFAULT_MODEL_TYPE,
                         help="simpletransformers model_type for --segmentation_model_dir (e.g. 'bert', "
                              "'electra', 'xlnet') -- must match how that checkpoint was fine-tuned.")
     parser.add_argument('--segmentation_use_cuda', action='store_true',

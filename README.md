@@ -88,7 +88,7 @@ decoder), intended as an ablation switch.
 flags `--use_segmentation --segmentation_model_dir <path_or_hub_id>
 --segmentation_model_type <simpletransformers model_type>`) — using
 [ADFLER](https://github.com/swardiantara/ADFLER) (`pip install simpletransformers`;
-model card: [swardiantara/ADFLER-bert-base-cased](https://huggingface.co/swardiantara/ADFLER-bert-base-cased)),
+model card: [swardiantara/ADFLER-xlnet-base-cased](https://huggingface.co/swardiantara/ADFLER-xlnet-base-cased)),
 inspired by [ATOSS](https://github.com/ryang1119/ATOSS): each input message is
 segmented into sentences via ADFLER's BIOES token classification, which
 simultaneously classifies each sentence as **Event** or **NonEvent**.
@@ -105,7 +105,7 @@ scoring against the original gold labels with both set- and multiset-based
 metrics (dumped to `results-<dataset>-segmented.json`). This applies to
 inference only — training always uses the original, unsegmented
 sentences/labels. `--segmentation_model_dir` defaults to the published
-`swardiantara/ADFLER-bert-base-cased` checkpoint (auto-downloaded via
+`swardiantara/ADFLER-xlnet-base-cased` checkpoint (auto-downloaded via
 `transformers`), and can be pointed at any other ADFLER-style
 `simpletransformers` NER checkpoint (local path or Hub id) instead. For error
 analysis, each example's `segment_predictions` field in
@@ -113,10 +113,11 @@ analysis, each example's `segment_predictions` field in
 input text, raw decoded output, and the quadruples parsed from it — i.e. the
 prediction *before* it gets merged into the message-level `output_pred`.
 
-**5. Output folder layout & resumable grid search** — since constrained
-decoding and segmentation are decode-time-only ablations but the script
-trains and evaluates in one shot, each ablation combination gets its own
-output folder: `<output_folder>/<dataset>/<scenario>/<task>/<absa_task>/<seed>/cd-{on,off}/seg-{on,off}/`.
+**5. Output folder layout & resumable grid search** — since contrastive loss
+(train-time), and constrained decoding / segmentation (decode-time-only) are
+all ablations but the script trains and evaluates in one shot, each
+combination gets its own output folder: `<output_folder>/<dataset>/<scenario>/<task>/<absa_task>/<seed>/cont-{on,off}/cd-{on,off}/seg-{on,off}/`
+(`cont-{on,off}` reflects whether `--cont_loss` is nonzero).
 `gen_scl_nat_main.py` prints this path (`Output directory for this run: ...`)
 as soon as it's determined, so you always know where a run's artifacts are
 going. Before training, it also checks whether that folder's `results-*.json`

@@ -23,10 +23,10 @@ ABSA_TASK=${ABSA_TASK:-quad}
 OUTPUT_FOLDER=${OUTPUT_FOLDER:-train_outputs}
 MODEL_PREFIX=${MODEL_PREFIX:-drone_paraphrase}
 
-# defaults to the published swardiantara/ADFLER-bert-base-cased checkpoint
+# defaults to the published swardiantara/ADFLER-xlnet-base-cased checkpoint
 # (source/gen_scl_nat_main.py's own default) when left unset
-SEGMENTATION_MODEL_DIR=${SEGMENTATION_MODEL_DIR:-swardiantara/ADFLER-bert-base-cased}
-SEGMENTATION_MODEL_TYPE=${SEGMENTATION_MODEL_TYPE:-bert}
+SEGMENTATION_MODEL_DIR=${SEGMENTATION_MODEL_DIR:-swardiantara/ADFLER-xlnet-base-cased}
+SEGMENTATION_MODEL_TYPE=${SEGMENTATION_MODEL_TYPE:-xlnet}
 SEGMENTATION_USE_CUDA=${SEGMENTATION_USE_CUDA:-true}
 
 # same 5 seeds used across the other grid scripts in this repo (see
