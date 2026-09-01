@@ -14,6 +14,8 @@
 #   bash configs/run_drone_gen_scl_nat.sh
 #   DATASET=acos_drone_binary bash configs/run_drone_gen_scl_nat.sh
 #   SEGMENTATION_MODEL_DIR=path/to/local/adfler/checkpoint bash configs/run_drone_gen_scl_nat.sh
+#   CONT_LOSS=0.0 bash configs/run_drone_gen_scl_nat.sh   # contrastive-loss OFF (isolate the template effect)
+#   RUN_SEGMENTATION=false bash configs/run_drone_gen_scl_nat.sh   # skip the seg=on half of the grid
 
 set -uo pipefail
 
@@ -23,18 +25,36 @@ ABSA_TASK=${ABSA_TASK:-quad}
 OUTPUT_FOLDER=${OUTPUT_FOLDER:-train_outputs}
 MODEL_PREFIX=${MODEL_PREFIX:-drone_gen_scl_nat}
 
+# --cont_loss/--cont_temp: T5FineTuner._step always computes the SCL
+# auxiliary loss, scaled by --cont_loss -- 0.0 makes its contribution exactly
+# zero (see source/losses.py's SupConLoss), i.e. contrastive learning OFF.
+# gen_scl_nat_main.py's output folder already encodes this as cont-{on,off}
+# (derived from --cont_loss > 0), so a cont_loss=0.0 run lands in its own
+# folder and won't clash with or be skipped because of existing cont-on runs.
+CONT_LOSS=${CONT_LOSS:-0.05}
+CONT_TEMP=${CONT_TEMP:-0.25}
+
 # defaults to the published swardiantara/ADFLER-xlnet-base-cased checkpoint
 # (source/gen_scl_nat_main.py's own default) when left unset
 SEGMENTATION_MODEL_DIR=${SEGMENTATION_MODEL_DIR:-swardiantara/ADFLER-xlnet-base-cased}
 SEGMENTATION_MODEL_TYPE=${SEGMENTATION_MODEL_TYPE:-xlnet}
 SEGMENTATION_USE_CUDA=${SEGMENTATION_USE_CUDA:-true}
+# set to "false" to only run the seg=off half of the grid (e.g. once you've
+# decided not to report the segmentation ablation)
+RUN_SEGMENTATION=${RUN_SEGMENTATION:-true}
 
 # same 5 seeds used across the other grid scripts in this repo (see
 # configs/train_scl_all.sh), for consistency across experiments
 SEEDS=(14298463 246773155 30288239 42511865 50995999)
 # ablation grid: constrained decoding x segmentation, both on/off
 CD_OPTIONS=(false true)
-SEG_OPTIONS=(false true)
+if [ "$RUN_SEGMENTATION" = "true" ]; then
+    SEG_OPTIONS=(false true)
+else
+    SEG_OPTIONS=(false)
+fi
+N_PER_SEED=$(( ${#CD_OPTIONS[@]} * ${#SEG_OPTIONS[@]} ))
+N_EXPECTED=$(( ${#SEEDS[@]} * N_PER_SEED ))
 
 n_total=0
 n_skipped=0
@@ -62,7 +82,7 @@ for seed in "${SEEDS[@]}"; do
             fi
 
             echo ""
-            echo "=== [$n_total/20] GEN-SCL-NAT seed=$seed constrained_decoding=$cd use_segmentation=$seg ==="
+            echo "=== [$n_total/$N_EXPECTED] GEN-SCL-NAT seed=$seed constrained_decoding=$cd use_segmentation=$seg ==="
 
             run_log=$(mktemp)
             python3 source/gen_scl_nat_main.py \
@@ -84,8 +104,8 @@ for seed in "${SEEDS[@]}"; do
                 --num_beams 5 \
                 --weight_decay 0.0 \
                 --seed "$seed" \
-                --cont_loss 0.05 \
-                --cont_temp 0.25 \
+                --cont_loss "$CONT_LOSS" \
+                --cont_temp "$CONT_TEMP" \
                 --model_prefix "$MODEL_PREFIX" \
                 "${EXTRA_FLAGS[@]}" 2>&1 | tee "$run_log"
             status=${PIPESTATUS[0]}
