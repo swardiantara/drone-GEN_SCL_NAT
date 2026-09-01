@@ -27,7 +27,7 @@ Motor is Blocked. Motor stuck. Check for objects blocking motor or contact DJI S
 Downlink Restored (after 0m 1.2s). ####[['Downlink', 'feature', 'positive', 'Restored']]
 Arrived at destination. ####[['NULL', 'component', 'positive', 'Arrived at destination']]
 Capture Failed The aircraft is moving. Cannot shoot panorama. ####[['capture', 'action', 'negative', 'failed'], ['aircraft', 'component', 'positive', 'moving'], ['shoot', 'action', 'negative', 'cannot']]
-Compass error Solution: Move away from ground magnetic interference. ####[['compass', 'component', 'negative', 'error']]
+Compass error. Solution: Move away from ground magnetic interference. ####[['compass', 'component', 'negative', 'error']]
 Aircraft battery level low. Return to home promptly. ####[['Aircraft battery level', 'parameter', 'negative', 'low']]
 Color display in Liveview is enhanced. Videos and photos will still be shot in D-Log mode. ####[['color display', 'feature', 'positive', 'enhanced']]
 Failed to cancel Return to Home. ####[['Return to Home', 'action', 'negative', 'Failed to cancel']]
