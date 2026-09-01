@@ -7,7 +7,7 @@
 # the ablation scope); set RUN_SEGMENTATION=true to add it back in.
 #
 # Resumable: source/gen_scl_nat_main.py's own output-folder check (keyed by
-# dataset/scenario/task/absa_task/seed/cont-{on,off}/cd-{on,off}/seg-{on,off})
+# dataset/scenario/task/absa_task/cont-{on,off}/cd-{on,off}/seg-{on,off}/seed)
 # skips any combination whose results-*.json already exists, so re-running
 # this script after it stopped partway through (crash, preemption, Ctrl-C,
 # ...) picks up where it left off instead of redoing completed runs. If

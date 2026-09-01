@@ -17,7 +17,7 @@ python analysis/significance.py
 
 All three scripts (via `common.py`) only scan the grid-search output layout:
 ```
-train_outputs/<dataset>/<scenario>/<task>/<absa_task>/<seed>/cont-{on,off}/cd-{on,off}/seg-{on,off}/
+train_outputs/<dataset>/<scenario>/<task>/<absa_task>/cont-{on,off}/cd-{on,off}/seg-{on,off}/<seed>/
 ```
 (`cont-{on,off}` reflects whether `--cont_loss` is nonzero, added so the same
 `--task`/template can be compared both with and without the SCL contrastive

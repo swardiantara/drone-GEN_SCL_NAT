@@ -8,9 +8,11 @@ score columns as flat dicts, ready to load into a pandas DataFrame.
 Scan scope: only the grid-search output layout produced by
 configs/run_drone_paraphrase.sh / configs/run_drone_gen_scl_nat.sh via
 source/gen_scl_nat_main.py --do_train --do_direct_eval, i.e.:
-    train_outputs/<dataset>/<scenario>/<task>/<absa_task>/<seed>/cd-{on,off}/seg-{on,off}/
-Older/unrelated result folders elsewhere under train_outputs/ (different
-layout) are ignored.
+    train_outputs/<dataset>/<scenario>/<task>/<absa_task>/cont-{on,off}/cd-{on,off}/seg-{on,off}/<seed>/
+(seed was originally the second-to-last path component, before cont-*/cd-*/
+seg-*; it was moved to the end so every seed for one scenario sits side by
+side on disk. find_run_dirs() matches both layouts.) Older/unrelated result
+folders elsewhere under train_outputs/ (different layout) are ignored.
 
 A run is only included if its args.json has a 'best_epoch' field -- i.e. it
 was evaluated using source/gen_scl_nat_main.py's best-checkpoint-by-val-F1
@@ -42,15 +44,22 @@ def _template_label(task):
 
 def find_run_dirs(root='train_outputs'):
     """
-    Returns sorted list of run directories matching the grid-search layout:
-    any args.json whose immediate parent directories are cd-*/seg-* (i.e.
-    .../dataset/scenario/task/absa_task/seed/[cont-*/]cd-*/seg-*/args.json).
-    Matching only on the last two path components (rather than a fixed
-    total depth) keeps this working across the cont-on/off folder level
-    added later, and any future ablation levels inserted the same way.
+    Returns sorted list of run directories matching the grid-search layout.
+    Matches two shapes, since seed moved from just-before to just-after
+    cont-*/cd-*/seg-*:
+      new: .../cont-*/cd-*/seg-*/<seed>/args.json  (seg-*/<anything>/args.json)
+      old: .../<seed>/[cont-*/]cd-*/seg-*/args.json  (seg-*/args.json directly)
+    Matching on cd-*/seg-* (rather than a fixed total depth) keeps this
+    working regardless of what other ablation levels sit above them.
     """
-    pattern = os.path.join(root, '**', 'cd-*', 'seg-*', 'args.json')
-    return sorted(os.path.dirname(p) for p in glob.glob(pattern, recursive=True))
+    patterns = [
+        os.path.join(root, '**', 'cd-*', 'seg-*', 'args.json'),       # old: seed before cd-*/seg-*
+        os.path.join(root, '**', 'cd-*', 'seg-*', '*', 'args.json'),  # new: seed after seg-*
+    ]
+    run_dirs = set()
+    for pattern in patterns:
+        run_dirs.update(os.path.dirname(p) for p in glob.glob(pattern, recursive=True))
+    return sorted(run_dirs)
 
 
 def load_run(run_dir):

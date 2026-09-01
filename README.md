@@ -116,7 +116,7 @@ prediction *before* it gets merged into the message-level `output_pred`.
 **5. Output folder layout & resumable grid search** — since contrastive loss
 (train-time), and constrained decoding / segmentation (decode-time-only) are
 all ablations but the script trains and evaluates in one shot, each
-combination gets its own output folder: `<output_folder>/<dataset>/<scenario>/<task>/<absa_task>/<seed>/cont-{on,off}/cd-{on,off}/seg-{on,off}/`
+combination gets its own output folder: `<output_folder>/<dataset>/<scenario>/<task>/<absa_task>/cont-{on,off}/cd-{on,off}/seg-{on,off}/<seed>/`
 (`cont-{on,off}` reflects whether `--cont_loss` is nonzero).
 `gen_scl_nat_main.py` prints this path (`Output directory for this run: ...`)
 as soon as it's determined, so you always know where a run's artifacts are
