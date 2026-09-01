@@ -11,7 +11,7 @@ Aircraft will not enter S-mode if powered on with the remote controller set to S
 Cannot Takeoff in Travel Mode. Exit Travel Mode. ####[['Take off', 'action', 'minor', 'Cannot'], ['Travel Mode', 'state', 'normal', 'Exit']]
 Compass Error. Compass disconnected. ####[['Compass', 'component', 'minor', 'Error'], ['Compass', 'component', 'minor', 'disconnected']]
 Downward altitude sensor data error. Please contact DJI Support for help. ####[['Downward altitude sensor', 'component', 'minor', 'error']]
-Compass Error. Compass error Solution: Move away from ground magnetic interference. ####[['Compass', 'component', 'minor', 'Error'], ['Compass', 'component', 'minor', 'error']]
+Compass Error. Compass error. Solution: Move away from ground magnetic interference. ####[['Compass', 'component', 'minor', 'Error'], ['Compass', 'component', 'minor', 'error']]
 Another aircraft is nearby. Fly with caution. ####[['Another aircraft', 'component', 'moderate', 'nearby']]
 The remaining battery is only enough for RTH. Return home now. ####[['battery', 'parameter', 'severe', 'only enough for RTH']]
 GPS signal low. Aircraft unable to auto hover and takeoff restricted. Move to environment with adequate light. Unlocking takeoff restrictions not recommended. ####[['GPS signal', 'feature', 'moderate', 'low'], ['Aircraft', 'component', 'moderate', 'unable to auto hover'], ['takeoff', 'action', 'moderate', 'restricted']]
