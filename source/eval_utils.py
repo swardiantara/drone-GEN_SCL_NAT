@@ -261,6 +261,44 @@ def compute_scores_from_quads(all_preds, all_labels, silent=True):
     }
 
 
+# quad tuple layout used throughout this file and extract_spans_para: (ac, at, sp, ot)
+ELEMENT_INDEX = {'ac': 0, 'at': 1, 'sp': 2, 'ot': 3}
+
+
+def compute_element_scores(all_preds, all_labels, silent=True):
+    """
+    Content-matched (multiset/bag) per-element scores for ac/at/sp/ot,
+    computed independently of full-quad matching: for each example, the
+    predicted and gold values of one element (e.g. just the sentiment
+    labels) are compared as a multiset via compute_prf_averaged, the same
+    Counter-intersection machinery compute_scores_from_quads uses for full
+    quads. A predicted element value counts as a true positive as soon as
+    that value also appears (with matching multiplicity) among the gold
+    values for that element in the same example -- it does not need to come
+    from a quad that also matches on the other three elements.
+
+    This replaces the earlier ac_score/at_score/ot_score/sp_score in
+    compute_f1_scores, which aligned gold_quads[j] against pred_quads[j] by
+    list position: whenever the model predicts a different number of quads
+    than gold, or predicts the same quads in a different order (both common
+    for a generative model with no guaranteed output order), that positional
+    alignment can score an element as wrong even though the correct value
+    was predicted -- just in a different slot. This function is not
+    position-sensitive, so it isn't subject to that failure mode. Only
+    multiset (bag) matching is provided, not set-based, since a repeated
+    element value should require matching multiplicity to be fully credited
+    (see the multiset justification in compute_scores_from_quads/
+    source/analyze_duplicates.py) -- e.g. two independent "negative"
+    quadruples in one message are two problems, not one.
+    """
+    scores = {}
+    for name, idx in ELEMENT_INDEX.items():
+        pred_values = [[quad[idx] for quad in quads] for quads in all_preds]
+        gold_values = [[quad[idx] for quad in quads] for quads in all_labels]
+        scores[name] = compute_prf_averaged(pred_values, gold_values, multiset=True, silent=silent)
+    return scores
+
+
 def compute_scores(pred_seqs, gold_seqs, task, absa_task, silent=False):
     """
     Compute model performance
@@ -287,6 +325,11 @@ def compute_scores(pred_seqs, gold_seqs, task, absa_task, silent=False):
     # additive: set-based and multiset-based (bag) precision/recall/F1, with
     # micro/macro/weighted averaging, justified by source/analyze_duplicates.py
     scores['set_multiset_scores'] = compute_scores_from_quads(all_preds, all_labels, silent)
+
+    # additive: content-matched (multiset) per-element scores -- see
+    # compute_element_scores's docstring for why this replaces the
+    # position-aligned ac_score/at_score/ot_score/sp_score above
+    scores['element_scores'] = compute_element_scores(all_preds, all_labels, silent)
 
     return scores, all_labels, all_preds
 

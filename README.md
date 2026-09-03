@@ -70,6 +70,22 @@ Each is reported with **micro** (global TP/gold/pred aggregation), **macro**
 (unweighted mean of per-example P/R/F1), and **weighted** (per-example P/R/F1
 averaged, weighted by each example's gold-quadruple count) averaging.
 
+**2b. Content-matched per-element scoring** (`compute_element_scores` in
+`source/eval_utils.py`) — every run also reports, under
+`performance_metrics.element_scores` (`ac`/`at`/`ot`/`sp`, each with the same
+micro/macro/weighted breakdown as above), a multiset (bag) comparison of just
+that one element's values per example, independent of the rest of the quad.
+This replaces `compute_f1_scores`'s original `ac_score`/`at_score`/
+`ot_score`/`sp_score` (still computed, kept for backward compatibility, not
+used by `analysis/`), which aligned the *i*-th gold quad against the *i*-th
+predicted quad by list position — for a generative model with no guaranteed
+output order or count, that positional pairing can mark an element wrong
+even when the model predicted the correct value, just attached to a
+different quad slot. `analysis/rescore_elements.py` backfills
+`element_scores` into `results-*.json` files written before this existed,
+by recomputing directly from each file's saved `examples` (no GPU / rerun of
+inference needed).
+
 **3. Constrained decoding** (`source/constrained_decoding.py`, flag
 `--constrained_decoding`) — restricts generation, at every step, to the union
 of: the current example's own input tokens (copy vocabulary), the closed

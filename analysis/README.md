@@ -44,7 +44,7 @@ One row per completed run, one file per metric:
 | `set-PRF.xlsx` | set-based precision/recall/F1, micro/macro/weighted |
 | `multiset-PRF.xlsx` | multiset (bag) precision/recall/F1, micro/macro/weighted |
 | `generative.xlsx` | BLEU (+ n-gram precisions, brevity penalty, length ratio, lengths), METEOR, ROUGE-1/2/L/Lsum, WER |
-| `ac-PRF.xlsx` / `at-PRF.xlsx` / `ot-PRF.xlsx` / `sp-PRF.xlsx` | element-level precision/recall/F1 for aspect category / aspect term / opinion term / sentiment polarity |
+| `ac-PRF.xlsx` / `at-PRF.xlsx` / `ot-PRF.xlsx` / `sp-PRF.xlsx` | element-level precision/recall/F1 (micro/macro/weighted) for aspect category / aspect term / opinion term / sentiment polarity, content-matched (multiset) per element -- see `compute_element_scores` in `source/eval_utils.py` |
 
 Every row also carries the config columns: `dataset`, `base_model`,
 `template` (`paraphrase` for `--task asqp`, `gen-scl-nat` for

@@ -163,13 +163,21 @@ def extract_generative(results):
 
 
 def extract_element(results, element):
-    """element: one of 'ac', 'at', 'ot', 'sp'. Returns precision/recall/f1."""
-    node = dget(results, 'performance_metrics', f'{element}_score', default={})
-    return {
-        'precision': node.get('precision'),
-        'recall': node.get('recall'),
-        'f1': node.get('f1_score'),
-    }
+    """
+    element: one of 'ac', 'at', 'ot', 'sp'. Returns the 9 P/R/F1
+    (micro/macro/weighted) columns from source/eval_utils.py's
+    compute_element_scores -- content-matched (multiset) per-element
+    scoring, independent of full-quad positional alignment. See
+    compute_element_scores's docstring for why this replaces the older
+    position-aligned performance_metrics.{element}_score.
+    """
+    node = dget(results, 'performance_metrics', 'element_scores', element, default={})
+    row = {}
+    for agg in ('micro', 'macro', 'weighted'):
+        agg_node = node.get(agg, {})
+        for metric in ('precision', 'recall', 'f1'):
+            row[f'{agg}_{metric}'] = agg_node.get(metric)
+    return row
 
 
 # metric-file name -> extractor function, used identically by recap.py and aggregate.py
