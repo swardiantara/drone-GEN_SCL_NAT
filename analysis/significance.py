@@ -1,19 +1,21 @@
 # -*- coding: utf-8 -*-
 """
 Wilcoxon signed-rank test of every scenario against a configurable baseline,
-on one main metric, computed per (dataset, base_model) group (so e.g. t5-base
-scenarios are only ever compared against a t5-base baseline, never pooled
-with flan-t5 results). Writes one Excel file under analysis/statistics/.
+on one main metric, computed per dataset group (so drone-binary and
+drone-multi runs are never pooled together).
 
-A "scenario" is one (template, contrastive, constrained_decoding,
+A "scenario" is one (base_model, template, contrastive, constrained_decoding,
 segmentation) combination; the baseline is one specific such combination
-(defaults to template=paraphrase, contrastive=yes, constrained_decoding=no,
-segmentation=no -- override with the --baseline_* flags). The test pairs
-runs by seed: only seeds present in both the baseline and the scenario are
-used, so e.g. a scenario missing a seed the baseline has (or vice versa) is
-still testable on the seeds they share, and is skipped with a note if they
-share fewer than 2 seeds (Wilcoxon needs at least one non-zero paired
-difference).
+(defaults to base_model=t5-base, template=paraphrase, contrastive=yes,
+constrained_decoding=no, segmentation=no -- override with the --baseline_*
+flags). base_model is a tested axis like the others, so e.g. flan-t5-base
+runs are compared directly against the t5-base baseline (paired by seed) to
+test the effect of the base model itself, alongside every other ablation.
+The test pairs runs by seed: only seeds present in both the baseline and the
+scenario are used, so e.g. a scenario missing a seed the baseline has (or
+vice versa) is still testable on the seeds they share, and is skipped with a
+note if they share fewer than 2 seeds (Wilcoxon needs at least one non-zero
+paired difference).
 
 Reads directly from train_outputs/ (via common.py), the same source
 recap.py/aggregate.py use.
@@ -21,7 +23,7 @@ recap.py/aggregate.py use.
 Usage (from the repo root):
     python analysis/significance.py
     python analysis/significance.py --baseline_template paraphrase --baseline_contrastive yes \
-        --baseline_constrained_decoding no --baseline_segmentation no
+        --baseline_constrained_decoding no --baseline_segmentation no --baseline_base_model t5-base
     python analysis/significance.py --metric set_micro_f1
 """
 
@@ -37,8 +39,8 @@ from scipy.stats import wilcoxon
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from common import iter_runs, dget, CONFIG_COLUMNS
 
-SCENARIO_COLUMNS = ['template', 'contrastive', 'constrained_decoding', 'segmentation']
-GROUP_COLUMNS = ['dataset', 'base_model']
+SCENARIO_COLUMNS = ['base_model', 'template', 'contrastive', 'constrained_decoding', 'segmentation']
+GROUP_COLUMNS = ['dataset']
 
 # name -> dotted path into a run's results.json, for --metric
 METRIC_PATHS = {
@@ -108,6 +110,8 @@ def main():
                          help="Directory to write the Wilcoxon test .xlsx file into.")
     parser.add_argument('--metric', default='multiset_micro_f1', choices=sorted(METRIC_PATHS),
                          help="Which score to test.")
+    parser.add_argument('--baseline_base_model', default='t5-base',
+                         help="Base model of the baseline scenario (must match a --scenario value used in the grid, e.g. t5-base, flan-t5-base).")
     parser.add_argument('--baseline_template', default='paraphrase', choices=['paraphrase', 'gen-scl-nat'])
     parser.add_argument('--baseline_contrastive', default='yes', choices=['yes', 'no'])
     parser.add_argument('--baseline_constrained_decoding', default='no', choices=['yes', 'no'])
@@ -125,6 +129,7 @@ def main():
         return
 
     baseline_scenario = {
+        'base_model': args.baseline_base_model,
         'template': args.baseline_template,
         'contrastive': args.baseline_contrastive,
         'constrained_decoding': args.baseline_constrained_decoding,
@@ -133,12 +138,12 @@ def main():
 
     result_rows = []
     for group_key, group_df in df.groupby(GROUP_COLUMNS, dropna=False):
-        dataset, base_model = group_key if isinstance(group_key, tuple) else (group_key,)
+        dataset = group_key[0] if isinstance(group_key, tuple) else group_key
 
         baseline_mask = (group_df[SCENARIO_COLUMNS] == pd.Series(baseline_scenario)).all(axis=1)
         baseline_rows = group_df[baseline_mask]
         if baseline_rows.empty:
-            print(f"[skip group] {dataset}/{base_model}: baseline scenario "
+            print(f"[skip group] {dataset}: baseline scenario "
                   f"{baseline_scenario} not present in this group")
             continue
         baseline_series = baseline_rows.set_index('seed')['metric']
@@ -158,12 +163,13 @@ def main():
 
             result_rows.append({
                 'dataset': dataset,
-                'base_model': base_model,
                 'metric': args.metric,
+                'baseline_base_model': baseline_scenario['base_model'],
                 'baseline_template': baseline_scenario['template'],
                 'baseline_contrastive': baseline_scenario['contrastive'],
                 'baseline_constrained_decoding': baseline_scenario['constrained_decoding'],
                 'baseline_segmentation': baseline_scenario['segmentation'],
+                'scenario_base_model': scenario_dict['base_model'],
                 'scenario_template': scenario_dict['template'],
                 'scenario_contrastive': scenario_dict['contrastive'],
                 'scenario_constrained_decoding': scenario_dict['constrained_decoding'],
