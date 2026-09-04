@@ -1,0 +1,2966 @@
+[
+  {
+    "date": "6/27/2025",
+    "time": "3:34:35.35 AM",
+    "message_type": "tip",
+    "message": "Motors starting.; Flight mode changed to Starting Motors.",
+    "quads": [
+      [
+        "Motors",
+        "component",
+        "positive",
+        "starting"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:34:35.55 AM",
+    "message_type": "tip",
+    "message": "Data Recorder File Index is 89.; Set Return to Home (RTH) altitude to 100 m (328 ft).; Set maximum flight altitude to 500 m (1640 ft).",
+    "quads": [
+      [
+        "Data Recorder File Index",
+        "parameter",
+        "positive",
+        "89"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:34:36.95 AM",
+    "message_type": "tip",
+    "message": "Flight mode changed to Manual Takeoff.",
+    "quads": [
+      [
+        "Flight mode",
+        "state",
+        "positive",
+        "changed to Manual Takeoff"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:34:38.15 AM",
+    "message_type": "tip",
+    "message": "Flight mode changed to P-GPS.",
+    "quads": [
+      [
+        "Flight mode",
+        "state",
+        "positive",
+        "changed to P-GPS"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:34:38.55 AM",
+    "message_type": "tip",
+    "message": "Home point updated. RTH altitude adjusted to 100m.",
+    "quads": [
+      [
+        "Home point",
+        "parameter",
+        "positive",
+        "updated"
+      ],
+      [
+        "RTH altitude",
+        "parameter",
+        "positive",
+        "adjusted to 100m"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:34:39.15 AM",
+    "message_type": "tip",
+    "message": "Home point updated. RTH altitude adjusted to 100m.; Forward ambient light too low. Obstacle avoidance unavailable. Fly with caution.",
+    "quads": [
+      [
+        "Home point",
+        "parameter",
+        "negative",
+        "updated"
+      ],
+      [
+        "RTH altitude",
+        "parameter",
+        "negative",
+        "adjusted 100m"
+      ],
+      [
+        "Forward ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:34:40.15 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.; Home point updated. RTH altitude adjusted to 100m.; Forward ambient light too low. Obstacle avoidance unavailable. Fly with caution.; Downward ambient light too low. Obstacle avoidance unavailable. Fly with caution.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:34:41.15 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.; Home point updated. RTH altitude adjusted to 100m.; Downward ambient light too low. Obstacle avoidance unavailable. Fly with caution.; Forward ambient light too low. Obstacle avoidance unavailable. Fly with caution.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:34:41.55 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:34:42.15 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:34:44.15 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:34:45.15 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:34:48.15 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:34:51.15 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:34:54.15 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:34:57.15 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:35:00.15 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:35:03.15 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:35:06.15 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:35:09.15 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:35:12.15 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:35:13.35 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.; RC signal lost.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:35:13.95 AM",
+    "message_type": "tip",
+    "message": "RC signal lost.; Aircraft braking.; RC signal lost. Aircraft will follow preset action for lost signal.; Forward ambient light too low. Obstacle avoidance unavailable. Fly with caution.; Downward ambient light too low. Obstacle avoidance unavailable. Fly with caution.; Image transmission signal weak. Adjust antennas and make sure they are perpendicular to flight direction of aircraft.; Image transmission signal lost.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ],
+      [
+        "Forward ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:35:13.95 AM",
+    "message_type": "warning",
+    "message": "Downlink Lost.",
+    "quads": [
+      [
+        "Downlink",
+        "feature",
+        "negative",
+        "Lost"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:35:36.75 AM",
+    "message_type": "tip",
+    "message": "Downlink Restored (after 0m 22.8s).; Flight mode changed to Go Home.",
+    "quads": [
+      [
+        "Downlink",
+        "feature",
+        "positive",
+        "Restored"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:35:36.95 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.; Press Brake button to cancel RTH.; No image transmission. Aircraft returning to home.; RC signal lost. Returning to home.; Aircraft and remote controller disconnected.; Downward ambient light too low. Obstacle avoidance unavailable. Fly with caution.",
+    "quads": [
+      [
+        "RTH",
+        "action",
+        "negative",
+        "Failsafe"
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ],
+      [
+        "Aircraft",
+        "component",
+        "negative",
+        "disconnected"
+      ],
+      [
+        "Downward ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:35:37.75 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.; Press Brake button to cancel RTH.; No image transmission. Aircraft returning to home.; RC signal lost. Returning to home.; Aircraft and remote controller disconnected.; Downward ambient light too low. Obstacle avoidance unavailable. Fly with caution.; RTH ascending.",
+    "quads": [
+      [
+        "RTH",
+        "action",
+        "negative",
+        "Failsafe"
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ],
+      [
+        "Downward ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:35:38.75 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.; Press Brake button to cancel RTH.; RC signal lost. Returning to home.; Downward ambient light too low. Obstacle avoidance unavailable. Fly with caution.; RTH ascending.",
+    "quads": [
+      [
+        "RTH",
+        "action",
+        "negative",
+        "Failsafe"
+      ],
+      [
+        "Downward ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:35:38.95 AM",
+    "message_type": "tip",
+    "message": "Controller triggered aircraft to descend. Auto RTH canceled.",
+    "quads": [
+      [
+        "",
+        "",
+        "",
+        ""
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:35:39.75 AM",
+    "message_type": "tip",
+    "message": "Flight mode changed to P-GPS.",
+    "quads": [
+      [
+        "Flight mode",
+        "state",
+        "positive",
+        "changed to P-GPS"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:35:40.75 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.; Controller triggered aircraft to descend. Auto RTH canceled.; RC signal lost. Returning to home.; Downward ambient light too low. Obstacle avoidance unavailable. Fly with caution.",
+    "quads": [
+      [
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ],
+      [
+        "Downward ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:35:41.15 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:35:41.95 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:35:45.15 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:35:48.15 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:35:51.15 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:35:52.15 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:35:53.15 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:35:54.15 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:35:55.15 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.; RC signal weak.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:35:56.15 AM",
+    "message_type": "tip",
+    "message": "RC signal weak.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:35:58.35 AM",
+    "message_type": "tip",
+    "message": "RC signal weak.; RC signal lost.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "weak"
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:35:58.75 AM",
+    "message_type": "tip",
+    "message": "RC signal lost.; Aircraft braking.; RC signal lost. Aircraft will follow preset action for lost signal.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.; Forward ambient light too low. Obstacle avoidance unavailable. Fly with caution.; Downward ambient light too low. Obstacle avoidance unavailable. Fly with caution.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ],
+      [
+        "Aircraft",
+        "parameter",
+        "negative",
+        "braking"
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:35:59.15 AM",
+    "message_type": "tip",
+    "message": "RC signal lost.; Aircraft braking.; RC signal lost. Aircraft will follow preset action for lost signal.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.; Forward ambient light too low. Obstacle avoidance unavailable. Fly with caution.; Downward ambient light too low. Obstacle avoidance unavailable. Fly with caution.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ],
+      [
+        "Aircraft",
+        "parameter",
+        "negative",
+        "braking"
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:36:00.15 AM",
+    "message_type": "tip",
+    "message": "RC signal lost.; Aircraft braking.; RC signal lost. Aircraft will follow preset action for lost signal.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.; Downward ambient light too low. Obstacle avoidance unavailable. Fly with caution.; Forward ambient light too low. Obstacle avoidance unavailable. Fly with caution.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ],
+      [
+        "Aircraft",
+        "parameter",
+        "negative",
+        "braking"
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:36:01.15 AM",
+    "message_type": "tip",
+    "message": "RC signal lost.; Aircraft braking.; RC signal lost. Aircraft will follow preset action for lost signal.; Downward ambient light too low. Obstacle avoidance unavailable. Fly with caution.; Forward ambient light too low. Obstacle avoidance unavailable. Fly with caution.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ],
+      [
+        "Aircraft braking",
+        "parameter",
+        "negative",
+        "lost"
+      ],
+      [
+        "Downward ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:36:01.75 AM",
+    "message_type": "tip",
+    "message": "RC signal lost.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:36:01.95 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.; Flight mode changed to Go Home.",
+    "quads": [
+      [
+        "RTH",
+        "action",
+        "negative",
+        "Failsafe"
+      ],
+      [
+        "Flight mode",
+        "parameter",
+        "positive",
+        "changed to Go Home"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:36:03.35 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.",
+    "quads": [
+      [
+        "Failsafe",
+        "action",
+        "negative",
+        "RTH"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:36:05.35 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.",
+    "quads": [
+      [
+        "Failsafe",
+        "action",
+        "negative",
+        "RTH"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:36:05.95 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.; Press Brake button to cancel RTH.; RC signal lost. Returning to home.; Downward ambient light too low. Obstacle avoidance unavailable. Fly with caution.; Original route RTH.",
+    "quads": [
+      [
+        "RTH",
+        "action",
+        "negative",
+        "Failsafe"
+      ],
+      [
+        "Downward ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:36:06.75 AM",
+    "message_type": "tip",
+    "message": "RTH in progress.",
+    "quads": [
+      [
+        "RTH",
+        "state",
+        "positive",
+        "in progress"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:36:07.15 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.; Press Brake button to cancel RTH.; RC signal lost. Returning to home.; Original route RTH.; RTH in progress.; Downward ambient light too low. Obstacle avoidance unavailable. Fly with caution.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.",
+    "quads": [
+      [
+        "RTH",
+        "action",
+        "negative",
+        "Failsafe"
+      ],
+      [
+        "Downward ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:36:07.75 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.; Press Brake button to cancel RTH.; RC signal lost. Returning to home.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.; RTH in progress.; Downward ambient light too low. Obstacle avoidance unavailable. Fly with caution.; RTH ascending.",
+    "quads": [
+      [
+        "RTH",
+        "action",
+        "negative",
+        "Failsafe"
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ],
+      [
+        "Downward ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:36:08.15 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.; Press Brake button to cancel RTH.; RC signal lost. Returning to home.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.; RTH in progress.; RTH ascending.",
+    "quads": [
+      [
+        "RTH",
+        "action",
+        "negative",
+        "Failsafe"
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ],
+      [
+        "RTH",
+        "feature",
+        "negative",
+        "in progress"
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:36:08.55 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.; Press Brake button to cancel RTH.; RC signal lost. Returning to home.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.; RTH in progress.; RTH ascending.",
+    "quads": [
+      [
+        "RTH",
+        "action",
+        "negative",
+        "Failsafe"
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ],
+      [
+        "RTH",
+        "feature",
+        "negative",
+        "in progress"
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:36:09.15 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.",
+    "quads": [
+      [
+        "Failsafe",
+        "action",
+        "negative",
+        "RTH"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:36:11.95 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.; Press Brake button to cancel RTH.; RC signal lost. Returning to home.; RTH ascending.; Controller triggered aircraft to descend. Auto RTH canceled.",
+    "quads": [
+      [
+        "RTH",
+        "action",
+        "negative",
+        "Failsafe"
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ],
+      [
+        "RTH",
+        "component",
+        "positive",
+        "ascending"
+      ],
+      [
+        "Auto RTH",
+        "component",
+        "positive",
+        "canceled"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:36:12.35 AM",
+    "message_type": "tip",
+    "message": "Flight mode changed to P-GPS.",
+    "quads": [
+      [
+        "Flight mode",
+        "state",
+        "positive",
+        "changed to P-GPS"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:36:13.15 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.; Controller triggered aircraft to descend. Auto RTH canceled.; RC signal lost. Returning to home.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.; RTH ascending.",
+    "quads": [
+      [
+        "RTH",
+        "action",
+        "negative",
+        "Failsafe"
+      ],
+      [
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:36:14.95 AM",
+    "message_type": "tip",
+    "message": "RC signal weak.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:36:16.35 AM",
+    "message_type": "tip",
+    "message": "RC signal lost.; Aircraft braking.; RC signal lost. Aircraft will follow preset action for lost signal.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ],
+      [
+        "Aircraft",
+        "component",
+        "negative",
+        "braking"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:36:19.55 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.; Flight mode changed to Go Home.",
+    "quads": [
+      [
+        "RTH",
+        "action",
+        "negative",
+        "Failsafe"
+      ],
+      [
+        "Flight mode",
+        "parameter",
+        "positive",
+        "changed to Go Home"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:36:21.35 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.",
+    "quads": [
+      [
+        "Failsafe",
+        "action",
+        "negative",
+        "RTH"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:36:23.15 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.",
+    "quads": [
+      [
+        "Failsafe",
+        "action",
+        "negative",
+        "RTH"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:36:23.35 AM",
+    "message_type": "tip",
+    "message": "Press Brake button to cancel RTH.; RC signal lost. Returning to home.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.; Original route RTH.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:36:23.75 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.; Press Brake button to cancel RTH.; RC signal lost. Returning to home.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.; Original route RTH.; RTH in progress.",
+    "quads": [
+      [
+        "RTH",
+        "action",
+        "negative",
+        "Failsafe"
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ],
+      [
+        "Returning to home",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:36:24.75 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.; Press Brake button to cancel RTH.; RC signal lost. Returning to home.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.; RTH in progress.",
+    "quads": [
+      [
+        "RTH",
+        "action",
+        "negative",
+        "Failsafe"
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:36:25.75 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.; Press Brake button to cancel RTH.; RC signal lost. Returning to home.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.; RTH in progress.; RTH ascending.",
+    "quads": [
+      [
+        "RTH",
+        "action",
+        "negative",
+        "Failsafe"
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ],
+      [
+        "RTH",
+        "feature",
+        "negative",
+        "in progress"
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:36:25.95 AM",
+    "message_type": "tip",
+    "message": "Controller triggered aircraft to descend. Auto RTH canceled.",
+    "quads": [
+      [
+        "",
+        "",
+        "",
+        ""
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:36:26.55 AM",
+    "message_type": "tip",
+    "message": "Flight mode changed to P-GPS.",
+    "quads": [
+      [
+        "Flight mode",
+        "state",
+        "positive",
+        "changed to P-GPS"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:36:27.75 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.; Controller triggered aircraft to descend. Auto RTH canceled.; RC signal lost. Returning to home.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.",
+    "quads": [
+      [
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:36:28.35 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.; Controller triggered aircraft to descend. Auto RTH canceled.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.",
+    "quads": [
+      [
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:36:32.35 AM",
+    "message_type": "tip",
+    "message": "RC signal weak.; RC signal lost.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "weak"
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:36:34.35 AM",
+    "message_type": "tip",
+    "message": "RC signal lost.; RC signal weak.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:36:35.15 AM",
+    "message_type": "tip",
+    "message": "RC signal weak.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:36:46.35 AM",
+    "message_type": "tip",
+    "message": "RC signal lost.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:36:47.75 AM",
+    "message_type": "tip",
+    "message": "RC signal lost.; Aircraft braking.; RC signal lost. Aircraft will follow preset action for lost signal.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ],
+      [
+        "Aircraft",
+        "component",
+        "negative",
+        "braking"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:36:50.35 AM",
+    "message_type": "tip",
+    "message": "RC signal lost.; Aircraft braking.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ],
+      [
+        "Aircraft",
+        "component",
+        "negative",
+        "braking"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:37:07.15 AM",
+    "message_type": "tip",
+    "message": "RC signal weak.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:37:10.15 AM",
+    "message_type": "tip",
+    "message": "RC signal weak.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:37:33.35 AM",
+    "message_type": "tip",
+    "message": "RC signal lost.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:37:33.75 AM",
+    "message_type": "tip",
+    "message": "RC signal lost.; Aircraft braking.; RC signal lost. Aircraft will follow preset action for lost signal.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ],
+      [
+        "Aircraft",
+        "component",
+        "negative",
+        "braking"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:37:36.35 AM",
+    "message_type": "tip",
+    "message": "RC signal lost.; Aircraft braking.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ],
+      [
+        "Aircraft",
+        "component",
+        "negative",
+        "braking"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:37:42.35 AM",
+    "message_type": "tip",
+    "message": "RC signal lost.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:37:45.35 AM",
+    "message_type": "tip",
+    "message": "RC signal lost.; Failsafe RTH.; Flight mode changed to Go Home.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ],
+      [
+        "Failsafe RTH",
+        "feature",
+        "negative",
+        "lost"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:37:46.15 AM",
+    "message_type": "tip",
+    "message": "Press Brake button to cancel RTH.; RC signal lost. Aircraft will follow preset action for lost signal.; RC signal lost. Returning to home.; Original route RTH.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ],
+      [
+        "Aircraft",
+        "component",
+        "negative",
+        "follow preset action"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:37:46.35 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.",
+    "quads": [
+      [
+        "Failsafe",
+        "action",
+        "negative",
+        "RTH"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:37:46.75 AM",
+    "message_type": "tip",
+    "message": "RTH in progress.",
+    "quads": [
+      [
+        "RTH",
+        "state",
+        "positive",
+        "in progress"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:37:47.15 AM",
+    "message_type": "tip",
+    "message": "RC signal weak. Avoid blocking antennas and adjust antenna orientation.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:37:50.75 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.; Press Brake button to cancel RTH.; RC signal lost. Returning to home.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.; RTH in progress.; RTH ascending.",
+    "quads": [
+      [
+        "RTH",
+        "action",
+        "negative",
+        "Failsafe"
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ],
+      [
+        "RTH",
+        "feature",
+        "negative",
+        "in progress"
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:37:51.55 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.; Controller triggered aircraft to descend. Auto RTH canceled.; RC signal lost. Returning to home.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.; RTH in progress.; RTH ascending.",
+    "quads": [
+      [
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:37:52.35 AM",
+    "message_type": "tip",
+    "message": "Flight mode changed to P-GPS.",
+    "quads": [
+      [
+        "Flight mode",
+        "state",
+        "positive",
+        "changed to P-GPS"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:37:53.55 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.; Controller triggered aircraft to descend. Auto RTH canceled.; RC signal lost. Returning to home.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.; RTH ascending.",
+    "quads": [
+      [
+        "RTH",
+        "action",
+        "negative",
+        "Failsafe"
+      ],
+      [
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:37:54.35 AM",
+    "message_type": "tip",
+    "message": "RC signal lost. Aircraft will follow preset action for lost signal.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:37:54.55 AM",
+    "message_type": "tip",
+    "message": "Aircraft braking.",
+    "quads": [
+      [
+        "Aircraft",
+        "action",
+        "positive",
+        "braking"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:37:54.75 AM",
+    "message_type": "tip",
+    "message": "Image transmission signal weak.",
+    "quads": [
+      [
+        "Image transmission signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:37:54.75 AM",
+    "message_type": "warning",
+    "message": "Downlink Lost.",
+    "quads": [
+      [
+        "Downlink",
+        "feature",
+        "negative",
+        "Lost"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:38:10.75 AM",
+    "message_type": "tip",
+    "message": "Downlink Restored (after 0m 16s).; Flight mode changed to Go Home.",
+    "quads": [
+      [
+        "Downlink",
+        "feature",
+        "positive",
+        "Restored"
+      ],
+      [
+        "Flight mode",
+        "parameter",
+        "positive",
+        "changed to Go Home"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:38:12.35 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.; Press Brake button to cancel RTH.; RC signal lost. Returning to home.; Original route RTH.",
+    "quads": [
+      [
+        "RTH",
+        "action",
+        "negative",
+        "Failsafe"
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:38:12.75 AM",
+    "message_type": "tip",
+    "message": "RTH ascending.",
+    "quads": [
+      [
+        "RTH",
+        "state",
+        "positive",
+        "ascending"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:38:13.75 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.; Press Brake button to cancel RTH.; RC signal lost. Returning to home.; RTH ascending.",
+    "quads": [
+      [
+        "RTH",
+        "action",
+        "negative",
+        "Failsafe"
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:38:16.15 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.; Press Brake button to cancel RTH.; RC signal lost. Returning to home.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.; RTH ascending.",
+    "quads": [
+      [
+        "RTH",
+        "action",
+        "negative",
+        "Failsafe"
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ],
+      [
+        "RTH",
+        "feature",
+        "negative",
+        "ascending"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:38:17.55 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.; Press Brake button to cancel RTH.; RC signal lost. Returning to home.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.; RTH ascending.",
+    "quads": [
+      [
+        "RTH",
+        "action",
+        "negative",
+        "Failsafe"
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ],
+      [
+        "RTH",
+        "feature",
+        "negative",
+        "ascending"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:38:18.15 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.",
+    "quads": [
+      [
+        "Failsafe",
+        "action",
+        "negative",
+        "RTH"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:38:18.95 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.; Controller triggered aircraft to descend. Auto RTH canceled.; RC signal lost. Returning to home.; RTH ascending.",
+    "quads": [
+      [
+        "RTH",
+        "action",
+        "negative",
+        "Failsafe"
+      ],
+      [
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:38:20.15 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.; Controller triggered aircraft to descend. Auto RTH canceled.; RC signal lost. Returning to home.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.; RTH ascending.",
+    "quads": [
+      [
+        "RTH",
+        "action",
+        "negative",
+        "Failsafe"
+      ],
+      [
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:38:20.75 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.; Controller triggered aircraft to descend. Auto RTH canceled.; RC signal lost. Returning to home.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.; RTH ascending.",
+    "quads": [
+      [
+        "RTH",
+        "action",
+        "negative",
+        "Failsafe"
+      ],
+      [
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:38:20.95 AM",
+    "message_type": "tip",
+    "message": "Flight mode changed to P-GPS.",
+    "quads": [
+      [
+        "Flight mode",
+        "state",
+        "positive",
+        "changed to P-GPS"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:38:21.55 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.; Controller triggered aircraft to descend. Auto RTH canceled.; RC signal lost. Returning to home.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.",
+    "quads": [
+      [
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:38:21.95 AM",
+    "message_type": "tip",
+    "message": "Press Brake button to cancel RTH.",
+    "quads": [
+      [
+        "Brake button",
+        "action",
+        "positive",
+        "Press to cancel RTH"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:38:22.75 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.; Press Brake button to cancel RTH.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.",
+    "quads": [
+      [
+        "RTH",
+        "action",
+        "negative",
+        "Failsafe"
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:38:23.35 AM",
+    "message_type": "tip",
+    "message": "RC signal weak.; Aircraft braking.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.; RC signal lost. Aircraft will follow preset action for lost signal.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "weak"
+      ],
+      [
+        "Aircraft",
+        "component",
+        "negative",
+        "braking"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:38:26.35 AM",
+    "message_type": "tip",
+    "message": "RC signal lost.; Aircraft braking.; RC signal lost. Aircraft will follow preset action for lost signal.; RC signal lost. Returning to home.; Failsafe RTH.; Flight mode changed to Go Home.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ],
+      [
+        "Aircraft",
+        "component",
+        "negative",
+        "braking"
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:38:33.55 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.; Press Brake button to cancel RTH.; RC signal lost. Returning to home.; Original route RTH.",
+    "quads": [
+      [
+        "RTH",
+        "action",
+        "negative",
+        "Failsafe"
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:38:33.75 AM",
+    "message_type": "tip",
+    "message": "RTH in progress.",
+    "quads": [
+      [
+        "RTH",
+        "state",
+        "positive",
+        "in progress"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:38:34.15 AM",
+    "message_type": "tip",
+    "message": "RC signal weak. Avoid blocking antennas and adjust antenna orientation.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:38:34.75 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.; Press Brake button to cancel RTH.; RC signal lost. Returning to home.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.; RTH in progress.",
+    "quads": [
+      [
+        "RTH",
+        "action",
+        "negative",
+        "Failsafe"
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:38:35.75 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.; Press Brake button to cancel RTH.; RC signal lost. Returning to home.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.; RTH in progress.",
+    "quads": [
+      [
+        "RTH",
+        "action",
+        "negative",
+        "Failsafe"
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:38:37.15 AM",
+    "message_type": "tip",
+    "message": "RC signal weak. Avoid blocking antennas and adjust antenna orientation.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:38:37.75 AM",
+    "message_type": "tip",
+    "message": "RTH ascending.",
+    "quads": [
+      [
+        "RTH",
+        "state",
+        "positive",
+        "ascending"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:38:38.35 AM",
+    "message_type": "tip",
+    "message": "Controller triggered aircraft to descend. Auto RTH canceled.",
+    "quads": [
+      [
+        "",
+        "",
+        "",
+        ""
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:38:39.35 AM",
+    "message_type": "tip",
+    "message": "Flight mode changed to P-GPS.",
+    "quads": [
+      [
+        "Flight mode",
+        "state",
+        "positive",
+        "changed to P-GPS"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:38:40.35 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.; Controller triggered aircraft to descend. Auto RTH canceled.; RC signal lost. Returning to home.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.; RTH ascending.",
+    "quads": [
+      [
+        "RTH",
+        "action",
+        "negative",
+        "Failsafe"
+      ],
+      [
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:38:44.35 AM",
+    "message_type": "tip",
+    "message": "Aircraft braking.",
+    "quads": [
+      [
+        "Aircraft",
+        "action",
+        "positive",
+        "braking"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:38:45.35 AM",
+    "message_type": "tip",
+    "message": "Aircraft braking.; RC signal lost. Aircraft will follow preset action for lost signal.",
+    "quads": [
+      [
+        "Aircraft braking",
+        "feature",
+        "negative",
+        "lost"
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:38:46.15 AM",
+    "message_type": "tip",
+    "message": "RC signal lost.; Aircraft braking.; RC signal lost. Aircraft will follow preset action for lost signal.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ],
+      [
+        "Aircraft",
+        "component",
+        "negative",
+        "braking"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:38:52.15 AM",
+    "message_type": "tip",
+    "message": "RC signal weak.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:38:54.15 AM",
+    "message_type": "tip",
+    "message": "RC signal weak.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:39:26.15 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:39:29.35 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:39:32.35 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:39:35.35 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:39:38.35 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:39:41.35 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:39:44.35 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:39:47.35 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:39:50.35 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:39:53.35 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:39:56.35 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:39:59.35 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:40:02.35 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:40:05.35 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:40:08.15 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:40:10.15 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:40:12.95 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.; Flight mode changed to Confirm Landing.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:40:14.15 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:40:15.15 AM",
+    "message_type": "tip",
+    "message": "Auto landing in progress.",
+    "quads": [
+      [
+        "Auto landing",
+        "action",
+        "positive",
+        "in progress"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:40:16.15 AM",
+    "message_type": "tip",
+    "message": "Auto landing in progress.",
+    "quads": [
+      [
+        "Auto landing",
+        "action",
+        "positive",
+        "in progress"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:40:16.75 AM",
+    "message_type": "tip",
+    "message": "Flight mode changed to P-GPS.",
+    "quads": [
+      [
+        "Flight mode",
+        "state",
+        "positive",
+        "changed to P-GPS"
+      ]
+    ]
+  }
+]

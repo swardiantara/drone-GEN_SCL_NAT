@@ -1,0 +1,592 @@
+[
+  {
+    "date": "6/27/2025",
+    "time": "3:23:15.27 AM",
+    "message_type": "tip",
+    "message": "Gimbal auto check failed.; Motors starting.; Gimbal stuck. Check whether gimbal lock is removed and make sure gimbal can rotate freely.; Data Recorder File Index is 88.; Set Return to Home (RTH) altitude to 100 m (328 ft).; Set maximum flight altitude to 500 m (1640 ft).; Flight mode changed to Starting Motors.",
+    "quads": [
+      [
+        "Gimbal auto check",
+        "feature",
+        "negative",
+        "failed"
+      ],
+      [
+        "Motors",
+        "component",
+        "negative",
+        "starting"
+      ],
+      [
+        "Gimbal",
+        "parameter",
+        "negative",
+        "stuck"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:23:16.66 AM",
+    "message_type": "tip",
+    "message": "Flight mode changed to Manual Takeoff.",
+    "quads": [
+      [
+        "Flight mode",
+        "state",
+        "positive",
+        "changed to Manual Takeoff"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:23:18.27 AM",
+    "message_type": "tip",
+    "message": "Gimbal auto check failed.",
+    "quads": [
+      [
+        "Gimbal auto check",
+        "feature",
+        "negative",
+        "failed"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:23:20.66 AM",
+    "message_type": "tip",
+    "message": "Flight mode changed to P-GPS (Brake).",
+    "quads": [
+      [
+        "Flight mode",
+        "state",
+        "positive",
+        "changed to P-GPS"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:23:21.28 AM",
+    "message_type": "tip",
+    "message": "Gimbal auto check failed.; Home point updated. RTH altitude adjusted to 100m.; Gimbal stuck. Check whether gimbal lock is removed and make sure gimbal can rotate freely.",
+    "quads": [
+      [
+        "Gimbal auto check",
+        "feature",
+        "negative",
+        "failed"
+      ],
+      [
+        "RTH altitude",
+        "parameter",
+        "positive",
+        "adjusted to 100m"
+      ],
+      [
+        "Gimbal",
+        "component",
+        "negative",
+        "stuck"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:23:24.27 AM",
+    "message_type": "tip",
+    "message": "Gimbal auto check failed.",
+    "quads": [
+      [
+        "Gimbal auto check",
+        "feature",
+        "negative",
+        "failed"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:24:25.29 AM",
+    "message_type": "tip",
+    "message": "Gimbal auto check failed.; Image transmission signal weak.",
+    "quads": [
+      [
+        "Gimbal auto check",
+        "feature",
+        "negative",
+        "failed"
+      ],
+      [
+        "Image transmission signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:24:27.87 AM",
+    "message_type": "tip",
+    "message": "Image transmission signal weak.; Aircraft braking.; Gimbal stuck. Check whether gimbal lock is removed and make sure gimbal can rotate freely.; Image transmission signal weak. Adjust antennas and make sure they are perpendicular to flight direction of aircraft.",
+    "quads": [
+      [
+        "Image transmission signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:24:28.07 AM",
+    "message_type": "tip",
+    "message": "RC signal lost.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:24:29.27 AM",
+    "message_type": "tip",
+    "message": "RC signal lost.; Aircraft braking.; Gimbal stuck. Check whether gimbal lock is removed and make sure gimbal can rotate freely.; Image transmission signal weak. Adjust antennas and make sure they are perpendicular to flight direction of aircraft.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ],
+      [
+        "Aircraft",
+        "component",
+        "negative",
+        "braking"
+      ],
+      [
+        "Gimbal",
+        "feature",
+        "negative",
+        "stuck"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:24:29.27 AM",
+    "message_type": "warning",
+    "message": "Downlink Lost.",
+    "quads": [
+      [
+        "Downlink",
+        "feature",
+        "negative",
+        "Lost"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:24:34.50 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.; Press Brake button to cancel RTH.; RC signal lost. Returning to home.; Downlink Restored (after 0m 5.2s).; Flight mode changed to Go Home.",
+    "quads": [
+      [
+        "RTH",
+        "action",
+        "negative",
+        "Failsafe"
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:24:34.91 AM",
+    "message_type": "tip",
+    "message": "RTH in progress.",
+    "quads": [
+      [
+        "RTH",
+        "state",
+        "positive",
+        "in progress"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:24:35.07 AM",
+    "message_type": "tip",
+    "message": "Gimbal stuck. Check whether gimbal lock is removed and make sure gimbal can rotate freely.",
+    "quads": [
+      [
+        "Gimbal",
+        "component",
+        "negative",
+        "stuck"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:24:35.27 AM",
+    "message_type": "tip",
+    "message": "RC signal weak. Avoid blocking antennas and adjust antenna orientation.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:24:36.07 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.; Press Brake button to cancel RTH.; RC signal lost. Returning to home.; Gimbal stuck. Check whether gimbal lock is removed and make sure gimbal can rotate freely.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.; RTH in progress.",
+    "quads": [
+      [
+        "RTH",
+        "action",
+        "negative",
+        "Failsafe"
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:24:36.86 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.; Press Brake button to cancel RTH.; RC signal lost. Returning to home.; Gimbal stuck. Check whether gimbal lock is removed and make sure gimbal can rotate freely.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.; RTH in progress.; RTH ascending.",
+    "quads": [
+      [
+        "RTH",
+        "action",
+        "negative",
+        "Failsafe"
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:24:37.68 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.; Press Brake button to cancel RTH.; RC signal lost. Returning to home.; Gimbal stuck. Check whether gimbal lock is removed and make sure gimbal can rotate freely.; RTH ascending.",
+    "quads": [
+      [
+        "RTH",
+        "action",
+        "negative",
+        "Failsafe"
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ],
+      [
+        "Gimbal",
+        "component",
+        "negative",
+        "stuck"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:24:38.29 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.; Controller triggered aircraft to descend. Auto RTH canceled.; RC signal lost. Returning to home.; Gimbal stuck. Check whether gimbal lock is removed and make sure gimbal can rotate freely.; RTH ascending.",
+    "quads": [
+      [
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:24:38.70 AM",
+    "message_type": "tip",
+    "message": "Flight mode changed to P-GPS (Brake).",
+    "quads": [
+      [
+        "Flight mode",
+        "state",
+        "positive",
+        "changed to P-GPS"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:24:39.67 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.; Controller triggered aircraft to descend. Auto RTH canceled.; RC signal lost. Returning to home.; Gimbal stuck. Check whether gimbal lock is removed and make sure gimbal can rotate freely.",
+    "quads": [
+      [
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:24:40.27 AM",
+    "message_type": "tip",
+    "message": "Gimbal auto check failed.",
+    "quads": [
+      [
+        "Gimbal auto check",
+        "feature",
+        "negative",
+        "failed"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:24:41.06 AM",
+    "message_type": "tip",
+    "message": "RC signal lost. Aircraft will follow preset action for lost signal.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:24:42.29 AM",
+    "message_type": "tip",
+    "message": "RC signal lost.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:24:43.11 AM",
+    "message_type": "tip",
+    "message": "Gimbal auto check failed.",
+    "quads": [
+      [
+        "Gimbal auto check",
+        "feature",
+        "negative",
+        "failed"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:24:43.47 AM",
+    "message_type": "tip",
+    "message": "RC signal weak.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:24:44.07 AM",
+    "message_type": "tip",
+    "message": "Gimbal auto check failed.",
+    "quads": [
+      [
+        "Gimbal auto check",
+        "feature",
+        "negative",
+        "failed"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:24:45.06 AM",
+    "message_type": "tip",
+    "message": "Gimbal auto check failed.",
+    "quads": [
+      [
+        "Gimbal auto check",
+        "feature",
+        "negative",
+        "failed"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:25:00.27 AM",
+    "message_type": "tip",
+    "message": "Gimbal auto check failed.; Press Brake button to cancel RTH.; Gimbal stuck. Check whether gimbal lock is removed and make sure gimbal can rotate freely.; RTH in progress.; Flight mode changed to Go Home.",
+    "quads": [
+      [
+        "Gimbal auto check",
+        "feature",
+        "negative",
+        "failed"
+      ],
+      [
+        "Gimbal",
+        "component",
+        "negative",
+        "stuck"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:25:03.87 AM",
+    "message_type": "tip",
+    "message": "RTH ascending.",
+    "quads": [
+      [
+        "RTH",
+        "state",
+        "positive",
+        "ascending"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:25:04.66 AM",
+    "message_type": "tip",
+    "message": "Gimbal auto check failed.; Press Brake button to cancel RTH.; Gimbal stuck. Check whether gimbal lock is removed and make sure gimbal can rotate freely.; RTH ascending.; RTH in progress.",
+    "quads": [
+      [
+        "Gimbal auto check",
+        "feature",
+        "negative",
+        "failed"
+      ],
+      [
+        "Gimbal",
+        "component",
+        "negative",
+        "stuck"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:25:10.87 AM",
+    "message_type": "tip",
+    "message": "Gimbal auto check failed.; Press Brake button to cancel RTH.; Gimbal stuck. Check whether gimbal lock is removed and make sure gimbal can rotate freely.; RTH in progress.; RTH ascending.",
+    "quads": [
+      [
+        "Gimbal auto check",
+        "feature",
+        "negative",
+        "failed"
+      ],
+      [
+        "Gimbal",
+        "component",
+        "negative",
+        "stuck"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:25:11.67 AM",
+    "message_type": "tip",
+    "message": "Gimbal auto check failed.; Press Brake button to cancel RTH.; Gimbal stuck. Check whether gimbal lock is removed and make sure gimbal can rotate freely.; RTH in progress.",
+    "quads": [
+      [
+        "Gimbal auto check",
+        "feature",
+        "negative",
+        "failed"
+      ],
+      [
+        "Gimbal",
+        "component",
+        "negative",
+        "stuck"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:26:08.66 AM",
+    "message_type": "tip",
+    "message": "Gimbal auto check failed.; Press Brake button to cancel RTH.; Gimbal stuck. Check whether gimbal lock is removed and make sure gimbal can rotate freely.; RTH in progress.; Auto landing in progress.; Press brake button to cancel landing.; Flight mode changed to Auto Landing.",
+    "quads": [
+      [
+        "Gimbal auto check",
+        "feature",
+        "negative",
+        "failed"
+      ],
+      [
+        "Gimbal",
+        "component",
+        "negative",
+        "stuck"
+      ]
+    ]
+  }
+]

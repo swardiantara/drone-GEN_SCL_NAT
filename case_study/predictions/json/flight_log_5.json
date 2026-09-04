@@ -1,0 +1,1460 @@
+[
+  {
+    "date": "6/27/2025",
+    "time": "3:27:42.37 AM",
+    "message_type": "tip",
+    "message": "Motors starting.; Flight mode changed to Starting Motors.",
+    "quads": [
+      [
+        "Motors",
+        "component",
+        "positive",
+        "starting"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:27:42.37 AM",
+    "message_type": "warning",
+    "message": "Compass error.; Compass error. Fly with caution.",
+    "quads": [
+      [
+        "Compass",
+        "component",
+        "negative",
+        "error"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:27:43.17 AM",
+    "message_type": "tip",
+    "message": "Data Recorder File Index is 88.; Set Return to Home (RTH) altitude to 100 m (328 ft).; Set maximum flight altitude to 500 m (1640 ft).",
+    "quads": [
+      [
+        "Data Recorder File Index",
+        "parameter",
+        "positive",
+        "88"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:27:43.77 AM",
+    "message_type": "tip",
+    "message": "Motors starting.; Flight mode changed to Manual Takeoff.",
+    "quads": [
+      [
+        "Motors",
+        "component",
+        "positive",
+        "starting"
+      ],
+      [
+        "Flight mode",
+        "parameter",
+        "positive",
+        "changed to Manual Takeoff"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:27:43.77 AM",
+    "message_type": "warning",
+    "message": "Compass error.",
+    "quads": [
+      [
+        "Compass",
+        "component",
+        "negative",
+        "error"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:27:51.77 AM",
+    "message_type": "tip",
+    "message": "Flight mode changed to P-GPS.",
+    "quads": [
+      [
+        "Flight mode",
+        "state",
+        "positive",
+        "changed to P-GPS"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:27:52.17 AM",
+    "message_type": "tip",
+    "message": "Home point updated. RTH altitude adjusted to 100m.",
+    "quads": [
+      [
+        "Home point",
+        "parameter",
+        "positive",
+        "updated"
+      ],
+      [
+        "RTH altitude",
+        "parameter",
+        "positive",
+        "adjusted to 100m"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:27:52.77 AM",
+    "message_type": "tip",
+    "message": "Home point updated. RTH altitude adjusted to 100m.; Downward ambient light too low. Obstacle avoidance unavailable. Fly with caution.",
+    "quads": [
+      [
+        "Home point",
+        "parameter",
+        "negative",
+        "updated"
+      ],
+      [
+        "RTH altitude",
+        "parameter",
+        "negative",
+        "adjusted 100m"
+      ],
+      [
+        "Downward ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:27:55.17 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:28:15.77 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:28:16.57 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:28:17.57 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:28:27.57 AM",
+    "message_type": "tip",
+    "message": "Aircraft braking.",
+    "quads": [
+      [
+        "Aircraft",
+        "action",
+        "positive",
+        "braking"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:28:27.97 AM",
+    "message_type": "tip",
+    "message": "Aircraft braking.; RC signal lost. Aircraft will follow preset action for lost signal.",
+    "quads": [
+      [
+        "Aircraft braking",
+        "feature",
+        "negative",
+        "lost"
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:28:29.77 AM",
+    "message_type": "tip",
+    "message": "RC signal lost.; Aircraft braking.; Gimbal pitch axis endpoint reached.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ],
+      [
+        "Aircraft",
+        "component",
+        "positive",
+        "braking"
+      ],
+      [
+        "Gimbal pitch axis endpoint",
+        "parameter",
+        "positive",
+        "reached"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:28:49.77 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:28:55.77 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:28:55.97 AM",
+    "message_type": "tip",
+    "message": "RC signal lost.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:28:56.17 AM",
+    "message_type": "tip",
+    "message": "Aircraft braking.; RC signal lost. Aircraft will follow preset action for lost signal.; Downward ambient light too low. Obstacle avoidance unavailable. Fly with caution.",
+    "quads": [
+      [
+        "Aircraft braking",
+        "feature",
+        "negative",
+        "lost"
+      ],
+      [
+        "RC signal",
+        "parameter",
+        "negative",
+        "lost"
+      ],
+      [
+        "Downward ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:28:56.77 AM",
+    "message_type": "tip",
+    "message": "RC signal lost.; Aircraft braking.; RC signal lost. Aircraft will follow preset action for lost signal.; Downward ambient light too low. Obstacle avoidance unavailable. Fly with caution.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ],
+      [
+        "Aircraft braking",
+        "feature",
+        "negative",
+        "lost"
+      ],
+      [
+        "Downward ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:28:57.77 AM",
+    "message_type": "tip",
+    "message": "RC signal lost.; Aircraft braking.; RC signal lost. Aircraft will follow preset action for lost signal.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ],
+      [
+        "Aircraft",
+        "component",
+        "negative",
+        "braking"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:28:59.17 AM",
+    "message_type": "tip",
+    "message": "RC signal lost.; Aircraft braking.; RC signal lost. Aircraft will follow preset action for lost signal.; RC signal lost. Returning to home.; Failsafe RTH.; Flight mode changed to Go Home.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ],
+      [
+        "Aircraft",
+        "component",
+        "negative",
+        "braking"
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:29:02.77 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.",
+    "quads": [
+      [
+        "Failsafe",
+        "action",
+        "negative",
+        "RTH"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:29:10.97 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.",
+    "quads": [
+      [
+        "Failsafe",
+        "action",
+        "negative",
+        "RTH"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:29:15.77 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.",
+    "quads": [
+      [
+        "Failsafe",
+        "action",
+        "negative",
+        "RTH"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:29:17.77 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.",
+    "quads": [
+      [
+        "Failsafe",
+        "action",
+        "negative",
+        "RTH"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:29:18.57 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.",
+    "quads": [
+      [
+        "Failsafe",
+        "action",
+        "negative",
+        "RTH"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:29:19.97 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.; Press Brake button to cancel RTH.; RC signal lost. Returning to home.; RTH in progress.",
+    "quads": [
+      [
+        "RTH",
+        "action",
+        "negative",
+        "Failsafe"
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:29:20.77 AM",
+    "message_type": "tip",
+    "message": "RTH ascending.",
+    "quads": [
+      [
+        "RTH",
+        "state",
+        "positive",
+        "ascending"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:29:21.57 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.; Press Brake button to cancel RTH.; RC signal lost. Returning to home.; RTH ascending.",
+    "quads": [
+      [
+        "RTH",
+        "action",
+        "negative",
+        "Failsafe"
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:29:21.97 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.; Press Brake button to cancel RTH.; RC signal lost. Returning to home.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.; RTH ascending.",
+    "quads": [
+      [
+        "RTH",
+        "action",
+        "negative",
+        "Failsafe"
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ],
+      [
+        "RTH",
+        "feature",
+        "negative",
+        "ascending"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:29:23.97 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.; Press Brake button to cancel RTH.; RC signal lost. Returning to home.; RTH ascending.",
+    "quads": [
+      [
+        "RTH",
+        "action",
+        "negative",
+        "Failsafe"
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:29:26.37 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.; Controller triggered aircraft to descend. Auto RTH canceled.; RC signal lost. Returning to home.; RTH ascending.",
+    "quads": [
+      [
+        "RTH",
+        "action",
+        "negative",
+        "Failsafe"
+      ],
+      [
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:29:27.17 AM",
+    "message_type": "tip",
+    "message": "Flight mode changed to P-GPS.",
+    "quads": [
+      [
+        "Flight mode",
+        "state",
+        "positive",
+        "changed to P-GPS"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:29:28.17 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.; Controller triggered aircraft to descend. Auto RTH canceled.; RC signal lost. Returning to home.; RTH ascending.",
+    "quads": [
+      [
+        "RTH",
+        "action",
+        "negative",
+        "Failsafe"
+      ],
+      [
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:29:28.57 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.; Controller triggered aircraft to descend. Auto RTH canceled.; RC signal lost. Returning to home.",
+    "quads": [
+      [
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "Auto RTH",
+        "feature",
+        "negative",
+        "canceled"
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:29:29.97 AM",
+    "message_type": "tip",
+    "message": "Aircraft braking.; RC signal lost. Aircraft will follow preset action for lost signal.",
+    "quads": [
+      [
+        "Aircraft braking",
+        "feature",
+        "negative",
+        "lost"
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:29:31.77 AM",
+    "message_type": "tip",
+    "message": "RC signal lost.; Aircraft braking.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ],
+      [
+        "Aircraft",
+        "component",
+        "negative",
+        "braking"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:29:38.57 AM",
+    "message_type": "tip",
+    "message": "Aircraft braking.",
+    "quads": [
+      [
+        "Aircraft",
+        "action",
+        "positive",
+        "braking"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:29:42.97 AM",
+    "message_type": "tip",
+    "message": "RC signal lost.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:29:52.97 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:29:56.97 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:29:57.77 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:29:58.77 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:30:03.97 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:30:08.97 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:30:09.77 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:30:10.77 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:30:35.97 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:30:36.97 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:30:38.97 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:30:41.97 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:30:44.97 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:30:45.97 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:30:46.77 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:30:47.77 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:30:49.97 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:30:50.97 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:30:52.97 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:30:55.97 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:30:58.97 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:31:01.97 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:31:02.97 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:31:03.77 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:31:04.77 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:31:15.97 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:31:16.97 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:31:18.97 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:31:21.97 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:31:24.97 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:31:26.97 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.; Flight mode changed to Confirm Landing.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:31:27.97 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:31:28.77 AM",
+    "message_type": "tip",
+    "message": "Ambient light too low. Obstacle avoidance unavailable.",
+    "quads": [
+      [
+        "Ambient light",
+        "parameter",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "feature",
+        "negative",
+        "unavailable"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:31:28.97 AM",
+    "message_type": "tip",
+    "message": "Auto landing in progress.",
+    "quads": [
+      [
+        "Auto landing",
+        "action",
+        "positive",
+        "in progress"
+      ]
+    ]
+  },
+  {
+    "date": "6/27/2025",
+    "time": "3:31:29.77 AM",
+    "message_type": "tip",
+    "message": "Auto landing in progress.",
+    "quads": [
+      [
+        "Auto landing",
+        "action",
+        "positive",
+        "in progress"
+      ]
+    ]
+  }
+]

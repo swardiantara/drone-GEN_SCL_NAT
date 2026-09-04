@@ -1,0 +1,352 @@
+[
+  {
+    "date": "11/10/2024",
+    "time": "3:09:29.82 AM",
+    "message_type": "tip",
+    "message": "Motors starting.; Flight mode changed to P-GPS.",
+    "quads": [
+      [
+        "Motors",
+        "component",
+        "positive",
+        "starting"
+      ],
+      [
+        "Flight mode",
+        "parameter",
+        "positive",
+        "changed to P-GPS"
+      ]
+    ]
+  },
+  {
+    "date": "11/10/2024",
+    "time": "3:09:30.02 AM",
+    "message_type": "tip",
+    "message": "Data Recorder File Index is 80.; Set Return to Home (RTH) altitude to 100 m (328 ft).; Set maximum flight altitude to 500 m (1640 ft).; Flight mode changed to Starting Motors.",
+    "quads": [
+      [
+        "Data Recorder File Index",
+        "parameter",
+        "positive",
+        "80"
+      ]
+    ]
+  },
+  {
+    "date": "11/10/2024",
+    "time": "3:09:31.42 AM",
+    "message_type": "tip",
+    "message": "Flight mode changed to Manual Takeoff.",
+    "quads": [
+      [
+        "Flight mode",
+        "state",
+        "positive",
+        "changed to Manual Takeoff"
+      ]
+    ]
+  },
+  {
+    "date": "11/10/2024",
+    "time": "3:09:35.42 AM",
+    "message_type": "tip",
+    "message": "Flight mode changed to P-GPS.",
+    "quads": [
+      [
+        "Flight mode",
+        "state",
+        "positive",
+        "changed to P-GPS"
+      ]
+    ]
+  },
+  {
+    "date": "11/10/2024",
+    "time": "3:09:36.02 AM",
+    "message_type": "tip",
+    "message": "Home point updated.",
+    "quads": [
+      [
+        "Home point",
+        "parameter",
+        "positive",
+        "updated"
+      ]
+    ]
+  },
+  {
+    "date": "11/10/2024",
+    "time": "3:09:48.82 AM",
+    "message_type": "tip",
+    "message": "Gimbal pitch axis endpoint reached.",
+    "quads": [
+      [
+        "Gimbal pitch axis endpoint",
+        "parameter",
+        "positive",
+        "reached"
+      ]
+    ]
+  },
+  {
+    "date": "11/10/2024",
+    "time": "3:09:51.62 AM",
+    "message_type": "tip",
+    "message": "Gimbal pitch axis endpoint reached.",
+    "quads": [
+      [
+        "Gimbal pitch axis endpoint",
+        "parameter",
+        "positive",
+        "reached"
+      ]
+    ]
+  },
+  {
+    "date": "11/10/2024",
+    "time": "3:10:21.02 AM",
+    "message_type": "tip",
+    "message": "Image transmission signal weak. Adjust antennas and make sure they are perpendicular to flight direction of aircraft.",
+    "quads": [
+      [
+        "Image transmission signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "11/10/2024",
+    "time": "3:10:27.82 AM",
+    "message_type": "tip",
+    "message": "Image transmission signal weak.; Aircraft braking.; Image transmission signal weak. Adjust antennas and make sure they are perpendicular to flight direction of aircraft.",
+    "quads": [
+      [
+        "Image transmission signal",
+        "feature",
+        "negative",
+        "weak"
+      ],
+      [
+        "Aircraft",
+        "component",
+        "negative",
+        "braking"
+      ]
+    ]
+  },
+  {
+    "date": "11/10/2024",
+    "time": "3:10:30.82 AM",
+    "message_type": "tip",
+    "message": "Image transmission signal weak.; Image transmission signal weak. Adjust antennas and make sure they are perpendicular to flight direction of aircraft.",
+    "quads": [
+      [
+        "Image transmission signal",
+        "feature",
+        "negative",
+        "weak"
+      ],
+      [
+        "Image transmission signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "11/10/2024",
+    "time": "3:10:38.62 AM",
+    "message_type": "tip",
+    "message": "Image transmission signal weak.; Aircraft braking.; Image transmission signal weak. Adjust antennas and make sure they are perpendicular to flight direction of aircraft.",
+    "quads": [
+      [
+        "Image transmission signal",
+        "feature",
+        "negative",
+        "weak"
+      ],
+      [
+        "Aircraft",
+        "component",
+        "negative",
+        "braking"
+      ]
+    ]
+  },
+  {
+    "date": "11/10/2024",
+    "time": "3:10:38.82 AM",
+    "message_type": "tip",
+    "message": "RC signal lost.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ]
+    ]
+  },
+  {
+    "date": "11/10/2024",
+    "time": "3:10:40.62 AM",
+    "message_type": "tip",
+    "message": "RC signal lost.; Aircraft braking.; Image transmission signal weak. Adjust antennas and make sure they are perpendicular to flight direction of aircraft.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ],
+      [
+        "Aircraft braking",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "11/10/2024",
+    "time": "3:10:53.82 AM",
+    "message_type": "tip",
+    "message": "Image transmission signal weak.",
+    "quads": [
+      [
+        "Image transmission signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "11/10/2024",
+    "time": "3:10:57.02 AM",
+    "message_type": "tip",
+    "message": "Image transmission signal weak. Adjust antennas and make sure they are perpendicular to flight direction of aircraft.",
+    "quads": [
+      [
+        "Image transmission signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "11/10/2024",
+    "time": "3:11:01.82 AM",
+    "message_type": "tip",
+    "message": "Image transmission signal weak.",
+    "quads": [
+      [
+        "Image transmission signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "11/10/2024",
+    "time": "3:13:12.42 AM",
+    "message_type": "tip",
+    "message": "Aircraft braking.",
+    "quads": [
+      [
+        "Aircraft",
+        "action",
+        "positive",
+        "braking"
+      ]
+    ]
+  },
+  {
+    "date": "11/10/2024",
+    "time": "3:13:12.82 AM",
+    "message_type": "tip",
+    "message": "Aircraft braking.",
+    "quads": [
+      [
+        "Aircraft",
+        "action",
+        "positive",
+        "braking"
+      ]
+    ]
+  },
+  {
+    "date": "11/10/2024",
+    "time": "3:13:14.22 AM",
+    "message_type": "tip",
+    "message": "Aircraft braking.; Auto landing in progress.; Flight mode changed to Auto Landing.",
+    "quads": [
+      [
+        "Aircraft",
+        "component",
+        "negative",
+        "braking"
+      ],
+      [
+        "Auto landing",
+        "action",
+        "negative",
+        "in progress"
+      ],
+      [
+        "Flight mode",
+        "state",
+        "positive",
+        "changed to Auto Landing"
+      ]
+    ]
+  },
+  {
+    "date": "11/10/2024",
+    "time": "3:13:15.82 AM",
+    "message_type": "tip",
+    "message": "Auto landing in progress.; Make sure the area under the aircraft is safe for landing. Push throttle down to use force landing.",
+    "quads": [
+      [
+        "Auto landing",
+        "action",
+        "positive",
+        "in progress"
+      ]
+    ]
+  },
+  {
+    "date": "11/10/2024",
+    "time": "3:13:41.82 AM",
+    "message_type": "tip",
+    "message": "Auto landing in progress.; Make sure the area under the aircraft is safe for landing. Push throttle down to use force landing.",
+    "quads": [
+      [
+        "Auto landing",
+        "action",
+        "positive",
+        "in progress"
+      ]
+    ]
+  },
+  {
+    "date": "11/10/2024",
+    "time": "3:13:52.92 AM",
+    "message_type": "tip",
+    "message": "Flight mode changed to P-GPS.",
+    "quads": [
+      [
+        "Flight mode",
+        "state",
+        "positive",
+        "changed to P-GPS"
+      ]
+    ]
+  }
+]

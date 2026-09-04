@@ -1,0 +1,2338 @@
+[
+  {
+    "date": "5/12/2025",
+    "time": "8:01:12.62 AM",
+    "message_type": "tip",
+    "message": "Motors starting.; Flight mode changed to Starting Motors.",
+    "quads": [
+      [
+        "Motors",
+        "component",
+        "positive",
+        "starting"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:01:13.42 AM",
+    "message_type": "tip",
+    "message": "Data Recorder File Index is 83.; Set Return to Home (RTH) altitude to 100 m (328 ft).; Set maximum flight altitude to 500 m (1640 ft).",
+    "quads": [
+      [
+        "Data Recorder File Index",
+        "parameter",
+        "positive",
+        "83"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:01:14.22 AM",
+    "message_type": "tip",
+    "message": "Flight mode changed to Manual Takeoff.",
+    "quads": [
+      [
+        "Flight mode",
+        "state",
+        "positive",
+        "changed to Manual Takeoff"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:01:16.42 AM",
+    "message_type": "tip",
+    "message": "Home point updated.; Flight mode changed to P-GPS.",
+    "quads": [
+      [
+        "Home point",
+        "parameter",
+        "positive",
+        "updated"
+      ],
+      [
+        "Flight mode",
+        "state",
+        "positive",
+        "changed to P-GPS"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:01:50.02 AM",
+    "message_type": "tip",
+    "message": "Image transmission signal weak.",
+    "quads": [
+      [
+        "Image transmission signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:01:51.02 AM",
+    "message_type": "tip",
+    "message": "Image transmission signal weak.; Aircraft braking.; Image transmission signal weak. Adjust antennas and make sure they are perpendicular to flight direction of aircraft.",
+    "quads": [
+      [
+        "Image transmission signal",
+        "feature",
+        "negative",
+        "weak"
+      ],
+      [
+        "Aircraft",
+        "component",
+        "negative",
+        "braking"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:01:51.22 AM",
+    "message_type": "tip",
+    "message": "RC signal lost.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:01:54.02 AM",
+    "message_type": "tip",
+    "message": "RC signal lost.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:01:54.62 AM",
+    "message_type": "tip",
+    "message": "No image transmission. RTH.; Press Brake button to cancel RTH.; No image transmission. Aircraft returning to home.; Image transmission signal weak. Adjust antennas and make sure they are perpendicular to flight direction of aircraft.; Flight mode changed to Go Home.",
+    "quads": [
+      [
+        "image transmission",
+        "feature",
+        "negative",
+        "No"
+      ],
+      [
+        "Aircraft",
+        "component",
+        "negative",
+        "returning to home"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:01:55.62 AM",
+    "message_type": "tip",
+    "message": "No image transmission. RTH.; Press Brake button to cancel RTH.; RC signal lost.; No image transmission. Aircraft returning to home.; Image transmission signal weak. Adjust antennas and make sure they are perpendicular to flight direction of aircraft.; RTH in progress.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ],
+      [
+        "Aircraft",
+        "component",
+        "negative",
+        "returning to home"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:01:56.02 AM",
+    "message_type": "tip",
+    "message": "No image transmission. RTH.; Press Brake button to cancel RTH.; No image transmission. Aircraft returning to home.; Image transmission signal weak. Adjust antennas and make sure they are perpendicular to flight direction of aircraft.; RTH in progress.",
+    "quads": [
+      [
+        "image transmission",
+        "feature",
+        "negative",
+        "No"
+      ],
+      [
+        "Aircraft",
+        "component",
+        "negative",
+        "returning to home"
+      ],
+      [
+        "Image transmission signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:01:58.42 AM",
+    "message_type": "tip",
+    "message": "No image transmission. RTH.; Press Brake button to cancel RTH.; No image transmission. Aircraft returning to home.; Image transmission signal weak. Adjust antennas and make sure they are perpendicular to flight direction of aircraft.; RTH in progress.",
+    "quads": [
+      [
+        "image transmission",
+        "feature",
+        "negative",
+        "No"
+      ],
+      [
+        "Aircraft",
+        "component",
+        "negative",
+        "returning to home"
+      ],
+      [
+        "Image transmission signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:01:59.62 AM",
+    "message_type": "tip",
+    "message": "RTH ascending.; Controller triggered aircraft to descend. Auto RTH canceled.",
+    "quads": [
+      [
+        "RTH",
+        "state",
+        "positive",
+        "ascending"
+      ],
+      [
+        "",
+        "",
+        "",
+        ""
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:02:00.42 AM",
+    "message_type": "tip",
+    "message": "Flight mode changed to P-GPS.",
+    "quads": [
+      [
+        "Flight mode",
+        "state",
+        "positive",
+        "changed to P-GPS"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:02:12.02 AM",
+    "message_type": "tip",
+    "message": "RC signal weak.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:02:12.82 AM",
+    "message_type": "tip",
+    "message": "RC signal weak.; Image transmission signal weak.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "weak"
+      ],
+      [
+        "Image transmission signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:02:14.02 AM",
+    "message_type": "tip",
+    "message": "Image transmission signal weak.",
+    "quads": [
+      [
+        "Image transmission signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:02:15.82 AM",
+    "message_type": "tip",
+    "message": "Image transmission signal weak.",
+    "quads": [
+      [
+        "Image transmission signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:02:23.02 AM",
+    "message_type": "tip",
+    "message": "Image transmission signal weak.",
+    "quads": [
+      [
+        "Image transmission signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:02:40.02 AM",
+    "message_type": "tip",
+    "message": "Image transmission signal weak.; RC signal weak.",
+    "quads": [
+      [
+        "Image transmission signal",
+        "feature",
+        "negative",
+        "weak"
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:02:44.05 AM",
+    "message_type": "tip",
+    "message": "Image transmission signal weak.",
+    "quads": [
+      [
+        "Image transmission signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:02:47.82 AM",
+    "message_type": "tip",
+    "message": "Image transmission signal weak.; Aircraft braking.; Image transmission signal weak. Adjust antennas and make sure they are perpendicular to flight direction of aircraft.",
+    "quads": [
+      [
+        "Image transmission signal",
+        "feature",
+        "negative",
+        "weak"
+      ],
+      [
+        "Aircraft",
+        "component",
+        "negative",
+        "braking"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:02:48.02 AM",
+    "message_type": "tip",
+    "message": "RC signal weak. Avoid blocking antennas and adjust antenna orientation.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:02:53.22 AM",
+    "message_type": "tip",
+    "message": "RC signal lost.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:02:59.82 AM",
+    "message_type": "tip",
+    "message": "Image transmission signal weak.",
+    "quads": [
+      [
+        "Image transmission signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:03:11.02 AM",
+    "message_type": "tip",
+    "message": "Image transmission signal weak.",
+    "quads": [
+      [
+        "Image transmission signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:03:11.82 AM",
+    "message_type": "tip",
+    "message": "Image transmission signal weak.; Aircraft braking.; Image transmission signal weak. Adjust antennas and make sure they are perpendicular to flight direction of aircraft.",
+    "quads": [
+      [
+        "Image transmission signal",
+        "feature",
+        "negative",
+        "weak"
+      ],
+      [
+        "Aircraft",
+        "component",
+        "negative",
+        "braking"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:03:14.82 AM",
+    "message_type": "tip",
+    "message": "Image transmission signal weak.",
+    "quads": [
+      [
+        "Image transmission signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:03:15.42 AM",
+    "message_type": "tip",
+    "message": "No image transmission. RTH.; Press Brake button to cancel RTH.; No image transmission. Aircraft returning to home.; Image transmission signal weak. Adjust antennas and make sure they are perpendicular to flight direction of aircraft.; Flight mode changed to Go Home.",
+    "quads": [
+      [
+        "image transmission",
+        "feature",
+        "negative",
+        "No"
+      ],
+      [
+        "Aircraft",
+        "component",
+        "negative",
+        "returning to home"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:03:15.62 AM",
+    "message_type": "tip",
+    "message": "Original route RTH.",
+    "quads": [
+      [
+        "Original route",
+        "parameter",
+        "positive",
+        "RTH"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:03:16.62 AM",
+    "message_type": "tip",
+    "message": "RTH in progress.",
+    "quads": [
+      [
+        "RTH",
+        "state",
+        "positive",
+        "in progress"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:03:17.42 AM",
+    "message_type": "tip",
+    "message": "No image transmission. RTH.; Press Brake button to cancel RTH.; No image transmission. Aircraft returning to home.; Image transmission signal weak. Adjust antennas and make sure they are perpendicular to flight direction of aircraft.; RTH in progress.",
+    "quads": [
+      [
+        "image transmission",
+        "feature",
+        "negative",
+        "No"
+      ],
+      [
+        "Aircraft",
+        "component",
+        "negative",
+        "returning to home"
+      ],
+      [
+        "Image transmission signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:03:18.42 AM",
+    "message_type": "tip",
+    "message": "No image transmission. RTH.; Press Brake button to cancel RTH.; No image transmission. Aircraft returning to home.; Image transmission signal weak. Adjust antennas and make sure they are perpendicular to flight direction of aircraft.; RTH in progress.",
+    "quads": [
+      [
+        "image transmission",
+        "feature",
+        "negative",
+        "No"
+      ],
+      [
+        "Aircraft",
+        "component",
+        "negative",
+        "returning to home"
+      ],
+      [
+        "Image transmission signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:03:19.82 AM",
+    "message_type": "tip",
+    "message": "Controller triggered aircraft to descend. Auto RTH canceled.",
+    "quads": [
+      [
+        "",
+        "",
+        "",
+        ""
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:03:20.62 AM",
+    "message_type": "tip",
+    "message": "RTH ascending.",
+    "quads": [
+      [
+        "RTH",
+        "state",
+        "positive",
+        "ascending"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:03:21.02 AM",
+    "message_type": "tip",
+    "message": "Flight mode changed to P-GPS.",
+    "quads": [
+      [
+        "Flight mode",
+        "state",
+        "positive",
+        "changed to P-GPS"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:03:25.02 AM",
+    "message_type": "tip",
+    "message": "Image transmission signal weak.",
+    "quads": [
+      [
+        "Image transmission signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:03:25.42 AM",
+    "message_type": "tip",
+    "message": "Aircraft braking.; Image transmission signal weak. Adjust antennas and make sure they are perpendicular to flight direction of aircraft.",
+    "quads": [
+      [
+        "Aircraft",
+        "component",
+        "negative",
+        "braking"
+      ],
+      [
+        "Image transmission signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:03:27.22 AM",
+    "message_type": "tip",
+    "message": "RC signal lost.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:03:29.62 AM",
+    "message_type": "tip",
+    "message": "RC signal lost.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:03:30.02 AM",
+    "message_type": "tip",
+    "message": "Image transmission signal weak.",
+    "quads": [
+      [
+        "Image transmission signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:03:34.42 AM",
+    "message_type": "tip",
+    "message": "Image transmission signal weak.; RC signal lost.",
+    "quads": [
+      [
+        "Image transmission signal",
+        "feature",
+        "negative",
+        "weak"
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:03:37.42 AM",
+    "message_type": "tip",
+    "message": "RC signal lost.; No image transmission. RTH.; Press Brake button to cancel RTH.; No image transmission. Aircraft returning to home.; Image transmission signal weak. Adjust antennas and make sure they are perpendicular to flight direction of aircraft.; Flight mode changed to Go Home.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ],
+      [
+        "RTH",
+        "action",
+        "negative",
+        "No"
+      ],
+      [
+        "Aircraft",
+        "feature",
+        "negative",
+        "returning to home"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:03:38.62 AM",
+    "message_type": "tip",
+    "message": "No image transmission. RTH.; Press Brake button to cancel RTH.; RC signal lost.; No image transmission. Aircraft returning to home.; Image transmission signal weak. Adjust antennas and make sure they are perpendicular to flight direction of aircraft.; RTH in progress.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ],
+      [
+        "Aircraft",
+        "component",
+        "negative",
+        "returning to home"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:03:41.62 AM",
+    "message_type": "tip",
+    "message": "RTH ascending.; Controller triggered aircraft to descend. Auto RTH canceled.",
+    "quads": [
+      [
+        "RTH",
+        "state",
+        "positive",
+        "ascending"
+      ],
+      [
+        "",
+        "",
+        "",
+        ""
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:03:42.42 AM",
+    "message_type": "tip",
+    "message": "No image transmission. RTH.; Controller triggered aircraft to descend. Auto RTH canceled.; No image transmission. Aircraft returning to home.; RTH ascending.; Flight mode changed to P-GPS.",
+    "quads": [
+      [
+        "RTH",
+        "feature",
+        "negative",
+        "triggered"
+      ],
+      [
+        "Auto RTH",
+        "feature",
+        "negative",
+        "canceled"
+      ],
+      [
+        "Aircraft",
+        "component",
+        "positive",
+        "returning to home"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:03:43.42 AM",
+    "message_type": "tip",
+    "message": "No image transmission. RTH.; Controller triggered aircraft to descend. Auto RTH canceled.; No image transmission. Aircraft returning to home.",
+    "quads": [
+      [
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "Auto RTH",
+        "feature",
+        "negative",
+        "canceled"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:03:45.02 AM",
+    "message_type": "tip",
+    "message": "Image transmission signal weak.",
+    "quads": [
+      [
+        "Image transmission signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:03:47.62 AM",
+    "message_type": "tip",
+    "message": "Image transmission signal weak.; Aircraft braking.; Image transmission signal weak. Adjust antennas and make sure they are perpendicular to flight direction of aircraft.",
+    "quads": [
+      [
+        "Image transmission signal",
+        "feature",
+        "negative",
+        "weak"
+      ],
+      [
+        "Aircraft",
+        "component",
+        "negative",
+        "braking"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:03:50.62 AM",
+    "message_type": "tip",
+    "message": "Image transmission signal weak.",
+    "quads": [
+      [
+        "Image transmission signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:03:55.82 AM",
+    "message_type": "tip",
+    "message": "Image transmission signal weak.",
+    "quads": [
+      [
+        "Image transmission signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:04:54.02 AM",
+    "message_type": "tip",
+    "message": "Image transmission signal weak.",
+    "quads": [
+      [
+        "Image transmission signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:04:57.82 AM",
+    "message_type": "tip",
+    "message": "Image transmission signal weak.",
+    "quads": [
+      [
+        "Image transmission signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:05:18.02 AM",
+    "message_type": "tip",
+    "message": "Image transmission signal weak.",
+    "quads": [
+      [
+        "Image transmission signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:05:19.82 AM",
+    "message_type": "tip",
+    "message": "Image transmission signal weak.",
+    "quads": [
+      [
+        "Image transmission signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:05:22.82 AM",
+    "message_type": "tip",
+    "message": "Aircraft braking.",
+    "quads": [
+      [
+        "Aircraft",
+        "action",
+        "positive",
+        "braking"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:05:23.02 AM",
+    "message_type": "tip",
+    "message": "RC signal weak. Avoid blocking antennas and adjust antenna orientation.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:05:25.02 AM",
+    "message_type": "tip",
+    "message": "RC signal weak.; Aircraft braking.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "weak"
+      ],
+      [
+        "Aircraft",
+        "component",
+        "negative",
+        "braking"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:05:25.22 AM",
+    "message_type": "tip",
+    "message": "RC signal lost.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:05:25.82 AM",
+    "message_type": "tip",
+    "message": "RC signal lost.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:05:28.02 AM",
+    "message_type": "tip",
+    "message": "RC signal lost.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:05:31.02 AM",
+    "message_type": "tip",
+    "message": "RC signal weak.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:05:32.82 AM",
+    "message_type": "tip",
+    "message": "RC signal weak.; Aircraft braking.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "weak"
+      ],
+      [
+        "Aircraft",
+        "component",
+        "negative",
+        "braking"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:05:33.22 AM",
+    "message_type": "tip",
+    "message": "RC signal weak.; Aircraft braking.; RC signal lost. Aircraft will follow preset action for lost signal.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "weak"
+      ],
+      [
+        "Aircraft",
+        "component",
+        "negative",
+        "braking"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:05:35.82 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.; Flight mode changed to Go Home.",
+    "quads": [
+      [
+        "RTH",
+        "action",
+        "negative",
+        "Failsafe"
+      ],
+      [
+        "Flight mode",
+        "parameter",
+        "positive",
+        "changed to Go Home"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:05:45.02 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.; Press Brake button to cancel RTH.; RC signal lost. Returning to home.; Original route RTH.",
+    "quads": [
+      [
+        "RTH",
+        "action",
+        "negative",
+        "Failsafe"
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:05:46.42 AM",
+    "message_type": "warning",
+    "message": "Downlink Lost.",
+    "quads": [
+      [
+        "Downlink",
+        "feature",
+        "negative",
+        "Lost"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:05:47.62 AM",
+    "message_type": "tip",
+    "message": "Downlink Restored (after 0m 1.2s).",
+    "quads": [
+      [
+        "Downlink",
+        "feature",
+        "positive",
+        "Restored"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:05:47.82 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.; Press Brake button to cancel RTH.; RC signal lost. Returning to home.; Image transmission signal weak. Adjust antennas and make sure they are perpendicular to flight direction of aircraft.; Original route RTH.",
+    "quads": [
+      [
+        "RTH",
+        "action",
+        "negative",
+        "Failsafe"
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ],
+      [
+        "Image transmission signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:05:48.02 AM",
+    "message_type": "tip",
+    "message": "RC signal weak. Avoid blocking antennas and adjust antenna orientation.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:05:49.42 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.",
+    "quads": [
+      [
+        "Failsafe",
+        "action",
+        "negative",
+        "RTH"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:05:49.82 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.",
+    "quads": [
+      [
+        "Failsafe",
+        "action",
+        "negative",
+        "RTH"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:05:53.62 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.; Image transmission signal weak.; RTH in progress.",
+    "quads": [
+      [
+        "RTH",
+        "feature",
+        "negative",
+        "Failsafe"
+      ],
+      [
+        "Image transmission signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:05:53.62 AM",
+    "message_type": "warning",
+    "message": "Downlink Lost.",
+    "quads": [
+      [
+        "Downlink",
+        "feature",
+        "negative",
+        "Lost"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:05:59.82 AM",
+    "message_type": "tip",
+    "message": "Press Brake button to cancel RTH.; RC signal lost. Returning to home.; Downlink Restored (after 0m 6.2s).",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ],
+      [
+        "Downlink",
+        "feature",
+        "positive",
+        "Restored"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:06:00.02 AM",
+    "message_type": "tip",
+    "message": "RC signal weak. Avoid blocking antennas and adjust antenna orientation.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:06:03.02 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.; Press Brake button to cancel RTH.; RC signal lost. Returning to home.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.; RTH in progress.",
+    "quads": [
+      [
+        "RTH",
+        "action",
+        "negative",
+        "Failsafe"
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:06:04.02 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.; Press Brake button to cancel RTH.; RC signal lost. Returning to home.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.; RTH in progress.; Controller triggered aircraft to fly backward. Auto RTH canceled.",
+    "quads": [
+      [
+        "RTH",
+        "action",
+        "negative",
+        "Failsafe"
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ],
+      [
+        "RTH",
+        "action",
+        "negative",
+        "in progress"
+      ],
+      [
+        "Auto RTH",
+        "action",
+        "negative",
+        "canceled"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:06:04.62 AM",
+    "message_type": "tip",
+    "message": "Flight mode changed to P-GPS.",
+    "quads": [
+      [
+        "Flight mode",
+        "state",
+        "positive",
+        "changed to P-GPS"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:06:05.42 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.; Controller triggered aircraft to fly backward. Auto RTH canceled.; RC signal lost. Returning to home.",
+    "quads": [
+      [
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "Auto RTH",
+        "feature",
+        "negative",
+        "canceled"
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:06:05.82 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.; Controller triggered aircraft to fly backward. Auto RTH canceled.; RC signal lost. Returning to home.",
+    "quads": [
+      [
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "Auto RTH",
+        "feature",
+        "negative",
+        "canceled"
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:06:27.42 AM",
+    "message_type": "tip",
+    "message": "Aircraft braking.",
+    "quads": [
+      [
+        "Aircraft",
+        "action",
+        "positive",
+        "braking"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:06:28.22 AM",
+    "message_type": "tip",
+    "message": "Gimbal pitch axis endpoint reached.; Aircraft braking.",
+    "quads": [
+      [
+        "Gimbal pitch axis endpoint",
+        "parameter",
+        "positive",
+        "reached"
+      ],
+      [
+        "Aircraft",
+        "component",
+        "positive",
+        "braking"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:06:30.02 AM",
+    "message_type": "tip",
+    "message": "Gimbal pitch axis endpoint reached.; Aircraft braking.",
+    "quads": [
+      [
+        "Gimbal pitch axis endpoint",
+        "parameter",
+        "positive",
+        "reached"
+      ],
+      [
+        "Aircraft",
+        "component",
+        "positive",
+        "braking"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:06:53.02 AM",
+    "message_type": "tip",
+    "message": "Aircraft braking.",
+    "quads": [
+      [
+        "Aircraft",
+        "action",
+        "positive",
+        "braking"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:06:53.22 AM",
+    "message_type": "tip",
+    "message": "RC signal lost.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:06:55.02 AM",
+    "message_type": "tip",
+    "message": "RC signal lost.; Aircraft braking.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ],
+      [
+        "Aircraft",
+        "component",
+        "negative",
+        "braking"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:06:58.22 AM",
+    "message_type": "tip",
+    "message": "RC signal weak.; RC signal lost.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "weak"
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:07:01.82 AM",
+    "message_type": "tip",
+    "message": "Aircraft braking.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.",
+    "quads": [
+      [
+        "Aircraft",
+        "component",
+        "negative",
+        "braking"
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:07:02.22 AM",
+    "message_type": "tip",
+    "message": "RC signal lost. Aircraft will follow preset action for lost signal.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:07:04.02 AM",
+    "message_type": "tip",
+    "message": "RC signal lost.; Aircraft braking.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ],
+      [
+        "Aircraft",
+        "component",
+        "negative",
+        "braking"
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:07:05.22 AM",
+    "message_type": "tip",
+    "message": "RC signal lost. Aircraft will follow preset action for lost signal.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:07:06.22 AM",
+    "message_type": "tip",
+    "message": "RC signal lost.; Aircraft braking.; RC signal lost. Aircraft will follow preset action for lost signal.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ],
+      [
+        "Aircraft",
+        "component",
+        "negative",
+        "braking"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:07:08.02 AM",
+    "message_type": "tip",
+    "message": "RC signal lost. Returning to home.; Failsafe RTH.; Flight mode changed to Go Home.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ],
+      [
+        "",
+        "",
+        "",
+        ""
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:07:09.22 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.",
+    "quads": [
+      [
+        "Failsafe",
+        "action",
+        "negative",
+        "RTH"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:07:10.02 AM",
+    "message_type": "tip",
+    "message": "Press Brake button to cancel RTH.; RC signal lost. Returning to home.; Original route RTH.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:07:10.62 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.; Press Brake button to cancel RTH.; RC signal lost. Returning to home.; Original route RTH.; RTH in progress.",
+    "quads": [
+      [
+        "RTH",
+        "action",
+        "negative",
+        "Failsafe"
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:07:11.02 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.; Press Brake button to cancel RTH.; RC signal lost. Returning to home.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.; Original route RTH.; RTH in progress.",
+    "quads": [
+      [
+        "RTH",
+        "action",
+        "negative",
+        "Failsafe"
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ],
+      [
+        "Returning to home",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:07:15.42 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.; Press Brake button to cancel RTH.; RC signal lost. Returning to home.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.; RTH in progress.",
+    "quads": [
+      [
+        "RTH",
+        "action",
+        "negative",
+        "Failsafe"
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:07:17.22 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.; Controller triggered aircraft to fly backward. Auto RTH canceled.; RC signal lost. Returning to home.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.; RTH in progress.",
+    "quads": [
+      [
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:07:18.02 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.; Controller triggered aircraft to fly backward. Auto RTH canceled.; RC signal lost. Returning to home.; RTH in progress.",
+    "quads": [
+      [
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:07:18.22 AM",
+    "message_type": "tip",
+    "message": "Flight mode changed to P-GPS.",
+    "quads": [
+      [
+        "Flight mode",
+        "state",
+        "positive",
+        "changed to P-GPS"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:07:19.22 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.; Controller triggered aircraft to fly backward. Auto RTH canceled.; RC signal lost. Returning to home.; RTH in progress.",
+    "quads": [
+      [
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:07:20.02 AM",
+    "message_type": "tip",
+    "message": "RC signal weak. Avoid blocking antennas and adjust antenna orientation.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:07:20.22 AM",
+    "message_type": "tip",
+    "message": "RC signal lost. Aircraft will follow preset action for lost signal.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:07:22.02 AM",
+    "message_type": "tip",
+    "message": "RC signal lost.; RC signal weak.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:07:26.62 AM",
+    "message_type": "tip",
+    "message": "RC signal weak.; Aircraft braking.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "weak"
+      ],
+      [
+        "Aircraft",
+        "component",
+        "negative",
+        "braking"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:07:28.02 AM",
+    "message_type": "tip",
+    "message": "RC signal weak.; Aircraft braking.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "weak"
+      ],
+      [
+        "Aircraft",
+        "component",
+        "negative",
+        "braking"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:07:38.42 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.; Flight mode changed to Go Home.",
+    "quads": [
+      [
+        "RTH",
+        "action",
+        "negative",
+        "Failsafe"
+      ],
+      [
+        "Flight mode",
+        "parameter",
+        "positive",
+        "changed to Go Home"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:07:40.02 AM",
+    "message_type": "tip",
+    "message": "Press Brake button to cancel RTH.; RC signal lost. Returning to home.",
+    "quads": [
+      [
+        "RTH",
+        "action",
+        "negative",
+        "cancel"
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:07:41.62 AM",
+    "message_type": "tip",
+    "message": "RTH in progress.",
+    "quads": [
+      [
+        "RTH",
+        "state",
+        "positive",
+        "in progress"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:07:43.02 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.; Press Brake button to cancel RTH.; RC signal lost. Returning to home.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.; RTH in progress.",
+    "quads": [
+      [
+        "RTH",
+        "action",
+        "negative",
+        "Failsafe"
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:07:44.42 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.",
+    "quads": [
+      [
+        "Failsafe",
+        "action",
+        "negative",
+        "RTH"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:07:45.02 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.",
+    "quads": [
+      [
+        "Failsafe",
+        "action",
+        "negative",
+        "RTH"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:07:45.42 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.; Press Brake button to cancel RTH.; RC signal lost. Returning to home.; RTH in progress.",
+    "quads": [
+      [
+        "RTH",
+        "action",
+        "negative",
+        "Failsafe"
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:07:45.62 AM",
+    "message_type": "tip",
+    "message": "Controller triggered aircraft to fly backward. Auto RTH canceled.",
+    "quads": [
+      [
+        "",
+        "",
+        "",
+        ""
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:07:46.02 AM",
+    "message_type": "tip",
+    "message": "RC signal weak. Avoid blocking antennas and adjust antenna orientation.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:07:46.42 AM",
+    "message_type": "tip",
+    "message": "Flight mode changed to P-GPS.",
+    "quads": [
+      [
+        "Flight mode",
+        "state",
+        "positive",
+        "changed to P-GPS"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:07:47.42 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.; Controller triggered aircraft to fly backward. Auto RTH canceled.; RC signal lost. Returning to home.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.; RTH in progress.",
+    "quads": [
+      [
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "lost"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:07:48.02 AM",
+    "message_type": "tip",
+    "message": "Failsafe RTH.; Controller triggered aircraft to fly backward. Auto RTH canceled.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.",
+    "quads": [
+      [
+        "RTH",
+        "action",
+        "negative",
+        "Failsafe"
+      ],
+      [
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:07:48.62 AM",
+    "message_type": "tip",
+    "message": "RC signal weak.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:07:49.02 AM",
+    "message_type": "tip",
+    "message": "RC signal weak.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:07:55.22 AM",
+    "message_type": "tip",
+    "message": "Aircraft braking.",
+    "quads": [
+      [
+        "Aircraft",
+        "action",
+        "positive",
+        "braking"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:08:26.62 AM",
+    "message_type": "tip",
+    "message": "Aircraft braking.",
+    "quads": [
+      [
+        "Aircraft",
+        "action",
+        "positive",
+        "braking"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:08:32.02 AM",
+    "message_type": "tip",
+    "message": "RC signal weak.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:08:34.62 AM",
+    "message_type": "tip",
+    "message": "RC signal weak.; Aircraft braking.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "weak"
+      ],
+      [
+        "Aircraft",
+        "component",
+        "negative",
+        "braking"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:08:37.62 AM",
+    "message_type": "tip",
+    "message": "RC signal weak.; Aircraft braking.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "weak"
+      ],
+      [
+        "Aircraft",
+        "component",
+        "negative",
+        "braking"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:08:40.62 AM",
+    "message_type": "tip",
+    "message": "RC signal weak.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:08:43.62 AM",
+    "message_type": "tip",
+    "message": "RC signal weak.; Aircraft braking.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "weak"
+      ],
+      [
+        "Aircraft",
+        "component",
+        "negative",
+        "braking"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:08:46.02 AM",
+    "message_type": "tip",
+    "message": "RC signal weak.; Aircraft braking.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "weak"
+      ],
+      [
+        "Aircraft",
+        "component",
+        "negative",
+        "braking"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:08:53.02 AM",
+    "message_type": "tip",
+    "message": "RC signal weak.",
+    "quads": [
+      [
+        "RC signal",
+        "feature",
+        "negative",
+        "weak"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:09:50.42 AM",
+    "message_type": "tip",
+    "message": "Auto landing in progress.; Press brake button to cancel landing.; Flight mode changed to Auto Landing.",
+    "quads": [
+      [
+        "Auto landing",
+        "action",
+        "negative",
+        "in progress"
+      ],
+      [
+        "Flight mode",
+        "parameter",
+        "positive",
+        "changed to Auto Landing"
+      ]
+    ]
+  },
+  {
+    "date": "5/12/2025",
+    "time": "8:10:03.32 AM",
+    "message_type": "tip",
+    "message": "Flight mode changed to P-GPS.",
+    "quads": [
+      [
+        "Flight mode",
+        "state",
+        "positive",
+        "changed to P-GPS"
+      ]
+    ]
+  }
+]
