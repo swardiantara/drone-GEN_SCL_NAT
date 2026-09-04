@@ -121,6 +121,10 @@ def init_args():
                              "'electra', 'xlnet') -- must match how that checkpoint was fine-tuned.")
     parser.add_argument('--segmentation_use_cuda', action='store_true',
                         help="Run the ADFLER segmentation model on GPU.")
+    parser.add_argument('--overwrite', action='store_true',
+                        help="Bypass the resume check below and rerun even if this scenario's "
+                             "results-*.json already exists (e.g. to retrain with --save_model "
+                             "after an earlier run of the same scenario didn't save weights).")
 
     args = parser.parse_args()
 
@@ -177,7 +181,7 @@ def init_args():
     # correctly detected and skipped on resume.
     result_filename = (f'results-{args.dataset}-segmented.json' if args.use_segmentation
                         else f'results-{args.dataset}.json')
-    if os.path.exists(os.path.join(output_dir, result_filename)):
+    if os.path.exists(os.path.join(output_dir, result_filename)) and not args.overwrite:
         print(f'[RESUME] Skipping {output_dir}: already completed (found {result_filename})')
         sys.exit(0)
 
