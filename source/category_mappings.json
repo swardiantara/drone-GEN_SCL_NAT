@@ -8,12 +8,12 @@
         "gen_scl_nat": ["|", "[SSEP]", "the", "it", "NULL", "null", "THE", "IS", "positive", "neutral", "negative"]
     },
     "drone_full_mapping": [
-        ["the component", "component"],
+        ["the hardware", "hardware"],
         ["the parameter", "parameter"],
-        ["the feature", "feature"],
-        ["the action", "action"],
-        ["the state", "state"],
-        ["the issue", "issue"]
+        ["the software", "software"],
+        ["the operation", "operation"],
+        ["the communication", "communication"],
+        ["the environment", "environment"]
     ],
     "restaurant_full_mapping": [
         ["the location", "LOCATION#GENERAL"],
