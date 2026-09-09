@@ -25,7 +25,7 @@ set -uo pipefail
 
 DATASET=${DATASET:-acos_drone_binary}
 ABSA_TASK=${ABSA_TASK:-quad}
-OUTPUT_FOLDER=${OUTPUT_FOLDER:-train_outputs}
+OUTPUT_FOLDER=${OUTPUT_FOLDER:-outputs}
 MODEL_PREFIX=${MODEL_PREFIX:-drone_gen_scl_nat}
 
 # base-model scenarios to sweep (space-separated; each becomes --scenario,
