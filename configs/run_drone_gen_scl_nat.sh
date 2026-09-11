@@ -54,7 +54,7 @@ RUN_SEGMENTATION=${RUN_SEGMENTATION:-false}
 
 # same 5 seeds used across the other grid scripts in this repo (see
 # configs/train_scl_all.sh), for consistency across experiments
-SEEDS=(14298463 246773155 30288239 42511865 50995999)
+SEEDS=(14298463 246773155 30288239 42511865 50995999 67584921 78912345 89012345 90123456 99568241)
 # ablation grid: constrained decoding x segmentation, both on/off
 CD_OPTIONS=(false true)
 if [ "$RUN_SEGMENTATION" = "true" ]; then
