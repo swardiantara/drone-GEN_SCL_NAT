@@ -159,20 +159,31 @@ def init_args():
     # contributes to training (see T5FineTuner._step) -- this lets the same
     # --task (paraphrase template or gen-scl-nat template) be compared both
     # with and without contrastive learning.
-    # qc-{on,off} reflects whether --quad_count_loss is nonzero, i.e. whether
-    # the quad-count regression auxiliary loss actually contributes to
-    # training (see T5FineTuner._step / QuadCountRegressor) -- same
-    # on/off-via-nonzero-weight convention as cont-{on,off}. Appended after
-    # seg-* (rather than inserted earlier) so pre-existing seg-*/<seed>/ run
-    # folders from before this axis existed remain a valid (implicitly
-    # qc-off) path prefix; see common.py's find_run_dirs() for the matching
-    # backward-compatible scan patterns.
-    ablation_tag = os.path.join(
+    # --quad_count_loss (whether the quad-count regression auxiliary loss --
+    # see T5FineTuner._step / QuadCountRegressor -- contributes to training)
+    # is, unlike the other ablations above, encoded ASYMMETRICALLY: an extra
+    # 'qc-on' folder segment is appended only when it's actually on; when
+    # it's off (the default, 0.0), NO segment is added at all. This is
+    # deliberate, not an oversight: --quad_count_loss was added after every
+    # existing scenario had already been trained+evaluated under
+    # cont-*/cd-*/seg-*/<seed>/ (no qc segment). Encoding qc-off as its own
+    # segment (e.g. 'qc-off') would have put those *same* scenarios at a
+    # *different* path than where their completed results already sit, so
+    # the resume check below would never find them and would silently
+    # retrain+re-evaluate all of them from scratch. Appending a segment only
+    # for the new qc-on scenarios keeps every previously-completed run's path
+    # (and its resumability) exactly as it was. See common.py's
+    # find_run_dirs() for the matching scan patterns, which read qc-on from
+    # this segment when present and qc-off from --quad_count_loss in
+    # args.json directly when it's absent.
+    ablation_parts = [
         'cont-{}'.format('on' if float(args.cont_loss) > 0.0 else 'off'),
         'cd-{}'.format('on' if args.constrained_decoding else 'off'),
         'seg-{}'.format('on' if args.use_segmentation else 'off'),
-        'qc-{}'.format('on' if float(args.quad_count_loss) > 0.0 else 'off'),
-    )
+    ]
+    if float(args.quad_count_loss) > 0.0:
+        ablation_parts.append('qc-on')
+    ablation_tag = os.path.join(*ablation_parts)
 
     # TODO CLEANUP TRAINING OUTPUT FOLDER
     # the model path is the prefix
