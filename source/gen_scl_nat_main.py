@@ -26,7 +26,7 @@ import numpy as np
 import copy
 
 from torch import nn
-from torch.nn.functional import normalize
+from torch.nn.functional import normalize, mse_loss
 import torch
 from torch.utils.data import DataLoader
 from torch.nn import CrossEntropyLoss
@@ -100,6 +100,11 @@ def init_args():
     parser.add_argument("--early_stopping", type=int, default=0)
     parser.add_argument("--cont_loss", type=float, default=0.0)
     parser.add_argument("--cont_temp", type=float, default=0.1)
+    parser.add_argument("--quad_count_loss", type=float, default=0.0,
+                         help="Scaling factor for the quad-count regression auxiliary loss (MSE between "
+                              "the true number of quadruples in the example and a scalar predicted from "
+                              "the pooled encoder representation). 0.0 (default) disables it, matching "
+                              "--cont_loss's convention -- see T5FineTuner._step / QuadCountRegressor.")
     parser.add_argument('--truncate', action='store_true')
     parser.add_argument('--save_model', action='store_true')
     parser.add_argument('--constrained_decoding', action='store_true',
@@ -140,6 +145,7 @@ def init_args():
               ['lr', str(args.learning_rate)],
               ['cont_loss', str(args.cont_loss)],
               ['cont_temp', str(args.cont_temp)],
+              ['quad_count_loss', str(args.quad_count_loss)],
               ['trunc', str(args.truncate)], # whether to truncate the category labels
               ['seed', str(args.seed)]]
 
@@ -153,10 +159,19 @@ def init_args():
     # contributes to training (see T5FineTuner._step) -- this lets the same
     # --task (paraphrase template or gen-scl-nat template) be compared both
     # with and without contrastive learning.
+    # qc-{on,off} reflects whether --quad_count_loss is nonzero, i.e. whether
+    # the quad-count regression auxiliary loss actually contributes to
+    # training (see T5FineTuner._step / QuadCountRegressor) -- same
+    # on/off-via-nonzero-weight convention as cont-{on,off}. Appended after
+    # seg-* (rather than inserted earlier) so pre-existing seg-*/<seed>/ run
+    # folders from before this axis existed remain a valid (implicitly
+    # qc-off) path prefix; see common.py's find_run_dirs() for the matching
+    # backward-compatible scan patterns.
     ablation_tag = os.path.join(
         'cont-{}'.format('on' if float(args.cont_loss) > 0.0 else 'off'),
         'cd-{}'.format('on' if args.constrained_decoding else 'off'),
         'seg-{}'.format('on' if args.use_segmentation else 'off'),
+        'qc-{}'.format('on' if float(args.quad_count_loss) > 0.0 else 'off'),
     )
 
     # TODO CLEANUP TRAINING OUTPUT FOLDER
@@ -234,11 +249,32 @@ class LinearModel(nn.Module):
         dropped = self.dropout(features_summed)
         return torch.stack((self.layer_1(features_summed), self.layer_1(dropped)), 1)
 
+
+class QuadCountRegressor(nn.Module):
+    """
+    Predicts the number of quadruples in an example (a scalar regression
+    target, see get_n_quads_labels in data_utils.py) from the pooled encoder
+    representation (T5FineTuner.forward's pooled_encoder_layer -- the same
+    masked-sum-pooled, L2-normalized representation the sentiment/aspect/
+    opinion SCL heads use; T5 has no BERT-style [CLS] token, so there is no
+    literal classification-token hidden state to use instead).
+    """
+    def __init__(self, d_model=768):
+        super().__init__()
+        self.layer_1 = nn.Linear(d_model, 256)
+        self.dropout = nn.Dropout(0.1)
+        self.layer_2 = nn.Linear(256, 1)
+
+    def forward(self, pooled_encoder_layer):
+        x = self.dropout(torch.relu(self.layer_1(pooled_encoder_layer)))
+        return self.layer_2(x).squeeze(-1)
+
+
 class T5FineTuner(pl.LightningModule):
     """
     Fine tune a pre-trained T5 model
     """
-    def __init__(self, hparams, seq2seq_model, tokenizer, cont_model, op_model, as_model):
+    def __init__(self, hparams, seq2seq_model, tokenizer, cont_model, op_model, as_model, qc_model):
         super(T5FineTuner, self).__init__()
         self.hparams.update(vars(hparams))
         self.model = seq2seq_model
@@ -246,6 +282,7 @@ class T5FineTuner(pl.LightningModule):
         self.op_model = op_model
         self.as_model = as_model
         # self.cat_model = cat_model
+        self.qc_model = qc_model
         self.tokenizer = tokenizer
 
     def is_logger(self):
@@ -277,14 +314,17 @@ class T5FineTuner(pl.LightningModule):
         pooled_encoder_layer = torch.sum(masked_last_state, dim=1)
         pooled_encoder_layer = normalize(pooled_encoder_layer, p=2.0, dim=1)
 
-        return main_pred, cont_pred, op_pred, as_pred, pooled_encoder_layer
-        
+        # quad-count regression (auxiliary task, scaled by --quad_count_loss)
+        qc_pred = self.qc_model(pooled_encoder_layer)
+
+        return main_pred, cont_pred, op_pred, as_pred, pooled_encoder_layer, qc_pred
+
 
     def _step(self, batch):
         lm_labels = torch.clone(batch["target_ids"])
         lm_labels[lm_labels[:, :] == self.tokenizer.pad_token_id] = -100
 
-        outputs, cont_pred, op_pred, as_pred, pooled_encoder_layer = self(
+        outputs, cont_pred, op_pred, as_pred, pooled_encoder_layer, qc_pred = self(
             input_ids=batch["source_ids"],
             attention_mask=batch["source_mask"],
             labels=lm_labels,
@@ -312,7 +352,15 @@ class T5FineTuner(pl.LightningModule):
         op_normed = normalize(op_summed, p=2.0, dim=2)
         opinion_contrastive_loss = criterion(op_normed, opinion_labels)
         #print('op_loss:\t', opinion_contrastive_loss)
-        
+
+        # quad-count regression auxiliary loss: MSE between the predicted
+        # and true number of quadruples, scaled by --quad_count_loss (0.0
+        # makes its contribution exactly zero, same on/off convention as
+        # --cont_loss above)
+        n_quads_labels = batch['n_quads_labels']
+        quad_count_loss = self.hparams.quad_count_loss * mse_loss(qc_pred, n_quads_labels)
+
+
         """
         Uncomment this section to extract the tsne encodings/labels used for Figure 2 in paper
 
@@ -342,7 +390,9 @@ class T5FineTuner(pl.LightningModule):
         """
 
         # return original loss plus the characteristic-specific SCL losses
-        loss = outputs[0] + opinion_contrastive_loss + sentiment_contrastive_loss + aspect_contrastive_loss
+        # and the quad-count regression auxiliary loss
+        loss = (outputs[0] + opinion_contrastive_loss + sentiment_contrastive_loss
+                + aspect_contrastive_loss + quad_count_loss)
         return loss, outputs
 
     def training_step(self, batch, batch_idx):
@@ -426,6 +476,7 @@ class T5FineTuner(pl.LightningModule):
         cont_model = self.cont_model
         op_model = self.op_model
         as_model = self.as_model
+        qc_model = self.qc_model
         no_decay = ["bias", "LayerNorm.weight"]
         optimizer_grouped_parameters = [
             {
@@ -458,6 +509,14 @@ class T5FineTuner(pl.LightningModule):
             },
             {
                 "params": [p for n, p in as_model.named_parameters() if any(nd in n for nd in no_decay)],
+                "weight_decay": 0.0,
+            },
+            {
+                "params": [p for n, p in qc_model.named_parameters() if not any(nd in n for nd in no_decay)],
+                "weight_decay": self.hparams.weight_decay,
+            },
+            {
+                "params": [p for n, p in qc_model.named_parameters() if any(nd in n for nd in no_decay)],
                 "weight_decay": 0.0,
             },
         ]
@@ -766,7 +825,8 @@ if __name__ == '__main__':
         op_model = LinearModel()
         as_model = LinearModel()
         # cat_model = LinearModel()
-        model = T5FineTuner(args, seq2seq_model, tokenizer, cont_model, op_model, as_model)
+        qc_model = QuadCountRegressor()
+        model = T5FineTuner(args, seq2seq_model, tokenizer, cont_model, op_model, as_model, qc_model)
 
         # always track the best checkpoint by validation-set (multiset micro)
         # F1 -- see T5FineTuner.validation_epoch_end -- so evaluation uses the
@@ -853,7 +913,8 @@ if __name__ == '__main__':
         op_model = LinearModel()
         as_model = LinearModel()
         # cat_model = LinearModel()
-        model = T5FineTuner(args, seq2seq_model, tokenizer, cont_model, op_model, as_model)
+        qc_model = QuadCountRegressor()
+        model = T5FineTuner(args, seq2seq_model, tokenizer, cont_model, op_model, as_model, qc_model)
 
         sents, _ = read_line_examples_from_file(f'data/{args.dataset}/test.txt')
 

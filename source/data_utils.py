@@ -205,14 +205,16 @@ class GenSCLNatDataset(ABSADataset):
         sentiment_label = torch.tensor(self.contrastive_labels['sentiment'][index])
         aspect_label = torch.tensor(self.contrastive_labels['aspect'][index])
         opinion_label = torch.tensor(self.contrastive_labels['opinion'][index])
-        
+        n_quads_label = torch.tensor(self.contrastive_labels['n_quads'][index], dtype=torch.float)
+
         return {"source_ids": source_ids,
-                "source_mask": src_mask, 
+                "source_mask": src_mask,
                 "target_ids": target_ids,
                 "target_mask": target_mask,
                 'sentiment_labels': sentiment_label,
                 'opinion_labels': opinion_label,
                 'aspect_labels': aspect_label,
+                'n_quads_labels': n_quads_label,
                 }
 
     def _build_examples(self):
@@ -319,6 +321,13 @@ class GenSCLNatDataset(ABSADataset):
                 aspect_labels.append(label)
             return aspect_labels
         
+        def get_n_quads_labels(labels_in):
+            # ground-truth quadruple count per example, target for the
+            # quad-count regression auxiliary task (see --quad_count_loss in
+            # source/gen_scl_nat_main.py)
+            return [float(len(ex)) for ex in labels_in]
+
         self.contrastive_labels['sentiment'] = get_sentiment_labels(labels)
         self.contrastive_labels['opinion'] = get_opinion_labels(labels)
         self.contrastive_labels['aspect'] = get_aspect_labels(labels)
+        self.contrastive_labels['n_quads'] = get_n_quads_labels(labels)
