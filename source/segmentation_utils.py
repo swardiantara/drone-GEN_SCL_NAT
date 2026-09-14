@@ -1,35 +1,69 @@
 # -*- coding: utf-8 -*-
 """
-Optional sentence segmentation at inference time, using ADFLER (Automated
-Drone Flight Log Event Recognizer):
-  paper: "Automated event recognition in drone flight logs: a noise-robust
-          approach" (Silalahi, Ahmad and Studiawan)
-  code:  https://github.com/swardiantara/ADFLER
-  model: https://huggingface.co/swardiantara/ADFLER-xlnet-base-cased
-
-ADFLER is a BIOES token-classification (NER) model that performs sentence
-boundary detection and Event/NonEvent classification in one pass: each token
-is tagged B/I/E/S-Event, B/I/E/S-NonEvent, or O. This is inspired by ATOSS
-(https://github.com/ryang1119/ATOSS): segmenting a flight-log message into its
-constituent sentences before ASQP inference can simplify the input the
-generative model has to reason over. ADFLER additionally lets us drop NonEvent
-sentences before ASQP inference: per the paper's annotation criteria (Section
-4.2), a NonEvent sentence is "informational, advisory or state-descriptive but
-not indicative of a specific event occurring at that moment" and so cannot
-contain an aspect-category-sentiment-opinion quadruple by definition. Dropping
-those keeps the number of extracted quads aligned with the actual quads in the
-message-level input, rather than risking spurious quads generated from
-non-informative text.
+Optional sentence segmentation at inference time: segmenting a flight-log
+message into its constituent sentences before ASQP inference can simplify
+the input the generative model has to reason over (inspired by ATOSS,
+https://github.com/ryang1119/ATOSS).
 
 This only applies to *inference*: segmentation changes what the model sees as
 its input at generation time, but training still uses the original,
 unsegmented sentences/labels as authored in the dataset files.
 
-Requires the `simpletransformers` package (`pip install simpletransformers`).
+The default/pipeline segmenter (--use_segmentation in
+source/gen_scl_nat_main.py) is PySBDSegmenter, using the rule-based
+Pragmatic Segmenter port PySBD (`pip install pysbd`). This replaced the
+original ADFLER-based segmenter (SentenceSegmenter, below, kept for
+analysis/diagnose_segmentation.py and anyone still comparing against it):
+  paper: "Automated event recognition in drone flight logs: a noise-robust
+          approach" (Silalahi, Ahmad and Studiawan)
+  code:  https://github.com/swardiantara/ADFLER
+  model: https://huggingface.co/swardiantara/ADFLER-xlnet-base-cased
+ADFLER is a BIOES token-classification (NER) model that performs sentence
+boundary detection and Event/NonEvent classification in one pass, additionally
+letting us drop NonEvent sentences (which by the paper's Section 4.2 criteria
+cannot contain a quad) before ASQP inference. PySBD only does sentence
+boundary detection -- no Event/NonEvent classification -- so every sentence
+is kept; it requires no fine-tuned checkpoint and needs no GPU.
+
+Requires the `simpletransformers` package (`pip install simpletransformers`)
+for SentenceSegmenter (ADFLER); PySBDSegmenter requires only `pysbd`
+(`pip install pysbd`).
 """
 
 DEFAULT_MODEL_DIR = 'swardiantara/ADFLER-xlnet-base-cased'
 DEFAULT_MODEL_TYPE = 'xlnet'
+
+
+class PySBDSegmenter:
+    """
+    Splits each message into sentences with PySBD (a Python port of the
+    Pragmatic Segmenter). This is the segmenter --use_segmentation uses in
+    source/gen_scl_nat_main.py.
+    """
+
+    def __init__(self, language='en'):
+        import pysbd
+        self._segmenter = pysbd.Segmenter(language=language, clean=False)
+
+    def segment(self, messages):
+        """
+        messages: list[str], one raw (untokenized-joined) message per example.
+        Returns list[list[str]]: per-message list of sentences. Falls back to
+        the original, unsegmented message as a single segment if PySBD finds
+        no sentence boundary in it.
+        """
+        return [self._segment_one(message) for message in messages]
+
+    def _segment_one(self, message):
+        # drone log messages join separate log lines with "; " (see
+        # data/<dataset>/*.txt); PySBD does not treat "; " as a sentence
+        # boundary on its own, so it can leave a leading "; " on a segment
+        # that starts right after one -- strip that off so each segment
+        # reads like a standalone sentence before it's fed to the model.
+        raw_sentences = self._segmenter.segment(message)
+        sentences = [s.strip().lstrip(';').strip() for s in raw_sentences]
+        sentences = [s for s in sentences if s]
+        return sentences or [message]
 
 
 def extract_boundaries_with_types(tags):
