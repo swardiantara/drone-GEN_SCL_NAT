@@ -81,6 +81,20 @@ def extract_spans_para(task, absa_task, seq, seq_type):
     return quads
 
 
+def _casefold_value(value):
+    """Case-folds a quad element, or a whole quad tuple, for case-INSENSITIVE
+    comparison only. Every quad-matching function below applies this to its
+    own local copies right before comparing -- gold_pt/pred_pt (and the
+    all_labels/all_preds this module returns to its callers, which get
+    logged verbatim to results-*.json) are never mutated, so logged output
+    always preserves the original source/prediction casing."""
+    if isinstance(value, tuple):
+        return tuple(_casefold_value(v) for v in value)
+    if isinstance(value, str):
+        return value.casefold()
+    return value
+
+
 def f1_score(n_tp, n_gold, n_pred):
     precision = float(n_tp) / float(n_pred) if n_pred != 0 else 0
     recall = float(n_tp) / float(n_gold) if n_gold != 0 else 0
@@ -109,19 +123,24 @@ def compute_f1_scores(pred_pt, gold_pt, silent=True):
     for i in range(len(gold_pt)):
         n_gold += len(gold_pt[i])   # num of quads in gold sample
         n_pred += len(pred_pt[i])   # num of quads in pred sample
-        
+
+        # case-insensitive comparison only (see _casefold_value) -- gold_pt/
+        # pred_pt themselves are left untouched, so callers still get back
+        # (and log) the original casing
+        pred_i_casefold = [_casefold_value(q) for q in pred_pt[i]]
+
         # loop over quads in gold labels
         for j in range(len(gold_pt[i])):
             gold_quad = gold_pt[i][j]       # check if the quad exists in pred_quad
-            if gold_quad in pred_pt[i]:     # count misordered quad as TP
+            if _casefold_value(gold_quad) in pred_i_casefold:  # count misordered quad as TP
                 quad_tp += 1                # strict quad-level true positive
-            
+
             # prevent out of range index error
             # count per-element TP
             # the quad order must be the correct
             if j < len(pred_pt[i]):
-                gold_ac, gold_at, gold_sp, gold_ot = gold_quad
-                pred_ac, pred_at, pred_sp, pred_ot = pred_pt[i][j]
+                gold_ac, gold_at, gold_sp, gold_ot = _casefold_value(gold_quad)
+                pred_ac, pred_at, pred_sp, pred_ot = _casefold_value(pred_pt[i][j])
                 tp_ac += 1 if pred_ac == gold_ac else 0
                 tp_at += 1 if pred_at == gold_at else 0
                 tp_ot += 1 if pred_ot == gold_ot else 0
@@ -168,7 +187,14 @@ def _match_counts(pred_quads, gold_quads, multiset):
     Computes true-positive/gold/pred counts for one example, either under
     set semantics (duplicates collapsed) or multiset/bag semantics
     (duplicates counted with multiplicity, via Counter intersection).
+
+    Matching is case-insensitive (see _casefold_value); this only affects
+    what's compared here, not the pred_quads/gold_quads objects callers hold
+    (compute_element_scores passes single-element string lists through this
+    same path, which _casefold_value handles just as well as quad tuples).
     """
+    pred_quads = [_casefold_value(q) for q in pred_quads]
+    gold_quads = [_casefold_value(q) for q in gold_quads]
     if multiset:
         pred_counter = Counter(pred_quads)
         gold_counter = Counter(gold_quads)

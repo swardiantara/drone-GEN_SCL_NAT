@@ -9,16 +9,16 @@
 #
 # Resumable: source/gen_scl_nat_main.py's own output-folder check (keyed by
 # dataset/scenario/task/absa_task/cont-{on,off}/cd-{on,off}/seg-{on,off}/
-# qc-{on,off}/seed) skips any combination whose results-*.json already
-# exists, so re-running this script after it stopped partway through (crash,
+# [qc-on/]seed) skips any combination whose results-*.json already exists,
+# so re-running this script after it stopped partway through (crash,
 # preemption, Ctrl-C, ...) picks up where it left off instead of redoing
-# completed runs. If you've deleted outputs/ to start clean (e.g. after a
-# dataset fix), every combination runs fresh. Runs from before qc-{on,off}
-# existed sit one level up (.../seg-{on,off}/seed/, no qc-* segment) and are
-# read as qc-off by analysis/common.py, but are NOT resumed/reused here --
-# this script only ever writes to the qc-{on,off} layout, so if you want a
-# from-scratch qc-off rerun (e.g. because the model architecture changed)
-# remove the old .../seg-{on,off}/<seed>/ folders yourself first.
+# completed runs. quad_count_loss=0.0 (qc-off) runs land at the SAME path as
+# before this axis existed (.../seg-{on,off}/seed/, no qc-* segment at all --
+# a 'qc-on' segment is added only when the auxiliary task is actually on),
+# so scenarios you already ran before this axis was added are correctly
+# skipped/resumed rather than being retrained under a new path. If you've
+# deleted outputs/ to start clean (e.g. after a dataset fix), every
+# combination runs fresh.
 #
 # Usage:
 #   bash configs/run_drone_gen_scl_nat.sh
@@ -26,7 +26,7 @@
 #   BASE_MODELS="t5-base flan-t5-base" bash configs/run_drone_gen_scl_nat.sh
 #   CONT_LOSS_OPTIONS="0.0 0.05" bash configs/run_drone_gen_scl_nat.sh
 #   QUAD_COUNT_LOSS_OPTIONS="0.0 1.0" bash configs/run_drone_gen_scl_nat.sh
-#   RUN_SEGMENTATION=true SEGMENTATION_MODEL_DIR=path/to/local/adfler/checkpoint bash configs/run_drone_gen_scl_nat.sh
+#   RUN_SEGMENTATION=true bash configs/run_drone_gen_scl_nat.sh
 
 set -uo pipefail
 
@@ -54,18 +54,17 @@ CONT_TEMP=${CONT_TEMP:-0.25}
 # regression MSE loss (predicting the number of quadruples in the example
 # from the pooled encoder representation), scaled by --quad_count_loss --
 # 0.0 makes its contribution exactly zero, i.e. this auxiliary task OFF.
-# gen_scl_nat_main.py's output folder encodes this as qc-{on,off} (derived
-# from --quad_count_loss > 0), same convention as cont-{on,off}, so each
-# value lands in its own folder and is resumable/isolated independently.
+# Unlike cont-{on,off}, gen_scl_nat_main.py's output folder encodes this
+# ASYMMETRICALLY: a 'qc-on' segment is appended only when nonzero; 0.0 (off)
+# adds no segment at all, landing at the exact same path a pre-quad-count-
+# task run would -- see init_args() in gen_scl_nat_main.py for why (keeps
+# every already-completed scenario's resume check working).
 read -ra QUAD_COUNT_LOSS_OPTIONS <<< "${QUAD_COUNT_LOSS_OPTIONS:-0.0 0.1}"
 
-# defaults to the published swardiantara/ADFLER-xlnet-base-cased checkpoint
-# (source/gen_scl_nat_main.py's own default) when left unset
-SEGMENTATION_MODEL_DIR=${SEGMENTATION_MODEL_DIR:-swardiantara/ADFLER-xlnet-base-cased}
-SEGMENTATION_MODEL_TYPE=${SEGMENTATION_MODEL_TYPE:-xlnet}
-SEGMENTATION_USE_CUDA=${SEGMENTATION_USE_CUDA:-true}
 # segmentation is off by default -- set to "true" to add the seg=on half of
-# the grid back in for every (base model x contrastive x CD) combination
+# the grid back in for every (base model x contrastive x CD) combination.
+# --use_segmentation runs PySBD (source/segmentation_utils.py's
+# PySBDSegmenter) -- no model checkpoint or GPU needed for it.
 RUN_SEGMENTATION=${RUN_SEGMENTATION:-false}
 
 # same 5 seeds used across the other grid scripts in this repo (see
@@ -100,13 +99,7 @@ for base_model in "${BASE_MODELS[@]}"; do
                             EXTRA_FLAGS+=(--constrained_decoding)
                         fi
                         if [ "$seg" = "true" ]; then
-                            EXTRA_FLAGS+=(--use_segmentation --segmentation_model_type "$SEGMENTATION_MODEL_TYPE")
-                            if [ -n "$SEGMENTATION_MODEL_DIR" ]; then
-                                EXTRA_FLAGS+=(--segmentation_model_dir "$SEGMENTATION_MODEL_DIR")
-                            fi
-                            if [ "$SEGMENTATION_USE_CUDA" = "true" ]; then
-                                EXTRA_FLAGS+=(--segmentation_use_cuda)
-                            fi
+                            EXTRA_FLAGS+=(--use_segmentation)
                         fi
 
                         echo ""
