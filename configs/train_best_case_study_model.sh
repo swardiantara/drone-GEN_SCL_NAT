@@ -1,10 +1,11 @@
 #!/bin/bash
 # Trains and saves the single best-performing scenario from the grid search
 # (acos_drone_binary, t5-base, paraphrase, contrastive on, constrained
-# decoding on, segmentation off, seed=42511865 -- see analysis/aggregate/
-# multiset-PRF.xlsx), so its checkpoint can be reused for case-study
-# inference (source/case_study_inference.py) instead of only ever being
-# scored and discarded like the rest of the grid.
+# decoding on, quad-aware (quad-count regression) loss on, segmentation off,
+# seed=50995999 -- see analysis/aggregate/multiset-PRF.xlsx), so its
+# checkpoint can be reused for case-study inference
+# (source/case_study_inference.py) instead of only ever being scored and
+# discarded like the rest of the grid.
 #
 # --overwrite bypasses the resume check: this exact scenario/seed already
 # has a results-*.json from the grid search (configs/run_drone_paraphrase.sh),
@@ -23,9 +24,10 @@ ABSA_TASK=${ABSA_TASK:-quad}
 OUTPUT_FOLDER=${OUTPUT_FOLDER:-train_outputs}
 MODEL_PREFIX=${MODEL_PREFIX:-drone_paraphrase}
 BASE_MODEL=${BASE_MODEL:-t5-base}
-SEED=${SEED:-42511865}
+SEED=${SEED:-50995999}
 CONT_LOSS=${CONT_LOSS:-0.05}
 CONT_TEMP=${CONT_TEMP:-0.25}
+QUAD_COUNT_LOSS=${QUAD_COUNT_LOSS:-0.1}
 BEST_MODEL_DIR=${BEST_MODEL_DIR:-best-model}
 
 python3 source/gen_scl_nat_main.py \
@@ -49,12 +51,13 @@ python3 source/gen_scl_nat_main.py \
     --seed "$SEED" \
     --cont_loss "$CONT_LOSS" \
     --cont_temp "$CONT_TEMP" \
+    --quad_count_loss "$QUAD_COUNT_LOSS" \
     --model_prefix "$MODEL_PREFIX" \
     --constrained_decoding \
     --save_model \
     --overwrite
 
-RUN_DIR="$OUTPUT_FOLDER/$DATASET/$BASE_MODEL/asqp/$ABSA_TASK/cont-on/cd-on/seg-off/$SEED"
+RUN_DIR="$OUTPUT_FOLDER/$DATASET/$BASE_MODEL/asqp/$ABSA_TASK/cont-on/cd-on/seg-off/qc-on/$SEED"
 if [ ! -f "$RUN_DIR/config.json" ]; then
     echo "[FAILED] expected a saved HF checkpoint at $RUN_DIR (config.json missing)" >&2
     exit 1
