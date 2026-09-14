@@ -1,0 +1,3570 @@
+{
+  "performance_metrics": {
+    "quad_score": {
+      "precision": 0.4036363636363636,
+      "recall": 0.5,
+      "f1_score": 0.4466800804828974
+    },
+    "ac_score": {
+      "precision": 0.5418181818181819,
+      "recall": 0.6711711711711712,
+      "f1_score": 0.5995975855130784
+    },
+    "acsp_score": {
+      "precision": 0.3709090909090909,
+      "recall": 0.4594594594594595,
+      "f1_score": 0.4104627766599597
+    },
+    "at_score": {
+      "precision": 0.52,
+      "recall": 0.6441441441441441,
+      "f1_score": 0.5754527162977868
+    },
+    "ot_score": {
+      "precision": 0.52,
+      "recall": 0.6441441441441441,
+      "f1_score": 0.5754527162977868
+    },
+    "sp_score": {
+      "precision": 0.4618181818181818,
+      "recall": 0.5720720720720721,
+      "f1_score": 0.5110663983903421
+    },
+    "micro_average": {
+      "precision": 0.5109090909090909,
+      "recall": 0.6328828828828829,
+      "f1_score": 0.5653923541247484
+    },
+    "set_multiset_scores": {
+      "set": {
+        "micro": {
+          "precision": 0.47435897435897434,
+          "recall": 0.5721649484536082,
+          "f1": 0.5186915887850467
+        },
+        "macro": {
+          "precision": 0.5188218390804596,
+          "recall": 0.575889436234264,
+          "f1": 0.5424512999603743
+        },
+        "weighted": {
+          "precision": 0.48660407461953864,
+          "recall": 0.5721649484536082,
+          "f1": 0.5232120075920944
+        },
+        "support": {
+          "n_gold": 194,
+          "n_pred": 234,
+          "n_tp": 111,
+          "n_examples": 58
+        }
+      },
+      "multiset": {
+        "micro": {
+          "precision": 0.4036363636363636,
+          "recall": 0.5,
+          "f1": 0.4466800804828974
+        },
+        "macro": {
+          "precision": 0.4874477533960293,
+          "recall": 0.5381636562671045,
+          "f1": 0.5083213750770065
+        },
+        "weighted": {
+          "precision": 0.41888479388479394,
+          "recall": 0.5,
+          "f1": 0.4534423772813866
+        },
+        "support": {
+          "n_gold": 222,
+          "n_pred": 275,
+          "n_tp": 111,
+          "n_examples": 58
+        }
+      }
+    },
+    "element_scores": {
+      "ac": {
+        "micro": {
+          "precision": 0.7890909090909091,
+          "recall": 0.9774774774774775,
+          "f1": 0.8732394366197183
+        },
+        "macro": {
+          "precision": 0.8715778474399163,
+          "recall": 0.9730637657361794,
+          "f1": 0.9139924256930768
+        },
+        "weighted": {
+          "precision": 0.8089134589134589,
+          "recall": 0.9774774774774775,
+          "f1": 0.8808508681573697
+        },
+        "support": {
+          "n_gold": 222,
+          "n_pred": 275,
+          "n_tp": 217,
+          "n_examples": 58
+        }
+      },
+      "at": {
+        "micro": {
+          "precision": 0.6909090909090909,
+          "recall": 0.8558558558558559,
+          "f1": 0.7645875251509053
+        },
+        "macro": {
+          "precision": 0.8240377917102056,
+          "recall": 0.9098522167487683,
+          "f1": 0.8597588999852266
+        },
+        "weighted": {
+          "precision": 0.716932841932842,
+          "recall": 0.8558558558558559,
+          "f1": 0.7761766712231112
+        },
+        "support": {
+          "n_gold": 222,
+          "n_pred": 275,
+          "n_tp": 190,
+          "n_examples": 58
+        }
+      },
+      "sp": {
+        "micro": {
+          "precision": 0.5490909090909091,
+          "recall": 0.6801801801801802,
+          "f1": 0.607645875251509
+        },
+        "macro": {
+          "precision": 0.5790839428770463,
+          "recall": 0.6554666119321293,
+          "f1": 0.6108011592691855
+        },
+        "weighted": {
+          "precision": 0.5568591318591318,
+          "recall": 0.6801801801801802,
+          "f1": 0.6094931769854373
+        },
+        "support": {
+          "n_gold": 222,
+          "n_pred": 275,
+          "n_tp": 151,
+          "n_examples": 58
+        }
+      },
+      "ot": {
+        "micro": {
+          "precision": 0.7745454545454545,
+          "recall": 0.9594594594594594,
+          "f1": 0.8571428571428571
+        },
+        "macro": {
+          "precision": 0.841118077324974,
+          "recall": 0.9364258347016966,
+          "f1": 0.8810422341221957
+        },
+        "weighted": {
+          "precision": 0.7947993447993448,
+          "recall": 0.9594594594594594,
+          "f1": 0.865135152441654
+        },
+        "support": {
+          "n_gold": 222,
+          "n_pred": 275,
+          "n_tp": 213,
+          "n_examples": 58
+        }
+      }
+    }
+  },
+  "examples": [
+    {
+      "message": "Motors starting.; Flight mode changed to Starting Motors.",
+      "labels_correct": [
+        [
+          "Motors",
+          "hardware",
+          "positive",
+          "starting"
+        ],
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to Starting Motors"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Motors",
+          "hardware",
+          "positive",
+          "starting"
+        ],
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to Starting Motors"
+        ]
+      ]
+    },
+    {
+      "message": "Compass error.; Compass error. Fly with caution.",
+      "labels_correct": [
+        [
+          "Compass",
+          "hardware",
+          "negative",
+          "Error"
+        ],
+        [
+          "Compass",
+          "hardware",
+          "negative",
+          "Error"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Compass",
+          "hardware",
+          "negative",
+          "error"
+        ],
+        [
+          "Compass",
+          "hardware",
+          "negative",
+          "error"
+        ],
+        [
+          "caution",
+          "operation",
+          "positive",
+          "Fly with caution"
+        ]
+      ]
+    },
+    {
+      "message": "Data Recorder File Index is 88.; Set Return to Home (RTH) altitude to 100 m (328 ft).; Set maximum flight altitude to 500 m (1640 ft).",
+      "labels_correct": [
+        [
+          "Data Recorder File Index",
+          "parameter",
+          "positive",
+          "88"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Data Recorder File Index",
+          "parameter",
+          "positive",
+          "88"
+        ],
+        [
+          "maximum flight altitude",
+          "parameter",
+          "positive",
+          "500 m (1640 ft"
+        ]
+      ]
+    },
+    {
+      "message": "Motors starting.",
+      "labels_correct": [
+        [
+          "Motors",
+          "hardware",
+          "positive",
+          "starting"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Motors",
+          "hardware",
+          "positive",
+          "starting"
+        ]
+      ]
+    },
+    {
+      "message": "Compass error.",
+      "labels_correct": [
+        [
+          "Compass",
+          "hardware",
+          "negative",
+          "Error"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Compass",
+          "hardware",
+          "negative",
+          "error"
+        ]
+      ]
+    },
+    {
+      "message": "Flight mode changed to Manual Takeoff.",
+      "labels_correct": [
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to Manual Takeoff"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to Manual Takeoff"
+        ]
+      ]
+    },
+    {
+      "message": "Home point updated. RTH altitude adjusted to 100m.; Flight mode changed to P-GPS.",
+      "labels_correct": [
+        [
+          "Home point",
+          "parameter",
+          "positive",
+          "updated"
+        ],
+        [
+          "RTH altitude",
+          "parameter",
+          "positive",
+          "adjusted to 100m"
+        ],
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to P-GPS"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Home point",
+          "parameter",
+          "positive",
+          "updated"
+        ],
+        [
+          "RTH altitude",
+          "parameter",
+          "positive",
+          "adjusted to 100m"
+        ],
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to P-GPS"
+        ]
+      ]
+    },
+    {
+      "message": "Home point updated. RTH altitude adjusted to 100m.; Downward ambient light too low. Obstacle avoidance unavailable. Fly with caution.; Forward ambient light too low. Obstacle avoidance unavailable. Fly with caution.",
+      "labels_correct": [
+        [
+          "Home point",
+          "parameter",
+          "positive",
+          "updated"
+        ],
+        [
+          "RTH altitude",
+          "parameter",
+          "positive",
+          "adjusted to 100m"
+        ],
+        [
+          "downward ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ],
+        [
+          "Forward ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Home point",
+          "parameter",
+          "positive",
+          "updated"
+        ],
+        [
+          "RTH altitude",
+          "parameter",
+          "positive",
+          "adjusted to 100m"
+        ],
+        [
+          "Downward ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ],
+        [
+          "caution",
+          "operation",
+          "positive",
+          "Fly with caution"
+        ],
+        [
+          "Forward ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ],
+        [
+          "caution",
+          "operation",
+          "positive",
+          "Fly with caution"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.; Home point updated. RTH altitude adjusted to 100m.; Forward ambient light too low. Obstacle avoidance unavailable. Fly with caution.; Downward ambient light too low. Obstacle avoidance unavailable. Fly with caution.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ],
+        [
+          "Home point",
+          "parameter",
+          "positive",
+          "updated"
+        ],
+        [
+          "RTH altitude",
+          "parameter",
+          "positive",
+          "adjusted to 100m"
+        ],
+        [
+          "Forward ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ],
+        [
+          "downward ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ],
+        [
+          "Home point",
+          "parameter",
+          "positive",
+          "updated"
+        ],
+        [
+          "RTH altitude",
+          "parameter",
+          "positive",
+          "adjusted to 100m"
+        ],
+        [
+          "Forward ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ],
+        [
+          "caution",
+          "operation",
+          "positive",
+          "Fly with caution"
+        ],
+        [
+          "Downward ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ],
+        [
+          "caution",
+          "operation",
+          "positive",
+          "Fly with caution"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.; Home point updated. RTH altitude adjusted to 100m.; Downward ambient light too low. Obstacle avoidance unavailable. Fly with caution.; Forward ambient light too low. Obstacle avoidance unavailable. Fly with caution.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ],
+        [
+          "Home point",
+          "parameter",
+          "positive",
+          "updated"
+        ],
+        [
+          "RTH altitude",
+          "parameter",
+          "positive",
+          "adjusted to 100m"
+        ],
+        [
+          "downward ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ],
+        [
+          "Forward ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ],
+        [
+          "Home point",
+          "parameter",
+          "positive",
+          "updated"
+        ],
+        [
+          "RTH altitude",
+          "parameter",
+          "positive",
+          "adjusted to 100m"
+        ],
+        [
+          "Downward ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ],
+        [
+          "caution",
+          "operation",
+          "positive",
+          "Fly with caution"
+        ],
+        [
+          "Forward ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ],
+        [
+          "caution",
+          "operation",
+          "positive",
+          "Fly with caution"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ]
+      ]
+    },
+    {
+      "message": "Low battery. Auto RTH in 9 s. Press the start/stop button to cancel.; Forward ambient light too low. Obstacle avoidance unavailable. Fly with caution.; Downward ambient light too low. Obstacle avoidance unavailable. Fly with caution.",
+      "labels_correct": [
+        [
+          "battery",
+          "hardware",
+          "negative",
+          "Low"
+        ],
+        [
+          "Auto RTH",
+          "operation",
+          "positive",
+          "in 9 s"
+        ],
+        [
+          "Forward ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ],
+        [
+          "downward ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "battery",
+          "hardware",
+          "negative",
+          "Low"
+        ],
+        [
+          "Auto RTH",
+          "operation",
+          "positive",
+          "in 9 s"
+        ],
+        [
+          "start/stop button",
+          "operation",
+          "positive",
+          "Press to cancel"
+        ],
+        [
+          "Forward ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ],
+        [
+          "caution",
+          "operation",
+          "positive",
+          "Fly with caution"
+        ],
+        [
+          "Downward ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ],
+        [
+          "caution",
+          "operation",
+          "positive",
+          "Fly with caution"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.; Low battery. Auto RTH in 9 s. Press the start/stop button to cancel.; Downward ambient light too low. Obstacle avoidance unavailable. Fly with caution.; Forward ambient light too low. Obstacle avoidance unavailable. Fly with caution.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ],
+        [
+          "battery",
+          "hardware",
+          "negative",
+          "Low"
+        ],
+        [
+          "Auto RTH",
+          "operation",
+          "positive",
+          "in 9 s"
+        ],
+        [
+          "downward ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ],
+        [
+          "Forward ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ],
+        [
+          "battery",
+          "hardware",
+          "negative",
+          "Low"
+        ],
+        [
+          "Auto RTH",
+          "operation",
+          "positive",
+          "in 9 s"
+        ],
+        [
+          "start/stop button",
+          "operation",
+          "positive",
+          "Press to cancel"
+        ],
+        [
+          "Downward ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ],
+        [
+          "caution",
+          "operation",
+          "positive",
+          "Fly with caution"
+        ],
+        [
+          "Forward ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ],
+        [
+          "caution",
+          "operation",
+          "positive",
+          "Fly with caution"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.; Low battery. Auto RTH in 8 s. Press the start/stop button to cancel.; Downward ambient light too low. Obstacle avoidance unavailable. Fly with caution.; Forward ambient light too low. Obstacle avoidance unavailable. Fly with caution.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ],
+        [
+          "battery",
+          "hardware",
+          "negative",
+          "Low"
+        ],
+        [
+          "Auto RTH",
+          "operation",
+          "positive",
+          "in 8 s"
+        ],
+        [
+          "downward ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ],
+        [
+          "Forward ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ],
+        [
+          "battery",
+          "hardware",
+          "negative",
+          "Low"
+        ],
+        [
+          "Auto RTH",
+          "operation",
+          "positive",
+          "in 8 s"
+        ],
+        [
+          "start/stop button",
+          "operation",
+          "positive",
+          "Press to cancel"
+        ],
+        [
+          "Downward ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ],
+        [
+          "caution",
+          "operation",
+          "positive",
+          "Fly with caution"
+        ],
+        [
+          "Forward ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ],
+        [
+          "caution",
+          "operation",
+          "positive",
+          "Fly with caution"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.; Low battery. Auto RTH in 8 s. Press the start/stop button to cancel.; Downward ambient light too low. Obstacle avoidance unavailable. Fly with caution.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ],
+        [
+          "battery",
+          "hardware",
+          "negative",
+          "Low"
+        ],
+        [
+          "Auto RTH",
+          "operation",
+          "positive",
+          "in 8 s"
+        ],
+        [
+          "downward ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ],
+        [
+          "battery",
+          "hardware",
+          "negative",
+          "Low"
+        ],
+        [
+          "Auto RTH",
+          "operation",
+          "positive",
+          "in 8 s"
+        ],
+        [
+          "start/stop button",
+          "operation",
+          "positive",
+          "Press to cancel"
+        ],
+        [
+          "Downward ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ],
+        [
+          "caution",
+          "operation",
+          "positive",
+          "Fly with caution"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.; Low battery. Auto RTH in 7 s. Press the start/stop button to cancel.; Downward ambient light too low. Obstacle avoidance unavailable. Fly with caution.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ],
+        [
+          "battery",
+          "hardware",
+          "negative",
+          "Low"
+        ],
+        [
+          "Auto RTH",
+          "operation",
+          "positive",
+          "in 7 s"
+        ],
+        [
+          "downward ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ],
+        [
+          "battery",
+          "hardware",
+          "negative",
+          "Low"
+        ],
+        [
+          "Auto RTH",
+          "operation",
+          "positive",
+          "in 7 s"
+        ],
+        [
+          "start/stop button",
+          "operation",
+          "positive",
+          "Press to cancel"
+        ],
+        [
+          "Downward ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ],
+        [
+          "caution",
+          "operation",
+          "positive",
+          "Fly with caution"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.; Low battery. Auto RTH in 6 s. Press the start/stop button to cancel.; Downward ambient light too low. Obstacle avoidance unavailable. Fly with caution.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ],
+        [
+          "battery",
+          "hardware",
+          "negative",
+          "Low"
+        ],
+        [
+          "Auto RTH",
+          "operation",
+          "positive",
+          "in 6 s"
+        ],
+        [
+          "downward ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ],
+        [
+          "battery",
+          "hardware",
+          "negative",
+          "Low"
+        ],
+        [
+          "Auto RTH",
+          "operation",
+          "positive",
+          "in 6 s"
+        ],
+        [
+          "start/stop button",
+          "operation",
+          "positive",
+          "Press to cancel"
+        ],
+        [
+          "Downward ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ],
+        [
+          "caution",
+          "operation",
+          "positive",
+          "Fly with caution"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.; Low battery. Auto RTH in 5 s. Press the start/stop button to cancel.; Downward ambient light too low. Obstacle avoidance unavailable. Fly with caution.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ],
+        [
+          "battery",
+          "hardware",
+          "negative",
+          "Low"
+        ],
+        [
+          "Auto RTH",
+          "operation",
+          "positive",
+          "in 5 s"
+        ],
+        [
+          "downward ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ],
+        [
+          "battery",
+          "hardware",
+          "negative",
+          "Low"
+        ],
+        [
+          "Auto RTH",
+          "operation",
+          "positive",
+          "in 5 s"
+        ],
+        [
+          "start/stop button",
+          "operation",
+          "positive",
+          "Press to cancel"
+        ],
+        [
+          "Downward ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ],
+        [
+          "caution",
+          "operation",
+          "positive",
+          "Fly with caution"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.; Low battery. Auto RTH in 4 s. Press the start/stop button to cancel.; Downward ambient light too low. Obstacle avoidance unavailable. Fly with caution.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ],
+        [
+          "battery",
+          "hardware",
+          "negative",
+          "Low"
+        ],
+        [
+          "Auto RTH",
+          "operation",
+          "positive",
+          "in 4 s"
+        ],
+        [
+          "downward ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ],
+        [
+          "battery",
+          "hardware",
+          "negative",
+          "Low"
+        ],
+        [
+          "Auto RTH",
+          "operation",
+          "positive",
+          "in 4 s"
+        ],
+        [
+          "start/stop button",
+          "operation",
+          "positive",
+          "Press to cancel"
+        ],
+        [
+          "Downward ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ],
+        [
+          "caution",
+          "operation",
+          "positive",
+          "Fly with caution"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.; Low battery. Auto RTH in 3 s. Press the start/stop button to cancel.; Downward ambient light too low. Obstacle avoidance unavailable. Fly with caution.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ],
+        [
+          "battery",
+          "hardware",
+          "negative",
+          "Low"
+        ],
+        [
+          "Auto RTH",
+          "operation",
+          "positive",
+          "in 3 s"
+        ],
+        [
+          "downward ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ],
+        [
+          "battery",
+          "hardware",
+          "negative",
+          "Low"
+        ],
+        [
+          "Auto RTH",
+          "operation",
+          "positive",
+          "in 3 s"
+        ],
+        [
+          "start/stop button",
+          "operation",
+          "positive",
+          "Press to cancel"
+        ],
+        [
+          "Downward ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ],
+        [
+          "caution",
+          "operation",
+          "positive",
+          "Fly with caution"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.; Low battery. Auto RTH in 2 s. Press the start/stop button to cancel.; Downward ambient light too low. Obstacle avoidance unavailable. Fly with caution.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ],
+        [
+          "battery",
+          "hardware",
+          "negative",
+          "Low"
+        ],
+        [
+          "Auto RTH",
+          "operation",
+          "positive",
+          "in 2 s"
+        ],
+        [
+          "downward ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ],
+        [
+          "battery",
+          "hardware",
+          "negative",
+          "Low"
+        ],
+        [
+          "Auto RTH",
+          "operation",
+          "positive",
+          "in 2 s"
+        ],
+        [
+          "start/stop button",
+          "operation",
+          "positive",
+          "Press to cancel"
+        ],
+        [
+          "Downward ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ],
+        [
+          "caution",
+          "operation",
+          "positive",
+          "Fly with caution"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.; Low battery. Auto RTH in 1 s. Press the start/stop button to cancel.; Downward ambient light too low. Obstacle avoidance unavailable. Fly with caution.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ],
+        [
+          "battery",
+          "hardware",
+          "negative",
+          "Low"
+        ],
+        [
+          "Auto RTH",
+          "operation",
+          "positive",
+          "in 1 s"
+        ],
+        [
+          "downward ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ],
+        [
+          "battery",
+          "hardware",
+          "negative",
+          "Low"
+        ],
+        [
+          "Auto RTH",
+          "operation",
+          "positive",
+          "in 1 s"
+        ],
+        [
+          "start/stop button",
+          "operation",
+          "positive",
+          "Press to cancel"
+        ],
+        [
+          "Downward ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ],
+        [
+          "caution",
+          "operation",
+          "positive",
+          "Fly with caution"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.; Low battery. Auto RTH in 1 s. Press the start/stop button to cancel.; Forward ambient light too low. Obstacle avoidance unavailable. Fly with caution.; Downward ambient light too low. Obstacle avoidance unavailable. Fly with caution.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ],
+        [
+          "battery",
+          "hardware",
+          "negative",
+          "Low"
+        ],
+        [
+          "Auto RTH",
+          "operation",
+          "positive",
+          "in 1 s"
+        ],
+        [
+          "Forward ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ],
+        [
+          "downward ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ],
+        [
+          "battery",
+          "hardware",
+          "negative",
+          "Low"
+        ],
+        [
+          "Auto RTH",
+          "operation",
+          "positive",
+          "in 1 s"
+        ],
+        [
+          "start/stop button",
+          "operation",
+          "positive",
+          "Press to cancel"
+        ],
+        [
+          "Forward ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ],
+        [
+          "caution",
+          "operation",
+          "positive",
+          "Fly with caution"
+        ],
+        [
+          "Downward ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ],
+        [
+          "caution",
+          "operation",
+          "positive",
+          "Fly with caution"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.; Low battery. Auto RTH in 1 s. Press the start/stop button to cancel.; Remaining battery only enough for RTH. Aircraft returning.; Forward ambient light too low. Obstacle avoidance unavailable. Fly with caution.; Downward ambient light too low. Obstacle avoidance unavailable. Fly with caution.; Low battery RTH.; Flight mode changed to Go Home.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ],
+        [
+          "battery",
+          "hardware",
+          "negative",
+          "Low"
+        ],
+        [
+          "Auto RTH",
+          "operation",
+          "positive",
+          "in 1 s"
+        ],
+        [
+          "Remaining battery",
+          "parameter",
+          "negative",
+          "only enough for RTH"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "returning"
+        ],
+        [
+          "Forward ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ],
+        [
+          "downward ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ],
+        [
+          "Low battery RTH",
+          "operation",
+          "positive",
+          "NULL"
+        ],
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to Go Home"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ],
+        [
+          "battery",
+          "hardware",
+          "negative",
+          "Low"
+        ],
+        [
+          "Auto RTH",
+          "operation",
+          "positive",
+          "in 1 s"
+        ],
+        [
+          "start/stop button",
+          "operation",
+          "positive",
+          "Press to cancel"
+        ],
+        [
+          "battery",
+          "hardware",
+          "positive",
+          "only enough for RTH"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "returning"
+        ],
+        [
+          "Forward ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ],
+        [
+          "caution",
+          "operation",
+          "positive",
+          "Fly with caution"
+        ],
+        [
+          "Downward ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ],
+        [
+          "caution",
+          "operation",
+          "positive",
+          "Fly with caution"
+        ],
+        [
+          "battery",
+          "hardware",
+          "negative",
+          "Low RTH"
+        ],
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to Go Home"
+        ]
+      ]
+    },
+    {
+      "message": "Low battery RTH.; Low battery. Auto RTH in 1 s. Press the start/stop button to cancel.; Remaining battery only enough for RTH. Aircraft returning.; Forward ambient light too low. Obstacle avoidance unavailable. Fly with caution.; Downward ambient light too low. Obstacle avoidance unavailable. Fly with caution.",
+      "labels_correct": [
+        [
+          "Low battery RTH",
+          "operation",
+          "positive",
+          "NULL"
+        ],
+        [
+          "battery",
+          "hardware",
+          "negative",
+          "Low"
+        ],
+        [
+          "Auto RTH",
+          "operation",
+          "positive",
+          "in 1 s"
+        ],
+        [
+          "Remaining battery",
+          "parameter",
+          "negative",
+          "only enough for RTH"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "returning"
+        ],
+        [
+          "Forward ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ],
+        [
+          "downward ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "battery",
+          "hardware",
+          "negative",
+          "Low RTH"
+        ],
+        [
+          "battery",
+          "hardware",
+          "negative",
+          "Low"
+        ],
+        [
+          "Auto RTH",
+          "operation",
+          "positive",
+          "in 1 s"
+        ],
+        [
+          "start/stop button",
+          "operation",
+          "positive",
+          "Press to cancel"
+        ],
+        [
+          "battery",
+          "hardware",
+          "positive",
+          "only enough for RTH"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "returning"
+        ],
+        [
+          "Forward ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ],
+        [
+          "caution",
+          "operation",
+          "positive",
+          "Fly with caution"
+        ],
+        [
+          "Downward ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ],
+        [
+          "caution",
+          "operation",
+          "positive",
+          "Fly with caution"
+        ]
+      ]
+    },
+    {
+      "message": "Press Brake button to cancel RTH.",
+      "labels_correct": [],
+      "labels_pred": [
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "Press Brake button"
+        ]
+      ]
+    },
+    {
+      "message": "Low battery RTH.; Press Brake button to cancel RTH.; Remaining battery only enough for RTH. Aircraft returning.; Downward ambient light too low. Obstacle avoidance unavailable. Fly with caution.; Forward ambient light too low. Obstacle avoidance unavailable. Fly with caution.",
+      "labels_correct": [
+        [
+          "Low battery RTH",
+          "operation",
+          "positive",
+          "NULL"
+        ],
+        [
+          "Remaining battery",
+          "parameter",
+          "negative",
+          "only enough for RTH"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "returning"
+        ],
+        [
+          "downward ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ],
+        [
+          "Forward ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "battery",
+          "hardware",
+          "negative",
+          "Low RTH"
+        ],
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "Press Brake button"
+        ],
+        [
+          "battery",
+          "hardware",
+          "positive",
+          "only enough for RTH"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "returning"
+        ],
+        [
+          "Downward ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ],
+        [
+          "caution",
+          "operation",
+          "positive",
+          "Fly with caution"
+        ],
+        [
+          "Forward ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ],
+        [
+          "caution",
+          "operation",
+          "positive",
+          "Fly with caution"
+        ]
+      ]
+    },
+    {
+      "message": "Low battery RTH.; Press Brake button to cancel RTH.; Remaining battery only enough for RTH. Aircraft returning.; Downward ambient light too low. Obstacle avoidance unavailable. Fly with caution.; RTH ascending.; Forward ambient light too low. Obstacle avoidance unavailable. Fly with caution.",
+      "labels_correct": [
+        [
+          "Low battery RTH",
+          "operation",
+          "positive",
+          "NULL"
+        ],
+        [
+          "Remaining battery",
+          "parameter",
+          "negative",
+          "only enough for RTH"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "returning"
+        ],
+        [
+          "downward ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ],
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "ascending"
+        ],
+        [
+          "Forward ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "battery",
+          "hardware",
+          "negative",
+          "Low RTH"
+        ],
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "Press Brake button"
+        ],
+        [
+          "battery",
+          "hardware",
+          "positive",
+          "only enough for RTH"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "returning"
+        ],
+        [
+          "Downward ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ],
+        [
+          "caution",
+          "operation",
+          "positive",
+          "Fly with caution"
+        ],
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "ascending"
+        ],
+        [
+          "Forward ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ],
+        [
+          "caution",
+          "operation",
+          "positive",
+          "Fly with caution"
+        ]
+      ]
+    },
+    {
+      "message": "Controller triggered aircraft to descend. Auto RTH canceled.",
+      "labels_correct": [
+        [
+          "Controller",
+          "hardware",
+          "positive",
+          "triggered aircraft to descend"
+        ],
+        [
+          "Auto RTH",
+          "operation",
+          "positive",
+          "canceled"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Controller",
+          "hardware",
+          "positive",
+          "triggered aircraft to descend"
+        ],
+        [
+          "Auto RTH",
+          "operation",
+          "negative",
+          "canceled"
+        ]
+      ]
+    },
+    {
+      "message": "Flight mode changed to P-GPS.",
+      "labels_correct": [
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to P-GPS"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to P-GPS"
+        ]
+      ]
+    },
+    {
+      "message": "Low battery RTH.; Controller triggered aircraft to descend. Auto RTH canceled.; Remaining battery only enough for RTH. Aircraft returning.; Forward ambient light too low. Obstacle avoidance unavailable. Fly with caution.; Downward ambient light too low. Obstacle avoidance unavailable. Fly with caution.; RTH ascending.",
+      "labels_correct": [
+        [
+          "Low battery RTH",
+          "operation",
+          "positive",
+          "NULL"
+        ],
+        [
+          "Controller",
+          "hardware",
+          "positive",
+          "triggered aircraft to descend"
+        ],
+        [
+          "Auto RTH",
+          "operation",
+          "positive",
+          "canceled"
+        ],
+        [
+          "Remaining battery",
+          "parameter",
+          "negative",
+          "only enough for RTH"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "returning"
+        ],
+        [
+          "Forward ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ],
+        [
+          "downward ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ],
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "ascending"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "battery",
+          "hardware",
+          "negative",
+          "Low RTH"
+        ],
+        [
+          "Controller",
+          "hardware",
+          "positive",
+          "triggered aircraft to descend"
+        ],
+        [
+          "Auto RTH",
+          "operation",
+          "negative",
+          "canceled"
+        ],
+        [
+          "battery",
+          "hardware",
+          "positive",
+          "only enough for RTH"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "returning"
+        ],
+        [
+          "Forward ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ],
+        [
+          "caution",
+          "operation",
+          "positive",
+          "Fly with caution"
+        ],
+        [
+          "Downward ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ],
+        [
+          "caution",
+          "operation",
+          "positive",
+          "Fly with caution"
+        ],
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "ascending"
+        ]
+      ]
+    },
+    {
+      "message": "Low battery RTH.; Controller triggered aircraft to descend. Auto RTH canceled.; Forward ambient light too low. Obstacle avoidance unavailable. Fly with caution.; Downward ambient light too low. Obstacle avoidance unavailable. Fly with caution.; RTH ascending.",
+      "labels_correct": [
+        [
+          "Low battery RTH",
+          "operation",
+          "positive",
+          "NULL"
+        ],
+        [
+          "Controller",
+          "hardware",
+          "positive",
+          "triggered aircraft to descend"
+        ],
+        [
+          "Auto RTH",
+          "operation",
+          "positive",
+          "canceled"
+        ],
+        [
+          "Forward ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ],
+        [
+          "downward ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ],
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "ascending"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "battery",
+          "hardware",
+          "negative",
+          "Low RTH"
+        ],
+        [
+          "Controller",
+          "hardware",
+          "positive",
+          "triggered aircraft to descend"
+        ],
+        [
+          "Auto RTH",
+          "operation",
+          "negative",
+          "canceled"
+        ],
+        [
+          "Forward ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ],
+        [
+          "caution",
+          "operation",
+          "positive",
+          "Fly with caution"
+        ],
+        [
+          "Downward ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ],
+        [
+          "caution",
+          "operation",
+          "positive",
+          "Fly with caution"
+        ],
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "ascending"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.; Flight mode changed to Confirm Landing.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ],
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to Confirm Landing"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ],
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to Confirm Landing"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.; Auto landing in progress.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ],
+        [
+          "Auto landing",
+          "operation",
+          "positive",
+          "in progress"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ],
+        [
+          "Auto landing",
+          "operation",
+          "positive",
+          "in progress"
+        ]
+      ]
+    },
+    {
+      "message": "Auto landing in progress.",
+      "labels_correct": [
+        [
+          "Auto landing",
+          "operation",
+          "positive",
+          "in progress"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Auto landing",
+          "operation",
+          "positive",
+          "in progress"
+        ]
+      ]
+    },
+    {
+      "message": "Flight mode changed to P-GPS.",
+      "labels_correct": [
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to P-GPS"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to P-GPS"
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,799 @@
+{
+  "performance_metrics": {
+    "quad_score": {
+      "precision": 0.6136363636363636,
+      "recall": 0.8181818181818182,
+      "f1_score": 0.7012987012987013
+    },
+    "ac_score": {
+      "precision": 0.7272727272727273,
+      "recall": 0.9696969696969697,
+      "f1_score": 0.8311688311688312
+    },
+    "acsp_score": {
+      "precision": 0.5909090909090909,
+      "recall": 0.7878787878787878,
+      "f1_score": 0.6753246753246752
+    },
+    "at_score": {
+      "precision": 0.7272727272727273,
+      "recall": 0.9696969696969697,
+      "f1_score": 0.8311688311688312
+    },
+    "ot_score": {
+      "precision": 0.7272727272727273,
+      "recall": 0.9696969696969697,
+      "f1_score": 0.8311688311688312
+    },
+    "sp_score": {
+      "precision": 0.6136363636363636,
+      "recall": 0.8181818181818182,
+      "f1_score": 0.7012987012987013
+    },
+    "micro_average": {
+      "precision": 0.6988636363636364,
+      "recall": 0.9318181818181818,
+      "f1_score": 0.7987012987012987
+    },
+    "set_multiset_scores": {
+      "set": {
+        "micro": {
+          "precision": 0.5853658536585366,
+          "recall": 0.8,
+          "f1": 0.676056338028169
+        },
+        "macro": {
+          "precision": 0.6666666666666666,
+          "recall": 0.8333333333333333,
+          "f1": 0.7199134199134198
+        },
+        "weighted": {
+          "precision": 0.6444444444444443,
+          "recall": 0.8,
+          "f1": 0.6971428571428571
+        },
+        "support": {
+          "n_gold": 30,
+          "n_pred": 41,
+          "n_tp": 24,
+          "n_examples": 22
+        }
+      },
+      "multiset": {
+        "micro": {
+          "precision": 0.6136363636363636,
+          "recall": 0.8181818181818182,
+          "f1": 0.7012987012987013
+        },
+        "macro": {
+          "precision": 0.6893939393939393,
+          "recall": 0.8484848484848484,
+          "f1": 0.7415584415584415
+        },
+        "weighted": {
+          "precision": 0.6616161616161614,
+          "recall": 0.8181818181818182,
+          "f1": 0.7174603174603175
+        },
+        "support": {
+          "n_gold": 33,
+          "n_pred": 44,
+          "n_tp": 27,
+          "n_examples": 22
+        }
+      }
+    },
+    "element_scores": {
+      "ac": {
+        "micro": {
+          "precision": 0.75,
+          "recall": 1.0,
+          "f1": 0.8571428571428571
+        },
+        "macro": {
+          "precision": 0.8295454545454544,
+          "recall": 1.0,
+          "f1": 0.8865800865800867
+        },
+        "weighted": {
+          "precision": 0.8207070707070706,
+          "recall": 1.0,
+          "f1": 0.8862914862914861
+        },
+        "support": {
+          "n_gold": 33,
+          "n_pred": 44,
+          "n_tp": 33,
+          "n_examples": 22
+        }
+      },
+      "at": {
+        "micro": {
+          "precision": 0.75,
+          "recall": 1.0,
+          "f1": 0.8571428571428571
+        },
+        "macro": {
+          "precision": 0.8295454545454544,
+          "recall": 1.0,
+          "f1": 0.8865800865800867
+        },
+        "weighted": {
+          "precision": 0.8207070707070706,
+          "recall": 1.0,
+          "f1": 0.8862914862914861
+        },
+        "support": {
+          "n_gold": 33,
+          "n_pred": 44,
+          "n_tp": 33,
+          "n_examples": 22
+        }
+      },
+      "sp": {
+        "micro": {
+          "precision": 0.6136363636363636,
+          "recall": 0.8181818181818182,
+          "f1": 0.7012987012987013
+        },
+        "macro": {
+          "precision": 0.6893939393939393,
+          "recall": 0.8484848484848484,
+          "f1": 0.7415584415584415
+        },
+        "weighted": {
+          "precision": 0.6616161616161614,
+          "recall": 0.8181818181818182,
+          "f1": 0.7174603174603175
+        },
+        "support": {
+          "n_gold": 33,
+          "n_pred": 44,
+          "n_tp": 27,
+          "n_examples": 22
+        }
+      },
+      "ot": {
+        "micro": {
+          "precision": 0.75,
+          "recall": 1.0,
+          "f1": 0.8571428571428571
+        },
+        "macro": {
+          "precision": 0.8295454545454544,
+          "recall": 1.0,
+          "f1": 0.8865800865800867
+        },
+        "weighted": {
+          "precision": 0.8207070707070706,
+          "recall": 1.0,
+          "f1": 0.8862914862914861
+        },
+        "support": {
+          "n_gold": 33,
+          "n_pred": 44,
+          "n_tp": 33,
+          "n_examples": 22
+        }
+      }
+    }
+  },
+  "examples": [
+    {
+      "message": "Motors starting.; Flight mode changed to P-GPS.",
+      "labels_correct": [
+        [
+          "Motors",
+          "hardware",
+          "positive",
+          "starting"
+        ],
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to P-GPS"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Motors",
+          "hardware",
+          "positive",
+          "starting"
+        ],
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to P-GPS"
+        ]
+      ]
+    },
+    {
+      "message": "Data Recorder File Index is 80.; Set Return to Home (RTH) altitude to 100 m (328 ft).; Set maximum flight altitude to 500 m (1640 ft).; Flight mode changed to Starting Motors.",
+      "labels_correct": [
+        [
+          "Data Recorder File Index",
+          "parameter",
+          "positive",
+          "80"
+        ],
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to Starting Motors"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Data Recorder File Index",
+          "parameter",
+          "positive",
+          "80"
+        ],
+        [
+          "maximum flight altitude",
+          "parameter",
+          "positive",
+          "500 m (1640 ft"
+        ],
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to Starting Motors"
+        ]
+      ]
+    },
+    {
+      "message": "Flight mode changed to Manual Takeoff.",
+      "labels_correct": [
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to Manual Takeoff"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to Manual Takeoff"
+        ]
+      ]
+    },
+    {
+      "message": "Flight mode changed to P-GPS.",
+      "labels_correct": [
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to P-GPS"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to P-GPS"
+        ]
+      ]
+    },
+    {
+      "message": "Home point updated.",
+      "labels_correct": [
+        [
+          "Home point",
+          "parameter",
+          "positive",
+          "updated"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Home point",
+          "parameter",
+          "positive",
+          "updated"
+        ]
+      ]
+    },
+    {
+      "message": "Gimbal pitch axis endpoint reached.",
+      "labels_correct": [
+        [
+          "Gimbal pitch axis endpoint",
+          "parameter",
+          "positive",
+          "reached"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Gimbal pitch axis endpoint",
+          "parameter",
+          "positive",
+          "reached"
+        ]
+      ]
+    },
+    {
+      "message": "Gimbal pitch axis endpoint reached.",
+      "labels_correct": [
+        [
+          "Gimbal pitch axis endpoint",
+          "parameter",
+          "positive",
+          "reached"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Gimbal pitch axis endpoint",
+          "parameter",
+          "positive",
+          "reached"
+        ]
+      ]
+    },
+    {
+      "message": "Image transmission signal weak. Adjust antennas and make sure they are perpendicular to flight direction of aircraft.",
+      "labels_correct": [
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ],
+        [
+          "antenna",
+          "hardware",
+          "positive",
+          "perpendicular to flight direction"
+        ]
+      ]
+    },
+    {
+      "message": "Image transmission signal weak.; Aircraft braking.; Image transmission signal weak. Adjust antennas and make sure they are perpendicular to flight direction of aircraft.",
+      "labels_correct": [
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "negative",
+          "braking"
+        ],
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "braking"
+        ],
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ],
+        [
+          "antenna",
+          "hardware",
+          "positive",
+          "perpendicular to flight direction"
+        ]
+      ]
+    },
+    {
+      "message": "Image transmission signal weak.; Image transmission signal weak. Adjust antennas and make sure they are perpendicular to flight direction of aircraft.",
+      "labels_correct": [
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ],
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ],
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ],
+        [
+          "antenna",
+          "hardware",
+          "positive",
+          "perpendicular to flight direction"
+        ]
+      ]
+    },
+    {
+      "message": "Image transmission signal weak.; Aircraft braking.; Image transmission signal weak. Adjust antennas and make sure they are perpendicular to flight direction of aircraft.",
+      "labels_correct": [
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "negative",
+          "braking"
+        ],
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "braking"
+        ],
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ],
+        [
+          "antenna",
+          "hardware",
+          "positive",
+          "perpendicular to flight direction"
+        ]
+      ]
+    },
+    {
+      "message": "RC signal lost.",
+      "labels_correct": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ]
+      ]
+    },
+    {
+      "message": "RC signal lost.; Aircraft braking.; Image transmission signal weak. Adjust antennas and make sure they are perpendicular to flight direction of aircraft.",
+      "labels_correct": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "negative",
+          "braking"
+        ],
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "braking"
+        ],
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ],
+        [
+          "antenna",
+          "hardware",
+          "positive",
+          "perpendicular to flight direction"
+        ]
+      ]
+    },
+    {
+      "message": "Image transmission signal weak.",
+      "labels_correct": [
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ]
+    },
+    {
+      "message": "Image transmission signal weak. Adjust antennas and make sure they are perpendicular to flight direction of aircraft.",
+      "labels_correct": [
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ],
+        [
+          "antenna",
+          "hardware",
+          "positive",
+          "perpendicular to flight direction"
+        ]
+      ]
+    },
+    {
+      "message": "Image transmission signal weak.",
+      "labels_correct": [
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ]
+    },
+    {
+      "message": "Aircraft braking.",
+      "labels_correct": [
+        [
+          "Aircraft",
+          "hardware",
+          "negative",
+          "braking"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "braking"
+        ]
+      ]
+    },
+    {
+      "message": "Aircraft braking.",
+      "labels_correct": [
+        [
+          "Aircraft",
+          "hardware",
+          "negative",
+          "braking"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "braking"
+        ]
+      ]
+    },
+    {
+      "message": "Aircraft braking.; Auto landing in progress.; Flight mode changed to Auto Landing.",
+      "labels_correct": [
+        [
+          "Aircraft",
+          "hardware",
+          "negative",
+          "braking"
+        ],
+        [
+          "Auto landing",
+          "operation",
+          "positive",
+          "in progress"
+        ],
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to Auto Landing"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "braking"
+        ],
+        [
+          "Auto landing",
+          "operation",
+          "positive",
+          "in progress"
+        ],
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to Auto Landing"
+        ]
+      ]
+    },
+    {
+      "message": "Auto landing in progress.; Make sure the area under the aircraft is safe for landing. Push throttle down to use force landing.",
+      "labels_correct": [
+        [
+          "Auto landing",
+          "operation",
+          "positive",
+          "in progress"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Auto landing",
+          "operation",
+          "positive",
+          "in progress"
+        ],
+        [
+          "the area",
+          "hardware",
+          "positive",
+          "under the aircraft"
+        ],
+        [
+          "throttle",
+          "hardware",
+          "positive",
+          "Push down"
+        ]
+      ]
+    },
+    {
+      "message": "Auto landing in progress.; Make sure the area under the aircraft is safe for landing. Push throttle down to use force landing.",
+      "labels_correct": [
+        [
+          "Auto landing",
+          "operation",
+          "positive",
+          "in progress"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Auto landing",
+          "operation",
+          "positive",
+          "in progress"
+        ],
+        [
+          "the area",
+          "hardware",
+          "positive",
+          "under the aircraft"
+        ],
+        [
+          "throttle",
+          "hardware",
+          "positive",
+          "Push down"
+        ]
+      ]
+    },
+    {
+      "message": "Flight mode changed to P-GPS.",
+      "labels_correct": [
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to P-GPS"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to P-GPS"
+        ]
+      ]
+    }
+  ]
+}

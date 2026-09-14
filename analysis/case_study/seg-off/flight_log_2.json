@@ -1,0 +1,4558 @@
+{
+  "performance_metrics": {
+    "quad_score": {
+      "precision": 0.748,
+      "recall": 0.5771604938271605,
+      "f1_score": 0.6515679442508712
+    },
+    "ac_score": {
+      "precision": 0.832,
+      "recall": 0.6419753086419753,
+      "f1_score": 0.7247386759581881
+    },
+    "acsp_score": {
+      "precision": 0.608,
+      "recall": 0.4691358024691358,
+      "f1_score": 0.5296167247386759
+    },
+    "at_score": {
+      "precision": 0.684,
+      "recall": 0.5277777777777778,
+      "f1_score": 0.5958188153310104
+    },
+    "ot_score": {
+      "precision": 0.7,
+      "recall": 0.5401234567901234,
+      "f1_score": 0.6097560975609756
+    },
+    "sp_score": {
+      "precision": 0.68,
+      "recall": 0.5246913580246914,
+      "f1_score": 0.5923344947735192
+    },
+    "micro_average": {
+      "precision": 0.724,
+      "recall": 0.558641975308642,
+      "f1_score": 0.6306620209059234
+    },
+    "set_multiset_scores": {
+      "set": {
+        "micro": {
+          "precision": 0.698744769874477,
+          "recall": 0.5548172757475083,
+          "f1": 0.6185185185185185
+        },
+        "macro": {
+          "precision": 0.7274436090225563,
+          "recall": 0.6773361976369496,
+          "f1": 0.6918915253501722
+        },
+        "weighted": {
+          "precision": 0.6871539313399778,
+          "recall": 0.5548172757475083,
+          "f1": 0.6013454430397952
+        },
+        "support": {
+          "n_gold": 301,
+          "n_pred": 239,
+          "n_tp": 167,
+          "n_examples": 133
+        }
+      },
+      "multiset": {
+        "micro": {
+          "precision": 0.712,
+          "recall": 0.5493827160493827,
+          "f1": 0.6202090592334494
+        },
+        "macro": {
+          "precision": 0.7412280701754388,
+          "recall": 0.6827157178660941,
+          "f1": 0.6992147785380872
+        },
+        "weighted": {
+          "precision": 0.7044753086419753,
+          "recall": 0.5493827160493827,
+          "f1": 0.6015777946333503
+        },
+        "support": {
+          "n_gold": 324,
+          "n_pred": 250,
+          "n_tp": 178,
+          "n_examples": 133
+        }
+      }
+    },
+    "element_scores": {
+      "ac": {
+        "micro": {
+          "precision": 0.98,
+          "recall": 0.7561728395061729,
+          "f1": 0.8536585365853658
+        },
+        "macro": {
+          "precision": 0.9830827067669173,
+          "recall": 0.8899301825993553,
+          "f1": 0.9186958405003521
+        },
+        "weighted": {
+          "precision": 0.9891975308641975,
+          "recall": 0.7561728395061729,
+          "f1": 0.8358504150170816
+        },
+        "support": {
+          "n_gold": 324,
+          "n_pred": 250,
+          "n_tp": 245,
+          "n_examples": 133
+        }
+      },
+      "at": {
+        "micro": {
+          "precision": 0.9,
+          "recall": 0.6944444444444444,
+          "f1": 0.7839721254355401
+        },
+        "macro": {
+          "precision": 0.8897243107769426,
+          "recall": 0.8072055137844611,
+          "f1": 0.8321510152337221
+        },
+        "weighted": {
+          "precision": 0.9043209876543211,
+          "recall": 0.6944444444444444,
+          "f1": 0.7658247616580948
+        },
+        "support": {
+          "n_gold": 324,
+          "n_pred": 250,
+          "n_tp": 225,
+          "n_examples": 133
+        }
+      },
+      "sp": {
+        "micro": {
+          "precision": 0.752,
+          "recall": 0.5802469135802469,
+          "f1": 0.6550522648083623
+        },
+        "macro": {
+          "precision": 0.7788220551378446,
+          "recall": 0.714133548156105,
+          "f1": 0.7327645620878707
+        },
+        "weighted": {
+          "precision": 0.7515432098765432,
+          "recall": 0.5802469135802469,
+          "f1": 0.6380536644425533
+        },
+        "support": {
+          "n_gold": 324,
+          "n_pred": 250,
+          "n_tp": 188,
+          "n_examples": 133
+        }
+      },
+      "ot": {
+        "micro": {
+          "precision": 0.872,
+          "recall": 0.6728395061728395,
+          "f1": 0.759581881533101
+        },
+        "macro": {
+          "precision": 0.8709273182957398,
+          "recall": 0.796983530254207,
+          "f1": 0.8189513494024774
+        },
+        "weighted": {
+          "precision": 0.8641975308641977,
+          "recall": 0.6728395061728395,
+          "f1": 0.7378412225634446
+        },
+        "support": {
+          "n_gold": 324,
+          "n_pred": 250,
+          "n_tp": 218,
+          "n_examples": 133
+        }
+      }
+    }
+  },
+  "examples": [
+    {
+      "message": "Motors starting.; Flight mode changed to Starting Motors.",
+      "labels_correct": [
+        [
+          "Motors",
+          "hardware",
+          "positive",
+          "starting"
+        ],
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to Starting Motors"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Motors",
+          "hardware",
+          "positive",
+          "starting"
+        ],
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to Starting Motors"
+        ]
+      ]
+    },
+    {
+      "message": "Data Recorder File Index is 83.; Set Return to Home (RTH) altitude to 100 m (328 ft).; Set maximum flight altitude to 500 m (1640 ft).",
+      "labels_correct": [
+        [
+          "Data Recorder File Index",
+          "parameter",
+          "positive",
+          "83"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Data Recorder File Index",
+          "parameter",
+          "positive",
+          "83"
+        ]
+      ]
+    },
+    {
+      "message": "Flight mode changed to Manual Takeoff.",
+      "labels_correct": [
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to Manual Takeoff"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to Manual Takeoff"
+        ]
+      ]
+    },
+    {
+      "message": "Home point updated.; Flight mode changed to P-GPS.",
+      "labels_correct": [
+        [
+          "Home point",
+          "parameter",
+          "positive",
+          "updated"
+        ],
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to P-GPS"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Home point",
+          "parameter",
+          "positive",
+          "updated"
+        ],
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to P-GPS"
+        ]
+      ]
+    },
+    {
+      "message": "Image transmission signal weak.",
+      "labels_correct": [
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ]
+    },
+    {
+      "message": "Image transmission signal weak.; Aircraft braking.; Image transmission signal weak. Adjust antennas and make sure they are perpendicular to flight direction of aircraft.",
+      "labels_correct": [
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "negative",
+          "braking"
+        ],
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "braking"
+        ],
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ]
+    },
+    {
+      "message": "RC signal lost.",
+      "labels_correct": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ]
+      ]
+    },
+    {
+      "message": "RC signal lost.",
+      "labels_correct": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ]
+      ]
+    },
+    {
+      "message": "No image transmission. RTH.; Press Brake button to cancel RTH.; No image transmission. Aircraft returning to home.; Image transmission signal weak. Adjust antennas and make sure they are perpendicular to flight direction of aircraft.; Flight mode changed to Go Home.",
+      "labels_correct": [
+        [
+          "image transmission",
+          "communication",
+          "negative",
+          "No"
+        ],
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "NULL"
+        ],
+        [
+          "image transmission",
+          "communication",
+          "negative",
+          "No"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "returning to home"
+        ],
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ],
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to Go Home"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Image transmission",
+          "communication",
+          "negative",
+          "No"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "returning to home"
+        ],
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ]
+    },
+    {
+      "message": "No image transmission. RTH.; Press Brake button to cancel RTH.; RC signal lost.; No image transmission. Aircraft returning to home.; Image transmission signal weak. Adjust antennas and make sure they are perpendicular to flight direction of aircraft.; RTH in progress.",
+      "labels_correct": [
+        [
+          "image transmission",
+          "communication",
+          "negative",
+          "No"
+        ],
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "NULL"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "image transmission",
+          "communication",
+          "negative",
+          "No"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "returning to home"
+        ],
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ],
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "in progress"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "image transmission",
+          "communication",
+          "negative",
+          "No"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "returning to home"
+        ],
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ]
+    },
+    {
+      "message": "No image transmission. RTH.; Press Brake button to cancel RTH.; No image transmission. Aircraft returning to home.; Image transmission signal weak. Adjust antennas and make sure they are perpendicular to flight direction of aircraft.; RTH in progress.",
+      "labels_correct": [
+        [
+          "image transmission",
+          "communication",
+          "negative",
+          "No"
+        ],
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "NULL"
+        ],
+        [
+          "image transmission",
+          "communication",
+          "negative",
+          "No"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "negative",
+          "returning to home"
+        ],
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ],
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "in progress"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "image transmission",
+          "communication",
+          "negative",
+          "No"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "returning to home"
+        ],
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ]
+    },
+    {
+      "message": "No image transmission. RTH.; Press Brake button to cancel RTH.; No image transmission. Aircraft returning to home.; Image transmission signal weak. Adjust antennas and make sure they are perpendicular to flight direction of aircraft.; RTH in progress.",
+      "labels_correct": [
+        [
+          "image transmission",
+          "communication",
+          "negative",
+          "No"
+        ],
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "NULL"
+        ],
+        [
+          "image transmission",
+          "communication",
+          "negative",
+          "No"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "returning to home"
+        ],
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ],
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "in progress"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "image transmission",
+          "communication",
+          "negative",
+          "No"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "returning to home"
+        ],
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ]
+    },
+    {
+      "message": "RTH ascending.; Controller triggered aircraft to descend. Auto RTH canceled.",
+      "labels_correct": [
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "ascending"
+        ],
+        [
+          "Controller",
+          "hardware",
+          "positive",
+          "triggered aircraft to descend"
+        ],
+        [
+          "Auto RTH",
+          "operation",
+          "positive",
+          "canceled"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "ascending"
+        ],
+        [
+          "Controller",
+          "hardware",
+          "positive",
+          "triggered aircraft to descend"
+        ],
+        [
+          "Auto RTH",
+          "operation",
+          "positive",
+          "canceled"
+        ]
+      ]
+    },
+    {
+      "message": "Flight mode changed to P-GPS.",
+      "labels_correct": [
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to P-GPS"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to P-GPS"
+        ]
+      ]
+    },
+    {
+      "message": "RC signal weak.",
+      "labels_correct": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ]
+    },
+    {
+      "message": "RC signal weak.; Image transmission signal weak.",
+      "labels_correct": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ],
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ],
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ]
+    },
+    {
+      "message": "Image transmission signal weak.",
+      "labels_correct": [
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ]
+    },
+    {
+      "message": "Image transmission signal weak.",
+      "labels_correct": [
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ]
+    },
+    {
+      "message": "Image transmission signal weak.",
+      "labels_correct": [
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ]
+    },
+    {
+      "message": "Image transmission signal weak.; RC signal weak.",
+      "labels_correct": [
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ]
+    },
+    {
+      "message": "Image transmission signal weak.",
+      "labels_correct": [
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ]
+    },
+    {
+      "message": "Image transmission signal weak.; Aircraft braking.; Image transmission signal weak. Adjust antennas and make sure they are perpendicular to flight direction of aircraft.",
+      "labels_correct": [
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "negative",
+          "braking"
+        ],
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "braking"
+        ],
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ]
+    },
+    {
+      "message": "RC signal weak. Avoid blocking antennas and adjust antenna orientation.",
+      "labels_correct": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ]
+    },
+    {
+      "message": "RC signal lost.",
+      "labels_correct": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ]
+      ]
+    },
+    {
+      "message": "Image transmission signal weak.",
+      "labels_correct": [
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ]
+    },
+    {
+      "message": "Image transmission signal weak.",
+      "labels_correct": [
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ]
+    },
+    {
+      "message": "Image transmission signal weak.; Aircraft braking.; Image transmission signal weak. Adjust antennas and make sure they are perpendicular to flight direction of aircraft.",
+      "labels_correct": [
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "negative",
+          "braking"
+        ],
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "braking"
+        ],
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ]
+    },
+    {
+      "message": "Image transmission signal weak.",
+      "labels_correct": [
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ]
+    },
+    {
+      "message": "No image transmission. RTH.; Press Brake button to cancel RTH.; No image transmission. Aircraft returning to home.; Image transmission signal weak. Adjust antennas and make sure they are perpendicular to flight direction of aircraft.; Flight mode changed to Go Home.",
+      "labels_correct": [
+        [
+          "image transmission",
+          "communication",
+          "negative",
+          "No"
+        ],
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "NULL"
+        ],
+        [
+          "image transmission",
+          "communication",
+          "negative",
+          "No"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "returning to home"
+        ],
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ],
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to Go Home"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Image transmission",
+          "communication",
+          "negative",
+          "No"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "returning to home"
+        ],
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ]
+    },
+    {
+      "message": "Original route RTH.",
+      "labels_correct": [
+        [
+          "Original route RTH",
+          "operation",
+          "positive",
+          "NULL"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Original route",
+          "operation",
+          "positive",
+          "RTH"
+        ]
+      ]
+    },
+    {
+      "message": "RTH in progress.",
+      "labels_correct": [
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "in progress"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "in progress"
+        ]
+      ]
+    },
+    {
+      "message": "No image transmission. RTH.; Press Brake button to cancel RTH.; No image transmission. Aircraft returning to home.; Image transmission signal weak. Adjust antennas and make sure they are perpendicular to flight direction of aircraft.; RTH in progress.",
+      "labels_correct": [
+        [
+          "image transmission",
+          "communication",
+          "negative",
+          "No"
+        ],
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "NULL"
+        ],
+        [
+          "image transmission",
+          "communication",
+          "negative",
+          "No"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "returning to home"
+        ],
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ],
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "in progress"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "image transmission",
+          "communication",
+          "negative",
+          "No"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "returning to home"
+        ],
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ]
+    },
+    {
+      "message": "No image transmission. RTH.; Press Brake button to cancel RTH.; No image transmission. Aircraft returning to home.; Image transmission signal weak. Adjust antennas and make sure they are perpendicular to flight direction of aircraft.; RTH in progress.",
+      "labels_correct": [
+        [
+          "image transmission",
+          "communication",
+          "negative",
+          "No"
+        ],
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "NULL"
+        ],
+        [
+          "image transmission",
+          "communication",
+          "negative",
+          "No"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "returning to home"
+        ],
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ],
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "in progress"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "image transmission",
+          "communication",
+          "negative",
+          "No"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "returning to home"
+        ],
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ]
+    },
+    {
+      "message": "Controller triggered aircraft to descend. Auto RTH canceled.",
+      "labels_correct": [
+        [
+          "Controller",
+          "hardware",
+          "positive",
+          "triggered aircraft to descend"
+        ],
+        [
+          "Auto RTH",
+          "operation",
+          "positive",
+          "canceled"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Controller",
+          "hardware",
+          "positive",
+          "triggered aircraft to descend"
+        ],
+        [
+          "Auto RTH",
+          "operation",
+          "positive",
+          "canceled"
+        ]
+      ]
+    },
+    {
+      "message": "RTH ascending.",
+      "labels_correct": [
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "ascending"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "ascending"
+        ]
+      ]
+    },
+    {
+      "message": "Flight mode changed to P-GPS.",
+      "labels_correct": [
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to P-GPS"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to P-GPS"
+        ]
+      ]
+    },
+    {
+      "message": "Image transmission signal weak.",
+      "labels_correct": [
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ]
+    },
+    {
+      "message": "Aircraft braking.; Image transmission signal weak. Adjust antennas and make sure they are perpendicular to flight direction of aircraft.",
+      "labels_correct": [
+        [
+          "Aircraft",
+          "hardware",
+          "negative",
+          "braking"
+        ],
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Aircraft",
+          "hardware",
+          "negative",
+          "braking"
+        ],
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ]
+    },
+    {
+      "message": "RC signal lost.",
+      "labels_correct": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ]
+      ]
+    },
+    {
+      "message": "RC signal lost.",
+      "labels_correct": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ]
+      ]
+    },
+    {
+      "message": "Image transmission signal weak.",
+      "labels_correct": [
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ]
+    },
+    {
+      "message": "Image transmission signal weak.; RC signal lost.",
+      "labels_correct": [
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ]
+      ]
+    },
+    {
+      "message": "RC signal lost.; No image transmission. RTH.; Press Brake button to cancel RTH.; No image transmission. Aircraft returning to home.; Image transmission signal weak. Adjust antennas and make sure they are perpendicular to flight direction of aircraft.; Flight mode changed to Go Home.",
+      "labels_correct": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "image transmission",
+          "communication",
+          "negative",
+          "No"
+        ],
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "NULL"
+        ],
+        [
+          "image transmission",
+          "communication",
+          "negative",
+          "No"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "returning to home"
+        ],
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ],
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to Go Home"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "RTH",
+          "operation",
+          "negative",
+          "No"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "returning to home"
+        ],
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ]
+    },
+    {
+      "message": "No image transmission. RTH.; Press Brake button to cancel RTH.; RC signal lost.; No image transmission. Aircraft returning to home.; Image transmission signal weak. Adjust antennas and make sure they are perpendicular to flight direction of aircraft.; RTH in progress.",
+      "labels_correct": [
+        [
+          "image transmission",
+          "communication",
+          "negative",
+          "No"
+        ],
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "NULL"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "image transmission",
+          "communication",
+          "negative",
+          "No"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "returning to home"
+        ],
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ],
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "in progress"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "image transmission",
+          "communication",
+          "negative",
+          "No"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "returning to home"
+        ],
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ]
+    },
+    {
+      "message": "RTH ascending.; Controller triggered aircraft to descend. Auto RTH canceled.",
+      "labels_correct": [
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "ascending"
+        ],
+        [
+          "Controller",
+          "hardware",
+          "positive",
+          "triggered aircraft to descend"
+        ],
+        [
+          "Auto RTH",
+          "operation",
+          "positive",
+          "canceled"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "ascending"
+        ],
+        [
+          "Controller",
+          "hardware",
+          "positive",
+          "triggered aircraft to descend"
+        ],
+        [
+          "Auto RTH",
+          "operation",
+          "positive",
+          "canceled"
+        ]
+      ]
+    },
+    {
+      "message": "No image transmission. RTH.; Controller triggered aircraft to descend. Auto RTH canceled.; No image transmission. Aircraft returning to home.; RTH ascending.; Flight mode changed to P-GPS.",
+      "labels_correct": [
+        [
+          "image transmission",
+          "communication",
+          "negative",
+          "No"
+        ],
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "NULL"
+        ],
+        [
+          "Controller",
+          "hardware",
+          "positive",
+          "triggered aircraft to descend"
+        ],
+        [
+          "Auto RTH",
+          "operation",
+          "positive",
+          "canceled"
+        ],
+        [
+          "image transmission",
+          "communication",
+          "negative",
+          "No"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "returning to home"
+        ],
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "ascending"
+        ],
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to P-GPS"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "image transmission",
+          "communication",
+          "negative",
+          "No"
+        ],
+        [
+          "Controller",
+          "hardware",
+          "positive",
+          "triggered aircraft to descend"
+        ],
+        [
+          "Auto RTH",
+          "operation",
+          "positive",
+          "canceled"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "returning to home"
+        ],
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to P-GPS"
+        ]
+      ]
+    },
+    {
+      "message": "No image transmission. RTH.; Controller triggered aircraft to descend. Auto RTH canceled.; No image transmission. Aircraft returning to home.",
+      "labels_correct": [
+        [
+          "image transmission",
+          "communication",
+          "negative",
+          "No"
+        ],
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "NULL"
+        ],
+        [
+          "Controller",
+          "hardware",
+          "positive",
+          "triggered aircraft to descend"
+        ],
+        [
+          "Auto RTH",
+          "operation",
+          "positive",
+          "canceled"
+        ],
+        [
+          "image transmission",
+          "communication",
+          "negative",
+          "No"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "returning to home"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "image transmission",
+          "communication",
+          "negative",
+          "No"
+        ],
+        [
+          "Controller",
+          "hardware",
+          "positive",
+          "triggered aircraft to descend"
+        ],
+        [
+          "Auto RTH",
+          "operation",
+          "positive",
+          "canceled"
+        ]
+      ]
+    },
+    {
+      "message": "Image transmission signal weak.",
+      "labels_correct": [
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ]
+    },
+    {
+      "message": "Image transmission signal weak.; Aircraft braking.; Image transmission signal weak. Adjust antennas and make sure they are perpendicular to flight direction of aircraft.",
+      "labels_correct": [
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "negative",
+          "braking"
+        ],
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "braking"
+        ],
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ]
+    },
+    {
+      "message": "Image transmission signal weak.",
+      "labels_correct": [
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ]
+    },
+    {
+      "message": "Image transmission signal weak.",
+      "labels_correct": [
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ]
+    },
+    {
+      "message": "Image transmission signal weak.",
+      "labels_correct": [
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ]
+    },
+    {
+      "message": "Image transmission signal weak.",
+      "labels_correct": [
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ]
+    },
+    {
+      "message": "Image transmission signal weak.",
+      "labels_correct": [
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ]
+    },
+    {
+      "message": "Image transmission signal weak.",
+      "labels_correct": [
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ]
+    },
+    {
+      "message": "Aircraft braking.",
+      "labels_correct": [
+        [
+          "Aircraft",
+          "hardware",
+          "negative",
+          "braking"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "braking"
+        ]
+      ]
+    },
+    {
+      "message": "RC signal weak. Avoid blocking antennas and adjust antenna orientation.",
+      "labels_correct": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ]
+    },
+    {
+      "message": "RC signal weak.; Aircraft braking.",
+      "labels_correct": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "negative",
+          "braking"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "braking"
+        ]
+      ]
+    },
+    {
+      "message": "RC signal lost.",
+      "labels_correct": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ]
+      ]
+    },
+    {
+      "message": "RC signal lost.",
+      "labels_correct": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ]
+      ]
+    },
+    {
+      "message": "RC signal lost.",
+      "labels_correct": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ]
+      ]
+    },
+    {
+      "message": "RC signal weak.",
+      "labels_correct": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ]
+    },
+    {
+      "message": "RC signal weak.; Aircraft braking.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.",
+      "labels_correct": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "negative",
+          "braking"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "braking"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ]
+    },
+    {
+      "message": "RC signal weak.; Aircraft braking.; RC signal lost. Aircraft will follow preset action for lost signal.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.",
+      "labels_correct": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "negative",
+          "braking"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "braking"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ]
+      ]
+    },
+    {
+      "message": "Failsafe RTH.; Flight mode changed to Go Home.",
+      "labels_correct": [
+        [
+          "Failsafe RTH",
+          "operation",
+          "positive",
+          "NULL"
+        ],
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to Go Home"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RTH",
+          "operation",
+          "negative",
+          "Failsafe"
+        ],
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to Go Home"
+        ]
+      ]
+    },
+    {
+      "message": "Failsafe RTH.; Press Brake button to cancel RTH.; RC signal lost. Returning to home.; Original route RTH.",
+      "labels_correct": [
+        [
+          "Failsafe RTH",
+          "operation",
+          "positive",
+          "NULL"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "returning to home"
+        ],
+        [
+          "Original route RTH",
+          "operation",
+          "positive",
+          "NULL"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RTH",
+          "operation",
+          "negative",
+          "Failsafe"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ]
+      ]
+    },
+    {
+      "message": "Downlink Lost.",
+      "labels_correct": [
+        [
+          "downlink",
+          "communication",
+          "negative",
+          "lost"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Downlink",
+          "communication",
+          "negative",
+          "Lost"
+        ]
+      ]
+    },
+    {
+      "message": "Downlink Restored (after 0m 1.2s).",
+      "labels_correct": [
+        [
+          "Downlink",
+          "communication",
+          "positive",
+          "Restored"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Downlink",
+          "communication",
+          "positive",
+          "Restored"
+        ]
+      ]
+    },
+    {
+      "message": "Failsafe RTH.; Press Brake button to cancel RTH.; RC signal lost. Returning to home.; Image transmission signal weak. Adjust antennas and make sure they are perpendicular to flight direction of aircraft.; Original route RTH.",
+      "labels_correct": [
+        [
+          "Failsafe RTH",
+          "operation",
+          "positive",
+          "NULL"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "returning to home"
+        ],
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ],
+        [
+          "Original route RTH",
+          "operation",
+          "positive",
+          "NULL"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RTH",
+          "operation",
+          "negative",
+          "Failsafe"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ]
+    },
+    {
+      "message": "RC signal weak. Avoid blocking antennas and adjust antenna orientation.",
+      "labels_correct": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ]
+    },
+    {
+      "message": "Failsafe RTH.",
+      "labels_correct": [
+        [
+          "Failsafe RTH",
+          "operation",
+          "positive",
+          "NULL"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RTH",
+          "operation",
+          "negative",
+          "Failsafe"
+        ]
+      ]
+    },
+    {
+      "message": "Failsafe RTH.",
+      "labels_correct": [
+        [
+          "Failsafe RTH",
+          "operation",
+          "positive",
+          "NULL"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RTH",
+          "operation",
+          "negative",
+          "Failsafe"
+        ]
+      ]
+    },
+    {
+      "message": "Failsafe RTH.; Image transmission signal weak.; RTH in progress.",
+      "labels_correct": [
+        [
+          "Failsafe RTH",
+          "operation",
+          "positive",
+          "NULL"
+        ],
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ],
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "in progress"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RTH",
+          "operation",
+          "negative",
+          "Failsafe"
+        ],
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ],
+        [
+          "RTH",
+          "operation",
+          "negative",
+          "in progress"
+        ]
+      ]
+    },
+    {
+      "message": "Downlink Lost.",
+      "labels_correct": [
+        [
+          "downlink",
+          "communication",
+          "negative",
+          "lost"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Downlink",
+          "communication",
+          "negative",
+          "Lost"
+        ]
+      ]
+    },
+    {
+      "message": "Press Brake button to cancel RTH.; RC signal lost. Returning to home.; Downlink Restored (after 0m 6.2s).",
+      "labels_correct": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "returning to home"
+        ],
+        [
+          "Downlink",
+          "communication",
+          "positive",
+          "Restored"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Downlink",
+          "communication",
+          "positive",
+          "Restored"
+        ]
+      ]
+    },
+    {
+      "message": "RC signal weak. Avoid blocking antennas and adjust antenna orientation.",
+      "labels_correct": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ]
+    },
+    {
+      "message": "Failsafe RTH.; Press Brake button to cancel RTH.; RC signal lost. Returning to home.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.; RTH in progress.",
+      "labels_correct": [
+        [
+          "Failsafe RTH",
+          "operation",
+          "positive",
+          "NULL"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "returning to home"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ],
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "in progress"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RTH",
+          "operation",
+          "negative",
+          "Failsafe"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ]
+    },
+    {
+      "message": "Failsafe RTH.; Press Brake button to cancel RTH.; RC signal lost. Returning to home.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.; RTH in progress.; Controller triggered aircraft to fly backward. Auto RTH canceled.",
+      "labels_correct": [
+        [
+          "Failsafe RTH",
+          "operation",
+          "positive",
+          "NULL"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "returning to home"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ],
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "in progress"
+        ],
+        [
+          "Controller",
+          "hardware",
+          "positive",
+          "triggered aircraft to fly backward"
+        ],
+        [
+          "Auto RTH",
+          "operation",
+          "positive",
+          "canceled"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RTH",
+          "operation",
+          "negative",
+          "Failsafe"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ]
+    },
+    {
+      "message": "Flight mode changed to P-GPS.",
+      "labels_correct": [
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to P-GPS"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to P-GPS"
+        ]
+      ]
+    },
+    {
+      "message": "Failsafe RTH.; Controller triggered aircraft to fly backward. Auto RTH canceled.; RC signal lost. Returning to home.",
+      "labels_correct": [
+        [
+          "Failsafe RTH",
+          "operation",
+          "positive",
+          "NULL"
+        ],
+        [
+          "Controller",
+          "hardware",
+          "positive",
+          "triggered aircraft to fly backward"
+        ],
+        [
+          "Auto RTH",
+          "operation",
+          "positive",
+          "canceled"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "returning to home"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RTH",
+          "operation",
+          "negative",
+          "Failsafe"
+        ],
+        [
+          "Controller",
+          "hardware",
+          "negative",
+          "triggered aircraft to fly backward"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ]
+      ]
+    },
+    {
+      "message": "Failsafe RTH.; Controller triggered aircraft to fly backward. Auto RTH canceled.; RC signal lost. Returning to home.",
+      "labels_correct": [
+        [
+          "Failsafe RTH",
+          "operation",
+          "positive",
+          "NULL"
+        ],
+        [
+          "Controller",
+          "hardware",
+          "positive",
+          "triggered aircraft to fly backward"
+        ],
+        [
+          "Auto RTH",
+          "operation",
+          "positive",
+          "canceled"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "returning to home"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RTH",
+          "operation",
+          "negative",
+          "Failsafe"
+        ],
+        [
+          "Controller",
+          "hardware",
+          "negative",
+          "triggered aircraft to fly backward"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ]
+      ]
+    },
+    {
+      "message": "Aircraft braking.",
+      "labels_correct": [
+        [
+          "Aircraft",
+          "hardware",
+          "negative",
+          "braking"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "braking"
+        ]
+      ]
+    },
+    {
+      "message": "Gimbal pitch axis endpoint reached.; Aircraft braking.",
+      "labels_correct": [
+        [
+          "Gimbal pitch axis endpoint",
+          "parameter",
+          "positive",
+          "reached"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "negative",
+          "braking"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Gimbal pitch axis endpoint",
+          "parameter",
+          "positive",
+          "reached"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "braking"
+        ]
+      ]
+    },
+    {
+      "message": "Gimbal pitch axis endpoint reached.; Aircraft braking.",
+      "labels_correct": [
+        [
+          "Gimbal pitch axis endpoint",
+          "parameter",
+          "positive",
+          "reached"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "negative",
+          "braking"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Gimbal pitch axis endpoint",
+          "parameter",
+          "positive",
+          "reached"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "braking"
+        ]
+      ]
+    },
+    {
+      "message": "Aircraft braking.",
+      "labels_correct": [
+        [
+          "Aircraft",
+          "hardware",
+          "negative",
+          "braking"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "braking"
+        ]
+      ]
+    },
+    {
+      "message": "RC signal lost.",
+      "labels_correct": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ]
+      ]
+    },
+    {
+      "message": "RC signal lost.; Aircraft braking.",
+      "labels_correct": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "negative",
+          "braking"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "braking"
+        ]
+      ]
+    },
+    {
+      "message": "RC signal weak.; RC signal lost.",
+      "labels_correct": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ]
+      ]
+    },
+    {
+      "message": "Aircraft braking.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.",
+      "labels_correct": [
+        [
+          "Aircraft",
+          "hardware",
+          "negative",
+          "braking"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Aircraft",
+          "hardware",
+          "negative",
+          "braking"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ]
+    },
+    {
+      "message": "RC signal lost. Aircraft will follow preset action for lost signal.",
+      "labels_correct": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "follow preset action"
+        ]
+      ]
+    },
+    {
+      "message": "RC signal lost.; Aircraft braking.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.",
+      "labels_correct": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "negative",
+          "braking"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "braking"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ]
+    },
+    {
+      "message": "RC signal lost. Aircraft will follow preset action for lost signal.",
+      "labels_correct": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "follow preset action"
+        ]
+      ]
+    },
+    {
+      "message": "RC signal lost.; Aircraft braking.; RC signal lost. Aircraft will follow preset action for lost signal.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.",
+      "labels_correct": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "negative",
+          "braking"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "braking"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "RC signal",
+          "hardware",
+          "negative",
+          "weak"
+        ]
+      ]
+    },
+    {
+      "message": "RC signal lost. Returning to home.; Failsafe RTH.; Flight mode changed to Go Home.",
+      "labels_correct": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "returning to home"
+        ],
+        [
+          "Failsafe RTH",
+          "operation",
+          "positive",
+          "NULL"
+        ],
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to Go Home"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Failsafe RTH",
+          "operation",
+          "negative",
+          "changed to Go Home"
+        ]
+      ]
+    },
+    {
+      "message": "Failsafe RTH.",
+      "labels_correct": [
+        [
+          "Failsafe RTH",
+          "operation",
+          "positive",
+          "NULL"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RTH",
+          "operation",
+          "negative",
+          "Failsafe"
+        ]
+      ]
+    },
+    {
+      "message": "Press Brake button to cancel RTH.; RC signal lost. Returning to home.; Original route RTH.",
+      "labels_correct": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "returning to home"
+        ],
+        [
+          "Original route RTH",
+          "operation",
+          "positive",
+          "NULL"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ]
+      ]
+    },
+    {
+      "message": "Failsafe RTH.; Press Brake button to cancel RTH.; RC signal lost. Returning to home.; Original route RTH.; RTH in progress.",
+      "labels_correct": [
+        [
+          "Failsafe RTH",
+          "operation",
+          "positive",
+          "NULL"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "returning to home"
+        ],
+        [
+          "Original route RTH",
+          "operation",
+          "positive",
+          "NULL"
+        ],
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "in progress"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RTH",
+          "operation",
+          "negative",
+          "Failsafe"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Original route",
+          "operation",
+          "negative",
+          "RTH"
+        ]
+      ]
+    },
+    {
+      "message": "Failsafe RTH.; Press Brake button to cancel RTH.; RC signal lost. Returning to home.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.; Original route RTH.; RTH in progress.",
+      "labels_correct": [
+        [
+          "Failsafe RTH",
+          "operation",
+          "positive",
+          "NULL"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "returning to home"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ],
+        [
+          "Original route RTH",
+          "operation",
+          "positive",
+          "NULL"
+        ],
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "in progress"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RTH",
+          "operation",
+          "negative",
+          "Failsafe"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ]
+    },
+    {
+      "message": "Failsafe RTH.; Press Brake button to cancel RTH.; RC signal lost. Returning to home.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.; RTH in progress.",
+      "labels_correct": [
+        [
+          "Failsafe RTH",
+          "operation",
+          "positive",
+          "NULL"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "returning to home"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ],
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "in progress"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RTH",
+          "operation",
+          "negative",
+          "Failsafe"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ]
+    },
+    {
+      "message": "Failsafe RTH.; Controller triggered aircraft to fly backward. Auto RTH canceled.; RC signal lost. Returning to home.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.; RTH in progress.",
+      "labels_correct": [
+        [
+          "Failsafe RTH",
+          "operation",
+          "positive",
+          "NULL"
+        ],
+        [
+          "Controller",
+          "hardware",
+          "positive",
+          "triggered aircraft to fly backward"
+        ],
+        [
+          "Auto RTH",
+          "operation",
+          "positive",
+          "canceled"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "returning to home"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ],
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "in progress"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RTH",
+          "operation",
+          "negative",
+          "Failsafe"
+        ],
+        [
+          "Controller",
+          "hardware",
+          "negative",
+          "triggered aircraft to fly backward"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Returning to home",
+          "operation",
+          "negative",
+          "weak"
+        ]
+      ]
+    },
+    {
+      "message": "Failsafe RTH.; Controller triggered aircraft to fly backward. Auto RTH canceled.; RC signal lost. Returning to home.; RTH in progress.",
+      "labels_correct": [
+        [
+          "Failsafe RTH",
+          "operation",
+          "positive",
+          "NULL"
+        ],
+        [
+          "Controller",
+          "hardware",
+          "positive",
+          "triggered aircraft to fly backward"
+        ],
+        [
+          "Auto RTH",
+          "operation",
+          "positive",
+          "canceled"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "returning to home"
+        ],
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "in progress"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RTH",
+          "operation",
+          "negative",
+          "Failsafe"
+        ],
+        [
+          "Controller",
+          "hardware",
+          "negative",
+          "triggered aircraft to fly backward"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ]
+      ]
+    },
+    {
+      "message": "Flight mode changed to P-GPS.",
+      "labels_correct": [
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to P-GPS"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to P-GPS"
+        ]
+      ]
+    },
+    {
+      "message": "Failsafe RTH.; Controller triggered aircraft to fly backward. Auto RTH canceled.; RC signal lost. Returning to home.; RTH in progress.",
+      "labels_correct": [
+        [
+          "Failsafe RTH",
+          "operation",
+          "positive",
+          "NULL"
+        ],
+        [
+          "Controller",
+          "hardware",
+          "positive",
+          "triggered aircraft to fly backward"
+        ],
+        [
+          "Auto RTH",
+          "operation",
+          "positive",
+          "canceled"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "returning to home"
+        ],
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "in progress"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RTH",
+          "operation",
+          "negative",
+          "Failsafe"
+        ],
+        [
+          "Controller",
+          "hardware",
+          "negative",
+          "triggered aircraft to fly backward"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ]
+      ]
+    },
+    {
+      "message": "RC signal weak. Avoid blocking antennas and adjust antenna orientation.",
+      "labels_correct": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ]
+    },
+    {
+      "message": "RC signal lost. Aircraft will follow preset action for lost signal.",
+      "labels_correct": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "follow preset action"
+        ]
+      ]
+    },
+    {
+      "message": "RC signal lost.; RC signal weak.",
+      "labels_correct": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ]
+    },
+    {
+      "message": "RC signal weak.; Aircraft braking.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.",
+      "labels_correct": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "negative",
+          "braking"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "braking"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ]
+    },
+    {
+      "message": "RC signal weak.; Aircraft braking.",
+      "labels_correct": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "negative",
+          "braking"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "braking"
+        ]
+      ]
+    },
+    {
+      "message": "Failsafe RTH.; Flight mode changed to Go Home.",
+      "labels_correct": [
+        [
+          "Failsafe RTH",
+          "operation",
+          "positive",
+          "NULL"
+        ],
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to Go Home"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RTH",
+          "operation",
+          "negative",
+          "Failsafe"
+        ],
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to Go Home"
+        ]
+      ]
+    },
+    {
+      "message": "Press Brake button to cancel RTH.; RC signal lost. Returning to home.",
+      "labels_correct": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "returning to home"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RTH",
+          "operation",
+          "negative",
+          "lost"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ]
+      ]
+    },
+    {
+      "message": "RTH in progress.",
+      "labels_correct": [
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "in progress"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "in progress"
+        ]
+      ]
+    },
+    {
+      "message": "Failsafe RTH.; Press Brake button to cancel RTH.; RC signal lost. Returning to home.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.; RTH in progress.",
+      "labels_correct": [
+        [
+          "Failsafe RTH",
+          "operation",
+          "positive",
+          "NULL"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "returning to home"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ],
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "in progress"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RTH",
+          "operation",
+          "negative",
+          "Failsafe"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ]
+    },
+    {
+      "message": "Failsafe RTH.",
+      "labels_correct": [
+        [
+          "Failsafe RTH",
+          "operation",
+          "positive",
+          "NULL"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RTH",
+          "operation",
+          "negative",
+          "Failsafe"
+        ]
+      ]
+    },
+    {
+      "message": "Failsafe RTH.",
+      "labels_correct": [
+        [
+          "Failsafe RTH",
+          "operation",
+          "positive",
+          "NULL"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RTH",
+          "operation",
+          "negative",
+          "Failsafe"
+        ]
+      ]
+    },
+    {
+      "message": "Failsafe RTH.; Press Brake button to cancel RTH.; RC signal lost. Returning to home.; RTH in progress.",
+      "labels_correct": [
+        [
+          "Failsafe RTH",
+          "operation",
+          "positive",
+          "NULL"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "returning to home"
+        ],
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "in progress"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RTH",
+          "operation",
+          "negative",
+          "Failsafe"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ]
+      ]
+    },
+    {
+      "message": "Controller triggered aircraft to fly backward. Auto RTH canceled.",
+      "labels_correct": [
+        [
+          "Controller",
+          "hardware",
+          "positive",
+          "triggered aircraft to fly backward"
+        ],
+        [
+          "Auto RTH",
+          "operation",
+          "positive",
+          "canceled"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Controller",
+          "hardware",
+          "negative",
+          "triggered aircraft to fly backward"
+        ],
+        [
+          "Auto RTH",
+          "operation",
+          "positive",
+          "canceled"
+        ]
+      ]
+    },
+    {
+      "message": "RC signal weak. Avoid blocking antennas and adjust antenna orientation.",
+      "labels_correct": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ]
+    },
+    {
+      "message": "Flight mode changed to P-GPS.",
+      "labels_correct": [
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to P-GPS"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to P-GPS"
+        ]
+      ]
+    },
+    {
+      "message": "Failsafe RTH.; Controller triggered aircraft to fly backward. Auto RTH canceled.; RC signal lost. Returning to home.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.; RTH in progress.",
+      "labels_correct": [
+        [
+          "Failsafe RTH",
+          "operation",
+          "positive",
+          "NULL"
+        ],
+        [
+          "Controller",
+          "hardware",
+          "positive",
+          "triggered aircraft to fly backward"
+        ],
+        [
+          "Auto RTH",
+          "operation",
+          "positive",
+          "canceled"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "returning to home"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ],
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "in progress"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RTH",
+          "operation",
+          "negative",
+          "Failsafe"
+        ],
+        [
+          "Controller",
+          "hardware",
+          "negative",
+          "triggered aircraft to fly backward"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Returning to home",
+          "operation",
+          "negative",
+          "weak"
+        ]
+      ]
+    },
+    {
+      "message": "Failsafe RTH.; Controller triggered aircraft to fly backward. Auto RTH canceled.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.",
+      "labels_correct": [
+        [
+          "Failsafe RTH",
+          "operation",
+          "positive",
+          "NULL"
+        ],
+        [
+          "Controller",
+          "hardware",
+          "positive",
+          "triggered aircraft to fly backward"
+        ],
+        [
+          "Auto RTH",
+          "operation",
+          "positive",
+          "canceled"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RTH",
+          "operation",
+          "negative",
+          "Failsafe"
+        ],
+        [
+          "Controller",
+          "hardware",
+          "negative",
+          "triggered aircraft to fly backward"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ]
+    },
+    {
+      "message": "RC signal weak.",
+      "labels_correct": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ]
+    },
+    {
+      "message": "RC signal weak.",
+      "labels_correct": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ]
+    },
+    {
+      "message": "Aircraft braking.",
+      "labels_correct": [
+        [
+          "Aircraft",
+          "hardware",
+          "negative",
+          "braking"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "braking"
+        ]
+      ]
+    },
+    {
+      "message": "Aircraft braking.",
+      "labels_correct": [
+        [
+          "Aircraft",
+          "hardware",
+          "negative",
+          "braking"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "braking"
+        ]
+      ]
+    },
+    {
+      "message": "RC signal weak.",
+      "labels_correct": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ]
+    },
+    {
+      "message": "RC signal weak.; Aircraft braking.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.",
+      "labels_correct": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "negative",
+          "braking"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "braking"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ]
+    },
+    {
+      "message": "RC signal weak.; Aircraft braking.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.",
+      "labels_correct": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "negative",
+          "braking"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "braking"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ]
+    },
+    {
+      "message": "RC signal weak.",
+      "labels_correct": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ]
+    },
+    {
+      "message": "RC signal weak.; Aircraft braking.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.",
+      "labels_correct": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "negative",
+          "braking"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "braking"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ]
+    },
+    {
+      "message": "RC signal weak.; Aircraft braking.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.",
+      "labels_correct": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "negative",
+          "braking"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "braking"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ]
+    },
+    {
+      "message": "RC signal weak.",
+      "labels_correct": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ]
+    },
+    {
+      "message": "Auto landing in progress.; Press brake button to cancel landing.; Flight mode changed to Auto Landing.",
+      "labels_correct": [
+        [
+          "Auto landing",
+          "operation",
+          "positive",
+          "in progress"
+        ],
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to Auto Landing"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Auto landing",
+          "operation",
+          "positive",
+          "in progress"
+        ],
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to Auto Landing"
+        ]
+      ]
+    },
+    {
+      "message": "Flight mode changed to P-GPS.",
+      "labels_correct": [
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to P-GPS"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to P-GPS"
+        ]
+      ]
+    }
+  ]
+}

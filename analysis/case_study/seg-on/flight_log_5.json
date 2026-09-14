@@ -1,0 +1,2832 @@
+{
+  "performance_metrics": {
+    "quad_score": {
+      "precision": 0.4702702702702703,
+      "recall": 0.514792899408284,
+      "f1_score": 0.4915254237288135
+    },
+    "ac_score": {
+      "precision": 0.8108108108108109,
+      "recall": 0.8875739644970414,
+      "f1_score": 0.8474576271186441
+    },
+    "acsp_score": {
+      "precision": 0.4540540540540541,
+      "recall": 0.4970414201183432,
+      "f1_score": 0.4745762711864407
+    },
+    "at_score": {
+      "precision": 0.7135135135135136,
+      "recall": 0.7810650887573964,
+      "f1_score": 0.7457627118644068
+    },
+    "ot_score": {
+      "precision": 0.7027027027027027,
+      "recall": 0.7692307692307693,
+      "f1_score": 0.7344632768361582
+    },
+    "sp_score": {
+      "precision": 0.4810810810810811,
+      "recall": 0.5266272189349113,
+      "f1_score": 0.5028248587570622
+    },
+    "micro_average": {
+      "precision": 0.677027027027027,
+      "recall": 0.7411242603550295,
+      "f1_score": 0.7076271186440678
+    },
+    "set_multiset_scores": {
+      "set": {
+        "micro": {
+          "precision": 0.46111111111111114,
+          "recall": 0.5060975609756098,
+          "f1": 0.48255813953488375
+        },
+        "macro": {
+          "precision": 0.48571428571428565,
+          "recall": 0.5097777777777777,
+          "f1": 0.49521885521885517
+        },
+        "weighted": {
+          "precision": 0.47587108013937285,
+          "recall": 0.5060975609756098,
+          "f1": 0.488389997536339
+        },
+        "support": {
+          "n_gold": 164,
+          "n_pred": 180,
+          "n_tp": 83,
+          "n_examples": 75
+        }
+      },
+      "multiset": {
+        "micro": {
+          "precision": 0.4702702702702703,
+          "recall": 0.514792899408284,
+          "f1": 0.4915254237288135
+        },
+        "macro": {
+          "precision": 0.4917460317460317,
+          "recall": 0.5162857142857142,
+          "f1": 0.5015449735449735
+        },
+        "weighted": {
+          "precision": 0.48207945900253596,
+          "recall": 0.514792899408284,
+          "f1": 0.49581102658025744
+        },
+        "support": {
+          "n_gold": 169,
+          "n_pred": 185,
+          "n_tp": 87,
+          "n_examples": 75
+        }
+      }
+    },
+    "element_scores": {
+      "ac": {
+        "micro": {
+          "precision": 0.8810810810810811,
+          "recall": 0.9644970414201184,
+          "f1": 0.9209039548022598
+        },
+        "macro": {
+          "precision": 0.9371587301587302,
+          "recall": 0.9828888888888889,
+          "f1": 0.9557248677248678
+        },
+        "weighted": {
+          "precision": 0.8999084249084247,
+          "recall": 0.9644970414201184,
+          "f1": 0.926984126984127
+        },
+        "support": {
+          "n_gold": 169,
+          "n_pred": 185,
+          "n_tp": 163,
+          "n_examples": 75
+        }
+      },
+      "at": {
+        "micro": {
+          "precision": 0.7891891891891892,
+          "recall": 0.863905325443787,
+          "f1": 0.8248587570621468
+        },
+        "macro": {
+          "precision": 0.8431111111111111,
+          "recall": 0.8825396825396827,
+          "f1": 0.858984126984127
+        },
+        "weighted": {
+          "precision": 0.8118343195266271,
+          "recall": 0.863905325443787,
+          "f1": 0.8335587489433643
+        },
+        "support": {
+          "n_gold": 169,
+          "n_pred": 185,
+          "n_tp": 146,
+          "n_examples": 75
+        }
+      },
+      "sp": {
+        "micro": {
+          "precision": 0.5783783783783784,
+          "recall": 0.6331360946745562,
+          "f1": 0.6045197740112994
+        },
+        "macro": {
+          "precision": 0.5526825396825398,
+          "recall": 0.5904444444444444,
+          "f1": 0.5680634920634922
+        },
+        "weighted": {
+          "precision": 0.5789306846999155,
+          "recall": 0.6331360946745562,
+          "f1": 0.6018596787827557
+        },
+        "support": {
+          "n_gold": 169,
+          "n_pred": 185,
+          "n_tp": 107,
+          "n_examples": 75
+        }
+      },
+      "ot": {
+        "micro": {
+          "precision": 0.7837837837837838,
+          "recall": 0.8579881656804734,
+          "f1": 0.8192090395480226
+        },
+        "macro": {
+          "precision": 0.826015873015873,
+          "recall": 0.8633015873015873,
+          "f1": 0.8410582010582011
+        },
+        "weighted": {
+          "precision": 0.8057551422936039,
+          "recall": 0.8579881656804734,
+          "f1": 0.8275758429604583
+        },
+        "support": {
+          "n_gold": 169,
+          "n_pred": 185,
+          "n_tp": 145,
+          "n_examples": 75
+        }
+      }
+    }
+  },
+  "examples": [
+    {
+      "message": "Motors starting.; Flight mode changed to Starting Motors.",
+      "labels_correct": [
+        [
+          "Motors",
+          "hardware",
+          "positive",
+          "starting"
+        ],
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to Starting Motors"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Motors",
+          "hardware",
+          "positive",
+          "starting"
+        ],
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to Starting Motors"
+        ]
+      ]
+    },
+    {
+      "message": "Compass error.; Compass error. Fly with caution.",
+      "labels_correct": [
+        [
+          "Compass",
+          "hardware",
+          "negative",
+          "Error"
+        ],
+        [
+          "Compass",
+          "hardware",
+          "negative",
+          "Error"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Compass",
+          "hardware",
+          "negative",
+          "error"
+        ],
+        [
+          "Compass",
+          "hardware",
+          "negative",
+          "error"
+        ],
+        [
+          "caution",
+          "operation",
+          "positive",
+          "Fly with caution"
+        ]
+      ]
+    },
+    {
+      "message": "Data Recorder File Index is 88.; Set Return to Home (RTH) altitude to 100 m (328 ft).; Set maximum flight altitude to 500 m (1640 ft).",
+      "labels_correct": [
+        [
+          "Data Recorder File Index",
+          "parameter",
+          "positive",
+          "88"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Data Recorder File Index",
+          "parameter",
+          "positive",
+          "88"
+        ],
+        [
+          "maximum flight altitude",
+          "parameter",
+          "positive",
+          "500 m (1640 ft"
+        ]
+      ]
+    },
+    {
+      "message": "Motors starting.; Flight mode changed to Manual Takeoff.",
+      "labels_correct": [
+        [
+          "Motors",
+          "hardware",
+          "positive",
+          "starting"
+        ],
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to Manual Takeoff"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Motors",
+          "hardware",
+          "positive",
+          "starting"
+        ],
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to Manual Takeoff"
+        ]
+      ]
+    },
+    {
+      "message": "Compass error.",
+      "labels_correct": [
+        [
+          "Compass",
+          "hardware",
+          "negative",
+          "Error"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Compass",
+          "hardware",
+          "negative",
+          "error"
+        ]
+      ]
+    },
+    {
+      "message": "Flight mode changed to P-GPS.",
+      "labels_correct": [
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to P-GPS"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to P-GPS"
+        ]
+      ]
+    },
+    {
+      "message": "Home point updated. RTH altitude adjusted to 100m.",
+      "labels_correct": [
+        [
+          "Home point",
+          "parameter",
+          "positive",
+          "updated"
+        ],
+        [
+          "RTH altitude",
+          "parameter",
+          "positive",
+          "adjusted to 100m"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Home point",
+          "parameter",
+          "positive",
+          "updated"
+        ],
+        [
+          "RTH altitude",
+          "parameter",
+          "positive",
+          "adjusted to 100m"
+        ]
+      ]
+    },
+    {
+      "message": "Home point updated. RTH altitude adjusted to 100m.; Downward ambient light too low. Obstacle avoidance unavailable. Fly with caution.",
+      "labels_correct": [
+        [
+          "Home point",
+          "parameter",
+          "positive",
+          "updated"
+        ],
+        [
+          "RTH altitude",
+          "parameter",
+          "positive",
+          "adjusted to 100m"
+        ],
+        [
+          "downward ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Home point",
+          "parameter",
+          "positive",
+          "updated"
+        ],
+        [
+          "RTH altitude",
+          "parameter",
+          "positive",
+          "adjusted to 100m"
+        ],
+        [
+          "Downward ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ],
+        [
+          "caution",
+          "operation",
+          "positive",
+          "Fly with caution"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ]
+      ]
+    },
+    {
+      "message": "Aircraft braking.",
+      "labels_correct": [
+        [
+          "Aircraft",
+          "hardware",
+          "negative",
+          "braking"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "braking"
+        ]
+      ]
+    },
+    {
+      "message": "Aircraft braking.; RC signal lost. Aircraft will follow preset action for lost signal.",
+      "labels_correct": [
+        [
+          "Aircraft",
+          "hardware",
+          "negative",
+          "braking"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "braking"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "lost signal"
+        ]
+      ]
+    },
+    {
+      "message": "RC signal lost.; Aircraft braking.; Gimbal pitch axis endpoint reached.",
+      "labels_correct": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "negative",
+          "braking"
+        ],
+        [
+          "Gimbal pitch axis endpoint",
+          "parameter",
+          "positive",
+          "reached"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "braking"
+        ],
+        [
+          "Gimbal pitch axis endpoint",
+          "parameter",
+          "positive",
+          "reached"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ]
+      ]
+    },
+    {
+      "message": "RC signal lost.",
+      "labels_correct": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ]
+      ]
+    },
+    {
+      "message": "Aircraft braking.; RC signal lost. Aircraft will follow preset action for lost signal.; Downward ambient light too low. Obstacle avoidance unavailable. Fly with caution.",
+      "labels_correct": [
+        [
+          "Aircraft",
+          "hardware",
+          "negative",
+          "braking"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "downward ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "braking"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "lost signal"
+        ],
+        [
+          "Downward ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ],
+        [
+          "caution",
+          "operation",
+          "positive",
+          "Fly with caution"
+        ]
+      ]
+    },
+    {
+      "message": "RC signal lost.; Aircraft braking.; RC signal lost. Aircraft will follow preset action for lost signal.; Downward ambient light too low. Obstacle avoidance unavailable. Fly with caution.",
+      "labels_correct": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "negative",
+          "braking"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "downward ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "braking"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "lost signal"
+        ],
+        [
+          "Downward ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ],
+        [
+          "caution",
+          "operation",
+          "positive",
+          "Fly with caution"
+        ]
+      ]
+    },
+    {
+      "message": "RC signal lost.; Aircraft braking.; RC signal lost. Aircraft will follow preset action for lost signal.",
+      "labels_correct": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "negative",
+          "braking"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "braking"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "lost signal"
+        ]
+      ]
+    },
+    {
+      "message": "RC signal lost.; Aircraft braking.; RC signal lost. Aircraft will follow preset action for lost signal.; RC signal lost. Returning to home.; Failsafe RTH.; Flight mode changed to Go Home.",
+      "labels_correct": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "negative",
+          "braking"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "returning to home"
+        ],
+        [
+          "Failsafe RTH",
+          "operation",
+          "positive",
+          "NULL"
+        ],
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to Go Home"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "braking"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "lost signal"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "NULL",
+          "operation",
+          "positive",
+          "Returning to home"
+        ],
+        [
+          "RTH",
+          "operation",
+          "negative",
+          "Failsafe"
+        ],
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to Go Home"
+        ]
+      ]
+    },
+    {
+      "message": "Failsafe RTH.",
+      "labels_correct": [
+        [
+          "Failsafe RTH",
+          "operation",
+          "positive",
+          "NULL"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RTH",
+          "operation",
+          "negative",
+          "Failsafe"
+        ]
+      ]
+    },
+    {
+      "message": "Failsafe RTH.",
+      "labels_correct": [
+        [
+          "Failsafe RTH",
+          "operation",
+          "positive",
+          "NULL"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RTH",
+          "operation",
+          "negative",
+          "Failsafe"
+        ]
+      ]
+    },
+    {
+      "message": "Failsafe RTH.",
+      "labels_correct": [
+        [
+          "Failsafe RTH",
+          "operation",
+          "positive",
+          "NULL"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RTH",
+          "operation",
+          "negative",
+          "Failsafe"
+        ]
+      ]
+    },
+    {
+      "message": "Failsafe RTH.",
+      "labels_correct": [
+        [
+          "Failsafe RTH",
+          "operation",
+          "positive",
+          "NULL"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RTH",
+          "operation",
+          "negative",
+          "Failsafe"
+        ]
+      ]
+    },
+    {
+      "message": "Failsafe RTH.",
+      "labels_correct": [
+        [
+          "Failsafe RTH",
+          "operation",
+          "positive",
+          "NULL"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RTH",
+          "operation",
+          "negative",
+          "Failsafe"
+        ]
+      ]
+    },
+    {
+      "message": "Failsafe RTH.; Press Brake button to cancel RTH.; RC signal lost. Returning to home.; RTH in progress.",
+      "labels_correct": [
+        [
+          "Failsafe RTH",
+          "operation",
+          "positive",
+          "NULL"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "returning to home"
+        ],
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "in progress"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RTH",
+          "operation",
+          "negative",
+          "Failsafe"
+        ],
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "Press Brake button"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "NULL",
+          "operation",
+          "positive",
+          "Returning to home"
+        ],
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "in progress"
+        ]
+      ]
+    },
+    {
+      "message": "RTH ascending.",
+      "labels_correct": [
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "ascending"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "ascending"
+        ]
+      ]
+    },
+    {
+      "message": "Failsafe RTH.; Press Brake button to cancel RTH.; RC signal lost. Returning to home.; RTH ascending.",
+      "labels_correct": [
+        [
+          "Failsafe RTH",
+          "operation",
+          "positive",
+          "NULL"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "returning to home"
+        ],
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "ascending"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RTH",
+          "operation",
+          "negative",
+          "Failsafe"
+        ],
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "Press Brake button"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "NULL",
+          "operation",
+          "positive",
+          "Returning to home"
+        ],
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "ascending"
+        ]
+      ]
+    },
+    {
+      "message": "Failsafe RTH.; Press Brake button to cancel RTH.; RC signal lost. Returning to home.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.; RTH ascending.",
+      "labels_correct": [
+        [
+          "Failsafe RTH",
+          "operation",
+          "positive",
+          "NULL"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "returning to home"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ],
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "ascending"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RTH",
+          "operation",
+          "negative",
+          "Failsafe"
+        ],
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "Press Brake button"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "NULL",
+          "operation",
+          "positive",
+          "Returning to home"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ],
+        [
+          "antennas",
+          "hardware",
+          "positive",
+          "blocking"
+        ],
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "ascending"
+        ]
+      ]
+    },
+    {
+      "message": "Failsafe RTH.; Press Brake button to cancel RTH.; RC signal lost. Returning to home.; RTH ascending.",
+      "labels_correct": [
+        [
+          "Failsafe RTH",
+          "operation",
+          "positive",
+          "NULL"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "returning to home"
+        ],
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "ascending"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RTH",
+          "operation",
+          "negative",
+          "Failsafe"
+        ],
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "Press Brake button"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "NULL",
+          "operation",
+          "positive",
+          "Returning to home"
+        ],
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "ascending"
+        ]
+      ]
+    },
+    {
+      "message": "Failsafe RTH.; Controller triggered aircraft to descend. Auto RTH canceled.; RC signal lost. Returning to home.; RTH ascending.",
+      "labels_correct": [
+        [
+          "Failsafe RTH",
+          "operation",
+          "positive",
+          "NULL"
+        ],
+        [
+          "Controller",
+          "hardware",
+          "positive",
+          "triggered aircraft to descend"
+        ],
+        [
+          "Auto RTH",
+          "operation",
+          "positive",
+          "canceled"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "returning to home"
+        ],
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "ascending"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RTH",
+          "operation",
+          "negative",
+          "Failsafe"
+        ],
+        [
+          "Controller",
+          "hardware",
+          "positive",
+          "triggered aircraft to descend"
+        ],
+        [
+          "Auto RTH",
+          "operation",
+          "negative",
+          "canceled"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "NULL",
+          "operation",
+          "positive",
+          "Returning to home"
+        ],
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "ascending"
+        ]
+      ]
+    },
+    {
+      "message": "Flight mode changed to P-GPS.",
+      "labels_correct": [
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to P-GPS"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to P-GPS"
+        ]
+      ]
+    },
+    {
+      "message": "Failsafe RTH.; Controller triggered aircraft to descend. Auto RTH canceled.; RC signal lost. Returning to home.; RTH ascending.",
+      "labels_correct": [
+        [
+          "Failsafe RTH",
+          "operation",
+          "positive",
+          "NULL"
+        ],
+        [
+          "Controller",
+          "hardware",
+          "positive",
+          "triggered aircraft to descend"
+        ],
+        [
+          "Auto RTH",
+          "operation",
+          "positive",
+          "canceled"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "returning to home"
+        ],
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "ascending"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RTH",
+          "operation",
+          "negative",
+          "Failsafe"
+        ],
+        [
+          "Controller",
+          "hardware",
+          "positive",
+          "triggered aircraft to descend"
+        ],
+        [
+          "Auto RTH",
+          "operation",
+          "negative",
+          "canceled"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "NULL",
+          "operation",
+          "positive",
+          "Returning to home"
+        ],
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "ascending"
+        ]
+      ]
+    },
+    {
+      "message": "Failsafe RTH.; Controller triggered aircraft to descend. Auto RTH canceled.; RC signal lost. Returning to home.",
+      "labels_correct": [
+        [
+          "Failsafe RTH",
+          "operation",
+          "positive",
+          "NULL"
+        ],
+        [
+          "Controller",
+          "hardware",
+          "positive",
+          "triggered aircraft to descend"
+        ],
+        [
+          "Auto RTH",
+          "operation",
+          "positive",
+          "canceled"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "returning to home"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RTH",
+          "operation",
+          "negative",
+          "Failsafe"
+        ],
+        [
+          "Controller",
+          "hardware",
+          "positive",
+          "triggered aircraft to descend"
+        ],
+        [
+          "Auto RTH",
+          "operation",
+          "negative",
+          "canceled"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "NULL",
+          "operation",
+          "positive",
+          "Returning to home"
+        ]
+      ]
+    },
+    {
+      "message": "Aircraft braking.; RC signal lost. Aircraft will follow preset action for lost signal.",
+      "labels_correct": [
+        [
+          "Aircraft",
+          "hardware",
+          "negative",
+          "braking"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "braking"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "lost signal"
+        ]
+      ]
+    },
+    {
+      "message": "RC signal lost.; Aircraft braking.",
+      "labels_correct": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "negative",
+          "braking"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "braking"
+        ]
+      ]
+    },
+    {
+      "message": "Aircraft braking.",
+      "labels_correct": [
+        [
+          "Aircraft",
+          "hardware",
+          "negative",
+          "braking"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "braking"
+        ]
+      ]
+    },
+    {
+      "message": "RC signal lost.",
+      "labels_correct": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.; Flight mode changed to Confirm Landing.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ],
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to Confirm Landing"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ],
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to Confirm Landing"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ]
+      ]
+    },
+    {
+      "message": "Ambient light too low. Obstacle avoidance unavailable.",
+      "labels_correct": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "negative",
+          "unavailable"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Ambient light",
+          "environment",
+          "negative",
+          "too low"
+        ],
+        [
+          "Obstacle avoidance",
+          "software",
+          "positive",
+          "unavailable"
+        ]
+      ]
+    },
+    {
+      "message": "Auto landing in progress.",
+      "labels_correct": [
+        [
+          "Auto landing",
+          "operation",
+          "positive",
+          "in progress"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Auto landing",
+          "operation",
+          "positive",
+          "in progress"
+        ]
+      ]
+    },
+    {
+      "message": "Auto landing in progress.",
+      "labels_correct": [
+        [
+          "Auto landing",
+          "operation",
+          "positive",
+          "in progress"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Auto landing",
+          "operation",
+          "positive",
+          "in progress"
+        ]
+      ]
+    }
+  ]
+}

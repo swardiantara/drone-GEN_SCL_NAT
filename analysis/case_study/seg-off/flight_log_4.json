@@ -1,0 +1,1363 @@
+{
+  "performance_metrics": {
+    "quad_score": {
+      "precision": 0.671875,
+      "recall": 0.46236559139784944,
+      "f1_score": 0.5477707006369426
+    },
+    "ac_score": {
+      "precision": 0.78125,
+      "recall": 0.5376344086021505,
+      "f1_score": 0.6369426751592356
+    },
+    "acsp_score": {
+      "precision": 0.625,
+      "recall": 0.43010752688172044,
+      "f1_score": 0.5095541401273884
+    },
+    "at_score": {
+      "precision": 0.765625,
+      "recall": 0.5268817204301075,
+      "f1_score": 0.6242038216560509
+    },
+    "ot_score": {
+      "precision": 0.71875,
+      "recall": 0.4946236559139785,
+      "f1_score": 0.5859872611464968
+    },
+    "sp_score": {
+      "precision": 0.78125,
+      "recall": 0.5376344086021505,
+      "f1_score": 0.6369426751592356
+    },
+    "micro_average": {
+      "precision": 0.76171875,
+      "recall": 0.5241935483870968,
+      "f1_score": 0.6210191082802548
+    },
+    "set_multiset_scores": {
+      "set": {
+        "micro": {
+          "precision": 0.65625,
+          "recall": 0.45652173913043476,
+          "f1": 0.5384615384615383
+        },
+        "macro": {
+          "precision": 0.6102941176470589,
+          "recall": 0.49523809523809526,
+          "f1": 0.5299295475766064
+        },
+        "weighted": {
+          "precision": 0.6829710144927537,
+          "recall": 0.45652173913043476,
+          "f1": 0.5317570111048372
+        },
+        "support": {
+          "n_gold": 92,
+          "n_pred": 64,
+          "n_tp": 42,
+          "n_examples": 34
+        }
+      },
+      "multiset": {
+        "micro": {
+          "precision": 0.65625,
+          "recall": 0.45161290322580644,
+          "f1": 0.535031847133758
+        },
+        "macro": {
+          "precision": 0.6102941176470589,
+          "recall": 0.4878851540616247,
+          "f1": 0.5257278669043375
+        },
+        "weighted": {
+          "precision": 0.6863799283154122,
+          "recall": 0.45161290322580644,
+          "f1": 0.5306474887120048
+        },
+        "support": {
+          "n_gold": 93,
+          "n_pred": 64,
+          "n_tp": 42,
+          "n_examples": 34
+        }
+      }
+    },
+    "element_scores": {
+      "ac": {
+        "micro": {
+          "precision": 0.875,
+          "recall": 0.6021505376344086,
+          "f1": 0.713375796178344
+        },
+        "macro": {
+          "precision": 0.7941176470588235,
+          "recall": 0.6333333333333333,
+          "f1": 0.6851858925388338
+        },
+        "weighted": {
+          "precision": 0.9193548387096774,
+          "recall": 0.6021505376344086,
+          "f1": 0.7109877577619512
+        },
+        "support": {
+          "n_gold": 93,
+          "n_pred": 64,
+          "n_tp": 56,
+          "n_examples": 34
+        }
+      },
+      "at": {
+        "micro": {
+          "precision": 0.953125,
+          "recall": 0.6559139784946236,
+          "f1": 0.7770700636942676
+        },
+        "macro": {
+          "precision": 0.946078431372549,
+          "recall": 0.7892156862745098,
+          "f1": 0.8395976572447162
+        },
+        "weighted": {
+          "precision": 0.9659498207885304,
+          "recall": 0.6559139784946236,
+          "f1": 0.7620630265791557
+        },
+        "support": {
+          "n_gold": 93,
+          "n_pred": 64,
+          "n_tp": 61,
+          "n_examples": 34
+        }
+      },
+      "sp": {
+        "micro": {
+          "precision": 0.890625,
+          "recall": 0.6129032258064516,
+          "f1": 0.7261146496815287
+        },
+        "macro": {
+          "precision": 0.9338235294117648,
+          "recall": 0.7928571428571428,
+          "f1": 0.8371912401324169
+        },
+        "weighted": {
+          "precision": 0.8897849462365591,
+          "recall": 0.6129032258064516,
+          "f1": 0.7064423032164967
+        },
+        "support": {
+          "n_gold": 93,
+          "n_pred": 64,
+          "n_tp": 57,
+          "n_examples": 34
+        }
+      },
+      "ot": {
+        "micro": {
+          "precision": 0.84375,
+          "recall": 0.5806451612903226,
+          "f1": 0.6878980891719746
+        },
+        "macro": {
+          "precision": 0.8431372549019607,
+          "recall": 0.7063025210084034,
+          "f1": 0.749772939478822
+        },
+        "weighted": {
+          "precision": 0.8449820788530465,
+          "recall": 0.5806451612903226,
+          "f1": 0.6711376437182889
+        },
+        "support": {
+          "n_gold": 93,
+          "n_pred": 64,
+          "n_tp": 54,
+          "n_examples": 34
+        }
+      }
+    }
+  },
+  "examples": [
+    {
+      "message": "Gimbal auto check failed.; Motors starting.; Gimbal stuck. Check whether gimbal lock is removed and make sure gimbal can rotate freely.; Data Recorder File Index is 88.; Set Return to Home (RTH) altitude to 100 m (328 ft).; Set maximum flight altitude to 500 m (1640 ft).; Flight mode changed to Starting Motors.",
+      "labels_correct": [
+        [
+          "Gimbal auto check",
+          "operation",
+          "negative",
+          "failed"
+        ],
+        [
+          "Motors",
+          "hardware",
+          "positive",
+          "starting"
+        ],
+        [
+          "Gimbal",
+          "hardware",
+          "negative",
+          "stuck"
+        ],
+        [
+          "Data Recorder File Index",
+          "parameter",
+          "positive",
+          "88"
+        ],
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to Starting Motors"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Gimbal auto check",
+          "operation",
+          "negative",
+          "failed"
+        ],
+        [
+          "Motors",
+          "hardware",
+          "positive",
+          "starting"
+        ],
+        [
+          "Gimbal",
+          "hardware",
+          "negative",
+          "stuck"
+        ]
+      ]
+    },
+    {
+      "message": "Flight mode changed to Manual Takeoff.",
+      "labels_correct": [
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to Manual Takeoff"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to Manual Takeoff"
+        ]
+      ]
+    },
+    {
+      "message": "Gimbal auto check failed.",
+      "labels_correct": [
+        [
+          "Gimbal auto check",
+          "operation",
+          "negative",
+          "failed"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Gimbal auto check",
+          "software",
+          "negative",
+          "failed"
+        ]
+      ]
+    },
+    {
+      "message": "Flight mode changed to P-GPS (Brake).",
+      "labels_correct": [
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to P-GPS (Brake)"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to P-GPS"
+        ]
+      ]
+    },
+    {
+      "message": "Gimbal auto check failed.; Home point updated. RTH altitude adjusted to 100m.; Gimbal stuck. Check whether gimbal lock is removed and make sure gimbal can rotate freely.",
+      "labels_correct": [
+        [
+          "Gimbal auto check",
+          "operation",
+          "negative",
+          "failed"
+        ],
+        [
+          "Home point",
+          "parameter",
+          "positive",
+          "updated"
+        ],
+        [
+          "RTH altitude",
+          "parameter",
+          "positive",
+          "adjusted to 100m"
+        ],
+        [
+          "Gimbal",
+          "hardware",
+          "negative",
+          "stuck"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Gimbal auto check",
+          "operation",
+          "negative",
+          "failed"
+        ],
+        [
+          "Home point",
+          "parameter",
+          "positive",
+          "updated"
+        ],
+        [
+          "RTH altitude",
+          "parameter",
+          "positive",
+          "adjusted to 100m"
+        ],
+        [
+          "Gimbal",
+          "hardware",
+          "negative",
+          "stuck"
+        ]
+      ]
+    },
+    {
+      "message": "Gimbal auto check failed.",
+      "labels_correct": [
+        [
+          "Gimbal auto check",
+          "operation",
+          "negative",
+          "failed"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Gimbal auto check",
+          "software",
+          "negative",
+          "failed"
+        ]
+      ]
+    },
+    {
+      "message": "Gimbal auto check failed.; Image transmission signal weak.",
+      "labels_correct": [
+        [
+          "Gimbal auto check",
+          "operation",
+          "negative",
+          "failed"
+        ],
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Gimbal auto check",
+          "software",
+          "negative",
+          "failed"
+        ],
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ]
+    },
+    {
+      "message": "Image transmission signal weak.; Aircraft braking.; Gimbal stuck. Check whether gimbal lock is removed and make sure gimbal can rotate freely.; Image transmission signal weak. Adjust antennas and make sure they are perpendicular to flight direction of aircraft.",
+      "labels_correct": [
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "negative",
+          "braking"
+        ],
+        [
+          "Gimbal",
+          "hardware",
+          "negative",
+          "stuck"
+        ],
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "negative",
+          "braking"
+        ],
+        [
+          "Gimbal",
+          "hardware",
+          "negative",
+          "stuck"
+        ]
+      ]
+    },
+    {
+      "message": "RC signal lost.",
+      "labels_correct": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ]
+      ]
+    },
+    {
+      "message": "RC signal lost.; Aircraft braking.; Gimbal stuck. Check whether gimbal lock is removed and make sure gimbal can rotate freely.; Image transmission signal weak. Adjust antennas and make sure they are perpendicular to flight direction of aircraft.",
+      "labels_correct": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "negative",
+          "braking"
+        ],
+        [
+          "Gimbal",
+          "hardware",
+          "negative",
+          "stuck"
+        ],
+        [
+          "Image transmission signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "negative",
+          "braking"
+        ],
+        [
+          "Gimbal",
+          "communication",
+          "negative",
+          "stuck"
+        ]
+      ]
+    },
+    {
+      "message": "Downlink Lost.",
+      "labels_correct": [
+        [
+          "downlink",
+          "communication",
+          "negative",
+          "lost"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Downlink",
+          "communication",
+          "negative",
+          "Lost"
+        ]
+      ]
+    },
+    {
+      "message": "Failsafe RTH.; Press Brake button to cancel RTH.; RC signal lost. Returning to home.; Downlink Restored (after 0m 5.2s).; Flight mode changed to Go Home.",
+      "labels_correct": [
+        [
+          "Failsafe RTH",
+          "operation",
+          "positive",
+          "NULL"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "returning to home"
+        ],
+        [
+          "Downlink",
+          "communication",
+          "positive",
+          "Restored"
+        ],
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to Go Home"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RTH",
+          "operation",
+          "negative",
+          "Failsafe"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Downlink",
+          "communication",
+          "negative",
+          "Restored"
+        ]
+      ]
+    },
+    {
+      "message": "RTH in progress.",
+      "labels_correct": [
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "in progress"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "in progress"
+        ]
+      ]
+    },
+    {
+      "message": "Gimbal stuck. Check whether gimbal lock is removed and make sure gimbal can rotate freely.",
+      "labels_correct": [
+        [
+          "Gimbal",
+          "hardware",
+          "negative",
+          "stuck"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Gimbal",
+          "hardware",
+          "negative",
+          "stuck"
+        ]
+      ]
+    },
+    {
+      "message": "RC signal weak. Avoid blocking antennas and adjust antenna orientation.",
+      "labels_correct": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ]
+    },
+    {
+      "message": "Failsafe RTH.; Press Brake button to cancel RTH.; RC signal lost. Returning to home.; Gimbal stuck. Check whether gimbal lock is removed and make sure gimbal can rotate freely.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.; RTH in progress.",
+      "labels_correct": [
+        [
+          "Failsafe RTH",
+          "operation",
+          "positive",
+          "NULL"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "returning to home"
+        ],
+        [
+          "Gimbal",
+          "hardware",
+          "negative",
+          "stuck"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ],
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "in progress"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RTH",
+          "operation",
+          "negative",
+          "Failsafe"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Gimbal",
+          "hardware",
+          "negative",
+          "stuck"
+        ]
+      ]
+    },
+    {
+      "message": "Failsafe RTH.; Press Brake button to cancel RTH.; RC signal lost. Returning to home.; Gimbal stuck. Check whether gimbal lock is removed and make sure gimbal can rotate freely.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.; RTH in progress.; RTH ascending.",
+      "labels_correct": [
+        [
+          "Failsafe RTH",
+          "operation",
+          "positive",
+          "NULL"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "returning to home"
+        ],
+        [
+          "Gimbal",
+          "hardware",
+          "negative",
+          "stuck"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ],
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "in progress"
+        ],
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "ascending"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RTH",
+          "operation",
+          "negative",
+          "Failsafe"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Gimbal",
+          "hardware",
+          "negative",
+          "stuck"
+        ]
+      ]
+    },
+    {
+      "message": "Failsafe RTH.; Press Brake button to cancel RTH.; RC signal lost. Returning to home.; Gimbal stuck. Check whether gimbal lock is removed and make sure gimbal can rotate freely.; RTH ascending.",
+      "labels_correct": [
+        [
+          "Failsafe RTH",
+          "operation",
+          "positive",
+          "NULL"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "returning to home"
+        ],
+        [
+          "Gimbal",
+          "hardware",
+          "negative",
+          "stuck"
+        ],
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "ascending"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RTH",
+          "operation",
+          "negative",
+          "Failsafe"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Gimbal",
+          "hardware",
+          "negative",
+          "stuck"
+        ]
+      ]
+    },
+    {
+      "message": "Failsafe RTH.; Controller triggered aircraft to descend. Auto RTH canceled.; RC signal lost. Returning to home.; Gimbal stuck. Check whether gimbal lock is removed and make sure gimbal can rotate freely.; RTH ascending.",
+      "labels_correct": [
+        [
+          "Failsafe RTH",
+          "operation",
+          "positive",
+          "NULL"
+        ],
+        [
+          "Controller",
+          "hardware",
+          "positive",
+          "triggered aircraft to descend"
+        ],
+        [
+          "Auto RTH",
+          "operation",
+          "positive",
+          "canceled"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "returning to home"
+        ],
+        [
+          "Gimbal",
+          "hardware",
+          "negative",
+          "stuck"
+        ],
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "ascending"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RTH",
+          "operation",
+          "negative",
+          "Failsafe"
+        ],
+        [
+          "Controller",
+          "hardware",
+          "positive",
+          "triggered aircraft to descend"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Gimbal",
+          "operation",
+          "negative",
+          "stuck"
+        ]
+      ]
+    },
+    {
+      "message": "Flight mode changed to P-GPS (Brake).",
+      "labels_correct": [
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to P-GPS (Brake)"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to P-GPS"
+        ]
+      ]
+    },
+    {
+      "message": "Failsafe RTH.; Controller triggered aircraft to descend. Auto RTH canceled.; RC signal lost. Returning to home.; Gimbal stuck. Check whether gimbal lock is removed and make sure gimbal can rotate freely.",
+      "labels_correct": [
+        [
+          "Failsafe RTH",
+          "operation",
+          "positive",
+          "NULL"
+        ],
+        [
+          "Controller",
+          "hardware",
+          "positive",
+          "triggered aircraft to descend"
+        ],
+        [
+          "Auto RTH",
+          "operation",
+          "positive",
+          "canceled"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "returning to home"
+        ],
+        [
+          "Gimbal",
+          "hardware",
+          "negative",
+          "stuck"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Failsafe RTH",
+          "operation",
+          "negative",
+          "lost"
+        ],
+        [
+          "Controller",
+          "hardware",
+          "negative",
+          "triggered aircraft to descend"
+        ],
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Gimbal",
+          "operation",
+          "negative",
+          "stuck"
+        ]
+      ]
+    },
+    {
+      "message": "Gimbal auto check failed.",
+      "labels_correct": [
+        [
+          "Gimbal auto check",
+          "operation",
+          "negative",
+          "failed"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Gimbal auto check",
+          "software",
+          "negative",
+          "failed"
+        ]
+      ]
+    },
+    {
+      "message": "RC signal lost. Aircraft will follow preset action for lost signal.",
+      "labels_correct": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ],
+        [
+          "Aircraft",
+          "hardware",
+          "positive",
+          "follow preset action"
+        ]
+      ]
+    },
+    {
+      "message": "RC signal lost.",
+      "labels_correct": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "lost"
+        ]
+      ]
+    },
+    {
+      "message": "Gimbal auto check failed.",
+      "labels_correct": [
+        [
+          "Gimbal auto check",
+          "operation",
+          "negative",
+          "failed"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Gimbal auto check",
+          "software",
+          "negative",
+          "failed"
+        ]
+      ]
+    },
+    {
+      "message": "RC signal weak.",
+      "labels_correct": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RC signal",
+          "communication",
+          "negative",
+          "weak"
+        ]
+      ]
+    },
+    {
+      "message": "Gimbal auto check failed.",
+      "labels_correct": [
+        [
+          "Gimbal auto check",
+          "operation",
+          "negative",
+          "failed"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Gimbal auto check",
+          "software",
+          "negative",
+          "failed"
+        ]
+      ]
+    },
+    {
+      "message": "Gimbal auto check failed.",
+      "labels_correct": [
+        [
+          "Gimbal auto check",
+          "operation",
+          "negative",
+          "failed"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Gimbal auto check",
+          "software",
+          "negative",
+          "failed"
+        ]
+      ]
+    },
+    {
+      "message": "Gimbal auto check failed.; Press Brake button to cancel RTH.; Gimbal stuck. Check whether gimbal lock is removed and make sure gimbal can rotate freely.; RTH in progress.; Flight mode changed to Go Home.",
+      "labels_correct": [
+        [
+          "Gimbal auto check",
+          "operation",
+          "negative",
+          "failed"
+        ],
+        [
+          "Gimbal",
+          "hardware",
+          "negative",
+          "stuck"
+        ],
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "in progress"
+        ],
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to Go Home"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Gimbal auto check",
+          "operation",
+          "negative",
+          "failed"
+        ],
+        [
+          "Gimbal",
+          "hardware",
+          "negative",
+          "stuck"
+        ]
+      ]
+    },
+    {
+      "message": "RTH ascending.",
+      "labels_correct": [
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "ascending"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "ascending"
+        ]
+      ]
+    },
+    {
+      "message": "Gimbal auto check failed.; Press Brake button to cancel RTH.; Gimbal stuck. Check whether gimbal lock is removed and make sure gimbal can rotate freely.; RTH ascending.; RTH in progress.",
+      "labels_correct": [
+        [
+          "Gimbal auto check",
+          "operation",
+          "negative",
+          "failed"
+        ],
+        [
+          "Gimbal",
+          "hardware",
+          "negative",
+          "stuck"
+        ],
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "ascending"
+        ],
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "in progress"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Gimbal auto check",
+          "operation",
+          "negative",
+          "failed"
+        ],
+        [
+          "Gimbal",
+          "hardware",
+          "negative",
+          "stuck"
+        ]
+      ]
+    },
+    {
+      "message": "Gimbal auto check failed.; Press Brake button to cancel RTH.; Gimbal stuck. Check whether gimbal lock is removed and make sure gimbal can rotate freely.; RTH in progress.; RTH ascending.",
+      "labels_correct": [
+        [
+          "Gimbal auto check",
+          "operation",
+          "negative",
+          "failed"
+        ],
+        [
+          "Gimbal",
+          "hardware",
+          "negative",
+          "stuck"
+        ],
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "in progress"
+        ],
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "ascending"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Gimbal auto check",
+          "operation",
+          "negative",
+          "failed"
+        ],
+        [
+          "Gimbal",
+          "hardware",
+          "negative",
+          "stuck"
+        ]
+      ]
+    },
+    {
+      "message": "Gimbal auto check failed.; Press Brake button to cancel RTH.; Gimbal stuck. Check whether gimbal lock is removed and make sure gimbal can rotate freely.; RTH in progress.",
+      "labels_correct": [
+        [
+          "Gimbal auto check",
+          "operation",
+          "negative",
+          "failed"
+        ],
+        [
+          "Gimbal",
+          "hardware",
+          "negative",
+          "stuck"
+        ],
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "in progress"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Gimbal auto check",
+          "operation",
+          "negative",
+          "failed"
+        ],
+        [
+          "Gimbal",
+          "hardware",
+          "negative",
+          "stuck"
+        ]
+      ]
+    },
+    {
+      "message": "Gimbal auto check failed.; Press Brake button to cancel RTH.; Gimbal stuck. Check whether gimbal lock is removed and make sure gimbal can rotate freely.; RTH in progress.; Auto landing in progress.; Press brake button to cancel landing.; Flight mode changed to Auto Landing.",
+      "labels_correct": [
+        [
+          "Gimbal auto check",
+          "operation",
+          "negative",
+          "failed"
+        ],
+        [
+          "Gimbal",
+          "hardware",
+          "negative",
+          "stuck"
+        ],
+        [
+          "RTH",
+          "operation",
+          "positive",
+          "in progress"
+        ],
+        [
+          "Auto landing",
+          "operation",
+          "positive",
+          "in progress"
+        ],
+        [
+          "Flight mode",
+          "operation",
+          "positive",
+          "changed to Auto Landing"
+        ]
+      ],
+      "labels_pred": [
+        [
+          "Gimbal auto check",
+          "operation",
+          "negative",
+          "failed"
+        ],
+        [
+          "Gimbal",
+          "hardware",
+          "negative",
+          "stuck"
+        ]
+      ]
+    }
+  ]
+}
