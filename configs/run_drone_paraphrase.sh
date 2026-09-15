@@ -64,7 +64,7 @@ read -ra QUAD_COUNT_LOSS_OPTIONS <<< "${QUAD_COUNT_LOSS_OPTIONS:-0.0 0.1}"
 # the grid back in for every (base model x contrastive x CD) combination.
 # --use_segmentation runs PySBD (source/segmentation_utils.py's
 # PySBDSegmenter) -- no model checkpoint or GPU needed for it.
-RUN_SEGMENTATION=${RUN_SEGMENTATION:-false}
+RUN_SEGMENTATION=${RUN_SEGMENTATION:-true}
 
 # same 5 seeds used across the other grid scripts in this repo (see
 # configs/train_scl_all.sh), for consistency across experiments
