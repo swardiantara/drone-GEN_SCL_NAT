@@ -4,8 +4,13 @@
 # model x contrastive-loss on/off x constrained-decoding on/off x
 # quad-count-regression-loss on/off -- across 10 seeds. Default grid: 2 base
 # models x 2 contrastive x 2 CD x 2 quad-count x 10 seeds = 160 train+eval
-# runs. Segmentation is off by default (dropped from the ablation scope);
-# set RUN_SEGMENTATION=true to add it back in (doubling the grid again).
+# runs. Segmentation is NOT a separate combination here: it only changes
+# inference (source/segmentation_utils.py's PySBDSegmenter has no effect on
+# training), so RUN_SEGMENTATION=true (the default) adds
+# --also_eval_segmented to every run instead of doubling the grid -- each
+# scenario trains once and gets a second, segmented evaluation pass on that
+# same checkpoint, written straight into its seg-on/ sibling folder. Set
+# RUN_SEGMENTATION=false to skip that extra eval pass entirely.
 #
 # Resumable: source/gen_scl_nat_main.py's own output-folder check (keyed by
 # dataset/scenario/task/absa_task/cont-{on,off}/cd-{on,off}/seg-{on,off}/
@@ -61,23 +66,25 @@ CONT_TEMP=${CONT_TEMP:-0.25}
 # every already-completed scenario's resume check working).
 read -ra QUAD_COUNT_LOSS_OPTIONS <<< "${QUAD_COUNT_LOSS_OPTIONS:-0.0}"
 
-# segmentation is off by default -- set to "true" to add the seg=on half of
-# the grid back in for every (base model x contrastive x CD) combination.
-# --use_segmentation runs PySBD (source/segmentation_utils.py's
-# PySBDSegmenter) -- no model checkpoint or GPU needed for it.
+# segmentation is off by default -- set to "true" to also produce the seg-on
+# results for every (base model x contrastive x CD x quad-count) combination.
+# Segmentation only changes INFERENCE (see source/segmentation_utils.py's
+# PySBDSegmenter), not training, so this does NOT train a separate seg-on
+# model: each combination is trained once (as its seg-off scenario) and
+# --also_eval_segmented then runs a second evaluation pass -- segmented --
+# on that SAME checkpoint, writing results straight into the seg-on/ sibling
+# folder (see gen_scl_nat_main.py's init_args/segmented_output_dir). So
+# turning this on adds an eval pass, not a second training run.
 RUN_SEGMENTATION=${RUN_SEGMENTATION:-true}
 
 # same 5 seeds used across the other grid scripts in this repo (see
 # configs/train_scl_all.sh), for consistency across experiments
 SEEDS=(14298463 246773155 30288239 42511865 50995999 67584921 78912345 89012345 90123456 99568241)
-# ablation grid: constrained decoding x segmentation, both on/off
+# ablation grid: constrained decoding on/off (segmentation is a same-run
+# eval-time byproduct via --also_eval_segmented, not a separate combination
+# -- see RUN_SEGMENTATION above)
 CD_OPTIONS=(false true)
-if [ "$RUN_SEGMENTATION" = "true" ]; then
-    SEG_OPTIONS=(false true)
-else
-    SEG_OPTIONS=(false)
-fi
-N_PER_SEED=$(( ${#BASE_MODELS[@]} * ${#CONT_LOSS_OPTIONS[@]} * ${#QUAD_COUNT_LOSS_OPTIONS[@]} * ${#CD_OPTIONS[@]} * ${#SEG_OPTIONS[@]} ))
+N_PER_SEED=$(( ${#BASE_MODELS[@]} * ${#CONT_LOSS_OPTIONS[@]} * ${#QUAD_COUNT_LOSS_OPTIONS[@]} * ${#CD_OPTIONS[@]} ))
 N_EXPECTED=$(( ${#SEEDS[@]} * N_PER_SEED ))
 
 n_total=0
@@ -91,58 +98,56 @@ for base_model in "${BASE_MODELS[@]}"; do
         for quad_count_loss in "${QUAD_COUNT_LOSS_OPTIONS[@]}"; do
             for seed in "${SEEDS[@]}"; do
                 for cd in "${CD_OPTIONS[@]}"; do
-                    for seg in "${SEG_OPTIONS[@]}"; do
-                        n_total=$((n_total + 1))
+                    n_total=$((n_total + 1))
 
-                        EXTRA_FLAGS=()
-                        if [ "$cd" = "true" ]; then
-                            EXTRA_FLAGS+=(--constrained_decoding)
-                        fi
-                        if [ "$seg" = "true" ]; then
-                            EXTRA_FLAGS+=(--use_segmentation)
-                        fi
+                    EXTRA_FLAGS=()
+                    if [ "$cd" = "true" ]; then
+                        EXTRA_FLAGS+=(--constrained_decoding)
+                    fi
+                    if [ "$RUN_SEGMENTATION" = "true" ]; then
+                        EXTRA_FLAGS+=(--also_eval_segmented)
+                    fi
 
-                        echo ""
-                        echo "=== [$n_total/$N_EXPECTED] GEN-SCL-NAT base_model=$base_model cont_loss=$cont_loss quad_count_loss=$quad_count_loss seed=$seed constrained_decoding=$cd use_segmentation=$seg ==="
+                    echo ""
+                    echo "=== [$n_total/$N_EXPECTED] GEN-SCL-NAT base_model=$base_model cont_loss=$cont_loss quad_count_loss=$quad_count_loss seed=$seed constrained_decoding=$cd also_eval_segmented=$RUN_SEGMENTATION ==="
 
-                        run_log=$(mktemp)
-                        python3 source/gen_scl_nat_main.py \
-                            --task gen_scl_nat \
-                            --absa_task "$ABSA_TASK" \
-                            --do_train \
-                            --do_direct_eval \
-                            --scenario "$base_model" \
-                            --dataset "$DATASET" \
-                            --model_name_or_path t5-base \
-                            --output_folder "$OUTPUT_FOLDER" \
-                            --n_gpu 1 \
-                            --accelerator gpu \
-                            --train_batch_size 16 \
-                            --eval_batch_size 16 \
-                            --learning_rate 9e-5 \
-                            --gradient_accumulation_steps 1 \
-                            --num_train_epochs 45 \
-                            --num_beams 5 \
-                            --weight_decay 0.0 \
-                            --seed "$seed" \
-                            --cont_loss "$cont_loss" \
-                            --cont_temp "$CONT_TEMP" \
-                            --quad_count_loss "$quad_count_loss" \
-                            --model_prefix "$MODEL_PREFIX" \
-                            "${EXTRA_FLAGS[@]}" 2>&1 | tee "$run_log"
-                        status=${PIPESTATUS[0]}
+                    run_log=$(mktemp)
+                    python3 source/gen_scl_nat_main.py \
+                        --task gen_scl_nat \
+                        --absa_task "$ABSA_TASK" \
+                        --do_train \
+                        --do_direct_eval \
+                        --scenario "$base_model" \
+                        --dataset "$DATASET" \
+                        --model_name_or_path t5-base \
+                        --output_folder "$OUTPUT_FOLDER" \
+                        --n_gpu 1 \
+                        --accelerator gpu \
+                        --train_batch_size 16 \
+                        --eval_batch_size 16 \
+                        --learning_rate 9e-5 \
+                        --gradient_accumulation_steps 1 \
+                        --num_train_epochs 45 \
+                        --num_beams 5 \
+                        --weight_decay 0.0 \
+                        --seed "$seed" \
+                        --cont_loss "$cont_loss" \
+                        --cont_temp "$CONT_TEMP" \
+                        --quad_count_loss "$quad_count_loss" \
+                        --model_prefix "$MODEL_PREFIX" \
+                        "${EXTRA_FLAGS[@]}" 2>&1 | tee "$run_log"
+                    status=${PIPESTATUS[0]}
 
-                        if grep -q '^\[RESUME\] Skipping' "$run_log"; then
-                            n_skipped=$((n_skipped + 1))
-                        elif [ $status -eq 0 ]; then
-                            n_succeeded=$((n_succeeded + 1))
-                        else
-                            n_failed=$((n_failed + 1))
-                            failed_runs+=("base_model=$base_model cont_loss=$cont_loss quad_count_loss=$quad_count_loss seed=$seed cd=$cd seg=$seg")
-                            echo "[FAILED] base_model=$base_model cont_loss=$cont_loss quad_count_loss=$quad_count_loss seed=$seed constrained_decoding=$cd use_segmentation=$seg (exit code $status)" >&2
-                        fi
-                        rm -f "$run_log"
-                    done
+                    if grep -q '^\[RESUME\] Skipping' "$run_log"; then
+                        n_skipped=$((n_skipped + 1))
+                    elif [ $status -eq 0 ]; then
+                        n_succeeded=$((n_succeeded + 1))
+                    else
+                        n_failed=$((n_failed + 1))
+                        failed_runs+=("base_model=$base_model cont_loss=$cont_loss quad_count_loss=$quad_count_loss seed=$seed cd=$cd")
+                        echo "[FAILED] base_model=$base_model cont_loss=$cont_loss quad_count_loss=$quad_count_loss seed=$seed constrained_decoding=$cd (exit code $status)" >&2
+                    fi
+                    rm -f "$run_log"
                 done
             done
         done

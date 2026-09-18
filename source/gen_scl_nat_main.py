@@ -114,6 +114,15 @@ def init_args():
                              "inference per sentence, then merge predictions per message (keeping "
                              "duplicates). Inference-only; has no effect on training. See "
                              "source/segmentation_utils.py's PySBDSegmenter.")
+    parser.add_argument('--also_eval_segmented', action='store_true',
+                        help="Segmentation only changes inference, not training (see --use_segmentation), so "
+                             "training a seg-off and a seg-on scenario that are otherwise identical is "
+                             "redundant -- this trains ONCE (as a seg-off run) and then, on that same trained "
+                             "checkpoint, runs a SECOND evaluation pass with segmentation on, writing its "
+                             "results into the sibling seg-on/ output folder exactly as if it had been trained "
+                             "separately (see init_args' segmented_output_dir). Requires --use_segmentation to "
+                             "NOT be set (this flag's whole point is to produce the seg-on results as a "
+                             "byproduct of the seg-off run).")
     parser.add_argument('--overwrite', action='store_true',
                         help="Bypass the resume check below and rerun even if this scenario's "
                              "results-*.json already exists (e.g. to retrain with --save_model "
@@ -164,6 +173,10 @@ def init_args():
     # find_run_dirs() for the matching scan patterns, which read qc-on from
     # this segment when present and qc-off from --quad_count_loss in
     # args.json directly when it's absent.
+    if args.also_eval_segmented and args.use_segmentation:
+        raise ValueError("--also_eval_segmented trains a seg-off scenario and derives its seg-on companion "
+                          "from the same checkpoint -- pass it without --use_segmentation.")
+
     ablation_parts = [
         'cont-{}'.format('on' if float(args.cont_loss) > 0.0 else 'off'),
         'cd-{}'.format('on' if args.constrained_decoding else 'off'),
@@ -195,12 +208,33 @@ def init_args():
     # correctly detected and skipped on resume.
     result_filename = (f'results-{args.dataset}-segmented.json' if args.use_segmentation
                         else f'results-{args.dataset}.json')
-    if os.path.exists(os.path.join(output_dir, result_filename)) and not args.overwrite:
-        print(f'[RESUME] Skipping {output_dir}: already completed (found {result_filename})')
+
+    # --also_eval_segmented's companion seg-on output sits at the exact same
+    # path a standalone `--use_segmentation` run of this scenario would use
+    # (same cont/cd/qc/seed, 'seg-off' swapped for 'seg-on') -- computed here
+    # regardless of whether the flag is set, since it's cheap and only ever
+    # read when it's on.
+    segmented_ablation_parts = list(ablation_parts)
+    segmented_ablation_parts[2] = 'seg-on'
+    segmented_ablation_tag = os.path.join(*segmented_ablation_parts)
+    segmented_output_fold = os.path.join(args.dataset, args.scenario, args.task, args.absa_task,
+                                          segmented_ablation_tag, str(args.seed))
+    args.segmented_output_dir = os.path.join(args.output_folder, segmented_output_fold)
+    segmented_result_path = os.path.join(args.segmented_output_dir, f'results-{args.dataset}-segmented.json')
+
+    already_done = os.path.exists(os.path.join(output_dir, result_filename))
+    if args.also_eval_segmented:
+        already_done = already_done and os.path.exists(segmented_result_path)
+    if already_done and not args.overwrite:
+        print(f'[RESUME] Skipping {output_dir}: already completed '
+              f'(found {result_filename}' +
+              (f' and {segmented_result_path}' if args.also_eval_segmented else '') + ')')
         sys.exit(0)
 
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
+    if args.also_eval_segmented and not os.path.exists(args.segmented_output_dir):
+        os.makedirs(args.segmented_output_dir)
     args.output_dir = output_dir
     print(f"Output directory for this run: {args.output_dir}")
 
@@ -892,6 +926,20 @@ if __name__ == '__main__':
 
         # compute the performance scores
         run_evaluation(test_loader, model, device, tokenizer, test_dataset.sentence_strings, args)
+
+        if args.also_eval_segmented:
+            # same trained model, second evaluation pass with segmentation on
+            # -- writes into the seg-on sibling folder (args.segmented_output_dir,
+            # set in init_args) so it's indistinguishable from a standalone
+            # seg-on run's output, without retraining
+            print("\n****** Conduct Evaluating (segmented companion, same checkpoint) ******")
+            segmented_args = copy.deepcopy(args)
+            segmented_args.use_segmentation = True
+            segmented_args.also_eval_segmented = False
+            segmented_args.output_dir = args.segmented_output_dir
+            run_evaluation(test_loader, model, device, tokenizer, test_dataset.sentence_strings, segmented_args)
+            with open(os.path.join(segmented_args.output_dir, 'args.json'), 'w') as f:
+                json.dump(segmented_args.__dict__, f, indent=2)
 
     if args.do_inference:
         print("\n****** Conduct inference on trained checkpoint ******")

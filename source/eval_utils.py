@@ -13,7 +13,14 @@ import evaluate
 
 def extract_spans_para(task, absa_task, seq, seq_type):
     quads = []
+    # an empty seq (a genuinely zero-quad message/segment's target or
+    # prediction) has zero quads, not one -- '' still tokenizes to a single
+    # '' entry via ''.split('[SSEP]'), which the parsing below can't decode
+    # and would otherwise turn into a spurious ('', '', '', '') quad
+    if not seq:
+        return quads
     sents = [s.strip() for s in seq.split('[SSEP]')]
+    sents = [s for s in sents if s]
 
     if task == 'asqp' or task == 'gen_scl_nat_wo_intra':
         for s in sents:
