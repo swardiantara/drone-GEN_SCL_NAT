@@ -63,7 +63,7 @@ CONT_TEMP=${CONT_TEMP:-0.25}
 # adds no segment at all, landing at the exact same path a pre-quad-count-
 # task run would -- see init_args() in gen_scl_nat_main.py for why (keeps
 # every already-completed scenario's resume check working).
-read -ra QUAD_COUNT_LOSS_OPTIONS <<< "${QUAD_COUNT_LOSS_OPTIONS:-0.0}"
+read -ra QUAD_COUNT_LOSS_OPTIONS <<< "${QUAD_COUNT_LOSS_OPTIONS:-0.0 0.1}"
 
 # segmentation is off by default -- set to "true" to also produce the seg-on
 # results for every (base model x contrastive x CD x quad-count) combination.
