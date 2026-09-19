@@ -280,12 +280,12 @@
         [
           "the hardware",
           "Aircraft",
-          "ok",
+          "concerning",
           "not enter S-mode"
         ]
       ],
       "output_correct": "the hardware is ok because Aircraft is not enter S-mode",
-      "output_pred": "the hardware is ok because Aircraft is not enter S-mode",
+      "output_pred": "the hardware is concerning because Aircraft is not enter S-mode",
       "utterances": [
         "Aircraft",
         "will",
@@ -402,13 +402,13 @@
       "labels_pred": [
         [
           "the parameter",
-          "Downward altitude sensor data",
+          "downward altitude sensor data",
           "concerning",
           "error"
         ]
       ],
       "output_correct": "the hardware is concerning because Downward altitude sensor is error",
-      "output_pred": "the parameter is concerning because Downward altitude sensor data is error",
+      "output_pred": "the parameter is concerning because downward altitude sensor data is error",
       "utterances": [
         "Downward",
         "altitude",
@@ -444,10 +444,16 @@
           "compass",
           "concerning",
           "error"
+        ],
+        [
+          "the hardware",
+          "compass",
+          "concerning",
+          "error"
         ]
       ],
       "output_correct": "the hardware is concerning because Compass is Error [SSEP] the hardware is concerning because Compass is error",
-      "output_pred": "the hardware is concerning because compass is error",
+      "output_pred": "the hardware is concerning because compass is error [SSEP] the hardware is concerning because compass is error",
       "utterances": [
         "Compass",
         "Error.",
@@ -800,12 +806,12 @@
         [
           "the software",
           "Obstacle sensing",
-          "ok",
+          "concerning",
           "not available at night"
         ]
       ],
       "output_correct": "the software is concerning because Obstacle sensing is not available at night",
-      "output_pred": "the software is ok because Obstacle sensing is not available at night",
+      "output_pred": "the software is concerning because Obstacle sensing is not available at night",
       "utterances": [
         "Obstacle",
         "sensing",
@@ -885,7 +891,7 @@
       ],
       "labels_pred": [
         [
-          "the parameter",
+          "the environment",
           "target area",
           "concerning",
           "in an Altitude Zone"
@@ -898,7 +904,7 @@
         ]
       ],
       "output_correct": "the parameter is concerning because target area is in an Altitude Zone [SSEP] the parameter is concerning because Flight altitude is restricted to nnn",
-      "output_pred": "the parameter is concerning because target area is in an Altitude Zone [SSEP] the parameter is concerning because flight altitude is restricted to nnn",
+      "output_pred": "the environment is concerning because target area is in an Altitude Zone [SSEP] the parameter is concerning because flight altitude is restricted to nnn",
       "utterances": [
         "GEO",
         "Zone",
@@ -1266,17 +1272,11 @@
           "the hardware",
           "propeller",
           "concerning",
-          "lost"
-        ],
-        [
-          "the hardware",
-          "Motor",
-          "concerning",
-          "missing propeller"
+          "missing"
         ]
       ],
       "output_correct": "the hardware is concerning because Motor is idling [SSEP] the hardware is concerning because propeller is lost [SSEP] the hardware is concerning because propeller is missing",
-      "output_pred": "the hardware is concerning because Motor is idling [SSEP] the hardware is concerning because propeller is lost [SSEP] the hardware is concerning because Motor is missing propeller",
+      "output_pred": "the hardware is concerning because Motor is idling [SSEP] the hardware is concerning because propeller is missing",
       "utterances": [
         "Motor",
         "is",
@@ -1520,11 +1520,11 @@
           "the parameter",
           "subject",
           "concerning",
-          "cannot find"
+          "Cannot find"
         ]
       ],
       "output_correct": "the operation is concerning because ActiveTrack Flight is Ended [SSEP] the parameter is concerning because subject is cannot find",
-      "output_pred": "the operation is concerning because ActiveTrack Flight is Ended [SSEP] the parameter is concerning because subject is cannot find",
+      "output_pred": "the operation is concerning because ActiveTrack Flight is Ended [SSEP] the parameter is concerning because subject is Cannot find",
       "utterances": [
         "ActiveTrack",
         "Flight",
@@ -1545,14 +1545,14 @@
       ],
       "labels_pred": [
         [
-          "the software",
+          "the operation",
           "Remote ID functionality",
           "ok",
           "normal"
         ]
       ],
       "output_correct": "the communication is ok because Remote ID functionality is normal",
-      "output_pred": "the software is ok because Remote ID functionality is normal",
+      "output_pred": "the operation is ok because Remote ID functionality is normal",
       "utterances": [
         "Remote",
         "ID",
@@ -1714,11 +1714,11 @@
           "the hardware",
           "Gimbal Tilt",
           "concerning",
-          "too Large"
+          "too large"
         ]
       ],
       "output_correct": "the operation is concerning because track subject is Cannot [SSEP] the parameter is concerning because Gimbal Tilt is too Large",
-      "output_pred": "the operation is concerning because track subject is Cannot [SSEP] the hardware is concerning because Gimbal Tilt is too Large",
+      "output_pred": "the operation is concerning because track subject is Cannot [SSEP] the hardware is concerning because Gimbal Tilt is too large",
       "utterances": [
         "Cannot",
         "track",
@@ -1742,12 +1742,12 @@
         [
           "the operation",
           "Aircraft Mode",
-          "ok",
+          "concerning",
           "Not Allowed"
         ]
       ],
       "output_correct": "the operation is concerning because Aircraft Mode is not allowed to change",
-      "output_pred": "the operation is ok because Aircraft Mode is Not Allowed",
+      "output_pred": "the operation is concerning because Aircraft Mode is Not Allowed",
       "utterances": [
         "Not",
         "Allowed",
@@ -1777,13 +1777,13 @@
         ],
         [
           "the operation",
-          "fly in that direction",
+          "TapFly",
           "concerning",
-          "Cannot enter"
+          "Cannot fly in that direction"
         ]
       ],
       "output_correct": "the operation is concerning because TapFly is Cannot Enter",
-      "output_pred": "the operation is concerning because TapFly is Cannot Enter [SSEP] the operation is concerning because fly in that direction is Cannot enter",
+      "output_pred": "the operation is concerning because TapFly is Cannot Enter [SSEP] the operation is concerning because TapFly is Cannot fly in that direction",
       "utterances": [
         "Cannot",
         "Enter",
@@ -2216,12 +2216,12 @@
         [
           "the operation",
           "Aircraft Mode",
-          "ok",
-          "Not Allowed"
+          "concerning",
+          "Not Allowed to change"
         ]
       ],
       "output_correct": "the operation is concerning because Aircraft Mode is Not Allowed to change",
-      "output_pred": "the operation is ok because Aircraft Mode is Not Allowed",
+      "output_pred": "the operation is concerning because Aircraft Mode is Not Allowed to change",
       "utterances": [
         "Not",
         "Allowed",
@@ -2527,11 +2527,17 @@
           "the operation",
           "GPS mode",
           "concerning",
-          "Unknown"
+          "Exiting"
+        ],
+        [
+          "the hardware",
+          "Unknown",
+          "concerning",
+          "Error"
         ]
       ],
       "output_correct": "the operation is ok because GPS mode is Exiting [SSEP] the hardware is concerning because Unknown is Error",
-      "output_pred": "the operation is concerning because GPS mode is Unknown",
+      "output_pred": "the operation is concerning because GPS mode is Exiting [SSEP] the hardware is concerning because Unknown is Error",
       "utterances": [
         "Exiting",
         "GPS",
@@ -2631,10 +2637,16 @@
           "Battery",
           "concerning",
           "Overcurrent"
+        ],
+        [
+          "the operation",
+          "Discharge",
+          "concerning",
+          "NULL"
         ]
       ],
       "output_correct": "the hardware is concerning because Battery is Overcurrent During Discharge",
-      "output_pred": "the hardware is concerning because Battery is Overcurrent",
+      "output_pred": "the hardware is concerning because Battery is Overcurrent [SSEP] the operation is concerning because Discharge is NULL",
       "utterances": [
         "Battery:",
         "Overcurrent",
@@ -2681,16 +2693,10 @@
           "Landing gear",
           "ok",
           "lowered"
-        ],
-        [
-          "the software",
-          "Obstacle Avoidance",
-          "ok",
-          "Disabled"
         ]
       ],
       "output_correct": "the environment is concerning because wireless interference is strong [SSEP] the software is ok because Obstacle Avoidance is disabled [SSEP] the hardware is ok because Landing gear is lowered",
-      "output_pred": "the environment is concerning because wireless interference is strong [SSEP] the software is ok because Obstacle Avoidance is Disabled [SSEP] the hardware is ok because Landing gear is lowered [SSEP] the software is ok because Obstacle Avoidance is Disabled",
+      "output_pred": "the environment is concerning because wireless interference is strong [SSEP] the software is ok because Obstacle Avoidance is Disabled [SSEP] the hardware is ok because Landing gear is lowered",
       "utterances": [
         "Strong",
         "wireless",
@@ -2930,11 +2936,11 @@
           "the hardware",
           "gimbal",
           "ok",
-          "rotated"
+          "rotate"
         ]
       ],
       "output_correct": "the parameter is ok because flight attitude angle is larger in Sport mode",
-      "output_pred": "the parameter is ok because flight attitude angle is larger in Sport mode [SSEP] the hardware is ok because gimbal is rotated",
+      "output_pred": "the parameter is ok because flight attitude angle is larger in Sport mode [SSEP] the hardware is ok because gimbal is rotate",
       "utterances": [
         "The",
         "flight",
@@ -3141,14 +3147,14 @@
       ],
       "labels_pred": [
         [
-          "the operation",
+          "the parameter",
           "End Point",
           "ok",
-          "Arrived at"
+          "Arrived"
         ]
       ],
       "output_correct": "the operation is ok because it is Arrived at End Point",
-      "output_pred": "the operation is ok because End Point is Arrived at",
+      "output_pred": "the parameter is ok because End Point is Arrived",
       "utterances": [
         "Arrived",
         "at",
@@ -3261,11 +3267,11 @@
           "the hardware",
           "Aircraft",
           "concerning",
-          "Entering Restricted Area"
+          "entering Restricted Area"
         ]
       ],
       "output_correct": "the operation is concerning because ActiveTrack Flight is Stopped [SSEP] the hardware is concerning because Aircraft is Entering Restricted Area",
-      "output_pred": "the operation is concerning because ActiveTrack Flight is Stopped [SSEP] the hardware is concerning because Aircraft is Entering Restricted Area",
+      "output_pred": "the operation is concerning because ActiveTrack Flight is Stopped [SSEP] the hardware is concerning because Aircraft is entering Restricted Area",
       "utterances": [
         "ActiveTrack",
         "Flight",
@@ -3426,11 +3432,11 @@
           "the hardware",
           "Remote controller",
           "concerning",
-          "disconnected from aircraft"
+          "disconnected"
         ]
       ],
       "output_correct": "the hardware is concerning because Remote controller is disconnected from aircraft",
-      "output_pred": "the hardware is concerning because Remote controller is disconnected from aircraft",
+      "output_pred": "the hardware is concerning because Remote controller is disconnected",
       "utterances": [
         "Remote",
         "controller",
@@ -3969,14 +3975,8 @@
       "labels_pred": [
         [
           "the parameter",
-          "flight",
+          "high-altitude flight",
           "concerning",
-          "High-altitude"
-        ],
-        [
-          "the parameter",
-          "braking distance",
-          "ok",
           "extended"
         ],
         [
@@ -3987,7 +3987,7 @@
         ]
       ],
       "output_correct": "the operation is concerning because flight is High-altitude [SSEP] the parameter is ok because aircraft braking distance is extended [SSEP] the parameter is ok because flight time is shortened",
-      "output_pred": "the parameter is concerning because flight is High-altitude [SSEP] the parameter is ok because braking distance is extended [SSEP] the parameter is concerning because flight time is shortened",
+      "output_pred": "the parameter is concerning because high-altitude flight is extended [SSEP] the parameter is concerning because flight time is shortened",
       "utterances": [
         "High-altitude",
         "flight,",
@@ -4062,14 +4062,14 @@
           "completed"
         ],
         [
-          "the parameter",
+          "the hardware",
           "sky part",
           "ok",
           "filled automatically"
         ]
       ],
       "output_correct": "the software is ok because pano shooting is completed",
-      "output_pred": "the operation is ok because Pano shooting is completed [SSEP] the parameter is ok because sky part is filled automatically",
+      "output_pred": "the operation is ok because Pano shooting is completed [SSEP] the hardware is ok because sky part is filled automatically",
       "utterances": [
         "Pano",
         "shooting",
@@ -4120,14 +4120,14 @@
       ],
       "labels_pred": [
         [
-          "the operation",
+          "the environment",
           "Current RTH route",
           "concerning",
           "pass a No-Fly zone"
         ]
       ],
       "output_correct": "the parameter is concerning because Current RTH route is pass a No-Fly zone",
-      "output_pred": "the operation is concerning because Current RTH route is pass a No-Fly zone",
+      "output_pred": "the environment is concerning because Current RTH route is pass a No-Fly zone",
       "utterances": [
         "Current",
         "RTH",
@@ -4182,16 +4182,10 @@
           "Landing gear",
           "ok",
           "lowered"
-        ],
-        [
-          "the software",
-          "Obstacle Avoidance",
-          "ok",
-          "Disabled"
         ]
       ],
       "output_correct": "the software is ok because Obstacle Avoidance is Disabled [SSEP] the hardware is ok because Landing gear is lowered [SSEP] the software is ok because Obstacle Avoidance is Disabled",
-      "output_pred": "the software is ok because Obstacle Avoidance is Disabled [SSEP] the hardware is ok because Landing gear is lowered [SSEP] the software is ok because Obstacle Avoidance is Disabled",
+      "output_pred": "the software is ok because Obstacle Avoidance is Disabled [SSEP] the hardware is ok because Landing gear is lowered",
       "utterances": [
         "Obstacle",
         "Avoidance",
@@ -4341,11 +4335,17 @@
           "the hardware",
           "Compass",
           "concerning",
+          "Error"
+        ],
+        [
+          "the hardware",
+          "Compass",
+          "concerning",
           "disconnected"
         ]
       ],
       "output_correct": "the hardware is concerning because Compass is Error [SSEP] the hardware is concerning because Compass is Error [SSEP] the hardware is concerning because Compass is disconnected",
-      "output_pred": "the hardware is concerning because Compass is Error [SSEP] the hardware is concerning because Compass is disconnected",
+      "output_pred": "the hardware is concerning because Compass is Error [SSEP] the hardware is concerning because Compass is Error [SSEP] the hardware is concerning because Compass is disconnected",
       "utterances": [
         "Compass",
         "Error.",
@@ -4415,34 +4415,34 @@
   ],
   "generative_score": {
     "bleu_score": {
-      "bleu": 0.8313926899455,
-      "brevity_penalty": 0.9670697300070306,
-      "length_ratio": 0.9676002196595277,
+      "bleu": 0.8254923009858446,
+      "brevity_penalty": 0.9647983362374225,
+      "length_ratio": 0.9654036243822076,
       "precisions": [
-        0.9222474460839954,
-        0.8799512492382694,
-        0.8407894736842105,
-        0.8005718370264474
+        0.9197952218430034,
+        0.8753817959682346,
+        0.8357519788918206,
+        0.796415770609319
       ],
       "reference_length": 1821,
-      "translation_length": 1762
+      "translation_length": 1758
     },
     "meteor_score": {
-      "meteor": 0.9160239205902541
+      "meteor": 0.9182504698659336
     },
     "rouge_score": {
-      "rouge1": 0.9344567193663197,
-      "rouge2": 0.9042154229462807,
-      "rougeL": 0.9305001655553784,
-      "rougeLsum": 0.9304009688181777
+      "rouge1": 0.9363728825650995,
+      "rouge2": 0.9068611124075179,
+      "rougeL": 0.9318294259208892,
+      "rougeLsum": 0.9322159847864568
     },
-    "wer_score": 0.14886164623467601
+    "wer_score": 0.15119673088149446
   },
   "performance_metrics": {
     "ac_score": {
-      "f1_score": 0.8695652173913043,
-      "precision": 0.8823529411764706,
-      "recall": 0.8571428571428571
+      "f1_score": 0.8579710144927537,
+      "precision": 0.8705882352941177,
+      "recall": 0.8457142857142858
     },
     "acsp_score": {
       "f1_score": 0.8057971014492753,
@@ -4450,171 +4450,171 @@
       "recall": 0.7942857142857143
     },
     "at_score": {
-      "f1_score": 0.8115942028985507,
-      "precision": 0.8235294117647058,
-      "recall": 0.8
+      "f1_score": 0.8811594202898549,
+      "precision": 0.8941176470588236,
+      "recall": 0.8685714285714285
     },
     "element_scores": {
       "ac": {
         "macro": {
-          "f1": 0.886973632428178,
-          "precision": 0.9084022038567493,
-          "recall": 0.8829201101928377
+          "f1": 0.8779614325068871,
+          "precision": 0.8966942148760331,
+          "recall": 0.8760330578512399
         },
         "micro": {
-          "f1": 0.8811594202898549,
-          "precision": 0.8941176470588236,
-          "recall": 0.8685714285714285
+          "f1": 0.8753623188405797,
+          "precision": 0.888235294117647,
+          "recall": 0.8628571428571429
         },
         "support": {
           "n_examples": 121,
           "n_gold": 175,
           "n_pred": 170,
-          "n_tp": 152
+          "n_tp": 151
         },
         "weighted": {
-          "f1": 0.881360544217687,
-          "precision": 0.9166666666666666,
-          "recall": 0.8685714285714285
+          "f1": 0.8769523809523809,
+          "precision": 0.9123809523809523,
+          "recall": 0.8628571428571429
         }
       },
       "at": {
         "macro": {
-          "f1": 0.8216843762298308,
-          "precision": 0.8326446280991737,
-          "recall": 0.8236914600550965
+          "f1": 0.9000000000000001,
+          "precision": 0.9104683195592287,
+          "recall": 0.9049586776859505
         },
         "micro": {
-          "f1": 0.8173913043478261,
-          "precision": 0.8294117647058824,
-          "recall": 0.8057142857142857
+          "f1": 0.8985507246376812,
+          "precision": 0.9117647058823529,
+          "recall": 0.8857142857142857
         },
         "support": {
           "n_examples": 121,
           "n_gold": 175,
           "n_pred": 170,
-          "n_tp": 141
+          "n_tp": 155
         },
         "weighted": {
-          "f1": 0.809360544217687,
-          "precision": 0.8290476190476189,
-          "recall": 0.8057142857142857
+          "f1": 0.8918095238095238,
+          "precision": 0.9161904761904762,
+          "recall": 0.8857142857142857
         }
       },
       "ot": {
         "macro": {
-          "f1": 0.8297914207005117,
-          "precision": 0.8443526170798898,
-          "recall": 0.8305785123966943
+          "f1": 0.8958677685950412,
+          "precision": 0.9118457300275482,
+          "recall": 0.8953168044077137
         },
         "micro": {
-          "f1": 0.8231884057971014,
-          "precision": 0.8352941176470589,
-          "recall": 0.8114285714285714
+          "f1": 0.8985507246376812,
+          "precision": 0.9117647058823529,
+          "recall": 0.8857142857142857
         },
         "support": {
           "n_examples": 121,
           "n_gold": 175,
           "n_pred": 170,
-          "n_tp": 142
+          "n_tp": 155
         },
         "weighted": {
-          "f1": 0.8193197278911563,
-          "precision": 0.8457142857142858,
-          "recall": 0.8114285714285714
+          "f1": 0.8979047619047619,
+          "precision": 0.9295238095238094,
+          "recall": 0.8857142857142857
         }
       },
       "sp": {
         "macro": {
-          "f1": 0.9012987012987014,
-          "precision": 0.9180440771349863,
-          "recall": 0.9022038567493115
+          "f1": 0.9137741046831956,
+          "precision": 0.9269972451790633,
+          "recall": 0.9173553719008265
         },
         "micro": {
-          "f1": 0.8927536231884058,
-          "precision": 0.9058823529411765,
-          "recall": 0.88
+          "f1": 0.8985507246376812,
+          "precision": 0.9117647058823529,
+          "recall": 0.8857142857142857
         },
         "support": {
           "n_examples": 121,
           "n_gold": 175,
           "n_pred": 170,
-          "n_tp": 154
+          "n_tp": 155
         },
         "weighted": {
-          "f1": 0.8878367346938775,
-          "precision": 0.9176190476190477,
-          "recall": 0.88
+          "f1": 0.8937142857142856,
+          "precision": 0.921904761904762,
+          "recall": 0.8857142857142857
         }
       }
     },
     "micro_average": {
-      "f1_score": 0.8420289855072464,
-      "precision": 0.8544117647058823,
-      "recall": 0.83
+      "f1_score": 0.8782608695652174,
+      "precision": 0.8911764705882353,
+      "recall": 0.8657142857142858
     },
     "ot_score": {
-      "f1_score": 0.8,
-      "precision": 0.8117647058823529,
-      "recall": 0.7885714285714286
+      "f1_score": 0.8753623188405797,
+      "precision": 0.888235294117647,
+      "recall": 0.8628571428571429
     },
     "quad_score": {
-      "f1_score": 0.6550724637681158,
-      "precision": 0.6647058823529411,
-      "recall": 0.6457142857142857
+      "f1_score": 0.7710144927536231,
+      "precision": 0.7823529411764706,
+      "recall": 0.76
     },
     "set_multiset_scores": {
       "multiset": {
         "macro": {
-          "f1": 0.6487996851633214,
-          "precision": 0.6556473829201103,
-          "recall": 0.6515151515151517
+          "f1": 0.7550964187327823,
+          "precision": 0.765840220385675,
+          "recall": 0.7548209366391186
         },
         "micro": {
-          "f1": 0.6434782608695652,
-          "precision": 0.6529411764705882,
-          "recall": 0.6342857142857142
+          "f1": 0.7536231884057971,
+          "precision": 0.7647058823529411,
+          "recall": 0.7428571428571429
         },
         "support": {
           "n_examples": 121,
           "n_gold": 175,
           "n_pred": 170,
-          "n_tp": 111
+          "n_tp": 130
         },
         "weighted": {
-          "f1": 0.6372244897959184,
-          "precision": 0.6514285714285715,
-          "recall": 0.6342857142857142
+          "f1": 0.752,
+          "precision": 0.7742857142857142,
+          "recall": 0.7428571428571429
         }
       },
       "set": {
         "macro": {
-          "f1": 0.6528925619834711,
-          "precision": 0.6570247933884299,
-          "recall": 0.6570247933884299
+          "f1": 0.7600550964187328,
+          "precision": 0.765840220385675,
+          "recall": 0.7630853994490359
         },
         "micro": {
-          "f1": 0.6468842729970327,
-          "precision": 0.6526946107784432,
-          "recall": 0.6411764705882353
+          "f1": 0.7559523809523809,
+          "precision": 0.7604790419161677,
+          "recall": 0.7514792899408284
         },
         "support": {
           "n_examples": 121,
-          "n_gold": 170,
+          "n_gold": 169,
           "n_pred": 167,
-          "n_tp": 109
+          "n_tp": 127
         },
         "weighted": {
-          "f1": 0.6411764705882353,
-          "precision": 0.65,
-          "recall": 0.6411764705882353
+          "f1": 0.7538461538461537,
+          "precision": 0.7662721893491125,
+          "recall": 0.7514792899408284
         }
       }
     },
     "sp_score": {
-      "f1_score": 0.8869565217391304,
-      "precision": 0.9,
-      "recall": 0.8742857142857143
+      "f1_score": 0.8985507246376812,
+      "precision": 0.9117647058823529,
+      "recall": 0.8857142857142857
     }
   }
 }

@@ -31,12 +31,11 @@
   "save_model": false,
   "constrained_decoding": false,
   "use_segmentation": false,
-  "segmentation_model_dir": "swardiantara/ADFLER-xlnet-base-cased",
-  "segmentation_model_type": "xlnet",
-  "segmentation_use_cuda": false,
+  "also_eval_segmented": true,
   "overwrite": false,
+  "segmented_output_dir": "outputs/acos_drone_binary/flan-t5-base/asqp/quad/cont-off/cd-off/seg-on/qc-on/50995999",
   "output_dir": "outputs/acos_drone_binary/flan-t5-base/asqp/quad/cont-off/cd-off/seg-off/qc-on/50995999",
-  "best_epoch": 26,
-  "best_val_f1": 0.6436781883239746,
-  "best_checkpoint_path": "outputs/acos_drone_binary/flan-t5-base/asqp/quad/cont-off/cd-off/seg-off/qc-on/50995999/best-epoch=26-val_f1=0.6437.ckpt"
+  "best_epoch": 20,
+  "best_val_f1": 0.7319884896278381,
+  "best_checkpoint_path": "outputs/acos_drone_binary/flan-t5-base/asqp/quad/cont-off/cd-off/seg-off/qc-on/50995999/best-epoch=20-val_f1=0.7320.ckpt"
 }

@@ -1267,16 +1267,10 @@
           "Motor",
           "concerning",
           "idling"
-        ],
-        [
-          "the hardware",
-          "propeller",
-          "concerning",
-          "missing"
         ]
       ],
       "output_correct": "the hardware is concerning because Motor is idling [SSEP] the hardware is concerning because propeller is lost [SSEP] the hardware is concerning because propeller is missing",
-      "output_pred": "the hardware is concerning because Motor is idling [SSEP] the hardware is concerning because propeller is missing",
+      "output_pred": "the hardware is concerning because Motor is idling",
       "utterances": [
         "Motor",
         "is",
@@ -1307,11 +1301,11 @@
           "the operation",
           "take off",
           "concerning",
-          "Unable"
+          "Unable in low light environment"
         ]
       ],
       "output_correct": "the operation is concerning because it is unable to take off [SSEP] the environment is concerning because it is low light environment",
-      "output_pred": "the operation is concerning because take off is Unable",
+      "output_pred": "the operation is concerning because take off is Unable in low light environment",
       "utterances": [
         "Unable",
         "to",
@@ -1377,13 +1371,13 @@
       "labels_pred": [
         [
           "the parameter",
-          "Waypoint Distance",
+          "Min Waypoint Distance",
           "ok",
           "nnn"
         ]
       ],
       "output_correct": "the parameter is ok because Min Waypoint Distance is nnn",
-      "output_pred": "the parameter is ok because Waypoint Distance is nnn",
+      "output_pred": "the parameter is ok because Min Waypoint Distance is nnn",
       "utterances": [
         "Min",
         "Waypoint",
@@ -2082,7 +2076,7 @@
         [
           "the hardware",
           "Aircraft",
-          "ok",
+          "concerning",
           "in Altitude Zone"
         ],
         [
@@ -2093,7 +2087,7 @@
         ]
       ],
       "output_correct": "the hardware is ok because Aircraft is in Altitude Zone [SSEP] the parameter is ok because Max altitude is set to nnn",
-      "output_pred": "the hardware is ok because Aircraft is in Altitude Zone [SSEP] the parameter is ok because Max altitude is set to nnn",
+      "output_pred": "the hardware is concerning because Aircraft is in Altitude Zone [SSEP] the parameter is ok because Max altitude is set to nnn",
       "utterances": [
         "Aircraft",
         "in",
@@ -2149,11 +2143,11 @@
           "the parameter",
           "Return-To-Home altitude",
           "ok",
-          "to nnn"
+          "Setting to nnn"
         ]
       ],
       "output_correct": "the parameter is ok because Return-To-Home altitude is set to nnn",
-      "output_pred": "the parameter is ok because Return-To-Home altitude is to nnn",
+      "output_pred": "the parameter is ok because Return-To-Home altitude is Setting to nnn",
       "utterances": [
         "Setting",
         "new",
@@ -2297,14 +2291,14 @@
       ],
       "labels_pred": [
         [
-          "the operation",
-          "API Automatic Takeoff ok because API",
-          "ok",
-          "ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is"
+          "",
+          "",
+          "",
+          ""
         ]
       ],
       "output_correct": "the operation is ok because API Automatic Takeoff is NULL",
-      "output_pred": "the operation is ok because API Automatic Takeoff ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is ok because API is",
+      "output_pred": "the operation is ok because API Automatic Takeoff ok because API Automatic Takeoff ok because API Automatic Takeoff ok because API Automatic Takeoff ok because API Automatic Takeoff ok because API Automatic Takeoff ok because API Automatic Takeoff ok because API Automatic Takeoff ok because API Automatic Takeoff ok because API Automatic Takeoff ok because API Automatic Takeoff ok because API Automatic Takeoff ok because API Automatic Takeoff ok because API Automatic Takeoff ok because API Automatic Takeoff ok because API Automatic Takeoff ok because API Automatic Takeoff ok because API Automatic Takeoff ok because API Automatic Takeoff ok because API Automatic Takeoff ok because API Automatic Takeoff ok because API Automatic Takeoff ok because API Automatic Takeoff ok because API Automatic Takeoff ok because API Automatic Takeoff ok because API Automatic Takeoff ok because API Automatic Takeoff ok because API Automatic Takeoff ok because API Automatic Takeoff ok because API Automatic Takeoff ok because API Automatic Takeoff ok because API Automatic Takeoff ok because API Automatic Takeoff ok because API Automatic Takeoff ok because API Automatic Takeoff ok because API Automatic Takeoff",
       "utterances": [
         "API",
         "Automatic",
@@ -3975,8 +3969,14 @@
       "labels_pred": [
         [
           "the parameter",
-          "flight distance",
+          "flight",
           "concerning",
+          "High-altitude flight"
+        ],
+        [
+          "the parameter",
+          "braking distance",
+          "ok",
           "extended"
         ],
         [
@@ -3987,7 +3987,7 @@
         ]
       ],
       "output_correct": "the operation is concerning because flight is High-altitude [SSEP] the parameter is ok because aircraft braking distance is extended [SSEP] the parameter is ok because flight time is shortened",
-      "output_pred": "the parameter is concerning because flight distance is extended [SSEP] the parameter is concerning because flight time is shortened",
+      "output_pred": "the parameter is concerning because flight is High-altitude flight [SSEP] the parameter is ok because braking distance is extended [SSEP] the parameter is concerning because flight time is shortened",
       "utterances": [
         "High-altitude",
         "flight,",
@@ -4035,31 +4035,13 @@
         ],
         [
           "the software",
-          "Videos",
-          "ok",
-          "shot in D-Log mode"
-        ],
-        [
-          "the software",
-          "photos",
-          "ok",
-          "shot in D-Log mode"
-        ],
-        [
-          "the software",
-          "Videos",
-          "ok",
-          "shot in D-Log mode"
-        ],
-        [
-          "the software",
           "photos",
           "ok",
           "shot in D-Log mode"
         ]
       ],
       "output_correct": "the software is ok because color display is enhanced",
-      "output_pred": "the software is ok because Color display is enhanced [SSEP] the software is ok because Videos is shot in D-Log mode [SSEP] the software is ok because photos is shot in D-Log mode [SSEP] the software is ok because Videos is shot in D-Log mode [SSEP] the software is ok because photos is shot in D-Log mode [SSEP] the software is ok because Videos is shot in D-Log mode [SSEP] the software is ok because photos is shot in D-Log mode",
+      "output_pred": "the software is ok because Color display is enhanced [SSEP] the software is ok because Videos is shot in D-Log mode [SSEP] the software is ok because photos is shot in D-Log mode [SSEP] the software is ok because photos is shot in D-Log mode",
       "utterances": [
         "Color",
         "display",
@@ -4457,206 +4439,206 @@
   ],
   "generative_score": {
     "bleu_score": {
-      "bleu": 0.6743129217432166,
+      "bleu": 0.6926957979523419,
       "brevity_penalty": 1.0,
-      "length_ratio": 1.2202086765513454,
+      "length_ratio": 1.1894563426688634,
       "precisions": [
-        0.7353735373537353,
-        0.6939552594002856,
-        0.656060606060606,
-        0.6175363098440022
+        0.7548476454293629,
+        0.7124694376528118,
+        0.6741164241164241,
+        0.6350526899611758
       ],
       "reference_length": 1821,
-      "translation_length": 2222
+      "translation_length": 2166
     },
     "meteor_score": {
-      "meteor": 0.9010276465581458
+      "meteor": 0.9035494949700387
     },
     "rouge_score": {
-      "rouge1": 0.9153436631660051,
-      "rouge2": 0.882141606892884,
-      "rougeL": 0.9113710064187484,
-      "rougeLsum": 0.9109134157519615
+      "rouge1": 0.9156240167961707,
+      "rouge2": 0.8820022832693086,
+      "rougeL": 0.9118279188863359,
+      "rougeLsum": 0.9117389970297753
     },
-    "wer_score": 0.4016345592527729
+    "wer_score": 0.36777583187390545
   },
   "performance_metrics": {
     "ac_score": {
-      "f1_score": 0.8522727272727272,
-      "precision": 0.847457627118644,
-      "recall": 0.8571428571428571
+      "f1_score": 0.853868194842407,
+      "precision": 0.8563218390804598,
+      "recall": 0.8514285714285714
     },
     "acsp_score": {
-      "f1_score": 0.8011363636363635,
-      "precision": 0.7966101694915254,
-      "recall": 0.8057142857142857
+      "f1_score": 0.7965616045845271,
+      "precision": 0.7988505747126436,
+      "recall": 0.7942857142857143
     },
     "at_score": {
-      "f1_score": 0.8011363636363635,
-      "precision": 0.7966101694915254,
-      "recall": 0.8057142857142857
+      "f1_score": 0.8595988538681948,
+      "precision": 0.8620689655172413,
+      "recall": 0.8571428571428571
     },
     "element_scores": {
       "ac": {
         "macro": {
-          "f1": 0.8804998032270759,
-          "precision": 0.8985635576544667,
-          "recall": 0.8856749311294767
+          "f1": 0.8698937426210154,
+          "precision": 0.8884297520661157,
+          "recall": 0.8746556473829202
         },
         "micro": {
-          "f1": 0.8693181818181818,
-          "precision": 0.864406779661017,
-          "recall": 0.8742857142857143
+          "f1": 0.8653295128939829,
+          "precision": 0.867816091954023,
+          "recall": 0.8628571428571429
         },
         "support": {
           "n_examples": 121,
           "n_gold": 175,
-          "n_pred": 177,
-          "n_tp": 153
+          "n_pred": 174,
+          "n_tp": 151
         },
         "weighted": {
-          "f1": 0.8812653061224489,
-          "precision": 0.914625850340136,
-          "recall": 0.8742857142857143
+          "f1": 0.8689795918367348,
+          "precision": 0.9038095238095237,
+          "recall": 0.8628571428571429
         }
       },
       "at": {
         "macro": {
-          "f1": 0.8260920897284535,
-          "precision": 0.8353994490358128,
-          "recall": 0.8305785123966943
+          "f1": 0.8745769382133021,
+          "precision": 0.8829201101928376,
+          "recall": 0.8870523415977962
         },
         "micro": {
-          "f1": 0.8181818181818181,
-          "precision": 0.8135593220338984,
-          "recall": 0.8228571428571428
+          "f1": 0.8710601719197708,
+          "precision": 0.8735632183908046,
+          "recall": 0.8685714285714285
         },
         "support": {
           "n_examples": 121,
           "n_gold": 175,
-          "n_pred": 177,
-          "n_tp": 144
+          "n_pred": 174,
+          "n_tp": 152
         },
         "weighted": {
-          "f1": 0.8261224489795918,
-          "precision": 0.8461904761904763,
-          "recall": 0.8228571428571428
+          "f1": 0.8659319727891157,
+          "precision": 0.8876190476190476,
+          "recall": 0.8685714285714285
         }
       },
       "ot": {
         "macro": {
-          "f1": 0.7931326249508067,
-          "precision": 0.8035222353404171,
-          "recall": 0.8016528925619836
+          "f1": 0.836835891381346,
+          "precision": 0.8471074380165289,
+          "recall": 0.8457300275482095
         },
         "micro": {
-          "f1": 0.7897727272727272,
-          "precision": 0.7853107344632768,
-          "recall": 0.7942857142857143
+          "f1": 0.8424068767908308,
+          "precision": 0.8448275862068966,
+          "recall": 0.84
         },
         "support": {
           "n_examples": 121,
           "n_gold": 175,
-          "n_pred": 177,
-          "n_tp": 139
+          "n_pred": 174,
+          "n_tp": 147
         },
         "weighted": {
-          "f1": 0.7971836734693878,
-          "precision": 0.8203401360544217,
-          "recall": 0.7942857142857143
+          "f1": 0.840408163265306,
+          "precision": 0.8638095238095238,
+          "recall": 0.84
         }
       },
       "sp": {
         "macro": {
-          "f1": 0.9094254230617869,
-          "precision": 0.9219795356158993,
-          "recall": 0.9201101928374655
+          "f1": 0.8979929161747345,
+          "precision": 0.9118457300275483,
+          "recall": 0.9077134986225897
         },
         "micro": {
-          "f1": 0.8863636363636365,
-          "precision": 0.8813559322033898,
-          "recall": 0.8914285714285715
+          "f1": 0.8825214899713467,
+          "precision": 0.8850574712643678,
+          "recall": 0.88
         },
         "support": {
           "n_examples": 121,
           "n_gold": 175,
-          "n_pred": 177,
-          "n_tp": 156
+          "n_pred": 174,
+          "n_tp": 154
         },
         "weighted": {
-          "f1": 0.892312925170068,
-          "precision": 0.9184353741496599,
-          "recall": 0.8914285714285715
+          "f1": 0.8811700680272108,
+          "precision": 0.9104761904761905,
+          "recall": 0.88
         }
       }
     },
     "micro_average": {
-      "f1_score": 0.8238636363636365,
-      "precision": 0.8192090395480226,
-      "recall": 0.8285714285714286
+      "f1_score": 0.8567335243553009,
+      "precision": 0.8591954022988506,
+      "recall": 0.8542857142857143
     },
     "ot_score": {
-      "f1_score": 0.7613636363636364,
-      "precision": 0.7570621468926554,
-      "recall": 0.7657142857142857
+      "f1_score": 0.8366762177650429,
+      "precision": 0.8390804597701149,
+      "recall": 0.8342857142857143
     },
     "quad_score": {
-      "f1_score": 0.6534090909090909,
-      "precision": 0.6497175141242938,
-      "recall": 0.6571428571428571
+      "f1_score": 0.7163323782234957,
+      "precision": 0.7183908045977011,
+      "recall": 0.7142857142857143
     },
     "set_multiset_scores": {
       "multiset": {
         "macro": {
-          "f1": 0.6378984651711924,
-          "precision": 0.643939393939394,
-          "recall": 0.6404958677685951
+          "f1": 0.695789059425423,
+          "precision": 0.7024793388429752,
+          "recall": 0.7038567493112948
         },
         "micro": {
-          "f1": 0.6420454545454546,
-          "precision": 0.6384180790960452,
-          "recall": 0.6457142857142857
+          "f1": 0.7048710601719198,
+          "precision": 0.7068965517241379,
+          "recall": 0.7028571428571428
         },
         "support": {
           "n_examples": 121,
           "n_gold": 175,
-          "n_pred": 177,
-          "n_tp": 113
+          "n_pred": 174,
+          "n_tp": 123
         },
         "weighted": {
-          "f1": 0.6498503401360545,
-          "precision": 0.6642857142857143,
-          "recall": 0.6457142857142857
+          "f1": 0.7025034013605442,
+          "precision": 0.72,
+          "recall": 0.7028571428571428
         }
       },
       "set": {
         "macro": {
-          "f1": 0.6415977961432507,
-          "precision": 0.6446280991735537,
-          "recall": 0.6460055096418733
+          "f1": 0.7011019283746556,
+          "precision": 0.7052341597796142,
+          "recall": 0.709366391184573
         },
         "micro": {
-          "f1": 0.6489675516224188,
-          "precision": 0.650887573964497,
-          "recall": 0.6470588235294118
+          "f1": 0.7062314540059348,
+          "precision": 0.7083333333333334,
+          "recall": 0.7041420118343196
         },
         "support": {
           "n_examples": 121,
-          "n_gold": 170,
-          "n_pred": 169,
-          "n_tp": 110
+          "n_gold": 169,
+          "n_pred": 168,
+          "n_tp": 119
         },
         "weighted": {
-          "f1": 0.6474509803921569,
-          "precision": 0.6558823529411765,
-          "recall": 0.6470588235294118
+          "f1": 0.7021696252465482,
+          "precision": 0.7149901380670611,
+          "recall": 0.7041420118343196
         }
       }
     },
     "sp_score": {
-      "f1_score": 0.8806818181818181,
-      "precision": 0.8757062146892656,
-      "recall": 0.8857142857142857
+      "f1_score": 0.8767908309455588,
+      "precision": 0.8793103448275862,
+      "recall": 0.8742857142857143
     }
   }
 }
