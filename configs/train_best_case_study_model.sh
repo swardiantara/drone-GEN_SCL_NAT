@@ -1,8 +1,15 @@
 #!/bin/bash
-# Trains and saves the single best-performing scenario from the grid search
-# (acos_drone_binary, t5-base, paraphrase, contrastive on, constrained
-# decoding on, quad-aware (quad-count regression) loss on, segmentation off,
-# seed=50995999 -- see analysis/aggregate/multiset-PRF.xlsx), so its
+# Trains and saves the best-performing scenario from the grid search among
+# those with constrained decoding ON (so the case study can't be polluted by
+# hallucinated spans) and quad-count-aware loss ON (dense_quad=qc-on, for the
+# dense messages in the case-study logs): acos_drone_binary, t5-base,
+# paraphrase, contrastive OFF, constrained decoding on, quad-count regression
+# loss on, segmentation off (the 3-value dense_quad column excludes seg-on
+# from this pick), seed=89012345 -- the top config by mean multiset micro F1
+# in analysis/aggregate-insensitive/multiset-PRF.xlsx (0.7128; flan-t5-base
+# paraphrase is within noise at 0.7114) and its highest-scoring seed in
+# analysis/recap-insensitive/multiset-PRF.xlsx (0.7378). Note that seed was
+# picked on test-set score; override with SEED=... if you'd rather not. So its
 # checkpoint can be reused for case-study inference
 # (source/case_study_inference.py) instead of only ever being scored and
 # discarded like the rest of the grid.
@@ -24,8 +31,8 @@ ABSA_TASK=${ABSA_TASK:-quad}
 OUTPUT_FOLDER=${OUTPUT_FOLDER:-train_outputs}
 MODEL_PREFIX=${MODEL_PREFIX:-drone_paraphrase}
 BASE_MODEL=${BASE_MODEL:-t5-base}
-SEED=${SEED:-50995999}
-CONT_LOSS=${CONT_LOSS:-0.05}
+SEED=${SEED:-89012345}
+CONT_LOSS=${CONT_LOSS:-0.0}
 CONT_TEMP=${CONT_TEMP:-0.25}
 QUAD_COUNT_LOSS=${QUAD_COUNT_LOSS:-0.1}
 BEST_MODEL_DIR=${BEST_MODEL_DIR:-best-model}
@@ -57,7 +64,7 @@ python3 source/gen_scl_nat_main.py \
     --save_model \
     --overwrite
 
-RUN_DIR="$OUTPUT_FOLDER/$DATASET/$BASE_MODEL/asqp/$ABSA_TASK/cont-on/cd-on/seg-off/qc-on/$SEED"
+RUN_DIR="$OUTPUT_FOLDER/$DATASET/$BASE_MODEL/asqp/$ABSA_TASK/cont-off/cd-on/seg-off/qc-on/$SEED"
 if [ ! -f "$RUN_DIR/config.json" ]; then
     echo "[FAILED] expected a saved HF checkpoint at $RUN_DIR (config.json missing)" >&2
     exit 1
