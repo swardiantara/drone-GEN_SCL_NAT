@@ -23,7 +23,7 @@
         "maximum flight altitude",
         "parameter",
         "positive",
-        "500 m (1640 ft"
+        "to 500 m (1640 ft)."
       ]
     ]
   },
@@ -116,22 +116,16 @@
     "message": "No image transmission. RTH.; Press Brake button to cancel RTH.; No image transmission. Aircraft returning to home.; Image transmission signal weak. Adjust antennas and make sure they are perpendicular to flight direction of aircraft.; Flight mode changed to Go Home.",
     "quads": [
       [
-        "Image transmission",
+        "image transmission",
         "communication",
         "negative",
         "No"
       ],
       [
-        "Aircraft",
-        "hardware",
-        "positive",
-        "returning to home"
-      ],
-      [
-        "Image transmission signal",
-        "communication",
+        "aircraft",
+        "operation",
         "negative",
-        "weak"
+        "returning to home"
       ]
     ]
   },
@@ -148,7 +142,7 @@
         "lost"
       ],
       [
-        "Aircraft",
+        "aircraft",
         "hardware",
         "positive",
         "returning to home"
@@ -188,9 +182,9 @@
         "No"
       ],
       [
-        "Aircraft",
-        "hardware",
-        "positive",
+        "aircraft",
+        "operation",
+        "negative",
         "returning to home"
       ],
       [
@@ -234,16 +228,10 @@
         "returning to home"
       ],
       [
-        "RTH",
+        "image transmission",
         "operation",
         "positive",
         "No"
-      ],
-      [
-        "Aircraft",
-        "operation",
-        "positive",
-        "returning to home"
       ]
     ]
   },
@@ -254,15 +242,15 @@
     "message": "No image transmission. RTH.; Press Brake button to cancel RTH.; No image transmission. Aircraft returning to home.; Image transmission signal weak. Adjust antennas and make sure they are perpendicular to flight direction of aircraft.; RTH ascending.",
     "quads": [
       [
-        "Image transmission",
+        "image transmission",
         "communication",
         "negative",
         "No"
       ],
       [
-        "Aircraft",
-        "hardware",
-        "positive",
+        "aircraft",
+        "operation",
+        "negative",
         "returning to home"
       ],
       [
@@ -281,21 +269,21 @@
     "quads": [
       [
         "image transmission",
-        "communication",
+        "operation",
         "negative",
         "No"
       ],
       [
-        "Controller",
-        "hardware",
-        "positive",
-        "triggered aircraft to descend"
+        "aircraft",
+        "operation",
+        "negative",
+        "triggered to descend"
       ],
       [
-        "Aircraft",
-        "communication",
+        "Auto RTH",
+        "operation",
         "negative",
-        "returning to home"
+        "canceled"
       ],
       [
         "Image transmission signal",
@@ -316,6 +304,12 @@
         "operation",
         "positive",
         "changed to P-GPS"
+      ],
+      [
+        "",
+        "",
+        "",
+        ""
       ]
     ]
   },
@@ -333,7 +327,7 @@
       ],
       [
         "Controller",
-        "hardware",
+        "operation",
         "positive",
         "triggered aircraft to descend"
       ],
@@ -344,8 +338,8 @@
         "canceled"
       ],
       [
-        "Aircraft",
-        "hardware",
+        "RTH",
+        "operation",
         "positive",
         "returning to home"
       ]
@@ -433,7 +427,7 @@
       ],
       [
         "Aircraft",
-        "hardware",
+        "operation",
         "negative",
         "braking"
       ],
@@ -461,7 +455,7 @@
         "Aircraft",
         "hardware",
         "positive",
-        "follow preset action"
+        "follow preset action for lost signal"
       ]
     ]
   },
@@ -636,6 +630,12 @@
         "operation",
         "positive",
         "changed to P-GPS"
+      ],
+      [
+        "",
+        "",
+        "",
+        ""
       ]
     ]
   },
@@ -656,6 +656,12 @@
         "hardware",
         "positive",
         "triggered aircraft to descend"
+      ],
+      [
+        "Auto RTH",
+        "communication",
+        "negative",
+        "canceled"
       ],
       [
         "RC signal",
@@ -732,7 +738,7 @@
       [
         "Aircraft",
         "hardware",
-        "positive",
+        "negative",
         "braking"
       ],
       [
@@ -740,12 +746,6 @@
         "communication",
         "negative",
         "lost"
-      ],
-      [
-        "Image transmission signal",
-        "hardware",
-        "negative",
-        "weak"
       ]
     ]
   },
@@ -949,7 +949,7 @@
       ],
       [
         "Image transmission signal",
-        "communication",
+        "operation",
         "negative",
         "weak"
       ]
@@ -962,15 +962,9 @@
     "message": "Failsafe RTH.; Controller triggered aircraft to descend. Auto RTH canceled.; RC signal lost. Returning to home.; Image transmission signal weak. Adjust antennas and make sure they are perpendicular to flight direction of aircraft.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.; RTH ascending.",
     "quads": [
       [
-        "RTH",
+        "Controller",
         "operation",
         "negative",
-        "Failsafe"
-      ],
-      [
-        "Controller",
-        "hardware",
-        "positive",
         "triggered aircraft to descend"
       ],
       [
@@ -981,9 +975,9 @@
       ],
       [
         "RTH",
-        "communication",
+        "operation",
         "negative",
-        "weak"
+        "ascending"
       ]
     ]
   },
@@ -998,6 +992,12 @@
         "operation",
         "positive",
         "changed to P-GPS"
+      ],
+      [
+        "",
+        "",
+        "",
+        ""
       ]
     ]
   },
@@ -1008,15 +1008,9 @@
     "message": "Failsafe RTH.; Controller triggered aircraft to descend. Auto RTH canceled.; RC signal lost. Returning to home.; Image transmission signal weak. Adjust antennas and make sure they are perpendicular to flight direction of aircraft.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.; RTH ascending.",
     "quads": [
       [
-        "RTH",
+        "Controller",
         "operation",
         "negative",
-        "Failsafe"
-      ],
-      [
-        "Controller",
-        "hardware",
-        "positive",
         "triggered aircraft to descend"
       ],
       [
@@ -1027,9 +1021,9 @@
       ],
       [
         "RTH",
-        "communication",
+        "operation",
         "negative",
-        "weak"
+        "ascending"
       ]
     ]
   },
@@ -1151,9 +1145,15 @@
     "quads": [
       [
         "RC signal",
-        "communication",
+        "operation",
         "negative",
         "lost"
+      ],
+      [
+        "Original route",
+        "operation",
+        "positive",
+        "RTH"
       ]
     ]
   },
@@ -1176,10 +1176,10 @@
         "lost"
       ],
       [
-        "Original route",
+        "RTH",
         "operation",
-        "negative",
-        "RTH"
+        "positive",
+        "ascending"
       ]
     ]
   },
@@ -1230,8 +1230,8 @@
         "lost"
       ],
       [
-        "RTH",
-        "communication",
+        "RC signal",
+        "operation",
         "negative",
         "weak"
       ]
@@ -1256,8 +1256,8 @@
         "lost"
       ],
       [
-        "RTH",
-        "communication",
+        "RC signal",
+        "operation",
         "negative",
         "weak"
       ]
@@ -1296,9 +1296,15 @@
         "lost"
       ],
       [
+        "RTH",
+        "operation",
+        "positive",
+        "ascending"
+      ],
+      [
         "Controller",
         "operation",
-        "negative",
+        "positive",
         "triggered aircraft to descend"
       ]
     ]
@@ -1310,26 +1316,20 @@
     "message": "Failsafe RTH.; Controller triggered aircraft to descend. Auto RTH canceled.; RC signal lost. Returning to home.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.; RTH ascending.",
     "quads": [
       [
-        "RTH",
+        "Controller",
         "operation",
         "negative",
-        "Failsafe"
+        "triggered aircraft to descend"
       ],
       [
-        "Controller",
-        "hardware",
-        "positive",
-        "triggered aircraft to descend"
+        "Auto RTH",
+        "communication",
+        "negative",
+        "canceled"
       ],
       [
         "RC signal",
         "communication",
-        "negative",
-        "lost"
-      ],
-      [
-        "RTH",
-        "operation",
         "negative",
         "weak"
       ]
@@ -1346,6 +1346,12 @@
         "operation",
         "positive",
         "changed to P-GPS"
+      ],
+      [
+        "",
+        "",
+        "",
+        ""
       ]
     ]
   },
@@ -1356,26 +1362,20 @@
     "message": "Failsafe RTH.; Controller triggered aircraft to descend. Auto RTH canceled.; RC signal lost. Returning to home.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.; RTH ascending.",
     "quads": [
       [
-        "RTH",
+        "Controller",
         "operation",
         "negative",
-        "Failsafe"
+        "triggered aircraft to descend"
       ],
       [
-        "Controller",
-        "hardware",
-        "positive",
-        "triggered aircraft to descend"
+        "Auto RTH",
+        "communication",
+        "negative",
+        "canceled"
       ],
       [
         "RC signal",
         "communication",
-        "negative",
-        "lost"
-      ],
-      [
-        "RTH",
-        "operation",
         "negative",
         "weak"
       ]
@@ -1534,6 +1534,12 @@
         "operation",
         "positive",
         "changed to P-GPS"
+      ],
+      [
+        "",
+        "",
+        "",
+        ""
       ]
     ]
   },
@@ -1551,8 +1557,8 @@
       ],
       [
         "Controller",
-        "hardware",
-        "positive",
+        "operation",
+        "negative",
         "triggered aircraft to descend"
       ],
       [
@@ -1562,16 +1568,10 @@
         "lost"
       ],
       [
-        "Aircraft",
-        "hardware",
-        "positive",
-        "follow prese action for lost signal"
-      ],
-      [
-        "RC signal",
-        "communication",
+        "RTH",
+        "operation",
         "negative",
-        "weak"
+        "canceled"
       ]
     ]
   },
@@ -1594,16 +1594,10 @@
         "triggered aircraft to descend"
       ],
       [
-        "RC signal",
-        "communication",
+        "Auto RTH",
+        "operation",
         "negative",
-        "lost"
-      ],
-      [
-        "Aircraft",
-        "hardware",
-        "negative",
-        "follow prese action for lost signal"
+        "canceled"
       ],
       [
         "RC signal",
@@ -1739,7 +1733,7 @@
         "Aircraft",
         "hardware",
         "positive",
-        "follow preset action"
+        "follow preset action for lost signal"
       ]
     ]
   },
@@ -1824,7 +1818,7 @@
         "weak"
       ],
       [
-        "aircraft",
+        "Aircraft",
         "hardware",
         "negative",
         "braking"
@@ -1907,7 +1901,7 @@
         "Aircraft",
         "hardware",
         "positive",
-        "follow preset action"
+        "follow preset action for lost signal"
       ]
     ]
   },
@@ -2171,7 +2165,7 @@
       ],
       [
         "Returning to home",
-        "communication",
+        "operation",
         "negative",
         "weak"
       ]
@@ -2184,26 +2178,20 @@
     "message": "Failsafe RTH.; Controller triggered aircraft to descend. Auto RTH canceled.; RC signal lost. Returning to home.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.; RTH ascending.",
     "quads": [
       [
-        "RTH",
+        "Controller",
         "operation",
         "negative",
-        "Failsafe"
+        "triggered aircraft to descend"
       ],
       [
-        "Controller",
-        "hardware",
-        "positive",
-        "triggered aircraft to descend"
+        "Auto RTH",
+        "communication",
+        "negative",
+        "canceled"
       ],
       [
         "RC signal",
         "communication",
-        "negative",
-        "lost"
-      ],
-      [
-        "RTH",
-        "operation",
         "negative",
         "weak"
       ]
@@ -2220,6 +2208,12 @@
         "operation",
         "positive",
         "changed to P-GPS"
+      ],
+      [
+        "",
+        "",
+        "",
+        ""
       ]
     ]
   },
@@ -2309,7 +2303,7 @@
       ],
       [
         "RC signal",
-        "communication",
+        "operation",
         "negative",
         "lost"
       ],
@@ -2318,12 +2312,6 @@
         "hardware",
         "positive",
         "returning to home"
-      ],
-      [
-        "RC signal",
-        "communication",
-        "negative",
-        "weak"
       ]
     ]
   },
@@ -2383,15 +2371,9 @@
       ],
       [
         "Controller",
-        "hardware",
+        "software",
         "positive",
         "triggered aircraft to descend"
-      ],
-      [
-        "Auto RTH",
-        "operation",
-        "positive",
-        "canceled"
       ]
     ]
   },
@@ -2406,6 +2388,12 @@
         "operation",
         "positive",
         "changed to P-GPS"
+      ],
+      [
+        "",
+        "",
+        "",
+        ""
       ]
     ]
   },
@@ -2423,7 +2411,7 @@
       ],
       [
         "Controller",
-        "hardware",
+        "operation",
         "positive",
         "triggered aircraft to descend"
       ]
@@ -2578,8 +2566,8 @@
         "lost"
       ],
       [
-        "RTH",
-        "communication",
+        "RC signal",
+        "operation",
         "negative",
         "weak"
       ]
@@ -2606,7 +2594,7 @@
       [
         "RTH",
         "operation",
-        "negative",
+        "positive",
         "ascending"
       ]
     ]
@@ -2632,7 +2620,7 @@
       [
         "RTH",
         "operation",
-        "negative",
+        "positive",
         "ascending"
       ]
     ]
@@ -2672,10 +2660,10 @@
     "message": "Press Brake button to cancel RTH.; RC signal lost. Returning to home.",
     "quads": [
       [
-        "RTH",
+        "Brake button",
         "operation",
         "negative",
-        "lost"
+        "Press to cancel RTH"
       ],
       [
         "RC signal",
@@ -2755,12 +2743,12 @@
         "Controller",
         "hardware",
         "negative",
-        "triggered aircraft to fly backward"
+        "triggered to fly backward"
       ],
       [
         "Auto RTH",
         "operation",
-        "positive",
+        "negative",
         "canceled"
       ]
     ]
@@ -2776,6 +2764,12 @@
         "operation",
         "positive",
         "changed to P-GPS"
+      ],
+      [
+        "",
+        "",
+        "",
+        ""
       ]
     ]
   },
@@ -2794,8 +2788,14 @@
       [
         "Controller",
         "hardware",
-        "negative",
+        "positive",
         "triggered aircraft to fly backward"
+      ],
+      [
+        "Auto RTH",
+        "communication",
+        "negative",
+        "canceled"
       ],
       [
         "RC signal",
@@ -2820,7 +2820,7 @@
       [
         "Controller",
         "hardware",
-        "negative",
+        "positive",
         "triggered aircraft to fly backward"
       ],
       [
@@ -2844,10 +2844,10 @@
         "No"
       ],
       [
-        "Aircraft",
+        "NULL",
         "hardware",
         "positive",
-        "returning to home"
+        "cancel RTH"
       ],
       [
         "Flight mode",
@@ -2876,10 +2876,10 @@
         "returning to home"
       ],
       [
-        "RTH",
+        "Brake button",
         "operation",
-        "negative",
-        "in progress"
+        "positive",
+        "to cancel RTH"
       ]
     ]
   },
@@ -2902,10 +2902,10 @@
         "returning to home"
       ],
       [
-        "RTH",
+        "Brake button",
         "operation",
-        "negative",
-        "in progress"
+        "positive",
+        "to cancel RTH"
       ]
     ]
   },
@@ -2917,21 +2917,21 @@
     "quads": [
       [
         "image transmission",
-        "communication",
+        "operation",
         "negative",
         "No"
       ],
       [
         "Controller",
-        "hardware",
+        "operation",
         "positive",
         "triggered aircraft to fly backward"
       ],
       [
-        "Aircraft",
+        "Auto RTH",
         "operation",
         "negative",
-        "returning to home"
+        "canceled"
       ]
     ]
   },
@@ -2946,6 +2946,12 @@
         "operation",
         "positive",
         "changed to P-GPS"
+      ],
+      [
+        "",
+        "",
+        "",
+        ""
       ]
     ]
   },
@@ -2957,21 +2963,21 @@
     "quads": [
       [
         "image transmission",
-        "communication",
+        "operation",
         "negative",
         "No"
       ],
       [
         "Controller",
-        "hardware",
+        "operation",
         "positive",
         "triggered aircraft to fly backward"
       ],
       [
-        "Aircraft",
+        "Auto RTH",
         "operation",
         "negative",
-        "returning to home"
+        "canceled"
       ]
     ]
   },
@@ -2989,14 +2995,14 @@
       ],
       [
         "Controller",
-        "hardware",
+        "operation",
         "positive",
         "triggered aircraft to fly backward"
       ],
       [
         "Auto RTH",
         "operation",
-        "positive",
+        "negative",
         "canceled"
       ]
     ]
@@ -3112,10 +3118,10 @@
     "message": "Press Brake button to cancel RTH.",
     "quads": [
       [
-        "RTH",
+        "Brake button",
         "operation",
         "positive",
-        "Press Brake button"
+        "Press to cancel"
       ]
     ]
   },
@@ -3164,12 +3170,6 @@
         "communication",
         "negative",
         "lost"
-      ],
-      [
-        "RTH",
-        "operation",
-        "negative",
-        "in progress"
       ]
     ]
   },
@@ -3184,12 +3184,6 @@
         "communication",
         "negative",
         "lost"
-      ],
-      [
-        "RTH",
-        "operation",
-        "negative",
-        "in progress"
       ]
     ]
   },
@@ -3380,10 +3374,10 @@
         "in progress"
       ],
       [
-        "Flight mode",
-        "parameter",
+        "Brake button",
+        "operation",
         "positive",
-        "changed to Auto Landing"
+        "to cancel RTH"
       ]
     ]
   },
@@ -3438,6 +3432,12 @@
         "operation",
         "positive",
         "changed to P-GPS"
+      ],
+      [
+        "",
+        "",
+        "",
+        ""
       ]
     ]
   },
@@ -3468,10 +3468,10 @@
     "message": "Area under aircraft unsuitable for landing. Move to safe environment and try again.",
     "quads": [
       [
-        "Area under aircraft",
+        "Area",
         "environment",
         "negative",
-        "unsuitable for landing"
+        "under aircraft unsuitable for landing"
       ]
     ]
   },
@@ -3548,6 +3548,12 @@
         "operation",
         "positive",
         "changed to P-GPS"
+      ],
+      [
+        "",
+        "",
+        "",
+        ""
       ]
     ]
   }

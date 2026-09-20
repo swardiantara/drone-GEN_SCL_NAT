@@ -38,7 +38,7 @@
         "error"
       ],
       [
-        "caution",
+        "NULL",
         "operation",
         "positive",
         "Fly with caution"
@@ -61,7 +61,7 @@
         "maximum flight altitude",
         "parameter",
         "positive",
-        "500 m (1640 ft"
+        "to 500 m (1640 ft)."
       ]
     ]
   },
@@ -164,7 +164,7 @@
         "unavailable"
       ],
       [
-        "caution",
+        "NULL",
         "operation",
         "positive",
         "Fly with caution"
@@ -182,7 +182,7 @@
         "unavailable"
       ],
       [
-        "caution",
+        "NULL",
         "operation",
         "positive",
         "Fly with caution"
@@ -232,7 +232,7 @@
         "unavailable"
       ],
       [
-        "caution",
+        "NULL",
         "operation",
         "positive",
         "Fly with caution"
@@ -250,7 +250,7 @@
         "unavailable"
       ],
       [
-        "caution",
+        "NULL",
         "operation",
         "positive",
         "Fly with caution"
@@ -300,7 +300,7 @@
         "unavailable"
       ],
       [
-        "caution",
+        "NULL",
         "operation",
         "positive",
         "Fly with caution"
@@ -318,7 +318,7 @@
         "unavailable"
       ],
       [
-        "caution",
+        "NULL",
         "operation",
         "positive",
         "Fly with caution"
@@ -587,7 +587,7 @@
         "start/stop button",
         "operation",
         "positive",
-        "Press to cancel"
+        "to cancel"
       ],
       [
         "Forward ambient light",
@@ -602,7 +602,7 @@
         "unavailable"
       ],
       [
-        "caution",
+        "NULL",
         "operation",
         "positive",
         "Fly with caution"
@@ -620,7 +620,7 @@
         "unavailable"
       ],
       [
-        "caution",
+        "NULL",
         "operation",
         "positive",
         "Fly with caution"
@@ -661,7 +661,7 @@
         "start/stop button",
         "operation",
         "positive",
-        "Press to cancel"
+        "to cancel"
       ],
       [
         "Downward ambient light",
@@ -676,7 +676,7 @@
         "unavailable"
       ],
       [
-        "caution",
+        "NULL",
         "operation",
         "positive",
         "Fly with caution"
@@ -694,7 +694,7 @@
         "unavailable"
       ],
       [
-        "caution",
+        "NULL",
         "operation",
         "positive",
         "Fly with caution"
@@ -735,7 +735,7 @@
         "start/stop button",
         "operation",
         "positive",
-        "Press to cancel"
+        "to cancel"
       ],
       [
         "Downward ambient light",
@@ -750,7 +750,7 @@
         "unavailable"
       ],
       [
-        "caution",
+        "NULL",
         "operation",
         "positive",
         "Fly with caution"
@@ -768,7 +768,7 @@
         "unavailable"
       ],
       [
-        "caution",
+        "NULL",
         "operation",
         "positive",
         "Fly with caution"
@@ -809,7 +809,7 @@
         "start/stop button",
         "operation",
         "positive",
-        "Press to cancel"
+        "to cancel"
       ],
       [
         "Downward ambient light",
@@ -824,7 +824,7 @@
         "unavailable"
       ],
       [
-        "caution",
+        "NULL",
         "operation",
         "positive",
         "Fly with caution"
@@ -865,7 +865,7 @@
         "start/stop button",
         "operation",
         "positive",
-        "Press to cancel"
+        "to cancel"
       ],
       [
         "Downward ambient light",
@@ -880,7 +880,7 @@
         "unavailable"
       ],
       [
-        "caution",
+        "NULL",
         "operation",
         "positive",
         "Fly with caution"
@@ -921,7 +921,7 @@
         "start/stop button",
         "operation",
         "positive",
-        "Press to cancel"
+        "to cancel"
       ],
       [
         "Downward ambient light",
@@ -936,7 +936,7 @@
         "unavailable"
       ],
       [
-        "caution",
+        "NULL",
         "operation",
         "positive",
         "Fly with caution"
@@ -977,7 +977,7 @@
         "start/stop button",
         "operation",
         "positive",
-        "Press to cancel"
+        "to cancel"
       ],
       [
         "Downward ambient light",
@@ -992,7 +992,7 @@
         "unavailable"
       ],
       [
-        "caution",
+        "NULL",
         "operation",
         "positive",
         "Fly with caution"
@@ -1033,7 +1033,7 @@
         "start/stop button",
         "operation",
         "positive",
-        "Press to cancel"
+        "to cancel"
       ],
       [
         "Downward ambient light",
@@ -1048,7 +1048,7 @@
         "unavailable"
       ],
       [
-        "caution",
+        "NULL",
         "operation",
         "positive",
         "Fly with caution"
@@ -1089,7 +1089,7 @@
         "start/stop button",
         "operation",
         "positive",
-        "Press to cancel"
+        "to cancel"
       ],
       [
         "Downward ambient light",
@@ -1104,7 +1104,7 @@
         "unavailable"
       ],
       [
-        "caution",
+        "NULL",
         "operation",
         "positive",
         "Fly with caution"
@@ -1145,7 +1145,7 @@
         "start/stop button",
         "operation",
         "positive",
-        "Press to cancel"
+        "to cancel"
       ],
       [
         "Downward ambient light",
@@ -1160,7 +1160,7 @@
         "unavailable"
       ],
       [
-        "caution",
+        "NULL",
         "operation",
         "positive",
         "Fly with caution"
@@ -1201,7 +1201,7 @@
         "start/stop button",
         "operation",
         "positive",
-        "Press to cancel"
+        "to cancel"
       ],
       [
         "Downward ambient light",
@@ -1216,7 +1216,7 @@
         "unavailable"
       ],
       [
-        "caution",
+        "NULL",
         "operation",
         "positive",
         "Fly with caution"
@@ -1257,7 +1257,7 @@
         "start/stop button",
         "operation",
         "positive",
-        "Press to cancel"
+        "to cancel"
       ],
       [
         "Forward ambient light",
@@ -1272,7 +1272,7 @@
         "unavailable"
       ],
       [
-        "caution",
+        "NULL",
         "operation",
         "positive",
         "Fly with caution"
@@ -1290,7 +1290,7 @@
         "unavailable"
       ],
       [
-        "caution",
+        "NULL",
         "operation",
         "positive",
         "Fly with caution"
@@ -1331,12 +1331,12 @@
         "start/stop button",
         "operation",
         "positive",
-        "Press to cancel"
+        "to cancel"
       ],
       [
         "battery",
         "hardware",
-        "positive",
+        "negative",
         "only enough for RTH"
       ],
       [
@@ -1358,7 +1358,7 @@
         "unavailable"
       ],
       [
-        "caution",
+        "NULL",
         "operation",
         "positive",
         "Fly with caution"
@@ -1376,16 +1376,16 @@
         "unavailable"
       ],
       [
-        "caution",
+        "NULL",
         "operation",
         "positive",
         "Fly with caution"
       ],
       [
-        "battery",
-        "hardware",
+        "battery RTH",
+        "parameter",
         "negative",
-        "Low RTH"
+        "Low"
       ],
       [
         "Flight mode",
@@ -1402,10 +1402,10 @@
     "message": "Low battery RTH.; Low battery. Auto RTH in 1 s. Press the start/stop button to cancel.; Remaining battery only enough for RTH. Aircraft returning.; Forward ambient light too low. Obstacle avoidance unavailable. Fly with caution.; Downward ambient light too low. Obstacle avoidance unavailable. Fly with caution.",
     "quads": [
       [
-        "battery",
-        "hardware",
+        "battery RTH",
+        "parameter",
         "negative",
-        "Low RTH"
+        "Low"
       ],
       [
         "battery",
@@ -1423,12 +1423,12 @@
         "start/stop button",
         "operation",
         "positive",
-        "Press to cancel"
+        "to cancel"
       ],
       [
         "battery",
         "hardware",
-        "positive",
+        "negative",
         "only enough for RTH"
       ],
       [
@@ -1450,7 +1450,7 @@
         "unavailable"
       ],
       [
-        "caution",
+        "NULL",
         "operation",
         "positive",
         "Fly with caution"
@@ -1468,7 +1468,7 @@
         "unavailable"
       ],
       [
-        "caution",
+        "NULL",
         "operation",
         "positive",
         "Fly with caution"
@@ -1482,10 +1482,10 @@
     "message": "Press Brake button to cancel RTH.",
     "quads": [
       [
-        "RTH",
+        "Brake button",
         "operation",
         "positive",
-        "Press Brake button"
+        "Press to cancel"
       ]
     ]
   },
@@ -1496,21 +1496,21 @@
     "message": "Low battery RTH.; Press Brake button to cancel RTH.; Remaining battery only enough for RTH. Aircraft returning.; Downward ambient light too low. Obstacle avoidance unavailable. Fly with caution.; Forward ambient light too low. Obstacle avoidance unavailable. Fly with caution.",
     "quads": [
       [
+        "battery RTH",
+        "parameter",
+        "negative",
+        "Low"
+      ],
+      [
+        "Brake button",
+        "operation",
+        "positive",
+        "Press to cancel"
+      ],
+      [
         "battery",
         "hardware",
         "negative",
-        "Low RTH"
-      ],
-      [
-        "RTH",
-        "operation",
-        "positive",
-        "Press Brake button"
-      ],
-      [
-        "battery",
-        "hardware",
-        "positive",
         "only enough for RTH"
       ],
       [
@@ -1532,7 +1532,7 @@
         "unavailable"
       ],
       [
-        "caution",
+        "NULL",
         "operation",
         "positive",
         "Fly with caution"
@@ -1550,7 +1550,7 @@
         "unavailable"
       ],
       [
-        "caution",
+        "NULL",
         "operation",
         "positive",
         "Fly with caution"
@@ -1564,21 +1564,21 @@
     "message": "Low battery RTH.; Press Brake button to cancel RTH.; Remaining battery only enough for RTH. Aircraft returning.; Downward ambient light too low. Obstacle avoidance unavailable. Fly with caution.; RTH ascending.; Forward ambient light too low. Obstacle avoidance unavailable. Fly with caution.",
     "quads": [
       [
+        "battery RTH",
+        "parameter",
+        "negative",
+        "Low"
+      ],
+      [
+        "Brake button",
+        "operation",
+        "positive",
+        "Press to cancel"
+      ],
+      [
         "battery",
         "hardware",
         "negative",
-        "Low RTH"
-      ],
-      [
-        "RTH",
-        "operation",
-        "positive",
-        "Press Brake button"
-      ],
-      [
-        "battery",
-        "hardware",
-        "positive",
         "only enough for RTH"
       ],
       [
@@ -1600,7 +1600,7 @@
         "unavailable"
       ],
       [
-        "caution",
+        "NULL",
         "operation",
         "positive",
         "Fly with caution"
@@ -1624,7 +1624,7 @@
         "unavailable"
       ],
       [
-        "caution",
+        "NULL",
         "operation",
         "positive",
         "Fly with caution"
@@ -1672,10 +1672,10 @@
     "message": "Low battery RTH.; Controller triggered aircraft to descend. Auto RTH canceled.; Remaining battery only enough for RTH. Aircraft returning.; Forward ambient light too low. Obstacle avoidance unavailable. Fly with caution.; Downward ambient light too low. Obstacle avoidance unavailable. Fly with caution.; RTH ascending.",
     "quads": [
       [
-        "battery",
-        "hardware",
+        "battery RTH",
+        "parameter",
         "negative",
-        "Low RTH"
+        "Low"
       ],
       [
         "Controller",
@@ -1692,7 +1692,7 @@
       [
         "battery",
         "hardware",
-        "positive",
+        "negative",
         "only enough for RTH"
       ],
       [
@@ -1714,7 +1714,7 @@
         "unavailable"
       ],
       [
-        "caution",
+        "NULL",
         "operation",
         "positive",
         "Fly with caution"
@@ -1732,7 +1732,7 @@
         "unavailable"
       ],
       [
-        "caution",
+        "NULL",
         "operation",
         "positive",
         "Fly with caution"
@@ -1752,10 +1752,10 @@
     "message": "Low battery RTH.; Controller triggered aircraft to descend. Auto RTH canceled.; Forward ambient light too low. Obstacle avoidance unavailable. Fly with caution.; Downward ambient light too low. Obstacle avoidance unavailable. Fly with caution.; RTH ascending.",
     "quads": [
       [
-        "battery",
-        "hardware",
+        "battery RTH",
+        "parameter",
         "negative",
-        "Low RTH"
+        "Low"
       ],
       [
         "Controller",
@@ -1782,7 +1782,7 @@
         "unavailable"
       ],
       [
-        "caution",
+        "NULL",
         "operation",
         "positive",
         "Fly with caution"
@@ -1800,7 +1800,7 @@
         "unavailable"
       ],
       [
-        "caution",
+        "NULL",
         "operation",
         "positive",
         "Fly with caution"

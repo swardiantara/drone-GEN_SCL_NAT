@@ -35,7 +35,7 @@
         "maximum flight altitude",
         "parameter",
         "positive",
-        "500 m (1640 ft"
+        "to 500 m (1640 ft)."
       ]
     ]
   },
@@ -118,7 +118,7 @@
         "unavailable"
       ],
       [
-        "caution",
+        "NULL",
         "operation",
         "positive",
         "Fly with caution"
@@ -168,7 +168,7 @@
         "unavailable"
       ],
       [
-        "caution",
+        "NULL",
         "operation",
         "positive",
         "Fly with caution"
@@ -186,7 +186,7 @@
         "unavailable"
       ],
       [
-        "caution",
+        "NULL",
         "operation",
         "positive",
         "Fly with caution"
@@ -236,7 +236,7 @@
         "unavailable"
       ],
       [
-        "caution",
+        "NULL",
         "operation",
         "positive",
         "Fly with caution"
@@ -254,7 +254,7 @@
         "unavailable"
       ],
       [
-        "caution",
+        "NULL",
         "operation",
         "positive",
         "Fly with caution"
@@ -575,7 +575,7 @@
         "Aircraft",
         "hardware",
         "positive",
-        "lost signal"
+        "follow preset action"
       ],
       [
         "Forward ambient light",
@@ -590,7 +590,7 @@
         "unavailable"
       ],
       [
-        "caution",
+        "NULL",
         "operation",
         "positive",
         "Fly with caution"
@@ -608,7 +608,7 @@
         "unavailable"
       ],
       [
-        "caution",
+        "NULL",
         "operation",
         "positive",
         "Fly with caution"
@@ -620,7 +620,7 @@
         "weak"
       ],
       [
-        "antenna",
+        "antennas",
         "hardware",
         "positive",
         "perpendicular to flight direction"
@@ -680,10 +680,10 @@
         "Failsafe"
       ],
       [
-        "RTH",
+        "Brake button",
         "operation",
         "positive",
-        "Press Brake button"
+        "Press to cancel"
       ],
       [
         "image transmission",
@@ -717,7 +717,7 @@
       ],
       [
         "remote controller",
-        "hardware",
+        "software",
         "negative",
         "disconnected"
       ],
@@ -734,7 +734,7 @@
         "unavailable"
       ],
       [
-        "caution",
+        "NULL",
         "operation",
         "positive",
         "Fly with caution"
@@ -754,10 +754,10 @@
         "Failsafe"
       ],
       [
-        "RTH",
+        "Brake button",
         "operation",
         "positive",
-        "Press Brake button"
+        "Press to cancel"
       ],
       [
         "image transmission",
@@ -791,7 +791,7 @@
       ],
       [
         "remote controller",
-        "hardware",
+        "software",
         "negative",
         "disconnected"
       ],
@@ -808,7 +808,7 @@
         "unavailable"
       ],
       [
-        "caution",
+        "NULL",
         "operation",
         "positive",
         "Fly with caution"
@@ -834,10 +834,10 @@
         "Failsafe"
       ],
       [
-        "RTH",
+        "Brake button",
         "operation",
         "positive",
-        "Press Brake button"
+        "Press to cancel"
       ],
       [
         "RC signal",
@@ -864,7 +864,7 @@
         "unavailable"
       ],
       [
-        "caution",
+        "NULL",
         "operation",
         "positive",
         "Fly with caution"
@@ -960,7 +960,7 @@
         "unavailable"
       ],
       [
-        "caution",
+        "NULL",
         "operation",
         "positive",
         "Fly with caution"
@@ -1215,7 +1215,7 @@
         "Aircraft",
         "hardware",
         "positive",
-        "lost signal"
+        "follow preset action"
       ],
       [
         "RC signal",
@@ -1226,8 +1226,8 @@
       [
         "antennas",
         "hardware",
-        "positive",
-        "blocking"
+        "negative",
+        "Avoid blocking"
       ],
       [
         "Forward ambient light",
@@ -1242,7 +1242,7 @@
         "unavailable"
       ],
       [
-        "caution",
+        "NULL",
         "operation",
         "positive",
         "Fly with caution"
@@ -1260,7 +1260,7 @@
         "unavailable"
       ],
       [
-        "caution",
+        "NULL",
         "operation",
         "positive",
         "Fly with caution"
@@ -1295,7 +1295,7 @@
         "Aircraft",
         "hardware",
         "positive",
-        "lost signal"
+        "follow preset action"
       ],
       [
         "RC signal",
@@ -1306,8 +1306,8 @@
       [
         "antennas",
         "hardware",
-        "positive",
-        "blocking"
+        "negative",
+        "Avoid blocking"
       ],
       [
         "Forward ambient light",
@@ -1322,7 +1322,7 @@
         "unavailable"
       ],
       [
-        "caution",
+        "NULL",
         "operation",
         "positive",
         "Fly with caution"
@@ -1340,7 +1340,7 @@
         "unavailable"
       ],
       [
-        "caution",
+        "NULL",
         "operation",
         "positive",
         "Fly with caution"
@@ -1375,7 +1375,7 @@
         "Aircraft",
         "hardware",
         "positive",
-        "lost signal"
+        "follow preset action"
       ],
       [
         "RC signal",
@@ -1386,8 +1386,8 @@
       [
         "antennas",
         "hardware",
-        "positive",
-        "blocking"
+        "negative",
+        "Avoid blocking"
       ],
       [
         "Downward ambient light",
@@ -1402,7 +1402,7 @@
         "unavailable"
       ],
       [
-        "caution",
+        "NULL",
         "operation",
         "positive",
         "Fly with caution"
@@ -1420,7 +1420,7 @@
         "unavailable"
       ],
       [
-        "caution",
+        "NULL",
         "operation",
         "positive",
         "Fly with caution"
@@ -1455,7 +1455,7 @@
         "Aircraft",
         "hardware",
         "positive",
-        "lost signal"
+        "follow preset action"
       ],
       [
         "Downward ambient light",
@@ -1470,7 +1470,7 @@
         "unavailable"
       ],
       [
-        "caution",
+        "NULL",
         "operation",
         "positive",
         "Fly with caution"
@@ -1488,7 +1488,7 @@
         "unavailable"
       ],
       [
-        "caution",
+        "NULL",
         "operation",
         "positive",
         "Fly with caution"
@@ -1570,10 +1570,10 @@
         "Failsafe"
       ],
       [
-        "RTH",
+        "Brake button",
         "operation",
         "positive",
-        "Press Brake button"
+        "Press to cancel"
       ],
       [
         "RC signal",
@@ -1600,7 +1600,7 @@
         "unavailable"
       ],
       [
-        "caution",
+        "NULL",
         "operation",
         "positive",
         "Fly with caution"
@@ -1640,10 +1640,10 @@
         "Failsafe"
       ],
       [
-        "RTH",
+        "Brake button",
         "operation",
         "positive",
-        "Press Brake button"
+        "Press to cancel"
       ],
       [
         "RC signal",
@@ -1682,7 +1682,7 @@
         "unavailable"
       ],
       [
-        "caution",
+        "NULL",
         "operation",
         "positive",
         "Fly with caution"
@@ -1696,8 +1696,8 @@
       [
         "antennas",
         "hardware",
-        "positive",
-        "blocking"
+        "negative",
+        "Avoid blocking"
       ]
     ]
   },
@@ -1714,10 +1714,10 @@
         "Failsafe"
       ],
       [
-        "RTH",
+        "Brake button",
         "operation",
         "positive",
-        "Press Brake button"
+        "Press to cancel"
       ],
       [
         "RC signal",
@@ -1740,8 +1740,8 @@
       [
         "antennas",
         "hardware",
-        "positive",
-        "blocking"
+        "negative",
+        "Avoid blocking"
       ],
       [
         "RTH",
@@ -1762,7 +1762,7 @@
         "unavailable"
       ],
       [
-        "caution",
+        "NULL",
         "operation",
         "positive",
         "Fly with caution"
@@ -1788,10 +1788,10 @@
         "Failsafe"
       ],
       [
-        "RTH",
+        "Brake button",
         "operation",
         "positive",
-        "Press Brake button"
+        "Press to cancel"
       ],
       [
         "RC signal",
@@ -1814,8 +1814,8 @@
       [
         "antennas",
         "hardware",
-        "positive",
-        "blocking"
+        "negative",
+        "Avoid blocking"
       ],
       [
         "RTH",
@@ -1844,10 +1844,10 @@
         "Failsafe"
       ],
       [
-        "RTH",
+        "Brake button",
         "operation",
         "positive",
-        "Press Brake button"
+        "Press to cancel"
       ],
       [
         "RC signal",
@@ -1870,8 +1870,8 @@
       [
         "antennas",
         "hardware",
-        "positive",
-        "blocking"
+        "negative",
+        "Avoid blocking"
       ],
       [
         "RTH",
@@ -1914,10 +1914,10 @@
         "Failsafe"
       ],
       [
-        "RTH",
+        "Brake button",
         "operation",
         "positive",
-        "Press Brake button"
+        "Press to cancel"
       ],
       [
         "RC signal",
@@ -2010,8 +2010,8 @@
       [
         "antennas",
         "hardware",
-        "positive",
-        "blocking"
+        "negative",
+        "Avoid blocking"
       ],
       [
         "RTH",
@@ -2063,7 +2063,7 @@
         "Aircraft",
         "hardware",
         "positive",
-        "lost signal"
+        "follow preset action"
       ]
     ]
   },
@@ -2122,10 +2122,10 @@
     "message": "Press Brake button to cancel RTH.; RC signal lost. Returning to home.; RC signal weak. Avoid blocking antennas and adjust antenna orientation.; Original route RTH.",
     "quads": [
       [
-        "RTH",
+        "Brake button",
         "operation",
         "positive",
-        "Press Brake button"
+        "Press to cancel"
       ],
       [
         "RC signal",
@@ -2148,8 +2148,8 @@
       [
         "antennas",
         "hardware",
-        "positive",
-        "blocking"
+        "negative",
+        "Avoid blocking"
       ],
       [
         "Original route",
@@ -2172,10 +2172,10 @@
         "Failsafe"
       ],
       [
-        "RTH",
+        "Brake button",
         "operation",
         "positive",
-        "Press Brake button"
+        "Press to cancel"
       ],
       [
         "RC signal",
@@ -2198,8 +2198,8 @@
       [
         "antennas",
         "hardware",
-        "positive",
-        "blocking"
+        "negative",
+        "Avoid blocking"
       ],
       [
         "Original route",
@@ -2228,10 +2228,10 @@
         "Failsafe"
       ],
       [
-        "RTH",
+        "Brake button",
         "operation",
         "positive",
-        "Press Brake button"
+        "Press to cancel"
       ],
       [
         "RC signal",
@@ -2254,8 +2254,8 @@
       [
         "antennas",
         "hardware",
-        "positive",
-        "blocking"
+        "negative",
+        "Avoid blocking"
       ],
       [
         "RTH",
@@ -2278,10 +2278,10 @@
         "Failsafe"
       ],
       [
-        "RTH",
+        "Brake button",
         "operation",
         "positive",
-        "Press Brake button"
+        "Press to cancel"
       ],
       [
         "RC signal",
@@ -2304,8 +2304,8 @@
       [
         "antennas",
         "hardware",
-        "positive",
-        "blocking"
+        "negative",
+        "Avoid blocking"
       ],
       [
         "RTH",
@@ -2400,8 +2400,8 @@
       [
         "antennas",
         "hardware",
-        "positive",
-        "blocking"
+        "negative",
+        "Avoid blocking"
       ]
     ]
   },
@@ -2438,8 +2438,8 @@
       [
         "antennas",
         "hardware",
-        "positive",
-        "blocking"
+        "negative",
+        "Avoid blocking"
       ]
     ]
   },
@@ -2539,7 +2539,7 @@
         "Aircraft",
         "hardware",
         "positive",
-        "lost signal"
+        "follow preset action"
       ]
     ]
   },
@@ -2633,7 +2633,7 @@
         "Aircraft",
         "hardware",
         "positive",
-        "lost signal"
+        "follow preset action"
       ]
     ]
   },
@@ -2704,10 +2704,10 @@
     "message": "Press Brake button to cancel RTH.; RC signal lost. Aircraft will follow preset action for lost signal.; RC signal lost. Returning to home.; Original route RTH.",
     "quads": [
       [
-        "RTH",
+        "Brake button",
         "operation",
         "positive",
-        "Press Brake button"
+        "Press to cancel"
       ],
       [
         "RC signal",
@@ -2719,7 +2719,7 @@
         "Aircraft",
         "hardware",
         "positive",
-        "lost signal"
+        "follow preset action"
       ],
       [
         "RC signal",
@@ -2784,8 +2784,8 @@
       [
         "antennas",
         "hardware",
-        "positive",
-        "blocking"
+        "negative",
+        "Avoid blocking"
       ]
     ]
   },
@@ -2802,10 +2802,10 @@
         "Failsafe"
       ],
       [
-        "RTH",
+        "Brake button",
         "operation",
         "positive",
-        "Press Brake button"
+        "Press to cancel"
       ],
       [
         "RC signal",
@@ -2828,8 +2828,8 @@
       [
         "antennas",
         "hardware",
-        "positive",
-        "blocking"
+        "negative",
+        "Avoid blocking"
       ],
       [
         "RTH",
@@ -2890,8 +2890,8 @@
       [
         "antennas",
         "hardware",
-        "positive",
-        "blocking"
+        "negative",
+        "Avoid blocking"
       ],
       [
         "RTH",
@@ -2966,8 +2966,8 @@
       [
         "antennas",
         "hardware",
-        "positive",
-        "blocking"
+        "negative",
+        "Avoid blocking"
       ],
       [
         "RTH",
@@ -2993,7 +2993,7 @@
         "Aircraft",
         "hardware",
         "positive",
-        "lost signal"
+        "follow preset action"
       ]
     ]
   },
@@ -3072,10 +3072,10 @@
         "Failsafe"
       ],
       [
-        "RTH",
+        "Brake button",
         "operation",
         "positive",
-        "Press Brake button"
+        "Press to cancel"
       ],
       [
         "RC signal",
@@ -3124,10 +3124,10 @@
         "Failsafe"
       ],
       [
-        "RTH",
+        "Brake button",
         "operation",
         "positive",
-        "Press Brake button"
+        "Press to cancel"
       ],
       [
         "RC signal",
@@ -3162,10 +3162,10 @@
         "Failsafe"
       ],
       [
-        "RTH",
+        "Brake button",
         "operation",
         "positive",
-        "Press Brake button"
+        "Press to cancel"
       ],
       [
         "RC signal",
@@ -3188,8 +3188,8 @@
       [
         "antennas",
         "hardware",
-        "positive",
-        "blocking"
+        "negative",
+        "Avoid blocking"
       ],
       [
         "RTH",
@@ -3212,10 +3212,10 @@
         "Failsafe"
       ],
       [
-        "RTH",
+        "Brake button",
         "operation",
         "positive",
-        "Press Brake button"
+        "Press to cancel"
       ],
       [
         "RC signal",
@@ -3238,8 +3238,8 @@
       [
         "antennas",
         "hardware",
-        "positive",
-        "blocking"
+        "negative",
+        "Avoid blocking"
       ],
       [
         "RTH",
@@ -3352,8 +3352,8 @@
       [
         "antennas",
         "hardware",
-        "positive",
-        "blocking"
+        "negative",
+        "Avoid blocking"
       ],
       [
         "RTH",
@@ -3408,8 +3408,8 @@
       [
         "antennas",
         "hardware",
-        "positive",
-        "blocking"
+        "negative",
+        "Avoid blocking"
       ],
       [
         "RTH",
@@ -3478,8 +3478,8 @@
       [
         "antennas",
         "hardware",
-        "positive",
-        "blocking"
+        "negative",
+        "Avoid blocking"
       ]
     ]
   },
@@ -3490,10 +3490,10 @@
     "message": "Press Brake button to cancel RTH.",
     "quads": [
       [
-        "RTH",
+        "Brake button",
         "operation",
         "positive",
-        "Press Brake button"
+        "Press to cancel"
       ]
     ]
   },
@@ -3510,10 +3510,10 @@
         "Failsafe"
       ],
       [
-        "RTH",
+        "Brake button",
         "operation",
         "positive",
-        "Press Brake button"
+        "Press to cancel"
       ],
       [
         "RC signal",
@@ -3524,8 +3524,8 @@
       [
         "antennas",
         "hardware",
-        "positive",
-        "blocking"
+        "negative",
+        "Avoid blocking"
       ]
     ]
   },
@@ -3556,8 +3556,8 @@
       [
         "antennas",
         "hardware",
-        "positive",
-        "blocking"
+        "negative",
+        "Avoid blocking"
       ],
       [
         "RC signal",
@@ -3569,7 +3569,7 @@
         "Aircraft",
         "hardware",
         "positive",
-        "lost signal"
+        "follow preset action"
       ]
     ]
   },
@@ -3601,7 +3601,7 @@
         "Aircraft",
         "hardware",
         "positive",
-        "lost signal"
+        "follow preset action"
       ],
       [
         "RC signal",
@@ -3642,10 +3642,10 @@
         "Failsafe"
       ],
       [
-        "RTH",
+        "Brake button",
         "operation",
         "positive",
-        "Press Brake button"
+        "Press to cancel"
       ],
       [
         "RC signal",
@@ -3696,8 +3696,8 @@
       [
         "antennas",
         "hardware",
-        "positive",
-        "blocking"
+        "negative",
+        "Avoid blocking"
       ]
     ]
   },
@@ -3714,10 +3714,10 @@
         "Failsafe"
       ],
       [
-        "RTH",
+        "Brake button",
         "operation",
         "positive",
-        "Press Brake button"
+        "Press to cancel"
       ],
       [
         "RC signal",
@@ -3740,8 +3740,8 @@
       [
         "antennas",
         "hardware",
-        "positive",
-        "blocking"
+        "negative",
+        "Avoid blocking"
       ],
       [
         "RTH",
@@ -3764,10 +3764,10 @@
         "Failsafe"
       ],
       [
-        "RTH",
+        "Brake button",
         "operation",
         "positive",
-        "Press Brake button"
+        "Press to cancel"
       ],
       [
         "RC signal",
@@ -3790,8 +3790,8 @@
       [
         "antennas",
         "hardware",
-        "positive",
-        "blocking"
+        "negative",
+        "Avoid blocking"
       ],
       [
         "RTH",
@@ -3816,8 +3816,8 @@
       [
         "antennas",
         "hardware",
-        "positive",
-        "blocking"
+        "negative",
+        "Avoid blocking"
       ]
     ]
   },
@@ -3914,8 +3914,8 @@
       [
         "antennas",
         "hardware",
-        "positive",
-        "blocking"
+        "negative",
+        "Avoid blocking"
       ],
       [
         "RTH",
@@ -3961,7 +3961,7 @@
         "Aircraft",
         "hardware",
         "positive",
-        "lost signal"
+        "follow preset action"
       ]
     ]
   },
@@ -3993,7 +3993,7 @@
         "Aircraft",
         "hardware",
         "positive",
-        "lost signal"
+        "follow preset action"
       ],
       [
         "RC signal",
@@ -4004,8 +4004,8 @@
       [
         "antennas",
         "hardware",
-        "positive",
-        "blocking"
+        "negative",
+        "Avoid blocking"
       ]
     ]
   },

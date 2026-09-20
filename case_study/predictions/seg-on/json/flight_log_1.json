@@ -35,7 +35,7 @@
         "maximum flight altitude",
         "parameter",
         "positive",
-        "500 m (1640 ft"
+        "to 500 m (1640 ft)."
       ],
       [
         "Flight mode",
@@ -128,7 +128,7 @@
         "weak"
       ],
       [
-        "antenna",
+        "antennas",
         "hardware",
         "positive",
         "perpendicular to flight direction"
@@ -160,7 +160,7 @@
         "weak"
       ],
       [
-        "antenna",
+        "antennas",
         "hardware",
         "positive",
         "perpendicular to flight direction"
@@ -186,7 +186,7 @@
         "weak"
       ],
       [
-        "antenna",
+        "antennas",
         "hardware",
         "positive",
         "perpendicular to flight direction"
@@ -218,7 +218,7 @@
         "weak"
       ],
       [
-        "antenna",
+        "antennas",
         "hardware",
         "positive",
         "perpendicular to flight direction"
@@ -264,7 +264,7 @@
         "weak"
       ],
       [
-        "antenna",
+        "antennas",
         "hardware",
         "positive",
         "perpendicular to flight direction"
@@ -298,7 +298,7 @@
         "weak"
       ],
       [
-        "antenna",
+        "antennas",
         "hardware",
         "positive",
         "perpendicular to flight direction"
@@ -387,7 +387,7 @@
       ],
       [
         "the area",
-        "hardware",
+        "environment",
         "positive",
         "under the aircraft"
       ],
@@ -413,7 +413,7 @@
       ],
       [
         "the area",
-        "hardware",
+        "environment",
         "positive",
         "under the aircraft"
       ],

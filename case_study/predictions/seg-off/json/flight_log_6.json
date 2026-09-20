@@ -134,21 +134,27 @@
         "updated"
       ],
       [
-        "RTH altitude",
+        "Downward ambient light",
         "parameter",
         "positive",
-        "adjusted to 100m"
-      ],
-      [
-        "Downward ambient light",
-        "environment",
-        "negative",
         "too low"
       ],
       [
         "Obstacle avoidance",
         "software",
         "positive",
+        "unavailable"
+      ],
+      [
+        "Forward ambient light",
+        "environment",
+        "negative",
+        "too low"
+      ],
+      [
+        "Obstacle avoidance",
+        "parameter",
+        "negative",
         "unavailable"
       ]
     ]
@@ -168,20 +174,20 @@
       [
         "Obstacle avoidance",
         "software",
-        "positive",
+        "negative",
         "unavailable"
       ],
       [
-        "Forward ambient light",
+        "Home point",
         "parameter",
         "positive",
-        "too low"
+        "updated"
       ],
       [
-        "Obstacle avoidance",
-        "software",
+        "RTH altitude",
+        "parameter",
         "positive",
-        "unavailable"
+        "adjusted to 100m"
       ]
     ]
   },
@@ -210,16 +216,10 @@
         "too low"
       ],
       [
-        "Forward ambient light",
-        "software",
+        "RTH altitude",
+        "parameter",
         "positive",
-        "too low"
-      ],
-      [
-        "Obstacle avoidance",
-        "software",
-        "positive",
-        "unavailable"
+        "adjusted to 100m"
       ]
     ]
   },
@@ -478,7 +478,7 @@
       [
         "Forward ambient light",
         "operation",
-        "negative",
+        "positive",
         "too low"
       ],
       [
@@ -486,6 +486,12 @@
         "software",
         "positive",
         "unavailable"
+      ],
+      [
+        "Downward ambient light",
+        "environment",
+        "negative",
+        "too low"
       ]
     ]
   },
@@ -504,13 +510,25 @@
       [
         "Obstacle avoidance",
         "software",
-        "positive",
+        "negative",
         "unavailable"
       ],
       [
-        "Forward ambient light",
+        "battery",
         "environment",
         "negative",
+        "low"
+      ],
+      [
+        "Downward ambient light",
+        "operation",
+        "positive",
+        "too low"
+      ],
+      [
+        "Forward ambient light",
+        "software",
+        "positive",
         "too low"
       ],
       [
@@ -536,13 +554,25 @@
       [
         "Obstacle avoidance",
         "software",
-        "positive",
+        "negative",
         "unavailable"
       ],
       [
-        "Forward ambient light",
+        "battery",
         "environment",
         "negative",
+        "low"
+      ],
+      [
+        "Downward ambient light",
+        "operation",
+        "positive",
+        "too low"
+      ],
+      [
+        "Forward ambient light",
+        "software",
+        "positive",
         "too low"
       ],
       [
@@ -568,13 +598,19 @@
       [
         "Obstacle avoidance",
         "software",
-        "positive",
+        "negative",
         "unavailable"
       ],
       [
-        "Downward ambient light",
-        "hardware",
+        "battery",
+        "environment",
         "negative",
+        "low"
+      ],
+      [
+        "Downward ambient light",
+        "operation",
+        "positive",
         "too low"
       ],
       [
@@ -600,13 +636,19 @@
       [
         "Obstacle avoidance",
         "software",
-        "positive",
+        "negative",
         "unavailable"
       ],
       [
-        "Downward ambient light",
-        "hardware",
+        "battery",
+        "environment",
         "negative",
+        "low"
+      ],
+      [
+        "Downward ambient light",
+        "operation",
+        "positive",
         "too low"
       ],
       [
@@ -632,13 +674,19 @@
       [
         "Obstacle avoidance",
         "software",
-        "positive",
+        "negative",
         "unavailable"
       ],
       [
-        "Downward ambient light",
-        "hardware",
+        "battery",
+        "environment",
         "negative",
+        "low"
+      ],
+      [
+        "Downward ambient light",
+        "operation",
+        "positive",
         "too low"
       ],
       [
@@ -664,13 +712,19 @@
       [
         "Obstacle avoidance",
         "software",
-        "positive",
+        "negative",
         "unavailable"
       ],
       [
-        "Downward ambient light",
-        "hardware",
+        "battery",
+        "environment",
         "negative",
+        "low"
+      ],
+      [
+        "Downward ambient light",
+        "operation",
+        "positive",
         "too low"
       ],
       [
@@ -696,13 +750,19 @@
       [
         "Obstacle avoidance",
         "software",
-        "positive",
+        "negative",
         "unavailable"
       ],
       [
-        "Downward ambient light",
-        "hardware",
+        "battery",
+        "environment",
         "negative",
+        "low"
+      ],
+      [
+        "Downward ambient light",
+        "operation",
+        "positive",
         "too low"
       ],
       [
@@ -728,13 +788,19 @@
       [
         "Obstacle avoidance",
         "software",
-        "positive",
+        "negative",
         "unavailable"
       ],
       [
-        "Downward ambient light",
-        "hardware",
+        "battery",
+        "environment",
         "negative",
+        "low"
+      ],
+      [
+        "Downward ambient light",
+        "operation",
+        "positive",
         "too low"
       ],
       [
@@ -760,13 +826,19 @@
       [
         "Obstacle avoidance",
         "software",
-        "positive",
+        "negative",
         "unavailable"
       ],
       [
-        "Downward ambient light",
-        "hardware",
+        "battery",
+        "environment",
         "negative",
+        "low"
+      ],
+      [
+        "Downward ambient light",
+        "operation",
+        "positive",
         "too low"
       ],
       [
@@ -792,13 +864,19 @@
       [
         "Obstacle avoidance",
         "software",
-        "positive",
+        "negative",
         "unavailable"
       ],
       [
-        "Downward ambient light",
-        "hardware",
+        "battery",
+        "environment",
         "negative",
+        "low"
+      ],
+      [
+        "Downward ambient light",
+        "operation",
+        "positive",
         "too low"
       ],
       [
@@ -824,18 +902,18 @@
       [
         "Obstacle avoidance",
         "software",
-        "positive",
+        "negative",
         "unavailable"
       ],
       [
-        "Forward ambient light",
-        "environment",
+        "battery",
+        "hardware",
         "negative",
-        "too low"
+        "low"
       ],
       [
-        "Downward ambient light",
-        "software",
+        "Forward ambient light",
+        "operation",
         "positive",
         "too low"
       ],
@@ -862,26 +940,32 @@
       [
         "Obstacle avoidance",
         "software",
-        "positive",
+        "negative",
         "unavailable"
       ],
       [
-        "Aircraft",
+        "battery",
         "hardware",
         "positive",
-        "returning"
+        "low"
       ],
       [
         "Forward ambient light",
-        "parameter",
+        "hardware",
         "positive",
         "too low"
       ],
       [
-        "Obstacle avoidance",
+        "Downward ambient light",
         "software",
         "positive",
-        "unavailable"
+        "too low"
+      ],
+      [
+        "battery",
+        "software",
+        "positive",
+        "returning"
       ]
     ]
   },
@@ -895,17 +979,11 @@
         "battery",
         "hardware",
         "negative",
-        "Low RTH"
-      ],
-      [
-        "Aircraft",
-        "hardware",
-        "positive",
-        "returning"
+        "only enough for RTH"
       ],
       [
         "Forward ambient light",
-        "parameter",
+        "hardware",
         "positive",
         "too low"
       ],
@@ -924,10 +1002,10 @@
     "message": "Press Brake button to cancel RTH.",
     "quads": [
       [
-        "RTH",
+        "Brake button",
         "operation",
         "positive",
-        "Press Brake button"
+        "Press to cancel"
       ]
     ]
   },
@@ -938,21 +1016,21 @@
     "message": "Low battery RTH.; Press Brake button to cancel RTH.; Remaining battery only enough for RTH. Aircraft returning.; Downward ambient light too low. Obstacle avoidance unavailable. Fly with caution.; Forward ambient light too low. Obstacle avoidance unavailable. Fly with caution.",
     "quads": [
       [
-        "battery",
-        "hardware",
+        "battery RTH",
+        "parameter",
         "negative",
-        "Low RTH"
+        "Low"
       ],
       [
-        "Aircraft",
-        "hardware",
+        "battery",
+        "parameter",
         "positive",
-        "returning"
+        "only enough for RTH"
       ],
       [
         "Downward ambient light",
-        "environment",
-        "negative",
+        "hardware",
+        "positive",
         "too low"
       ],
       [
@@ -970,21 +1048,21 @@
     "message": "Low battery RTH.; Press Brake button to cancel RTH.; Remaining battery only enough for RTH. Aircraft returning.; Downward ambient light too low. Obstacle avoidance unavailable. Fly with caution.; RTH ascending.; Forward ambient light too low. Obstacle avoidance unavailable. Fly with caution.",
     "quads": [
       [
-        "battery",
-        "hardware",
+        "battery RTH",
+        "parameter",
         "negative",
-        "Low RTH"
+        "Low"
       ],
       [
-        "Aircraft",
-        "hardware",
+        "battery",
+        "parameter",
         "positive",
-        "returning"
+        "only enough for RTH"
       ],
       [
         "Downward ambient light",
-        "environment",
-        "negative",
+        "hardware",
+        "positive",
         "too low"
       ],
       [
@@ -1036,26 +1114,32 @@
     "message": "Low battery RTH.; Controller triggered aircraft to descend. Auto RTH canceled.; Remaining battery only enough for RTH. Aircraft returning.; Forward ambient light too low. Obstacle avoidance unavailable. Fly with caution.; Downward ambient light too low. Obstacle avoidance unavailable. Fly with caution.; RTH ascending.",
     "quads": [
       [
-        "battery",
-        "hardware",
+        "battery RTH",
+        "operation",
         "negative",
-        "Low RTH"
+        "Low"
       ],
       [
         "Controller",
-        "hardware",
+        "operation",
         "positive",
         "triggered aircraft to descend"
       ],
       [
-        "Aircraft",
+        "battery",
+        "operation",
+        "positive",
+        "only enough for RTH"
+      ],
+      [
+        "Forward ambient light",
         "hardware",
         "positive",
-        "returning"
+        "too low"
       ],
       [
         "Obstacle avoidance",
-        "parameter",
+        "software",
         "positive",
         "unavailable"
       ]
@@ -1069,21 +1153,33 @@
     "quads": [
       [
         "battery",
-        "hardware",
+        "operation",
         "negative",
-        "Low RTH"
+        "low"
       ],
       [
-        "Controller",
-        "hardware",
+        "Forward ambient light",
+        "operation",
         "positive",
-        "triggered aircraft to descend"
+        "too low"
       ],
       [
         "Obstacle avoidance",
         "software",
         "positive",
         "unavailable"
+      ],
+      [
+        "Downward ambient light",
+        "environment",
+        "negative",
+        "too low"
+      ],
+      [
+        "RTH",
+        "operation",
+        "positive",
+        "ascending"
       ]
     ]
   },
@@ -1307,7 +1403,7 @@
       ],
       [
         "Flight mode",
-        "software",
+        "operation",
         "positive",
         "changed to Confirm Landing"
       ]
@@ -1354,7 +1450,7 @@
       [
         "Auto landing",
         "operation",
-        "negative",
+        "positive",
         "in progress"
       ]
     ]

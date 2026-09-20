@@ -38,7 +38,7 @@
         "error"
       ],
       [
-        "caution",
+        "NULL",
         "operation",
         "positive",
         "Fly with caution"
@@ -61,7 +61,7 @@
         "maximum flight altitude",
         "parameter",
         "positive",
-        "500 m (1640 ft"
+        "to 500 m (1640 ft)."
       ]
     ]
   },
@@ -164,7 +164,7 @@
         "unavailable"
       ],
       [
-        "caution",
+        "NULL",
         "operation",
         "positive",
         "Fly with caution"
@@ -287,7 +287,7 @@
         "Aircraft",
         "hardware",
         "positive",
-        "lost signal"
+        "follow preset action"
       ]
     ]
   },
@@ -393,7 +393,7 @@
         "Aircraft",
         "hardware",
         "positive",
-        "lost signal"
+        "follow preset action"
       ],
       [
         "Downward ambient light",
@@ -408,7 +408,7 @@
         "unavailable"
       ],
       [
-        "caution",
+        "NULL",
         "operation",
         "positive",
         "Fly with caution"
@@ -443,7 +443,7 @@
         "Aircraft",
         "hardware",
         "positive",
-        "lost signal"
+        "follow preset action"
       ],
       [
         "Downward ambient light",
@@ -458,7 +458,7 @@
         "unavailable"
       ],
       [
-        "caution",
+        "NULL",
         "operation",
         "positive",
         "Fly with caution"
@@ -493,7 +493,7 @@
         "Aircraft",
         "hardware",
         "positive",
-        "lost signal"
+        "follow preset action"
       ]
     ]
   },
@@ -525,7 +525,7 @@
         "Aircraft",
         "hardware",
         "positive",
-        "lost signal"
+        "follow preset action"
       ],
       [
         "RC signal",
@@ -636,10 +636,10 @@
         "Failsafe"
       ],
       [
-        "RTH",
+        "Brake button",
         "operation",
         "positive",
-        "Press Brake button"
+        "Press to cancel"
       ],
       [
         "RC signal",
@@ -688,10 +688,10 @@
         "Failsafe"
       ],
       [
-        "RTH",
+        "Brake button",
         "operation",
         "positive",
-        "Press Brake button"
+        "Press to cancel"
       ],
       [
         "RC signal",
@@ -726,10 +726,10 @@
         "Failsafe"
       ],
       [
-        "RTH",
+        "Brake button",
         "operation",
         "positive",
-        "Press Brake button"
+        "Press to cancel"
       ],
       [
         "RC signal",
@@ -752,8 +752,8 @@
       [
         "antennas",
         "hardware",
-        "positive",
-        "blocking"
+        "negative",
+        "Avoid blocking"
       ],
       [
         "RTH",
@@ -776,10 +776,10 @@
         "Failsafe"
       ],
       [
-        "RTH",
+        "Brake button",
         "operation",
         "positive",
-        "Press Brake button"
+        "Press to cancel"
       ],
       [
         "RC signal",
@@ -963,7 +963,7 @@
         "Aircraft",
         "hardware",
         "positive",
-        "lost signal"
+        "follow preset action"
       ]
     ]
   },

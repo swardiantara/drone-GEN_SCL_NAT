@@ -148,7 +148,7 @@
       [
         "Obstacle avoidance",
         "software",
-        "positive",
+        "negative",
         "unavailable"
       ]
     ]
@@ -264,6 +264,12 @@
         "communication",
         "negative",
         "lost"
+      ],
+      [
+        "Aircraft",
+        "hardware",
+        "positive",
+        "follow preset action for lost signal"
       ]
     ]
   },
@@ -355,7 +361,7 @@
     "quads": [
       [
         "Aircraft",
-        "hardware",
+        "communication",
         "negative",
         "braking"
       ],
@@ -368,13 +374,13 @@
       [
         "Downward ambient light",
         "hardware",
-        "positive",
+        "negative",
         "too low"
       ],
       [
         "Obstacle avoidance",
         "software",
-        "positive",
+        "negative",
         "unavailable"
       ]
     ]
@@ -398,15 +404,21 @@
         "braking"
       ],
       [
+        "RC signal",
+        "software",
+        "negative",
+        "lost"
+      ],
+      [
         "Downward ambient light",
-        "communication",
+        "environment",
         "negative",
         "too low"
       ],
       [
         "Obstacle avoidance",
         "software",
-        "positive",
+        "negative",
         "unavailable"
       ]
     ]
@@ -594,7 +606,7 @@
       [
         "RTH",
         "operation",
-        "negative",
+        "positive",
         "ascending"
       ]
     ]
@@ -618,8 +630,8 @@
         "lost"
       ],
       [
-        "RTH",
-        "communication",
+        "RC signal",
+        "operation",
         "negative",
         "weak"
       ]
@@ -646,7 +658,7 @@
       [
         "RTH",
         "operation",
-        "negative",
+        "positive",
         "ascending"
       ]
     ]
@@ -668,6 +680,12 @@
         "hardware",
         "positive",
         "triggered aircraft to descend"
+      ],
+      [
+        "Auto RTH",
+        "communication",
+        "negative",
+        "canceled"
       ],
       [
         "RC signal",
@@ -708,6 +726,12 @@
         "hardware",
         "positive",
         "triggered aircraft to descend"
+      ],
+      [
+        "Auto RTH",
+        "communication",
+        "negative",
+        "canceled"
       ],
       [
         "RC signal",
@@ -760,6 +784,12 @@
         "communication",
         "negative",
         "lost"
+      ],
+      [
+        "Aircraft",
+        "hardware",
+        "positive",
+        "follow preset action for lost signal"
       ]
     ]
   },
@@ -1431,7 +1461,7 @@
       ],
       [
         "Flight mode",
-        "software",
+        "operation",
         "positive",
         "changed to Confirm Landing"
       ]
